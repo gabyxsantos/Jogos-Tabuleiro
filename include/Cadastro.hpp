@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <algorithm>
 
 class Jogador{
     private:
@@ -12,8 +13,8 @@ class Jogador{
     int numero_derrotas;
 
     public:
-    void set_nome(int numero_jogador);
-    void set_apelido(int numero_jogador);
+    void set_nome();
+    void set_apelido();
     void adicionar_vitoria();
     void adicionar_derrota();
     std::string get_nome();
@@ -26,12 +27,19 @@ class Registro_jogadores{
     private:
     std::list<Jogador> Jogadores;
 
+    //////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////
     public: 
-    void ordenar_jogadores();
-    void ordenar_jogadores();
-    std::string buscar_jogador();
-    void adicionar_jogador();
-    void remover_jogador();
+    void ordenar_jogadores_nome();
+    void ordenar_jogadores_apelido(); ////////////OBSERVAÇÃO//////////ESSE CODIGO DISTINGUE MAIUSCULAS E MINUSCULAS, E POR ISSO APRESENTA UM BUG AO ORDENAR!!!!
+    /////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////
+    std::list<Jogador>::iterator buscar_jogador(std::string& apelido);
+    bool adicionar_jogador(Jogador jogador_novo, std::string apelido);
+    void remover_jogador(std::string& apelido);
+    void mostrar_jogadores();
 };
 
 

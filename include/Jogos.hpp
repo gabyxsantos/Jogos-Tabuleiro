@@ -2,7 +2,10 @@
 #define JOGOS_H
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <list>
+#include <vector>
+#include <iomanip>
 
 #define RESET   "\033[0m"        // Resetar cor para padrão
 #define BOLD    "\033[1m"
@@ -14,15 +17,18 @@
 #define BLACK   "\033[90m"
 #define ORANGE  "\033[38;5;214m"
 #define WHITE   "\033[97m"       
-#define PECA_VERMELHA "🔴" 
+#define PECA_VERMELHA "🔴"
 #define PECA_VERDE "🟢"     
 #define PECA_AMARELA "🟡"   
 #define PECA_AZUL "🔵"      
 #define PECA_MAGENTA "🟣"   
 #define PECA_LARANJA "🟠"   
 #define PECA_PRETA "⚫"     
-#define PECA_BRANCO "⚪"    
+#define PECA_BRANCO "⚪"
+#define PECA_X "X "
+#define PECA_O "O "    
 
+/*
 class Peca{ //Verificar a necessidade e senntido da implementação dessa classe!!!!
     protected:
     char peca;
@@ -37,60 +43,71 @@ class Peca{ //Verificar a necessidade e senntido da implementação dessa classe
     void get_X();
     void get_Y();
 };
+*/
+
 class Jogo_De_Tabuleiro {
     protected:
-    int X, Y;
-    //std::vector<std::vector<char>> tabuleiro; Mais coerente tentar primeiro com uma lógica mais simples, com arrays simples, para depois incrementar o código. Devemos também reavaliar se faz sentido mesmo fazer o tabuleiro com um vetor.
-    int tamanho_tabuleiro[2];
+    int linhas, colunas;
+    std::vector<std::vector<std::string>> tabuleiro;
 
-    virtual void imprimir_menu();
-    virtual void inicializar_tabuleiro()=0;
-    virtual void ler_jogada();
-    virtual void ler_jogada(int y);
-    virtual bool verificar_jogada();
-    virtual bool verificar_jogada(int y);
-    virtual void testar_vitoria()=0;
-    virtual void imprimir_tabuleiro()=0;
-    virtual void finalizar_partida();
-    virtual void finalizar_partida(std::string apelido_jogador);
-    virtual std::string definir_cor(); //Ainda estamos averiguando a possibilidade de utilizar diferentes cores das peças, já que para isso deveríamos averiguar a compatibilidade com diferentes sistemas operacionais
-    //Ainda sobre a funcao definir_cor, podemos depois ver formas mais agradáveis para o usuário escolher uma cor
-};
-class Lig_4 : public Jogo_De_Tabuleiro{
-    protected:
-    char tabuleiro[6][7];
-    int tamanho_tabuleiro[2]={6,7};
-    int numero_de_jogadas = 0;
+    // Podemos tentar tornar essa função mais geral, não apenas para jogos, talvez colocar em public ou coisa assim. 
+    void imprimir_erro(const std::string& erro);
 
     public:
-    virtual void inicializar_tabuleiro();
-    //void ler_jogada(); //Ja perguntei no forum da turma, não sei se essas funções (q são herdadas e não redefinidas) se mantém aq no cabecalho ou nao
-    //void ler_jogada(int y);
-    //virtual bool verificar_jogada();
-    //virtual bool verificar_jogada(int y);
-    virtual void testar_vitoria()=0;
-    virtual void imprimir_tabuleiro()=0;
-    virtual void finalizar_partida();
-    virtual void finalizar_partida(std::string apelido_jogador);
-    void definir_tamanho_tabuleiro();
-    virtual std::string definir_cor();
+    virtual ~Jogo_De_Tabuleiro() = default; // Destrutor virtual para permitir limpeza apropriada
+
+    // Métodos abstratos
+    virtual bool verificar_jogada(int linha, int coluna) = 0;
+    virtual void ler_jogada(const std::string& peca) = 0;
+    virtual bool testar_vitoria(const std::string& peca) = 0;
+
+    // Métodos para o tabuleiro
+    void definir_tamanho_tabuleiro(int linhas, int colunas);
+    void inicializar_tabuleiro();
+    void imprimir_tabuleiro();
+    bool tabuleiro_cheio();
+
+    // Metodos para encerramento da partida
+    void finalizar_partida_vencedor(const std::string& apelido_vencedor);
+    void finalizar_partida_empate();
+    bool testar_empate(const std::string& peca1, const std::string& peca2);
+
+    // Método para definir uma cor que não pode ser igual a outra
+    std::string definir_cor(const std::string& cor_excluida = " ");
 };
+
+class Lig_4 : public Jogo_De_Tabuleiro {
+    public:
+    Lig_4();
+
+    bool verificar_jogada(int linha, int coluna) override;
+    void ler_jogada(const std::string& peca) override;
+    bool testar_vitoria(const std::string& peca) override;
+};
+
 class Jogo_Da_Velha : public Jogo_De_Tabuleiro{
-    protected:
-    char tabuleiro[3][3];
-    int tamanho_tabuleiro[2]={3,3};
-    int numero_de_jogadas = 0;
-};
-class Reversi : public Jogo_De_Tabuleiro{
-    protected:
-    char tabuleiro[8][8];
-    int tamanho_tabuleiro[2]={8,8};
-    int numero_de_jogadas = 0;
-
     public:
+    bool pecas_coloridas;
+    Jogo_Da_Velha();
+
+    std::string escolher_peca(const std::string& peca_excluida = " ", bool colorido = false);
+    std::string escolher_cor(const std::string& peca);
+    bool verificar_jogada(int linha, int coluna) override;
+    void ler_jogada(const std::string& peca) override;
+    bool testar_vitoria(const std::string& peca) override;
+};
+
+class Reversi : public Jogo_De_Tabuleiro{
+    public:
+    Reversi();
+
+    bool verificar_jogada(int linha, int coluna) override;
+    void ler_jogada(const std::string& peca) override;
+    bool testar_vitoria(const std::string& peca) override;
     void mostrar_posicoes_possiveis();
     void converter_pecas();
 };
+
 class Tutorial{
     public:
     void iniciar_tutorial_lig4();

@@ -24,7 +24,7 @@ Desenvolver aprendizados adquiridos no curso de PDS II, praticar a linguagem de 
 
 # 👩 Autores
 
-| [Carolina Penido](https://github.com) |
+| [Carolina Penido](https://github.com/carolinabarcellos) |
 | :--------------------------------------------------------------------------------------------------------------------------------: |
 
 | [Gabrielly Xavier](https://github.com/gabyxsantos) |

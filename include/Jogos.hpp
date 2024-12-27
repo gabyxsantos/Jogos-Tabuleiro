@@ -24,7 +24,9 @@
 #define PECA_MAGENTA "🟣"   
 #define PECA_LARANJA "🟠"   
 #define PECA_PRETA "⚫"     
-#define PECA_BRANCO "⚪"    
+#define PECA_BRANCO "⚪"
+#define PECA_X "X "
+#define PECA_O "O "    
 
 /*
 class Peca{ //Verificar a necessidade e senntido da implementação dessa classe!!!!
@@ -55,13 +57,20 @@ class Jogo_De_Tabuleiro {
     virtual ~Jogo_De_Tabuleiro() = default; // Destrutor virtual para permitir limpeza apropriada
 
     // Métodos abstratos
-    virtual void definir_tamanho_tabuleiro(int linhas, int colunas) = 0;
-    virtual void inicializar_tabuleiro() = 0;
-    virtual void imprimir_tabuleiro() = 0;
     virtual bool verificar_jogada(int linha, int coluna) = 0;
     virtual void ler_jogada(const std::string& peca) = 0;
     virtual bool testar_vitoria(const std::string& peca) = 0;
-    virtual void finalizar_partida(const std::string& apelido_vencedor) = 0;
+
+    // Métodos para o tabuleiro
+    void definir_tamanho_tabuleiro(int linhas, int colunas);
+    void inicializar_tabuleiro();
+    void imprimir_tabuleiro();
+    bool tabuleiro_cheio();
+
+    // Metodos para encerramento da partida
+    void finalizar_partida_vencedor(const std::string& apelido_vencedor);
+    void finalizar_partida_empate();
+    bool testar_empate(const std::string& peca1, const std::string& peca2);
 
     // Método para definir uma cor que não pode ser igual a outra
     std::string definir_cor(const std::string& cor_excluida = " ");
@@ -71,31 +80,34 @@ class Lig_4 : public Jogo_De_Tabuleiro {
     public:
     Lig_4();
 
-    void definir_tamanho_tabuleiro(int linhas, int colunas) override;
-    void inicializar_tabuleiro() override;
-    void imprimir_tabuleiro() override;
     bool verificar_jogada(int linha, int coluna) override;
     void ler_jogada(const std::string& peca) override;
     bool testar_vitoria(const std::string& peca) override;
-    void finalizar_partida(const std::string& nome_vencedor) override;
 };
 
 class Jogo_Da_Velha : public Jogo_De_Tabuleiro{
-    protected:
-    char tabuleiro[3][3];
-    int tamanho_tabuleiro[2]={3,3};
-    int numero_de_jogadas = 0;
-};
-class Reversi : public Jogo_De_Tabuleiro{
-    protected:
-    char tabuleiro[8][8];
-    int tamanho_tabuleiro[2]={8,8};
-    int numero_de_jogadas = 0;
-
     public:
+    bool pecas_coloridas;
+    Jogo_Da_Velha();
+
+    std::string escolher_peca(const std::string& peca_excluida = " ", bool colorido = false);
+    std::string escolher_cor(const std::string& peca);
+    bool verificar_jogada(int linha, int coluna) override;
+    void ler_jogada(const std::string& peca) override;
+    bool testar_vitoria(const std::string& peca) override;
+};
+
+class Reversi : public Jogo_De_Tabuleiro{
+    public:
+    Reversi();
+
+    bool verificar_jogada(int linha, int coluna) override;
+    void ler_jogada(const std::string& peca) override;
+    bool testar_vitoria(const std::string& peca) override;
     void mostrar_posicoes_possiveis();
     void converter_pecas();
 };
+
 class Tutorial{
     public:
     void iniciar_tutorial_lig4();

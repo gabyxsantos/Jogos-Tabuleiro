@@ -125,7 +125,5 @@ int main() {
     if (empate) jogo.finalizar_partida_empate();
     else jogo.finalizar_partida_vencedor(nome_atual);
     */
-
-
     return 0;
 }

@@ -7,11 +7,12 @@
 
 class Partida{
 private:
-std::string nome_do_jogo;
+char nome_do_jogo;
 std::string apelido_jogador_1;
 std::string apelido_jogador_2;
 
 public:
+void iniciar_partida();
 void escolher_jogo();
 void definir_jogadores();
 void jogar_lig_4();

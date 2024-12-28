@@ -131,7 +131,7 @@ bool verificar_tipo(const std::string& entrada, T& valor) {
     std::string Jogo_De_Tabuleiro::definir_cor(const std::string& cor_excluida){
         int cor_escolhida;
         do{
-            std::cout << "Escolha a cor de suas peças: " << std::endl
+            std::cout << "escolha a cor de suas peças: " << std::endl
                     << RED << "<1> Vermelho " << PECA_VERMELHA << std::endl
                     << GREEN << "<2> Verde " << PECA_VERDE << std::endl
                     << YELLOW << "<3> Amarelo " << PECA_AMARELA << std::endl
@@ -426,10 +426,3 @@ bool verificar_tipo(const std::string& entrada, T& valor) {
     void Reversi::mostrar_posicoes_possiveis(){};
     void Reversi::converter_pecas(){};
 
-//Funções da classe Tutorial:
-    void Tutorial::iniciar_tutorial_lig4(){};
-    void Tutorial::iniciar_tutorial_reversi(){};
-    void Tutorial::iniciar_tutorial_jogo_da_velha(){};
-    void Tutorial::imprimir_regras_lig4(){};
-    void Tutorial::imprimir_regras_reversi(){};
-    void Tutorial::imprimir_regras_jogo_da_velha(){};

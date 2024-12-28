@@ -22,9 +22,12 @@ $(OBJ_DIR)/Partida.o: $(INCLUDE_DIR)/Partida.hpp $(INCLUDE_DIR)/Jogos.hpp $(INCL
 $(OBJ_DIR)/main.o: $(INCLUDE_DIR)/Cadastro.hpp $(INCLUDE_DIR)/Jogos.hpp $(INCLUDE_DIR)/Partida.hpp $(SRC_DIR)/main.cpp
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/main.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/main.o
 
+$(OBJ_DIR)/Tutorial.o: $(INCLUDE_DIR)/Tutorial.hpp $(SRC_DIR)/Tutorial.cpp 
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/Tutorial.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Tutorial.o
+
 # Linkagem do executável
-$(BIN_DIR)/main: $(OBJ_DIR)/main.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Partida.o
-	$(CC) $(CFLAGS) $(OBJ_DIR)/main.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Partida.o -o $(BIN_DIR)/main
+$(BIN_DIR)/main: $(OBJ_DIR)/main.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Partida.o $(OBJ_DIR)/Tutorial.o
+	$(CC) $(CFLAGS) $(OBJ_DIR)/main.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Partida.o $(OBJ_DIR)/Tutorial.o -o $(BIN_DIR)/main
 
 # Limpeza dos arquivos gerados
 clean:

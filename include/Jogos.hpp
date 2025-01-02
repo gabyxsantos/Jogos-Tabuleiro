@@ -1,57 +1,13 @@
 #ifndef JOGOS_H
 #define JOGOS_H
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <list>
-#include <vector>
-#include <iomanip>
-
-#define RESET   "\033[0m"        // Resetar cor para padrão
-#define BOLD    "\033[1m"
-#define RED     "\033[91m"
-#define GREEN   "\033[92m"
-#define YELLOW  "\033[93m"
-#define BLUE    "\033[94m"
-#define MAGENTA "\033[95m"
-#define BLACK   "\033[90m"
-#define ORANGE  "\033[38;5;214m"
-#define WHITE   "\033[97m"       
-#define PECA_VERMELHA "🔴"
-#define PECA_VERDE "🟢"     
-#define PECA_AMARELA "🟡"   
-#define PECA_AZUL "🔵"      
-#define PECA_MAGENTA "🟣"   
-#define PECA_LARANJA "🟠"   
-#define PECA_PRETA "⚫"     
-#define PECA_BRANCO "⚪"
-#define PECA_X "X "
-#define PECA_O " O"    
-
-/*
-class Peca{ //Verificar a necessidade e senntido da implementação dessa classe!!!!
-    protected:
-    char peca;
-    int coordenada_X;
-    int coordenada_Y;
-
-    public:
-    void set_peca();
-    void set_X();
-    void set_Y();
-    void get_peca();
-    void get_X();
-    void get_Y();
-};
-*/
+#include "FuncoesGlobais.hpp"
 
 class Jogo_De_Tabuleiro {
     protected:
+    std::string filler;
     int linhas, colunas;
     std::vector<std::vector<std::string>> tabuleiro;
 
-    // Podemos tentar tornar essa função mais geral, não apenas para jogos, talvez colocar em public ou coisa assim. 
-    void imprimir_erro(const std::string& erro);
 
     public:
     virtual ~Jogo_De_Tabuleiro() = default; // Destrutor virtual para permitir limpeza apropriada
@@ -60,8 +16,10 @@ class Jogo_De_Tabuleiro {
     virtual bool verificar_jogada(int linha, int coluna) = 0;
     virtual void ler_jogada(const std::string& peca) = 0;
     virtual bool testar_vitoria(const std::string& peca) = 0;
-
+    
+    
     // Métodos para o tabuleiro
+    void definir_filler(std::string filler);
     void definir_tamanho_tabuleiro(int linhas, int colunas);
     void inicializar_tabuleiro();
     void imprimir_tabuleiro();
@@ -80,6 +38,7 @@ class Lig_4 : public Jogo_De_Tabuleiro {
     public:
     Lig_4();
 
+    std::string escolher_peca(const std::string& peca_excluida);
     bool verificar_jogada(int linha, int coluna) override;
     void ler_jogada(const std::string& peca) override;
     bool testar_vitoria(const std::string& peca) override;

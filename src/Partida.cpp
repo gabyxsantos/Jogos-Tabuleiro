@@ -1,6 +1,8 @@
 #include "Partida.hpp"
 #include "Cadastro.hpp"
 #include "Jogos.hpp"
+#include "FuncoesGlobais.hpp"
+
 
 void Partida::iniciar_partida(){
     definir_jogadores();
@@ -10,9 +12,9 @@ void Partida::iniciar_partida(){
 void Partida::definir_jogadores(){
 
     std::cout << "Jogador 1, insira seu apelido:" << std::endl;
-    std::cin >> apelido_jogador_1;
+    pedir_usuario(apelido_jogador_1);
     std::cout << "Jogador 2, insira seu apelido:" << std::endl;
-    std::cin >> apelido_jogador_2;
+    pedir_usuario(apelido_jogador_2);
 };
 
 void Partida::escolher_jogo(){
@@ -22,7 +24,8 @@ void Partida::escolher_jogo(){
     std::cout << "(L) Lig4" << std::endl;
     std::cout << "(V) Jogo da Velha" << std::endl;
     
-    while (std::cin >> nome_do_jogo) {
+    while (true) {
+        pedir_usuario(nome_do_jogo);
         switch (nome_do_jogo) {
             case 'R':
             case 'r': 
@@ -36,11 +39,11 @@ void Partida::escolher_jogo(){
 
             case 'V':
             case 'v': 
-                jogar_reversi();
+                jogar_jogo_da_velha();
                 break;
 
             default:
-                std::cout << "Parece que você digitou uma opção inválida, tente novamente:" << std::endl;
+                imprimir_erro("Parece que você digitou uma opção inválida, tente novamente:");
                 continue; 
         }
         break; // Sai do while quando o switch processa um caso válido
@@ -51,14 +54,90 @@ void Partida::escolher_jogo(){
 };
 
 void Partida::jogar_reversi(){
+    Reversi jogo1;
 
+    timer(1800);
+    std::cout << "Vamos jogar Reversi!" << std::endl;
+    timer(1800);
+
+    std::string jogador1, jogador2;
+    std::string peca1, peca2;
+
+    jogo1.definir_filler(VOID);
+
+    std::cout << apelido_jogador_1 << ":" << std::endl;
+    peca1 = jogo1.definir_cor(" "); // O primeiro jogador escolhe a cor
+    timer(1800);
+    std::cout << "Jogador: " << apelido_jogador_1 << std::endl << "Peça: " << peca1 << std::endl;
+    timer(1800);
+
+    std::cout << apelido_jogador_2 << ":" << std::endl;
+    peca2 = jogo1.definir_cor(peca1); // O segundo jogador escolhe a cor diferente do primeiro
+    timer(1800);
+    std::cout << "Jogador: " << apelido_jogador_2 << std::endl << "Peça: " << peca2 << std::endl;
+    timer(1800);
+
+    // Inicializar o tabuleiro
+    jogo1.inicializar_tabuleiro();
+    jogo1.colocar_pecas_iniciais(peca1, peca2);
+
+    int i=0;
+    while(i < 30){
+
+        timer(1800);
+        std::cout << apelido_jogador_1 << " (" << peca1 << "), é sua vez!" << std::endl;
+        jogo1.mostrar_posicoes_possiveis(peca1, peca2);
+        jogo1.imprimir_tabuleiro();
+        jogo1.ler_jogada(peca1);
+        jogo1.converter_pecas(peca1, peca2);
+
+        timer(1800);
+        std::cout << apelido_jogador_2 << " (" << peca2 << "), é sua vez!" << std::endl;
+        jogo1.mostrar_posicoes_possiveis(peca2, peca1);
+        jogo1.imprimir_tabuleiro();
+        jogo1.ler_jogada(peca2);
+        jogo1.converter_pecas(peca2, peca1);
+
+        i++;
+    }
+
+    timer(1800);
+    if(jogo1.testar_vitoria(peca1)){
+        jogo1.imprimir_tabuleiro();
+        timer(1800);
+        std::cout << apelido_jogador_1 << " ganhou!" << std::endl;
+    } 
+    if(jogo1.testar_vitoria(peca2)){
+        jogo1.imprimir_tabuleiro();
+        timer(1800); 
+        std::cout << apelido_jogador_2 << " ganhou!" << std::endl;
+    }
 };
 
 void Partida::jogar_jogo_da_velha(){
     Jogo_Da_Velha jogo2;
+    
+    timer(1800);
+    std::cout << "Vamos jogar Jogo da Velha!" << std::endl;
+    timer(1800);
+
     std::string peca1, peca2;
-    peca1 = jogo2.escolher_peca(" ", jogo2.pecas_coloridas); 
+
+    jogo2.definir_filler(VOID);
+
+    std::cout << apelido_jogador_1 << ":" << std::endl; 
+    peca1 = jogo2.escolher_peca(" ", jogo2.pecas_coloridas);
+
+    timer(1800);
+    std::cout << "Jogador: " << apelido_jogador_1 << std::endl << "Peça: " << peca1 << std::endl;
+    timer(1800);
+
+    std::cout << apelido_jogador_2 << ":" << std::endl; 
     peca2 = jogo2.escolher_peca(peca1, jogo2.pecas_coloridas);
+
+    timer(1800);
+    std::cout << "Jogador: " << apelido_jogador_2 << std::endl << "Peça: " << peca2 << std::endl;
+    timer(1800);
 
     std::string nome_atual = apelido_jogador_1;
     std::string jogador_atual = peca1;
@@ -69,6 +148,7 @@ void Partida::jogar_jogo_da_velha(){
     bool terminou = false;
     bool empate = false;
     while (!terminou) {
+        timer(1800);
         jogo2.imprimir_tabuleiro();
 
         // Informar o turno atual
@@ -96,11 +176,12 @@ void Partida::jogar_jogo_da_velha(){
             nome_atual = apelido_jogador_2;
         } else {
             jogador_atual = peca1;
-            nome_atual = apelido_jogador_2;
+            nome_atual = apelido_jogador_1;
         }
     }
 
     // Finalizar a partida
+    timer(1800);
     if (empate) jogo2.finalizar_partida_empate();
     else jogo2.finalizar_partida_vencedor(nome_atual);
 
@@ -108,13 +189,29 @@ void Partida::jogar_jogo_da_velha(){
 
 void Partida::jogar_lig_4(){
     Lig_4 jogo3;
+
+    timer(1800);
+    std::cout << "Vamos jogar Lig 4!" << std::endl;
+    timer(1800);
+
     std::string peca1, peca2;
     Partida aux;
 
-    std::cout<< "Jogador 1,:";
-    peca1 = jogo3.definir_cor(" "); // O primeiro jogador escolhe a cor
-    std::cout<< "Jogador 2,:";
-    peca2 = jogo3.definir_cor(peca1); // O segundo jogador escolhe a cor diferente do primeiro
+    jogo3.definir_filler(PECA_BRANCO);
+
+    std::cout << apelido_jogador_1 << ":" << std::endl;
+    peca1 = jogo3.escolher_peca(" "); // O primeiro jogador escolhe a cor
+    
+    timer(1800);
+    std::cout << "Jogador: " << apelido_jogador_1 << std::endl << "Peça: " << peca1 << std::endl;
+    timer(1800);
+
+    std::cout << apelido_jogador_2 << ":" << std::endl;
+    peca2 = jogo3.escolher_peca(peca1); // O segundo jogador escolhe a cor diferente do primeiro
+
+    timer(1800);
+    std::cout << "Jogador: " << apelido_jogador_2 << std::endl << "Peça: " << peca2 << std::endl;
+    timer(1800);
 
     jogo3.inicializar_tabuleiro();
     std::string jogador_atual = peca1;
@@ -123,6 +220,7 @@ void Partida::jogar_lig_4(){
     bool terminou = false;
     bool empate = false;
     while (!terminou) {
+        timer(1800);
         jogo3.imprimir_tabuleiro();
 
         // Informar o turno atual
@@ -155,6 +253,7 @@ void Partida::jogar_lig_4(){
     }
 
     // Finalizar a partida
+    timer(1800);
     if (empate) jogo3.finalizar_partida_empate();
     else jogo3.finalizar_partida_vencedor(nome_atual);
     

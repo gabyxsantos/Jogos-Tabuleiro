@@ -1,24 +1,23 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
-#include <iostream>
-#include <string>
+#include "FuncoesGlobais.hpp"
 #include "Cadastro.hpp"
 #include "Jogos.hpp"
 
 class Partida{
-private:
-char nome_do_jogo;
-std::string apelido_jogador_1;
-std::string apelido_jogador_2;
+    private:
+    char nome_do_jogo;
+    std::string apelido_jogador_1;
+    std::string apelido_jogador_2;
 
-public:
-void iniciar_partida();
-void escolher_jogo();
-void definir_jogadores();
-void jogar_lig_4();
-void jogar_jogo_da_velha();
-void jogar_reversi();
-};
+    public:
+    void iniciar_partida();
+    void escolher_jogo();
+    void definir_jogadores();
+    void jogar_lig_4();
+    void jogar_jogo_da_velha();
+    void jogar_reversi();
+    };
 
 class Estatisticas{
     protected:

@@ -47,14 +47,30 @@ bool validar_char(char& valor){
     return std::isalpha(valor); //Funcao retorna true se for uma letra
 }
 
+bool validar_string(const std::string& valor) {
+    for (char c : valor) {
+        if (!std::isalpha(c) && !std::isspace(c)) {
+            return false; // Caracter inválido encontrado
+        }
+    }
+    return true;
+}
+
 
 // Funções templadas para entrada de dados
 template <typename T>
 bool validar_entrada(T& valor) {
     if (std::cin >> valor) {
-        // Verificação especial para char
+        // Verificação especial para char, impedindo que números sejam aceitos nesse caso
         if constexpr (std::is_same_v<T, char>) {
             if (!validar_char(valor)) {
+                limpar_entrada<T>();
+                return false;
+            }
+        }
+        //Verificação especial para string, impedindo que ela contenha caracteres especiais
+        else if constexpr (std::is_same_v<T, std::string>) {
+            if (!validar_string(valor)) {
                 limpar_entrada<T>();
                 return false;
             }

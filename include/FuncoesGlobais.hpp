@@ -9,6 +9,7 @@
 #include <iomanip>
 #include <thread> 
 #include <chrono>
+#include <cctype>
 
 #define RESET   "\033[0m"        // Resetar cor para padrão
 #define BOLD    "\033[1m"
@@ -35,15 +36,37 @@
 // Funções para tratamento de erros
 void imprimir_erro(const std::string& erro);
 
+//funcao para limpar o estado de erro e descartar a entrada invalida
+template <typename T>
+void limpar_entrada() {
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+bool validar_char(char& valor);
+bool validar_string(const std::string& valor);
+
 // Funções templadas para entrada de dados
 template <typename T>
 bool validar_entrada(T& valor) {
     if (std::cin >> valor) {
+        // Verificação especial para char, impedindo que números sejam aceitos nesse caso
+        if constexpr (std::is_same_v<T, char>) {
+            if (!validar_char(valor)) {
+                limpar_entrada<T>();
+                return false;
+            }
+        }
+        //Verificação especial para string, impedindo que ela contenha caracteres especiais
+        else if constexpr (std::is_same_v<T, std::string>) {
+            if (!validar_string(valor)) {
+                limpar_entrada<T>();
+                return false;
+            }
+        }
         return true; // Entrada válida
     }
-    // Limpa o estado de erro e descarta a entrada inválida
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    limpar_entrada<T>();
     return false; // Entrada inválida
 }
 
@@ -55,6 +78,5 @@ void pedir_usuario(T& valor) {
 }
 // Funções para saídas amigáveis
 void timer(int tempo);
-
 
 #endif

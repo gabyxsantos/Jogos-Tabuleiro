@@ -63,6 +63,33 @@
         return (!testar_vitoria(peca1)) && (!testar_vitoria(peca2)) && tabuleiro_cheio();
     };
     
+    //Metodo para atualizar o placar:
+    void Jogo_De_Tabuleiro::atualizar_placar(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo){
+        RegistroJogadores vencedor;
+        RegistroJogadores perdedor;
+
+        auto it = vencedor.buscar_jogador(apelido_vencedor);
+       (*it)->set_vitorias_totais();
+       auto it2 = perdedor.buscar_jogador(apelido_perdedor);
+       (*it2)->set_derrotas_totais();
+
+       if(jogo.compare("Reversi") == 0){
+        (*it)->set_Reversi(true);
+        (*it2)->set_Reversi(false);
+       }
+
+       else if(jogo.compare("Lig4") == 0){
+        (*it)->set_Lig4(true);
+        (*it2)->set_Lig4(false);
+       }
+
+       else if (jogo.compare("JogoVelha") == 0){
+        (*it)->set_JogoVelha(true);
+        (*it2)->set_JogoVelha(false);
+       }
+
+    };
+
 
     // Função para definição da cor da peça
     std::string Jogo_De_Tabuleiro::definir_cor(const std::string& cor_excluida){

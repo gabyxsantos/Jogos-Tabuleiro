@@ -1,6 +1,14 @@
 #include "Cadastro.hpp"
+#include <string>
+//#include "FuncoesGlobais.hpp"
 
 //Funções da classe Jogador:
+
+    Jogador::Jogador(std::string nome, std::string apelido){
+        this->nome = nome;
+        this->apelido = apelido;
+    };
+
     void Jogador::set_nome(){
         std::string verificador;
         std::cin.ignore();
@@ -12,6 +20,7 @@
         if (verificador.length()>=1 && verificador.length()<=100 && verificador.find(' ')== std::string::npos) Jogador::nome = verificador;
         } while (Jogador::nome != verificador);
     };
+
     void Jogador::set_apelido(){
         std::string verificador;
         std::cout << "Informe o apelido do jogador: ";
@@ -25,47 +34,123 @@
         }
         } while (Jogador::apelido != verificador);
     };
-    void Jogador::adicionar_vitoria(){
-        this->numero_vitorias++;
+
+
+    void Jogador::set_vitorias_totais(){
+        this->vitorias_totais++;
     };
-    void Jogador::adicionar_derrota(){
-        this->numero_derrotas++;
+
+    void Jogador::set_derrotas_totais(){
+        this->derrotas_totais++;
     };
+
+    void Jogador::set_vitorias_totais(int n){
+        this->vitorias_totais = n;
+    };
+
+    void Jogador::set_derrotas_totais(int n){
+        this->derrotas_totais = n;
+    };
+
+    void Jogador::set_Reversi(bool valor){
+        if (valor) {
+            this->Reversi.vitorias ++;
+        } 
+        else {
+            this->Reversi.derrotas ++;
+        }
+    };
+
+    void Jogador::set_Lig4(bool valor){
+        if (valor) {
+            this->Lig4.vitorias ++;
+        } 
+        else {
+            this->Lig4.derrotas ++;
+        }
+    };
+
+    void Jogador::set_JogoVelha(bool valor){
+        if (valor) {
+            this->JogoVelha.vitorias ++;
+        } 
+        else {
+            this->JogoVelha.derrotas ++;
+        }
+    };
+
+
+    void Jogador::set_Reversi(int vitorias, int derrotas){
+        this->Reversi.vitorias = vitorias;
+        this->Reversi.derrotas = derrotas;
+    };
+
+    void Jogador::set_Lig4(int vitorias, int derrotas){
+        this->Lig4.vitorias = vitorias;
+        this->Lig4.derrotas = derrotas;
+    };
+
+    void Jogador::set_JogoVelha(int vitorias, int derrotas){
+        this->JogoVelha.vitorias = vitorias;
+        this->JogoVelha.derrotas = derrotas;
+    };
+
+
     std::string Jogador::get_nome(){
         return Jogador::nome;
     };
+
     std::string Jogador::get_apelido(){
         return Jogador::apelido;
     };
-    int Jogador::get_vitorias(){
-        return Jogador::numero_vitorias;
+
+    int Jogador::get_vitorias_totais(){
+        return Jogador::vitorias_totais;
     };
-    int Jogador::get_derrotas(){
-        return Jogador::numero_derrotas;
+
+    int Jogador::get_derrotas_totais(){
+        return Jogador::derrotas_totais;
+    };
+
+    Placar Jogador::get_Reversi(){
+        return Jogador::Reversi;
+    };
+
+    Placar Jogador::get_Lig4(){
+        return Jogador::Lig4;
+    };
+
+    Placar Jogador::get_JogoVelha(){
+        return Jogador::JogoVelha;
     };
  
 //Funções da classe Registro_jogadores
-    void Registro_jogadores::ordenar_jogadores_nome(){ // Ordenar por nome
-        Registro_jogadores::Jogadores.sort([](Jogador& a, Jogador& b) {
-        return a.get_nome() < b.get_nome();
+    void RegistroJogadores::ordenar_jogadores_nome() {
+        RegistroJogadores::Jogadores.sort([](Jogador* a, Jogador* b) {
+            return a->get_nome() < b->get_nome(); // Use "->" para acessar os membros
         });
-    };
-    void Registro_jogadores::ordenar_jogadores_apelido(){ // Ordenar por apelido
-        Registro_jogadores::Jogadores.sort([](Jogador& a, Jogador& b) {
-            return a.get_apelido() < b.get_apelido();
-        });
-    };
-    std::list<Jogador>::iterator Registro_jogadores::buscar_jogador(std::string& apelido){
-        for (auto it = Jogadores.begin(); it != Jogadores.end(); ++it) {
-        if (it->get_apelido() == apelido) {
-            return it;
-        }
     }
-    return Jogadores.end();
+
+    void RegistroJogadores::ordenar_jogadores_apelido() {
+        RegistroJogadores::Jogadores.sort([](Jogador* a, Jogador* b) {
+            return a->get_apelido() < b->get_apelido(); // Use "->" para acessar os membros
+        });
+    }
+
+
+    std::list<Jogador*>::iterator RegistroJogadores::buscar_jogador(std::string& apelido){
+        std::list<Jogador*>::iterator it; //definindo um iterator que vai caminhar pela list
+        for ( it = Jogadores.begin(); it != Jogadores.end(); ++it) {
+            if ((*it)->get_apelido() == apelido) {
+                return (it);
+            }
+        }
+        return it;
     };
-    bool Registro_jogadores::adicionar_jogador(Jogador jogador_novo, std::string apelido){
-        if (Registro_jogadores::buscar_jogador(apelido)== Jogadores.end()) {
-            Registro_jogadores::Jogadores.push_back(jogador_novo);
+
+    bool RegistroJogadores::adicionar_jogador(Jogador* jogador_novo, std::string apelido){
+        if (RegistroJogadores::buscar_jogador(apelido)== Jogadores.end()) {
+            RegistroJogadores::Jogadores.push_back(jogador_novo);
             return false;
         }
         else {
@@ -73,12 +158,14 @@
             return true;
         }
     };
-    void Registro_jogadores::remover_jogador(std::string& apelido){
-        if (Registro_jogadores::buscar_jogador(apelido)== Jogadores.end()) std::cout << "Jogador não encontrado!";
-        else Jogadores.erase(Registro_jogadores::buscar_jogador(apelido));
+
+    void RegistroJogadores::remover_jogador(std::string& apelido){
+        if (RegistroJogadores::buscar_jogador(apelido)== Jogadores.end()) std::cout << "Jogador não encontrado!";
+        else Jogadores.erase(RegistroJogadores::buscar_jogador(apelido));
     };
-    void Registro_jogadores::mostrar_jogadores(){
+
+    void RegistroJogadores::mostrar_jogadores(){
         for (auto i : Jogadores) {
-        std::cout << i.get_nome() << std::endl << i.get_apelido() << std::endl;
+        std::cout << i->get_nome() << std::endl << i->get_apelido() << std::endl;
     }
     };

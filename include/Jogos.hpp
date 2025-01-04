@@ -1,6 +1,7 @@
 #ifndef JOGOS_H
 #define JOGOS_H
 #include "FuncoesGlobais.hpp"
+#include "Cadastro.hpp"
 
 class Jogo_De_Tabuleiro {
     protected:
@@ -29,6 +30,9 @@ class Jogo_De_Tabuleiro {
     void finalizar_partida_vencedor(const std::string& apelido_vencedor);
     void finalizar_partida_empate();
     bool testar_empate(const std::string& peca1, const std::string& peca2);
+
+    //metodo para atualizar placar
+    void atualizar_placar(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo);
 
     // Método para definir uma cor que não pode ser igual a outra
     std::string definir_cor(const std::string& cor_excluida = " ");

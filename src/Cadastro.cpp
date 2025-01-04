@@ -1,5 +1,8 @@
 #include "Cadastro.hpp"
-#include <string>
+#include <fstream> 
+#include <iostream>
+#include <string> 
+
 //#include "FuncoesGlobais.hpp"
 
 //Funções da classe Jogador:
@@ -159,13 +162,34 @@
         }
     };
 
-    void RegistroJogadores::remover_jogador(std::string& apelido){
-        if (RegistroJogadores::buscar_jogador(apelido)== Jogadores.end()) std::cout << "Jogador não encontrado!";
-        else Jogadores.erase(RegistroJogadores::buscar_jogador(apelido));
-    };
-
-    void RegistroJogadores::mostrar_jogadores(){
-        for (auto i : Jogadores) {
-        std::cout << i->get_nome() << std::endl << i->get_apelido() << std::endl;
+void RegistroJogadores::salvar_em_arquivo(const std::string& nome_arquivo) {
+    std::ofstream file(nome_arquivo, std::ios::out | std::ios::trunc);
+    if (!file.is_open()) {
+        std::cout << "Erro ao abrir o arquivo para salvar os jogadores!" << std::endl;
+        return;
     }
-    };
+
+    if (Jogadores.empty()) {
+        std::cout << "Aviso: Nenhum jogador na lista para salvar!" << std::endl;
+        return;
+    }
+
+    for (const auto& jogador : Jogadores) {
+        file << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome() << std::endl;
+        file << "VT:" << jogador->get_vitorias_totais() << " "
+             << "Dt:" << jogador->get_derrotas_totais() << std::endl;
+
+        file << "Reversi V:" << jogador->get_Reversi().vitorias
+             << " D:" << jogador->get_Reversi().derrotas << std::endl;
+
+        file << "Lig4 V:" << jogador->get_Lig4().vitorias
+             << " D:" << jogador->get_Lig4().derrotas << std::endl;
+
+        file << "Velha V:" << jogador->get_JogoVelha().vitorias
+             << " D:" << jogador->get_JogoVelha().derrotas << std::endl;
+
+        file << std::endl; // Separador entre os registros
+    }
+
+    file.close();
+}

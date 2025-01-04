@@ -22,7 +22,7 @@ int main() {
 
         while(!file.eof()){
 
-            file >> apelido >> nome >> auxstr >> vitorias_totais >> auxstr >> derrotas_totais;
+            file >> auxstr >> apelido >> nome >> auxstr >> vitorias_totais >> auxstr >> derrotas_totais;
             Jogador* jogador = new Jogador(nome, apelido); 
             jogador->set_vitorias_totais(vitorias_totais);
             jogador->set_derrotas_totais(derrotas_totais);
@@ -43,15 +43,18 @@ int main() {
             lista_jogadores.adicionar_jogador(jogador, apelido);
 
         }
+        file.close();
     }
     else{ //caso nao exista, iremos criá-lo
 
         file.open("JogosTabuleiro.txt", std::fstream::out);
-
+        file.close();
     }
 
     //com o arquivo criado, basta exucutar os comandos da partida:
 
+
+   
 
 
 
@@ -64,6 +67,6 @@ int main() {
 
 
     //depois que a partida se finalizar, vamos salvar tudo no arquivo:
-    
+     lista_jogadores.salvar_em_arquivo("JogosTabuleiro.txt");
     return 0;
 }

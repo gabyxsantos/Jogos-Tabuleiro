@@ -64,6 +64,7 @@ class RegistroJogadores{
     bool adicionar_jogador(Jogador* jogador_novo, std::string apelido);
     void remover_jogador(std::string& apelido);
     void mostrar_jogadores();
+    void salvar_em_arquivo(const std::string& nome_arquivo);
 };
 
 

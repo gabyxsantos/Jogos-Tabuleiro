@@ -43,19 +43,8 @@ void limpar_entrada() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-bool validar_char(char& valor){
-    return std::isalpha(valor); //Funcao retorna true se for uma letra
-}
-
-bool validar_string(const std::string& valor) {
-    for (char c : valor) {
-        if (!std::isalpha(c) && !std::isspace(c)) {
-            return false; // Caracter inválido encontrado
-        }
-    }
-    return true;
-}
-
+bool validar_char(char& valor);
+bool validar_string(const std::string& valor);
 
 // Funções templadas para entrada de dados
 template <typename T>
@@ -81,7 +70,6 @@ bool validar_entrada(T& valor) {
     return false; // Entrada inválida
 }
 
-
 template <typename T>
 void pedir_usuario(T& valor) {
     while (!validar_entrada(valor)) {
@@ -90,6 +78,5 @@ void pedir_usuario(T& valor) {
 }
 // Funções para saídas amigáveis
 void timer(int tempo);
-
 
 #endif

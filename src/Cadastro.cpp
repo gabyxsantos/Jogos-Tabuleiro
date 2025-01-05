@@ -163,6 +163,25 @@
         }
     };
 
+    
+    void RegistroJogadores::mostrar_jogadores(){
+        for (const auto& jogador : Jogadores) {
+           std::cout << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome() << std::endl;
+
+            std::cout << "Reversi V:" << jogador->get_Reversi().vitorias
+                << " D:" << jogador->get_Reversi().derrotas << std::endl;
+
+            std::cout << "Lig4 V:" << jogador->get_Lig4().vitorias
+                << " D:" << jogador->get_Lig4().derrotas << std::endl;
+
+            std::cout << "Velha V:" << jogador->get_JogoVelha().vitorias
+                << " D:" << jogador->get_JogoVelha().derrotas << std::endl;
+
+            std::cout << std::endl; // Separador entre os registros
+        }
+    };
+
+
     bool RegistroJogadores::lista_vazia() const {
         return Jogadores.empty();
     };

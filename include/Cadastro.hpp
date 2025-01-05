@@ -24,6 +24,7 @@ class Jogador{
 
     public:
     Jogador(std::string nome, std::string apelido);
+    
     void set_nome();
     void set_apelido();
     void set_vitorias_totais();
@@ -64,7 +65,11 @@ class RegistroJogadores{
     bool adicionar_jogador(Jogador* jogador_novo, std::string apelido);
     void remover_jogador(std::string& apelido);
     void mostrar_jogadores();
-    void salvar_em_arquivo(const std::string& nome_arquivo);
+    
+    //metodos para acessar os dados pelo main e salvar no arquivo
+    bool lista_vazia() const;
+    const std::list<Jogador*>& get_jogadores() const;
+    
 };
 
 

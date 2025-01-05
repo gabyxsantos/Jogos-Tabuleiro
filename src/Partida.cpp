@@ -55,6 +55,9 @@ void Partida::escolher_jogo(){
 
 void Partida::jogar_reversi(){
     Reversi jogo1;
+    RegistroJogadores vencedor;
+    RegistroJogadores perdedor;
+
 
     timer(1800);
     std::cout << "Vamos jogar Reversi!" << std::endl;
@@ -106,12 +109,17 @@ void Partida::jogar_reversi(){
         jogo1.imprimir_tabuleiro();
         timer(1800);
         std::cout << apelido_jogador_1 << " ganhou!" << std::endl;
-    } 
+        jogo1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi");
+    
+    }
+
     if(jogo1.testar_vitoria(peca2)){
         jogo1.imprimir_tabuleiro();
         timer(1800); 
         std::cout << apelido_jogador_2 << " ganhou!" << std::endl;
+        jogo1.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Reversi");
     }
+
 };
 
 void Partida::jogar_jogo_da_velha(){
@@ -182,8 +190,21 @@ void Partida::jogar_jogo_da_velha(){
 
     // Finalizar a partida
     timer(1800);
-    if (empate) jogo2.finalizar_partida_empate();
-    else jogo2.finalizar_partida_vencedor(nome_atual);
+    if (empate) {
+        jogo2.finalizar_partida_empate();
+    }
+    else {
+        jogo2.finalizar_partida_vencedor(nome_atual);
+        
+        if(nome_atual.compare(apelido_jogador_1) == 0){
+            jogo2.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "JogoVelha");
+        }
+         else{
+            jogo2.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "JogoVelha");
+        }
+    }
+
+    
 
 };
 
@@ -254,8 +275,21 @@ void Partida::jogar_lig_4(){
 
     // Finalizar a partida
     timer(1800);
-    if (empate) jogo3.finalizar_partida_empate();
-    else jogo3.finalizar_partida_vencedor(nome_atual);
+    if (empate) {
+        jogo3.finalizar_partida_empate();
+    }
+    else {
+        jogo3.finalizar_partida_vencedor(nome_atual);
+        
+        if(nome_atual.compare(apelido_jogador_1) == 0){
+            jogo3.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Lig4");
+        }
+         else{
+            jogo3.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Lig4");
+        }
+        
+    }
+    
     
 };
 

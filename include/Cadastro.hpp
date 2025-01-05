@@ -57,12 +57,11 @@ class RegistroJogadores{
 
     public: 
     void ordenar_jogadores_nome();
-    void ordenar_jogadores_apelido(); ////////////OBSERVAÇÃO//////////ESSE CODIGO DISTINGUE MAIUSCULAS E MINUSCULAS, E POR ISSO APRESENTA UM BUG AO ORDENAR!!!!
-    /////////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////////
+
+    void ordenar_jogadores_apelido(); 
     std::list<Jogador*>::iterator buscar_jogador(std::string& apelido);
     bool adicionar_jogador(Jogador* jogador_novo, std::string apelido);
+
     void remover_jogador(std::string& apelido);
     void mostrar_jogadores();
     

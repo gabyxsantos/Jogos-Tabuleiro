@@ -12,7 +12,7 @@ void Partida::iniciar_partida(){
 void Partida::definir_jogadores(){
 
     std::cout << "Jogador 1, insira seu apelido:" << std::endl;
-    pedir_usuario(apelido_jogador_1);
+    pedir_usuario(apelido_jogador_1); //será que set_apelido() também seria adequado nessa situação?
     std::cout << "Jogador 2, insira seu apelido:" << std::endl;
     pedir_usuario(apelido_jogador_2);
 };

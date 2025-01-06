@@ -30,7 +30,7 @@ int main() {
             for (int i = 0; i < 3; i++) {
                 file >> auxstr >> auxstr >> vitorias_jogo >> auxstr >> derrotas_jogo >> auxstr >> empates_jogo;
                 if (i == 0) {
-                    jogador->set_Reversi(vitorias_jogo, derrotas_jogo);
+                    jogador->set_Reversi(vitorias_jogo, derrotas_jogo, empates_jogo);
                 } 
                 else if (i == 1) {
                     jogador->set_Lig4(vitorias_jogo, derrotas_jogo, empates_jogo);
@@ -68,15 +68,17 @@ int main() {
 
 
     //depois que a partida se finalizar, vamos salvar tudo no arquivo:
-     std::ofstream file("JogosTabuleiro.txt", std::ios::out | std::ios::trunc);
+    file.clear();
+    file.open("JogosTabuleiro.txt", std::fstream::in);
+
         if (!file.is_open()) {
             std::cout << "Erro ao abrir o arquivo para salvar os jogadores!" << std::endl;
-            return;
+            return 1;
         }
 
         if (lista_jogadores.lista_vazia()) {
             std::cout << "Aviso: Nenhum jogador na lista para salvar!" << std::endl;
-            return;
+            return 1;
         }
 
         for (const auto& jogador : lista_jogadores.get_jogadores()) {

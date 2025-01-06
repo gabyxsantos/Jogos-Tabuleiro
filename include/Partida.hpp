@@ -21,11 +21,8 @@ class Partida{
 
 class Estatisticas{
     protected:
-    std::string nome_jogador;
+    RegistroJogadores lista;
     int partidas_jogadas;
-    int vitorias;
-    int empates;
-    int derrotas;
 
     public:
     virtual void imprimir_estatisticas();

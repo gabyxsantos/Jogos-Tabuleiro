@@ -47,7 +47,7 @@ class Jogador{
     void set_JogoVelha(bool valor);
 
     //por outro lado, se forem chamados com inteiros, indica que apenas se esta lendo os dados do arquivo
-    void set_Reversi(int vitorias, int derrotas);
+    void set_Reversi(int vitorias, int derrotas, int empates);
     void set_Lig4(int vitorias, int derrotas, int empates);
     void set_JogoVelha(int vitorias, int derrotas, int empates);
 

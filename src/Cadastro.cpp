@@ -93,9 +93,10 @@
     };
 
 // metodos usados na leitura de arquivo:
-    void Jogador::set_Reversi(int vitorias, int derrotas){
+    void Jogador::set_Reversi(int vitorias, int derrotas, int empates){
         this->Reversi.vitorias = vitorias;
         this->Reversi.derrotas = derrotas;
+        this->Reversi.empates = empates;
     };
 
     void Jogador::set_Lig4(int vitorias, int derrotas, int empates){

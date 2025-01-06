@@ -21,10 +21,11 @@ int main() {
 
         while(!file.eof()){
 
-            file >> auxstr >> apelido >> nome >> auxstr >> vitorias_totais >> auxstr >> derrotas_totais;
+            file >> auxstr >> apelido >> nome >> auxstr >> vitorias_totais >> auxstr >> derrotas_totais >> auxstr >> empates_totais;
             Jogador* jogador = new Jogador(nome, apelido); 
             jogador->set_vitorias_totais(vitorias_totais);
             jogador->set_derrotas_totais(derrotas_totais);
+            jogador->set_empates_totais(empates_totais);
 
             for (int i = 0; i < 3; i++) {
                 file >> auxstr >> auxstr >> vitorias_jogo >> auxstr >> derrotas_jogo >> auxstr >> empates_jogo;
@@ -81,7 +82,8 @@ int main() {
         for (const auto& jogador : lista_jogadores.get_jogadores()) {
             file << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome();
             file << "VT:" << jogador->get_vitorias_totais() << " "
-                << "DT:" << jogador->get_derrotas_totais() << std::endl;
+                << "DT:" << jogador->get_derrotas_totais() << " "
+                << "ET:" << jogador->get_empates_totais() << std::endl;
 
             file << "Reversi V:" << jogador->get_Reversi().vitorias
                 << " D:" << jogador->get_Reversi().derrotas << std::endl;

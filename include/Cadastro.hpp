@@ -55,6 +55,7 @@ class Jogador{
     std::string get_apelido();
     int get_vitorias_totais();
     int get_derrotas_totais();
+    int get_empates_totais();
     Placar get_Reversi();
     Placar get_Lig4();
     Placar get_JogoVelha();

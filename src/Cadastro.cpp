@@ -131,19 +131,19 @@
 //Funções da classe Registro_jogadores
 
 
-    void Registro_jogadores::ordenar_jogadores_nome(){ // Ordenar por nome
+    void RegistroJogadores::ordenar_jogadores_nome(){ // Ordenar por nome
         RegistroJogadores::Jogadores.sort([](Jogador* a, Jogador* b) {
-            std::string nome_a=a.get_nome();
-            std::string nome_b=b.get_nome();
+            std::string nome_a=a->get_nome();
+            std::string nome_b=b->get_nome();
             std::transform(nome_a.begin(), nome_a.end(), nome_a.begin(), ::tolower);
             std::transform(nome_b.begin(), nome_b.end(), nome_b.begin(), ::tolower);
             return nome_a < nome_b;
         });
     };
-    void Registro_jogadores::ordenar_jogadores_apelido(){ // Ordenar por apelido
+    void RegistroJogadores::ordenar_jogadores_apelido(){ // Ordenar por apelido
         RegistroJogadores::Jogadores.sort([](Jogador* a, Jogador* b) {
-            std::string apelido_a=a.get_apelido();
-            std::string apelido_b=b.get_apelido();
+            std::string apelido_a=a->get_apelido();
+            std::string apelido_b=b->get_apelido();
             std::transform(apelido_a.begin(), apelido_a.end(), apelido_a.begin(), ::tolower);
             std::transform(apelido_b.begin(), apelido_b.end(), apelido_b.begin(), ::tolower);
             return apelido_a < apelido_b;

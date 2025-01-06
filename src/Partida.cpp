@@ -192,6 +192,7 @@ void Partida::jogar_jogo_da_velha(){
     timer(1800);
     if (empate) {
         jogo2.finalizar_partida_empate();
+        
     }
     else {
         jogo2.finalizar_partida_vencedor(nome_atual);

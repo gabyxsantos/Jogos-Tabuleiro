@@ -17,7 +17,7 @@ int main() {
     if(file.is_open()){ //caso o arquivo ja exista
         
         std::string nome, apelido, auxstr; ///se der errado a leitura voltar aqui
-        int vitorias_jogo, derrotas_jogo, vitorias_totais, derrotas_totais;
+        int vitorias_jogo, derrotas_jogo, empates_jogo, vitorias_totais, derrotas_totais, empates_totais;
 
         while(!file.eof()){
 
@@ -27,15 +27,15 @@ int main() {
             jogador->set_derrotas_totais(derrotas_totais);
 
             for (int i = 0; i < 3; i++) {
-                file >> auxstr >> auxstr >> vitorias_jogo >> auxstr >> derrotas_jogo;
+                file >> auxstr >> auxstr >> vitorias_jogo >> auxstr >> derrotas_jogo >> auxstr >> empates_jogo;
                 if (i == 0) {
                     jogador->set_Reversi(vitorias_jogo, derrotas_jogo);
                 } 
                 else if (i == 1) {
-                    jogador->set_Lig4(vitorias_jogo, derrotas_jogo);
+                    jogador->set_Lig4(vitorias_jogo, derrotas_jogo, empates_jogo);
                 } 
                 else if (i == 2) {
-                    jogador->set_JogoVelha(vitorias_jogo, derrotas_jogo);
+                    jogador->set_JogoVelha(vitorias_jogo, derrotas_jogo, empates_jogo);
                 }
             }
 
@@ -81,16 +81,19 @@ int main() {
         for (const auto& jogador : lista_jogadores.get_jogadores()) {
             file << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome();
             file << "VT:" << jogador->get_vitorias_totais() << " "
-                << "Dt:" << jogador->get_derrotas_totais() << std::endl;
+                << "DT:" << jogador->get_derrotas_totais() << std::endl;
 
             file << "Reversi V:" << jogador->get_Reversi().vitorias
                 << " D:" << jogador->get_Reversi().derrotas << std::endl;
+               
 
             file << "Lig4 V:" << jogador->get_Lig4().vitorias
-                << " D:" << jogador->get_Lig4().derrotas << std::endl;
+                << " D:" << jogador->get_Lig4().derrotas
+                << " E:" << jogador->get_Lig4().empates << std::endl;
 
             file << "Velha V:" << jogador->get_JogoVelha().vitorias
-                << " D:" << jogador->get_JogoVelha().derrotas << std::endl;
+                << " D:" << jogador->get_JogoVelha().derrotas
+                << " E:" << jogador->get_JogoVelha().empates << std::endl;
 
             file << std::endl; // Separador entre os registros
         }

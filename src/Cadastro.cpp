@@ -54,6 +54,17 @@
         this->derrotas_totais = n;
     };
 
+//metodos para quando se tem empate
+    void Jogador::set_Lig4(){
+        this->Lig4.empates++;
+    };
+
+    void Jogador::set_JogoVelha(){
+        this->JogoVelha.empates++;
+    };
+
+//metodos para atualizar placra quando há vencedor e perdedor
+
     void Jogador::set_Reversi(bool valor){
         if (valor) {
             this->Reversi.vitorias ++;
@@ -81,20 +92,22 @@
         }
     };
 
-
+// metodos usados na leitura de arquivo:
     void Jogador::set_Reversi(int vitorias, int derrotas){
         this->Reversi.vitorias = vitorias;
         this->Reversi.derrotas = derrotas;
     };
 
-    void Jogador::set_Lig4(int vitorias, int derrotas){
+    void Jogador::set_Lig4(int vitorias, int derrotas, int empates){
         this->Lig4.vitorias = vitorias;
         this->Lig4.derrotas = derrotas;
+        this->Lig4.empates = empates;
     };
 
-    void Jogador::set_JogoVelha(int vitorias, int derrotas){
+    void Jogador::set_JogoVelha(int vitorias, int derrotas, int empates){
         this->JogoVelha.vitorias = vitorias;
         this->JogoVelha.derrotas = derrotas;
+        this->JogoVelha.empates = empates;
     };
 
 
@@ -131,26 +144,25 @@
 //Funções da classe Registro_jogadores
 
 
-    void Registro_jogadores::ordenar_jogadores_nome(){ // Ordenar por nome
+    void RegistroJogadores::ordenar_jogadores_nome(){ // Ordenar por nome
         RegistroJogadores::Jogadores.sort([](Jogador* a, Jogador* b) {
-            std::string nome_a=a.get_nome();
-            std::string nome_b=b.get_nome();
+            std::string nome_a=a->get_nome();
+            std::string nome_b=b->get_nome();
             std::transform(nome_a.begin(), nome_a.end(), nome_a.begin(), ::tolower);
             std::transform(nome_b.begin(), nome_b.end(), nome_b.begin(), ::tolower);
             return nome_a < nome_b;
         });
     };
-    void Registro_jogadores::ordenar_jogadores_apelido(){ // Ordenar por apelido
+    void RegistroJogadores::ordenar_jogadores_apelido(){ // Ordenar por apelido
         RegistroJogadores::Jogadores.sort([](Jogador* a, Jogador* b) {
-            std::string apelido_a=a.get_apelido();
-            std::string apelido_b=b.get_apelido();
+            std::string apelido_a=a->get_apelido();
+            std::string apelido_b=b->get_apelido();
             std::transform(apelido_a.begin(), apelido_a.end(), apelido_a.begin(), ::tolower);
             std::transform(apelido_b.begin(), apelido_b.end(), apelido_b.begin(), ::tolower);
             return apelido_a < apelido_b;
 
         });
     }
-
 
     std::list<Jogador*>::iterator RegistroJogadores::buscar_jogador(std::string& apelido){
         std::list<Jogador*>::iterator it; //definindo um iterator que vai caminhar pela list

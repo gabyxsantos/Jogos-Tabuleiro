@@ -37,7 +37,7 @@
 void imprimir_erro(const std::string& erro);
 
 //funcao para limpar o estado de erro e descartar a entrada invalida
-void limpar_entrada() {
+inline void limpar_entrada() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
@@ -47,7 +47,7 @@ bool validar_string(const std::string& valor);
 
 // Funções templadas para entrada de dados
 template <typename T>
-bool validar_entrada(T& valor) {
+inline bool validar_entrada(T& valor) {
     if (std::cin >> valor) {
         return true; // Entrada válida
     }
@@ -57,7 +57,7 @@ bool validar_entrada(T& valor) {
 }
 
 template <>
-bool validar_entrada(char& valor) {
+inline bool validar_entrada(char& valor) {
     if (std::cin >> valor) {
         if (validar_char(valor)) {
             return true; // Validação de char passou
@@ -69,7 +69,7 @@ bool validar_entrada(char& valor) {
 }
 
 template <>
-bool validar_entrada(std::string& valor) {
+inline bool validar_entrada(std::string& valor) {
     if (std::cin >> valor) {
         if (validar_string(valor)) {
             return true; // Validação de string passou

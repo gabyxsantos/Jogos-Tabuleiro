@@ -46,12 +46,20 @@
         this->derrotas_totais++;
     };
 
+    void Jogador::set_empates_totais(){
+        this->empates_totais++;
+    };
+
     void Jogador::set_vitorias_totais(int n){
         this->vitorias_totais = n;
     };
 
     void Jogador::set_derrotas_totais(int n){
         this->derrotas_totais = n;
+    };
+
+    void Jogador::set_empates_totais(int n){
+        this->empates_totais = n;
     };
 
     void Jogador::set_Reversi(bool valor){
@@ -82,19 +90,22 @@
     };
 
 
-    void Jogador::set_Reversi(int vitorias, int derrotas){
+    void Jogador::set_Reversi(int vitorias, int derrotas, int empates){
         this->Reversi.vitorias = vitorias;
         this->Reversi.derrotas = derrotas;
+        this->Reversi.empates = empates;
     };
 
-    void Jogador::set_Lig4(int vitorias, int derrotas){
+    void Jogador::set_Lig4(int vitorias, int derrotas, int empates){
         this->Lig4.vitorias = vitorias;
         this->Lig4.derrotas = derrotas;
+        this->Lig4.empates = empates;
     };
 
-    void Jogador::set_JogoVelha(int vitorias, int derrotas){
+    void Jogador::set_JogoVelha(int vitorias, int derrotas, int empates){
         this->JogoVelha.vitorias = vitorias;
         this->JogoVelha.derrotas = derrotas;
+        this->JogoVelha.empates = empates;
     };
 
 
@@ -114,6 +125,10 @@
         return Jogador::derrotas_totais;
     };
 
+     int Jogador::get_empates_totais(){
+        return Jogador::empates_totais;
+    };
+
     Placar Jogador::get_Reversi(){
         return Jogador::Reversi;
     };
@@ -131,19 +146,19 @@
 //Funções da classe Registro_jogadores
 
 
-    void Registro_jogadores::ordenar_jogadores_nome(){ // Ordenar por nome
+    void RegistroJogadores::ordenar_jogadores_nome(){ // Ordenar por nome
         RegistroJogadores::Jogadores.sort([](Jogador* a, Jogador* b) {
-            std::string nome_a=a.get_nome();
-            std::string nome_b=b.get_nome();
+            std::string nome_a=a->get_nome();
+            std::string nome_b=b->get_nome();
             std::transform(nome_a.begin(), nome_a.end(), nome_a.begin(), ::tolower);
             std::transform(nome_b.begin(), nome_b.end(), nome_b.begin(), ::tolower);
             return nome_a < nome_b;
         });
     };
-    void Registro_jogadores::ordenar_jogadores_apelido(){ // Ordenar por apelido
+    void RegistroJogadores::ordenar_jogadores_apelido(){ // Ordenar por apelido
         RegistroJogadores::Jogadores.sort([](Jogador* a, Jogador* b) {
-            std::string apelido_a=a.get_apelido();
-            std::string apelido_b=b.get_apelido();
+            std::string apelido_a=a->get_apelido();
+            std::string apelido_b=b->get_apelido();
             std::transform(apelido_a.begin(), apelido_a.end(), apelido_a.begin(), ::tolower);
             std::transform(apelido_b.begin(), apelido_b.end(), apelido_b.begin(), ::tolower);
             return apelido_a < apelido_b;

@@ -46,6 +46,10 @@
         this->derrotas_totais++;
     };
 
+    void Jogador::set_empates_totais(){
+        this->empates_totais++;
+    };
+
     void Jogador::set_vitorias_totais(int n){
         this->vitorias_totais = n;
     };
@@ -53,6 +57,7 @@
     void Jogador::set_derrotas_totais(int n){
         this->derrotas_totais = n;
     };
+
 
 //metodos para quando se tem empate
     void Jogador::set_Lig4(){
@@ -92,6 +97,7 @@
         }
     };
 
+
 // metodos usados na leitura de arquivo:
     void Jogador::set_Reversi(int vitorias, int derrotas, int empates){
         this->Reversi.vitorias = vitorias;
@@ -126,6 +132,10 @@
 
     int Jogador::get_derrotas_totais(){
         return Jogador::derrotas_totais;
+    };
+
+     int Jogador::get_empates_totais(){
+        return Jogador::empates_totais;
     };
 
     Placar Jogador::get_Reversi(){

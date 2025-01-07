@@ -10,6 +10,7 @@ class Placar{
         int vitorias = 0;
         int derrotas = 0;
         int empates = 0;
+
     
 };
 
@@ -17,9 +18,11 @@ class Jogador{
     private:
     std::string nome;
     std::string apelido;
+
     int vitorias_totais = 0; 
     int derrotas_totais = 0;
     int empates_totais = 0;
+
     Placar Reversi;
     Placar Lig4;
     Placar JogoVelha;
@@ -37,9 +40,11 @@ class Jogador{
     void set_derrotas_totais(int n);
     void set_empates_totais(int n);
 
+
     //metdos para add empates:
     void set_Lig4();
     void set_JogoVelha();
+
 
     //se os metodos set forem chamados com bool isso indica que é apenas a atualização do placar na partida
     void set_Reversi(bool valor);

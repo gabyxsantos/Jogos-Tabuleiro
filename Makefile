@@ -7,7 +7,10 @@ OBJ_DIR = obj
 BIN_DIR = bin
 
 # Alvo padrão
-all: $(BIN_DIR)/main
+all: create_dirs $(BIN_DIR)/main
+
+create_dirs:
+	mkdir -p $(OBJ_DIR) $(BIN_DIR)
 
 # Regras de compilação
 $(OBJ_DIR)/Cadastro.o: $(INCLUDE_DIR)/Cadastro.hpp $(SRC_DIR)/Cadastro.cpp

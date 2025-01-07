@@ -12,16 +12,16 @@
     }
 
 
-bool validar_char(char& valor){
-    return std::isalpha(valor); //Funcao retorna true se for uma letra
-}
-
-bool validar_string(const std::string& valor) {
-    for (char c : valor) {
-        if (!std::isalpha(c) && !std::isspace(c)) {
-            return false; // Caracter inválido encontrado e a função retorna false
-        }
+    bool validar_char(char& valor){
+        return std::isalpha(valor); //Funcao retorna true se for uma letra
     }
-    return true;
-}
+
+    bool validar_string(const std::string& valor) {
+        for (char c : valor) {
+            if (!std::isalpha(c) && !std::isspace(c)) {
+                return false; // Caracter inválido encontrado e a função retorna false
+            }
+        }
+        return true;
+    }
 

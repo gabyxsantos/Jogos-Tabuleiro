@@ -37,8 +37,7 @@
 void imprimir_erro(const std::string& erro);
 
 //funcao para limpar o estado de erro e descartar a entrada invalida
-template <typename T>
-void limpar_entrada() {
+inline void limpar_entrada() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
@@ -48,27 +47,39 @@ bool validar_string(const std::string& valor);
 
 // Funções templadas para entrada de dados
 template <typename T>
-bool validar_entrada(T& valor) {
+inline bool validar_entrada(T& valor) {
     if (std::cin >> valor) {
-        // Verificação especial para char, impedindo que números sejam aceitos nesse caso
-        if constexpr (std::is_same_v<T, char>) {
-            if (!validar_char(valor)) {
-                limpar_entrada<T>();
-                return false;
-            }
-        }
-        //Verificação especial para string, impedindo que ela contenha caracteres especiais
-        else if constexpr (std::is_same_v<T, std::string>) {
-            if (!validar_string(valor)) {
-                limpar_entrada<T>();
-                return false;
-            }
-        }
         return true; // Entrada válida
     }
-    limpar_entrada<T>();
+    
+    limpar_entrada();
     return false; // Entrada inválida
 }
+
+template <>
+inline bool validar_entrada(char& valor) {
+    if (std::cin >> valor) {
+        if (validar_char(valor)) {
+            return true; // Validação de char passou
+        }
+    }
+    
+    limpar_entrada();
+    return false; // Entrada inválida
+}
+
+template <>
+inline bool validar_entrada(std::string& valor) {
+    if (std::cin >> valor) {
+        if (validar_string(valor)) {
+            return true; // Validação de string passou
+        }
+    }
+    // Limpa o estado de erro e descarta a entrada inválida
+    limpar_entrada();
+    return false; // Entrada inválida
+}
+
 
 template <typename T>
 void pedir_usuario(T& valor) {

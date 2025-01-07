@@ -58,6 +58,10 @@
         this->derrotas_totais = n;
     };
 
+    void Jogador::set_empates_totais(int n){
+        this->empates_totais++;
+    };
+
 
 //metodos para quando se tem empate
     void Jogador::set_Lig4(){

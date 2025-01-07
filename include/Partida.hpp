@@ -23,6 +23,13 @@ class Estatisticas{
     protected:
     RegistroJogadores lista;
     int partidas_jogadas;
+    
+    /* ideias para as estatisticas:
+    - listagem dos jogadores com os respectivos dados
+    - ranking geral
+    - ranking por jogo
+    - jogo mais escohido
+    */
 
     public:
     virtual void imprimir_estatisticas();

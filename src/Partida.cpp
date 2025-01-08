@@ -2,7 +2,9 @@
 #include "Cadastro.hpp"
 #include "Jogos.hpp"
 #include "FuncoesGlobais.hpp"
+#include "Validacao.hpp"
 
+Validacao a;
 
 void Partida::iniciar_partida(){
     definir_jogadores();
@@ -16,7 +18,7 @@ void Partida::definir_jogadores(){
     bool encontrei = false;
     while(!encontrei){
         std::cout << "Jogador 1, insira seu apelido:" << std::endl;
-        pedir_usuario(apelido_jogador_1);
+        a.pedir_usuario(apelido_jogador_1);
         std::list<Jogador*>::iterator jogador1 = buscador.buscar_jogador(apelido_jogador_1);
 
         if (jogador1 != buscador.Jogadores.end() && (*jogador1)->get_apelido() == apelido_jogador_1){
@@ -24,7 +26,7 @@ void Partida::definir_jogadores(){
             break;
         }
         else{
-            imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
+            a.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
             continue;
         }
     }
@@ -32,9 +34,9 @@ void Partida::definir_jogadores(){
     bool encontrei = false;
     while(!encontrei){
         std::cout << "Jogador 2, insira seu apelido:" << std::endl;
-        pedir_usuario(apelido_jogador_2);
+        a.pedir_usuario(apelido_jogador_2);
         if (apelido_jogador_2 == apelido_jogador_1){
-            imprimir_erro("Os dois oponentes não podem ser o mesmo jogador! Tente novamente.");
+            a.imprimir_erro("Os dois oponentes não podem ser o mesmo jogador! Tente novamente.");
             continue;
         }
         std::list<Jogador*>::iterator jogador2 = buscador.buscar_jogador(apelido_jogador_2);
@@ -44,7 +46,7 @@ void Partida::definir_jogadores(){
             break;
         }
         else{
-            imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
+            a.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
             continue;
         }
     }
@@ -58,7 +60,7 @@ void Partida::escolher_jogo(){
     std::cout << "(V) Jogo da Velha" << std::endl;
     
     while (true) {
-        pedir_usuario(nome_do_jogo);
+        a.pedir_usuario(nome_do_jogo);
         switch (nome_do_jogo) {
             case 'R':
             case 'r': 
@@ -76,7 +78,7 @@ void Partida::escolher_jogo(){
                 break;
 
             default:
-                imprimir_erro("Parece que você digitou uma opção inválida, tente novamente:");
+                a.imprimir_erro("Parece que você digitou uma opção inválida, tente novamente:");
                 continue; 
         }
         break; // Sai do while quando o switch processa um caso válido

@@ -56,18 +56,6 @@ int main() {
     std::cout << "É hora de jogar!" << std::endl;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     //depois que a partida se finalizar, vamos salvar tudo no arquivo:
     file.clear();
     file.open("JogosTabuleiro.txt", std::fstream::in);

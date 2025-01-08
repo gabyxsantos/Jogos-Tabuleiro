@@ -9,7 +9,6 @@
 #include <iomanip>
 #include <thread> 
 #include <chrono>
-#include <cctype>
 
 #define RESET   "\033[0m"        // Resetar cor para padrão
 #define BOLD    "\033[1m"
@@ -33,60 +32,6 @@
 #define PECA_O " O"
 #define VOID "  "    
 
-// Funções para tratamento de erros
-void imprimir_erro(const std::string& erro);
-
-//funcao para limpar o estado de erro e descartar a entrada invalida
-inline void limpar_entrada() {
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-}
-
-bool validar_char(char& valor);
-bool validar_string(const std::string& valor);
-
-// Funções templadas para entrada de dados
-template <typename T>
-inline bool validar_entrada(T& valor) {
-    if (std::cin >> valor) {
-        return true; // Entrada válida
-    }
-    
-    limpar_entrada();
-    return false; // Entrada inválida
-}
-
-template <>
-inline bool validar_entrada(char& valor) {
-    if (std::cin >> valor) {
-        if (validar_char(valor)) {
-            return true; // Validação de char passou
-        }
-    }
-    
-    limpar_entrada();
-    return false; // Entrada inválida
-}
-
-template <>
-inline bool validar_entrada(std::string& valor) {
-    if (std::cin >> valor) {
-        if (validar_string(valor)) {
-            return true; // Validação de string passou
-        }
-    }
-    // Limpa o estado de erro e descarta a entrada inválida
-    limpar_entrada();
-    return false; // Entrada inválida
-}
-
-
-template <typename T>
-void pedir_usuario(T& valor) {
-    while (!validar_entrada(valor)) {
-        imprimir_erro("Entrada inválida. Insira no formato correto!");
-    }
-}
 // Funções para saídas amigáveis
 void timer(int tempo);
 

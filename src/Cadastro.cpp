@@ -59,20 +59,8 @@
     };
 
     void Jogador::set_empates_totais(int n){
-        this->empates_totais++;
+        this->empates_totais = n;
     };
-
-
-//metodos para quando se tem empate
-    void Jogador::set_Lig4(){
-        this->Lig4.empates++;
-    };
-
-    void Jogador::set_JogoVelha(){
-        this->JogoVelha.empates++;
-    };
-
-//metodos para atualizar placra quando há vencedor e perdedor
 
     void Jogador::set_Reversi(bool valor){
         if (valor) {
@@ -102,7 +90,6 @@
     };
 
 
-// metodos usados na leitura de arquivo:
     void Jogador::set_Reversi(int vitorias, int derrotas, int empates){
         this->Reversi.vitorias = vitorias;
         this->Reversi.derrotas = derrotas;
@@ -178,6 +165,7 @@
 
         });
     }
+
 
     std::list<Jogador*>::iterator RegistroJogadores::buscar_jogador(std::string& apelido){
         std::list<Jogador*>::iterator it; //definindo um iterator que vai caminhar pela list

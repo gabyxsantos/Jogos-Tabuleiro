@@ -49,6 +49,20 @@ Validacao v; //Adicionando um objeto da classe validação para efetuar as valid
         return true;
     }
 
+    // Getters
+    std::string Jogo_De_Tabuleiro::get_filler(){
+        return Jogo_De_Tabuleiro::filler;
+    }
+    int Jogo_De_Tabuleiro::get_linhas(){
+        return Jogo_De_Tabuleiro::linhas;
+    }
+    int Jogo_De_Tabuleiro::get_colunas(){
+        return Jogo_De_Tabuleiro::colunas;
+    }
+    std::vector<std::vector<std::string>> Jogo_De_Tabuleiro::get_tabuleiro(){
+        return Jogo_De_Tabuleiro::tabuleiro;
+    }
+    
     // Funções para finalizar a partida
     void Jogo_De_Tabuleiro::finalizar_partida_vencedor(const std::string& nome_vencedor){
         imprimir_tabuleiro();

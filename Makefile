@@ -34,6 +34,9 @@ $(OBJ_DIR)/FuncoesGlobais.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(SRC_DIR)/Funcoe
 $(OBJ_DIR)/Validacao.o: $(INCLUDE_DIR)/Validacao.hpp $(SRC_DIR)/Validacao.cpp 
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/Validacao.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Validacao.o
 
+$(OBJ_DIR)/Arquivo.o: $(INCLUDE_DIR)/Arquivo.hpp $(SRC_DIR)/Arquivo.cpp $(INCLUDE_DIR)/Cadastro.hpp
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/Arquivo.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Arquivo.o
+
 # Linkagem do executável
 $(BIN_DIR)/main: $(OBJ_DIR)/main.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Partida.o $(OBJ_DIR)/Tutorial.o $(OBJ_DIR)/FuncoesGlobais.o $(OBJ_DIR)/Validacao.o 
 	$(CC) $(CFLAGS) $(OBJ_DIR)/main.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Partida.o $(OBJ_DIR)/Tutorial.o $(OBJ_DIR)/FuncoesGlobais.o $(OBJ_DIR)/Validacao.o -o $(BIN_DIR)/main

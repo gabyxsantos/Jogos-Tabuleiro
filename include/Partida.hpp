@@ -13,6 +13,7 @@ class Partida{
     public:
     void iniciar_partida();
     void escolher_jogo();
+    void identificar_jogador(std::list<Jogador*>::iterator& jogador);
     void definir_jogadores();
     void jogar_lig_4();
     void jogar_jogo_da_velha();

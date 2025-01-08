@@ -1,5 +1,8 @@
 #include "Jogos.hpp"
 #include "FuncoesGlobais.hpp"
+#include "Validacao.hpp"
+
+Validacao v; //Adicionando um objeto da classe validação para efetuar as validações de entrada e impressão de erros
 
 //Funções da classe base Jogo_De_Tabuleiro:
     // Funções para o tabuleiro
@@ -104,10 +107,10 @@
                     << ORANGE << "<6> Laranja " << PECA_LARANJA << std::endl
                     << BLACK << "<7> Preto " << PECA_PRETA << std::endl
                     << WHITE << "<8> Branco " << PECA_BRANCO << RESET << std::endl;
-            pedir_usuario(cor_escolhida);
+            v.pedir_usuario(cor_escolhida);
             
             if (cor_escolhida < 1 || cor_escolhida > 8){
-                imprimir_erro("Por favor, escolha uma cor válida.");
+                v.imprimir_erro("Por favor, escolha uma cor válida.");
             } else{
                 switch (cor_escolhida) {
                     case 1: if (cor_excluida.compare(PECA_VERMELHA) != 0) return PECA_VERMELHA; break;
@@ -119,7 +122,7 @@
                     case 7: if (cor_excluida.compare(PECA_PRETA) != 0) return PECA_PRETA; break;
                     case 8: if (cor_excluida.compare(PECA_BRANCO) != 0) return PECA_BRANCO; break;
                 }
-                imprimir_erro("Essa cor já foi escolhida pelo oponente. Escolha outra.");
+                v.imprimir_erro("Essa cor já foi escolhida pelo oponente. Escolha outra.");
             }
         } while (true);
     }
@@ -134,7 +137,7 @@
                 << "<1> Pequeno (4x5)" << std::endl
                 << "<2> Padrão (6x7)" << std::endl
                 << "<3> Grande (7x10)" << std::endl;
-        pedir_usuario(escolha);
+        v.pedir_usuario(escolha);
 
         switch (escolha){
             case 1:
@@ -147,7 +150,7 @@
                 definir_tamanho_tabuleiro(7, 10);
                 break;
             default:
-                imprimir_erro("Opção inválida. O tamanho padrão será usado.");
+                v.imprimir_erro("Opção inválida. O tamanho padrão será usado.");
                 definir_tamanho_tabuleiro(6, 7);
         }
         inicializar_tabuleiro();
@@ -158,7 +161,7 @@
         do{
             std::string peca = definir_cor(peca_excluida);
             if (peca.compare(PECA_BRANCO) == 0){
-                imprimir_erro("Para esse jogo, você não pode escolher a peça branca. Escolha uma peça válida");
+                v.imprimir_erro("Para esse jogo, você não pode escolher a peça branca. Escolha uma peça válida");
             }
             else{
                 return peca;
@@ -169,15 +172,15 @@
 
     bool Lig_4::verificar_jogada(int linha,int coluna){
         if (coluna < 1 || coluna > colunas){
-            imprimir_erro("Coluna inválida!");
+            v.imprimir_erro("Coluna inválida!");
             return false;
         }
         if (linha != 0){ // Para Lig_4, sempre esperamos linha = 0
-            imprimir_erro("Linha inválida para este jogo!");
+            v.imprimir_erro("Linha inválida para este jogo!");
             return false;
         }
         if (tabuleiro[0][coluna - 1].compare(filler) != 0){
-            imprimir_erro("Coluna cheia!");
+            v.imprimir_erro("Coluna cheia!");
             return false;
         }
         return true;
@@ -188,7 +191,7 @@
         int coluna;
         while (true){
             std::cout << "Escolha uma coluna (1-" << colunas << ") para colocar a peça " << peca << ": ";
-            pedir_usuario(coluna);
+            v.pedir_usuario(coluna);
             if (verificar_jogada(0,coluna)) {
                 for (int i = linhas - 1; i >= 0; --i) {
                     if (tabuleiro[i][coluna - 1].compare(filler) == 0) {
@@ -252,7 +255,7 @@
         std::cout << "Escolha um formato para as peças:" << std::endl
                 << "<1> Padrão" << std::endl
                 << "<2> Peças coloridas" << std::endl;
-        pedir_usuario(escolha);
+        v.pedir_usuario(escolha);
 
         switch (escolha){
             case 1:
@@ -262,7 +265,7 @@
                 this->pecas_coloridas = true;
                 break;
             default:
-                imprimir_erro("Opção inválida. O formato padrão será usado.");
+                v.imprimir_erro("Opção inválida. O formato padrão será usado.");
                 this->pecas_coloridas = false;
         }
     };
@@ -274,16 +277,16 @@
             std::cout << "Escolha a sua peça: " << std::endl
                     << "<1> " << BOLD << PECA_X << RESET << std::endl
                     << "<2> " << BOLD << PECA_O << RESET << std::endl;
-            pedir_usuario(peca_escolhida);
+            v.pedir_usuario(peca_escolhida);
 
             if (peca_escolhida < 1 || peca_escolhida > 2) {
-                imprimir_erro("Por favor, escolha uma peça válida.");
+                v.imprimir_erro("Por favor, escolha uma peça válida.");
             } else {
                 // Peça válida escolhida
                 std::string peca = std::string(BOLD) + ((peca_escolhida == 1) ? PECA_X : PECA_O) + RESET;
 
                 if (peca.compare(peca_excluida) == 0) {
-                    imprimir_erro("Essa peça já foi escolhida pelo oponente. Escolha outra.");
+                    v.imprimir_erro("Essa peça já foi escolhida pelo oponente. Escolha outra.");
                 } else {
                     // Escolher cor, se necessário
                     if (colorido) {
@@ -308,10 +311,10 @@
                     << ORANGE << "<6> Laranja " << BOLD << peca << RESET << std::endl
                     << BLACK << "<7> Preto " << BOLD << peca << RESET << std::endl
                     << WHITE << "<8> Branco " << BOLD << peca << RESET << std::endl;
-            pedir_usuario(cor_escolhida);
+            v.pedir_usuario(cor_escolhida);
 
             if (cor_escolhida < 1 || cor_escolhida > 8) {
-                imprimir_erro("Por favor, escolha uma cor válida.");
+                v.imprimir_erro("Por favor, escolha uma cor válida.");
             } else {
                 // Escolher cor com base na entrada
                 std::string cor;
@@ -334,15 +337,15 @@
 
     bool Jogo_Da_Velha::verificar_jogada(int linha, int coluna){
         if (coluna < 1 || coluna > colunas){
-            imprimir_erro("Coluna inválida!");
+            v.imprimir_erro("Coluna inválida!");
             return false;
         }
         if (linha < 1 || linha > linhas){
-            imprimir_erro("Linha inválida!");
+            v.imprimir_erro("Linha inválida!");
             return false;
         }
         if (tabuleiro[linha - 1][coluna - 1].compare(filler) != 0){
-            imprimir_erro("Espaço ocupado!");
+            v.imprimir_erro("Espaço ocupado!");
             return false;
         }
         return true;
@@ -351,9 +354,9 @@
         int coluna, linha;
         while (true){
             std::cout << "Escolha uma coluna (1-" << colunas << ") para colocar a peça " << peca << ": ";
-            pedir_usuario(coluna);
+            v.pedir_usuario(coluna);
             std::cout << "Escolha uma linha (1-" << linhas << ") para colocar a peça " << peca << ": ";
-            pedir_usuario(linha);
+            v.pedir_usuario(linha);
             if (verificar_jogada(linha,coluna)) {
                 tabuleiro[linha - 1][coluna - 1] = peca;
                 return;
@@ -403,15 +406,15 @@
     }
     bool Reversi::verificar_jogada(int linha, int coluna){
         if (coluna < 1 || coluna > 8){
-            imprimir_erro("Coluna inválida!");
+            v.imprimir_erro("Coluna inválida!");
             return false;
         }
         if (linha < 1 || linha > 8){
-            imprimir_erro("Linha inválida!");
+            v.imprimir_erro("Linha inválida!");
             return false;
         }
         if (tabuleiro[linha - 1][coluna - 1].compare(PECA_O) != 0){
-            imprimir_erro("Movimento inválido!");
+            v.imprimir_erro("Movimento inválido!");
             return false;
         }
         return true;
@@ -420,9 +423,9 @@
         int coluna, linha;
         while (true){
             std::cout << "Escolha uma coluna (1-" << colunas << ") para colocar a peça " << peca << ": ";
-            pedir_usuario(coluna);
+            v.pedir_usuario(coluna);
             std::cout << "Escolha uma linha (1-" << linhas << ") para colocar a peça " << peca << ": ";
-            pedir_usuario(linha);
+            v.pedir_usuario(linha);
                 if (verificar_jogada(linha,coluna)) {
                     tabuleiro[linha - 1][coluna - 1] = peca;
                     Reversi::linha_ultima_jogada = (linha-1);

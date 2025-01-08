@@ -4,52 +4,75 @@
 #include "FuncoesGlobais.hpp"
 #include "Validacao.hpp"
 
-Validacao a;
+Validacao entradas;
 
 void Partida::iniciar_partida(){
     definir_jogadores();
     escolher_jogo();
 };
 
+void Partida::identificar_jogador(std::list<Jogador*>::iterator& jogador){
+    std::cout << "Os dados principais desse jogador são: " << std::endl;
+    std::cout << "Nome: " << (*jogador)->get_nome() << std::endl;
+    std::cout << "Número total de vitórias: " << (*jogador)->get_vitorias_totais() << std::endl;
+    std::cout << "Número total de derrotas: " << (*jogador)->get_derrotas_totais() << std::endl;
+    std::cout << "Número total de empates: " << (*jogador)->get_empates_totais() << std::endl;
+}
+
 void Partida::definir_jogadores(){
 
     RegistroJogadores buscador;
+    std::list<Jogador*>::iterator jogador1, jogador2;
     
     bool encontrei = false;
     while(!encontrei){
         std::cout << "Jogador 1, insira seu apelido:" << std::endl;
-        a.pedir_usuario(apelido_jogador_1);
-        std::list<Jogador*>::iterator jogador1 = buscador.buscar_jogador(apelido_jogador_1);
+        entradas.pedir_usuario(apelido_jogador_1);
+        jogador1 = buscador.buscar_jogador(apelido_jogador_1);
+        timer(1500);
 
         if (jogador1 != buscador.get_jogadores().end() && (*jogador1)->get_apelido() == apelido_jogador_1){
             encontrei = true;
+            timer(1500);
             break;
         }
         else{
-            a.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
+            entradas.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
             continue;
         }
     }
+    timer(1500);
+    std::cout << "Jogador 1 (" << apelido_jogador_1 <<") encontrado com sucesso" << std::endl;
+    identificar_jogador(jogador1);
+    timer(2000);
 
     bool encontrei2 = false;
     while(!encontrei2){
         std::cout << "Jogador 2, insira seu apelido:" << std::endl;
-        a.pedir_usuario(apelido_jogador_2);
+        entradas.pedir_usuario(apelido_jogador_2);
+        timer(1500);
+
         if (apelido_jogador_2 == apelido_jogador_1){
-            a.imprimir_erro("Os dois oponentes não podem ser o mesmo jogador! Tente novamente.");
+            entradas.imprimir_erro("Os dois oponentes não podem ser o mesmo jogador! Tente novamente.");
             continue;
+            timer(1500);
         }
-        std::list<Jogador*>::iterator jogador2 = buscador.buscar_jogador(apelido_jogador_2);
+        jogador2 = buscador.buscar_jogador(apelido_jogador_2);
 
         if (jogador2 != buscador.get_jogadores().end() && (*jogador2)->get_apelido() == apelido_jogador_2){
             encontrei2 = true;
+            timer(1500);
             break;
         }
         else{
-            a.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
+            entradas.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
             continue;
         }
     }
+    timer(1500);
+    std::cout << "Jogador 2 (" << apelido_jogador_2 <<") encontrado com sucesso" << std::endl;
+    identificar_jogador(jogador1);
+    timer(2000);
 };
 
 void Partida::escolher_jogo(){
@@ -60,7 +83,7 @@ void Partida::escolher_jogo(){
     std::cout << "(V) Jogo da Velha" << std::endl;
     
     while (true) {
-        a.pedir_usuario(nome_do_jogo);
+        entradas.pedir_usuario(nome_do_jogo);
         switch (nome_do_jogo) {
             case 'R':
             case 'r': 
@@ -78,7 +101,7 @@ void Partida::escolher_jogo(){
                 break;
 
             default:
-                a.imprimir_erro("Parece que você digitou uma opção inválida, tente novamente:");
+                entradas.imprimir_erro("Parece que você digitou uma opção inválida, tente novamente:");
                 continue; 
         }
         break; // Sai do while quando o switch processa um caso válido
@@ -328,4 +351,5 @@ void Partida::jogar_lig_4(){
     
     
 };
+
 

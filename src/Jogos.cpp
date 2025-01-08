@@ -90,6 +90,28 @@
 
     };
 
+    void Jogo_De_Tabuleiro::ataualizar_placar_empate(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo){
+        RegistroJogadores jogador1;
+        RegistroJogadores jogador2;
+        
+
+        auto it = jogador1.buscar_jogador(apelido_vencedor);
+       (*it)->set_empates_totais();
+       auto it2 = jogador2.buscar_jogador(apelido_perdedor);
+       (*it2)->set_empates_totais();
+
+       if(jogo.compare("Lig4") == 0){
+        (*it)->set_Lig4();
+        (*it2)->set_Lig4();
+       }
+
+       else if (jogo.compare("JogoVelha") == 0){
+        (*it)->set_JogoVelha();
+        (*it2)->set_JogoVelha();
+       }
+
+    };
+
 
     // Função para definição da cor da peça
     std::string Jogo_De_Tabuleiro::definir_cor(const std::string& cor_excluida){

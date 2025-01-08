@@ -21,11 +21,15 @@ class Partida{
 
 class Estatisticas{
     protected:
-    std::string nome_jogador;
+    RegistroJogadores lista;
     int partidas_jogadas;
-    int vitorias;
-    int empates;
-    int derrotas;
+    
+    /* ideias para as estatisticas:
+    - listagem dos jogadores com os respectivos dados
+    - ranking geral
+    - ranking por jogo
+    - jogo mais escohido
+    */
 
     public:
     virtual void imprimir_estatisticas();

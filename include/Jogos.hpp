@@ -33,7 +33,8 @@ class Jogo_De_Tabuleiro {
 
     //metodo para atualizar placar
     void atualizar_placar(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo);
-
+    void ataualizar_placar_empate(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo);
+    
     // Método para definir uma cor que não pode ser igual a outra
     std::string definir_cor(const std::string& cor_excluida = " ");
 };

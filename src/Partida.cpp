@@ -11,10 +11,43 @@ void Partida::iniciar_partida(){
 
 void Partida::definir_jogadores(){
 
-    std::cout << "Jogador 1, insira seu apelido:" << std::endl;
-    pedir_usuario(apelido_jogador_1); //será que set_apelido() também seria adequado nessa situação?
-    std::cout << "Jogador 2, insira seu apelido:" << std::endl;
-    pedir_usuario(apelido_jogador_2);
+    RegistroJogadores buscador;
+    
+    bool encontrei = false;
+    while(!encontrei){
+        std::cout << "Jogador 1, insira seu apelido:" << std::endl;
+        pedir_usuario(apelido_jogador_1);
+        std::list<Jogador*>::iterator jogador1 = buscador.buscar_jogador(apelido_jogador_1);
+
+        if (jogador1 != buscador.Jogadores.end() && (*jogador1)->get_apelido() == apelido_jogador_1){
+            encontrei = true;
+            break;
+        }
+        else{
+            imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
+            continue;
+        }
+    }
+
+    bool encontrei = false;
+    while(!encontrei){
+        std::cout << "Jogador 2, insira seu apelido:" << std::endl;
+        pedir_usuario(apelido_jogador_2);
+        if (apelido_jogador_2 == apelido_jogador_1){
+            imprimir_erro("Os dois oponentes não podem ser o mesmo jogador! Tente novamente.");
+            continue;
+        }
+        std::list<Jogador*>::iterator jogador2 = buscador.buscar_jogador(apelido_jogador_2);
+
+        if (jogador2 != buscador.Jogadores.end() && (*jogador2)->get_apelido() == apelido_jogador_2){
+            encontrei = true;
+            break;
+        }
+        else{
+            imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
+            continue;
+        }
+    }
 };
 
 void Partida::escolher_jogo(){

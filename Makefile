@@ -31,9 +31,12 @@ $(OBJ_DIR)/Tutorial.o: $(INCLUDE_DIR)/Tutorial.hpp $(SRC_DIR)/Tutorial.cpp
 $(OBJ_DIR)/FuncoesGlobais.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(SRC_DIR)/FuncoesGlobais.cpp 
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/FuncoesGlobais.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/FuncoesGlobais.o
 
+$(OBJ_DIR)/Validacao.o: $(INCLUDE_DIR)/Validacao.hpp $(SRC_DIR)/Validacao.cpp 
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/Validacao.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Validacao.o
+
 # Linkagem do executável
-$(BIN_DIR)/main: $(OBJ_DIR)/main.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Partida.o $(OBJ_DIR)/Tutorial.o $(OBJ_DIR)/FuncoesGlobais.o
-	$(CC) $(CFLAGS) $(OBJ_DIR)/main.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Partida.o $(OBJ_DIR)/Tutorial.o $(OBJ_DIR)/FuncoesGlobais.o -o $(BIN_DIR)/main
+$(BIN_DIR)/main: $(OBJ_DIR)/main.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Partida.o $(OBJ_DIR)/Tutorial.o $(OBJ_DIR)/FuncoesGlobais.o $(OBJ_DIR)/Validacao.o 
+	$(CC) $(CFLAGS) $(OBJ_DIR)/main.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Partida.o $(OBJ_DIR)/Tutorial.o $(OBJ_DIR)/FuncoesGlobais.o $(OBJ_DIR)/Validacao.o -o $(BIN_DIR)/main
 
 # Limpeza dos arquivos gerados
 clean:

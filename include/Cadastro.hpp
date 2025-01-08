@@ -69,6 +69,8 @@ class RegistroJogadores{
 
     void remover_jogador(std::string& apelido);
     void mostrar_jogadores();
+
+    std::list<Jogador*> get_jogadores();
     
     //metodos para acessar os dados pelo main e salvar no arquivo
     bool lista_vazia() const;

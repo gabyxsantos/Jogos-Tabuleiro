@@ -206,7 +206,10 @@
         }
     };
 
-
+    std::list<Jogador*> RegistroJogadores::get_jogadores(){
+        return RegistroJogadores::Jogadores;
+    }
+    
     bool RegistroJogadores::lista_vazia() const {
         return Jogadores.empty();
     };

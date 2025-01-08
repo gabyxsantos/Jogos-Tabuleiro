@@ -21,7 +21,7 @@ void Partida::definir_jogadores(){
         a.pedir_usuario(apelido_jogador_1);
         std::list<Jogador*>::iterator jogador1 = buscador.buscar_jogador(apelido_jogador_1);
 
-        if (jogador1 != buscador.Jogadores.end() && (*jogador1)->get_apelido() == apelido_jogador_1){
+        if (jogador1 != buscador.get_jogadores().end() && (*jogador1)->get_apelido() == apelido_jogador_1){
             encontrei = true;
             break;
         }
@@ -31,8 +31,8 @@ void Partida::definir_jogadores(){
         }
     }
 
-    bool encontrei = false;
-    while(!encontrei){
+    bool encontrei2 = false;
+    while(!encontrei2){
         std::cout << "Jogador 2, insira seu apelido:" << std::endl;
         a.pedir_usuario(apelido_jogador_2);
         if (apelido_jogador_2 == apelido_jogador_1){
@@ -41,8 +41,8 @@ void Partida::definir_jogadores(){
         }
         std::list<Jogador*>::iterator jogador2 = buscador.buscar_jogador(apelido_jogador_2);
 
-        if (jogador2 != buscador.Jogadores.end() && (*jogador2)->get_apelido() == apelido_jogador_2){
-            encontrei = true;
+        if (jogador2 != buscador.get_jogadores().end() && (*jogador2)->get_apelido() == apelido_jogador_2){
+            encontrei2 = true;
             break;
         }
         else{

@@ -24,7 +24,6 @@ class Validacao{
             return false; // Entrada inválida
         }
 
-        template <>
         inline bool validar_entrada(char& valor) {
             if (std::cin >> valor) {
                 if (Validacao::validar_char(valor)) {
@@ -36,7 +35,6 @@ class Validacao{
             return false; // Entrada inválida
         }
 
-        template <>
         inline bool validar_entrada(std::string& valor) {
             if (std::cin >> valor) {
                 if (Validacao::validar_string(valor)) {

@@ -26,6 +26,12 @@ class Jogo_De_Tabuleiro {
     void imprimir_tabuleiro();
     bool tabuleiro_cheio();
 
+    // Getters
+    std::string get_filler();
+    int get_linhas();
+    int get_colunas();
+    std::vector<std::vector<std::string>> get_tabuleiro();
+
     // Metodos para encerramento da partida
     void finalizar_partida_vencedor(const std::string& apelido_vencedor);
     void finalizar_partida_empate();
@@ -74,15 +80,5 @@ class Reversi : public Jogo_De_Tabuleiro{
     bool testar_vitoria(const std::string& peca) override;
     void mostrar_posicoes_possiveis(std::string jogador1, std::string jogador2);
     void converter_pecas(std::string& peca_nova, std::string& peca_convertida);
-};
-
-class Tutorial{
-    public:
-    void iniciar_tutorial_lig4();
-    void iniciar_tutorial_reversi();
-    void iniciar_tutorial_jogo_da_velha();
-    void imprimir_regras_lig4();
-    void imprimir_regras_reversi();
-    void imprimir_regras_jogo_da_velha();
 };
 #endif

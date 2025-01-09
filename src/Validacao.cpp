@@ -1,5 +1,4 @@
 #include "Validacao.hpp"
-#include "FuncoesGlobais.hpp"
 
 // Funções para tratamento de erros
 void Validacao::imprimir_erro(const std::string& erro){

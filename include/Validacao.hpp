@@ -1,9 +1,7 @@
 #ifndef VALIDACAO_HPP
 #define VALIDACAO_HPP
 
-#include <iostream>
-#include <string>
-#include <cctype>
+#include "FuncoesGlobais.hpp"
 
 class Validacao{
     private:

@@ -46,6 +46,10 @@
         this->empates_totais++;
     }
 
+    void Jogador::set_pontos(){
+        this->pontos = n;
+    }
+
     void Jogador::set_vitorias_totais(int n){
         this->vitorias_totais = n;
     }
@@ -56,6 +60,10 @@
 
     void Jogador::set_empates_totais(int n){
         this->empates_totais = n;
+    }
+
+    void Jogador::set_pontos(int n){
+        this->pontos = n;
     }
 
     void Jogador::set_Reversi(bool valor){

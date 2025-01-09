@@ -46,10 +46,6 @@
         this->empates_totais++;
     }
 
-    void Jogador::set_pontos(){
-        this->pontos = n;
-    }
-
     void Jogador::set_vitorias_totais(int n){
         this->vitorias_totais = n;
     }
@@ -64,6 +60,23 @@
 
     void Jogador::set_pontos(int n){
         this->pontos = n;
+    };
+
+    void Jogador::set_Lig4(){
+        this->Lig4.empates++;
+    };
+
+    void Jogador::set_JogoVelha(){
+        this->JogoVelha.empates++;
+    };
+
+    void Jogador::set_pontos(bool valor){
+        if (valor) {
+            this->pontos += 3;
+        } 
+        else {
+            this->pontos +=1;
+        }
     }
 
     void Jogador::set_Reversi(bool valor){
@@ -129,8 +142,12 @@
         return Jogador::derrotas_totais;
     }
 
-     int Jogador::get_empates_totais(){
+    int Jogador::get_empates_totais(){
         return Jogador::empates_totais;
+    }
+
+    int Jogador::get_pontos(){
+        return Jogador::pontos;
     }
 
     Placar Jogador::get_Reversi(){
@@ -145,3 +162,4 @@
         return Jogador::JogoVelha;
     }
 
+    

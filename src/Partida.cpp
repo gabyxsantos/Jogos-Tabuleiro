@@ -1,15 +1,11 @@
 #include "Partida.hpp"
-#include "Cadastro.hpp"
-#include "Jogos.hpp"
-#include "FuncoesGlobais.hpp"
-#include "Validacao.hpp"
 
-Validacao entradas;
+Validacao validar_entrada_partida;
 
 void Partida::iniciar_partida(){
     definir_jogadores();
     escolher_jogo();
-};
+}
 
 void Partida::identificar_jogador(std::list<Jogador*>::iterator& jogador){
     std::cout << "Os dados principais desse jogador são: " << std::endl;
@@ -21,13 +17,13 @@ void Partida::identificar_jogador(std::list<Jogador*>::iterator& jogador){
 
 void Partida::definir_jogadores(){
 
-    RegistroJogadores buscador;
+    CadastroJogadores buscador;
     std::list<Jogador*>::iterator jogador1, jogador2;
     
     bool encontrei = false;
     while(!encontrei){
         std::cout << "Jogador 1, insira seu apelido:" << std::endl;
-        entradas.pedir_usuario(apelido_jogador_1);
+        validar_entrada_partida.pedir_usuario(apelido_jogador_1);
         jogador1 = buscador.buscar_jogador(apelido_jogador_1);
         timer(1500);
 
@@ -37,7 +33,7 @@ void Partida::definir_jogadores(){
             break;
         }
         else{
-            entradas.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
+            validar_entrada_partida.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
             continue;
         }
     }
@@ -49,11 +45,11 @@ void Partida::definir_jogadores(){
     bool encontrei2 = false;
     while(!encontrei2){
         std::cout << "Jogador 2, insira seu apelido:" << std::endl;
-        entradas.pedir_usuario(apelido_jogador_2);
+        validar_entrada_partida.pedir_usuario(apelido_jogador_2);
         timer(1500);
 
         if (apelido_jogador_2 == apelido_jogador_1){
-            entradas.imprimir_erro("Os dois oponentes não podem ser o mesmo jogador! Tente novamente.");
+            validar_entrada_partida.imprimir_erro("Os dois oponentes não podem ser o mesmo jogador! Tente novamente.");
             continue;
             timer(1500);
         }
@@ -65,7 +61,7 @@ void Partida::definir_jogadores(){
             break;
         }
         else{
-            entradas.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
+            validar_entrada_partida.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
             continue;
         }
     }
@@ -73,7 +69,7 @@ void Partida::definir_jogadores(){
     std::cout << "Jogador 2 (" << apelido_jogador_2 <<") encontrado com sucesso" << std::endl;
     identificar_jogador(jogador1);
     timer(2000);
-};
+}
 
 void Partida::escolher_jogo(){
 
@@ -83,7 +79,7 @@ void Partida::escolher_jogo(){
     std::cout << "(V) Jogo da Velha" << std::endl;
     
     while (true) {
-        entradas.pedir_usuario(nome_do_jogo);
+        validar_entrada_partida.pedir_usuario(nome_do_jogo);
         switch (nome_do_jogo) {
             case 'R':
             case 'r': 
@@ -101,7 +97,7 @@ void Partida::escolher_jogo(){
                 break;
 
             default:
-                entradas.imprimir_erro("Parece que você digitou uma opção inválida, tente novamente:");
+                validar_entrada_partida.imprimir_erro("Parece que você digitou uma opção inválida, tente novamente:");
                 continue; 
         }
         break; // Sai do while quando o switch processa um caso válido
@@ -109,12 +105,12 @@ void Partida::escolher_jogo(){
 
    
 
-};
+}
 
 void Partida::jogar_reversi(){
     Reversi jogo1;
-    RegistroJogadores vencedor;
-    RegistroJogadores perdedor;
+    CadastroJogadores vencedor;
+    CadastroJogadores perdedor;
 
 
     timer(1800);
@@ -178,7 +174,7 @@ void Partida::jogar_reversi(){
         jogo1.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Reversi");
     }
 
-};
+}
 
 void Partida::jogar_jogo_da_velha(){
     Jogo_Da_Velha jogo2;
@@ -265,7 +261,7 @@ void Partida::jogar_jogo_da_velha(){
 
     
 
-};
+}
 
 void Partida::jogar_lig_4(){
     Lig_4 jogo3;
@@ -350,6 +346,6 @@ void Partida::jogar_lig_4(){
     }
     
     
-};
+}
 
 

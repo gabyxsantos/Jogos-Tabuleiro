@@ -1,5 +1,5 @@
 #include "Cadastro.hpp"
-#include "Jogos.hpp"
+#include "Jogos/Jogos.hpp"
 #include "Partida.hpp"
 #include "FuncoesGlobais.hpp"
 #include <fstream>

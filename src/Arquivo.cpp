@@ -1,8 +1,4 @@
 #include "Arquivo.hpp"
-#include <fstream> 
-#include <iostream>
-#include <string> 
-#include "FuncoesGlobais.hpp"
 
 void Arquivo::extrair_dados(){
     file.open("JogosTabuleiro.txt", std::fstream::in);
@@ -44,7 +40,7 @@ void Arquivo::extrair_dados(){
         file.close();
     }
 
-};
+}
 
 
 void Arquivo::salvar_dados(){
@@ -84,4 +80,4 @@ void Arquivo::salvar_dados(){
 
         file.close();
 
-};
+}

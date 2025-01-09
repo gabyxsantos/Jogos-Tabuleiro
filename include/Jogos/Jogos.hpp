@@ -1,6 +1,8 @@
 #ifndef JOGOS_H
 #define JOGOS_H
+
 #include "FuncoesGlobais.hpp"
+#include "Validacao.hpp"
 #include "Cadastro.hpp"
 
 class Jogo_De_Tabuleiro {
@@ -42,43 +44,5 @@ class Jogo_De_Tabuleiro {
 
     // Método para definir uma cor que não pode ser igual a outra
     std::string definir_cor(const std::string& cor_excluida = " ");
-};
-
-class Lig_4 : public Jogo_De_Tabuleiro {
-    public:
-    Lig_4();
-
-    std::string escolher_peca(const std::string& peca_excluida);
-    bool verificar_jogada(int linha, int coluna) override;
-    void ler_jogada(const std::string& peca) override;
-    bool testar_vitoria(const std::string& peca) override;
-};
-
-class Jogo_Da_Velha : public Jogo_De_Tabuleiro{
-    public:
-    bool pecas_coloridas;
-    Jogo_Da_Velha();
-
-    std::string escolher_peca(const std::string& peca_excluida = " ", bool colorido = false);
-    std::string escolher_cor(const std::string& peca);
-    bool verificar_jogada(int linha, int coluna) override;
-    void ler_jogada(const std::string& peca) override;
-    bool testar_vitoria(const std::string& peca) override;
-};
-
-class Reversi : public Jogo_De_Tabuleiro{
-    private:
-    int linha_ultima_jogada;
-    int coluna_ultima_jogada;
-
-    public:
-    Reversi();
-
-    void colocar_pecas_iniciais(std::string jogador1, std::string jogador2);
-    bool verificar_jogada(int linha, int coluna) override;
-    void ler_jogada(const std::string& peca) override;
-    bool testar_vitoria(const std::string& peca) override;
-    void mostrar_posicoes_possiveis(std::string jogador1, std::string jogador2);
-    void converter_pecas(std::string& peca_nova, std::string& peca_convertida);
 };
 #endif

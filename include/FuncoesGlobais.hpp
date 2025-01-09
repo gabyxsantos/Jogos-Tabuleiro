@@ -9,6 +9,10 @@
 #include <iomanip>
 #include <thread> 
 #include <chrono>
+#include <algorithm>
+#include <fstream>
+#include <sstream>
+#include <cctype>
 
 #define RESET   "\033[0m"        // Resetar cor para padrão
 #define BOLD    "\033[1m"

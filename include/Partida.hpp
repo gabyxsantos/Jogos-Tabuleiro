@@ -1,8 +1,13 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
+
 #include "FuncoesGlobais.hpp"
+#include "Validacao.hpp"
 #include "Cadastro.hpp"
-#include "Jogos.hpp"
+#include "Jogos/Jogos.hpp"
+#include "Jogos/Lig_4.hpp"
+#include "Jogos/Jogo_da_velha.hpp"
+#include "Jogos/Reversi.hpp"
 
 class Partida{
     private:
@@ -18,54 +23,6 @@ class Partida{
     void jogar_lig_4();
     void jogar_jogo_da_velha();
     void jogar_reversi();
-    };
-
-class Estatisticas{
-    protected:
-    std::string nome_jogador;
-    int partidas_jogadas;
-    int vitorias;
-    int empates;
-    int derrotas;
-
-    public:
-    virtual void imprimir_estatisticas();
-    void estatisticas_jogo_da_velha();
-    void estatisticas_lig_4();
-    void estatisticas_reversi();
-};
-
-class Estatisticas_Lig_4 : public Estatisticas{
-    protected:
-    int numero_medio_jogadas;
-
-    public:
-    void imprimir_estatisticas();
-};
-
-class Estatisticas_Jogo_Da_Velha : public Estatisticas{
-    protected:
-    int numero_medio_jogadas;
-
-    public:
-    void imprimir_estatisticas();
-};
-
-class Estatisticas_Reversi : public Estatisticas{
-    protected:
-    int porcentagem_tabuleiro_vitorias;
-    int porcentagem_tabuleiro_derrotas;
-
-    public:
-    void imprimir_estatisticas();
-};
-
-class Registro_Estatisticas{
-    private:
-    std::list<Estatisticas> estatisticas_por_usuario;
-    
-    public:
-    void buscar_usuario();
 };
 
 #endif

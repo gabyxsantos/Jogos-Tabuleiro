@@ -21,10 +21,6 @@ OBJECTS = $(OBJ_DIR)/FuncoesGlobais.o \
           $(OBJ_DIR)/Jogo_da_velha.o \
 		  $(OBJ_DIR)/Partida.o \
 		  $(OBJ_DIR)/Estatisticas.o \
-		  $(OBJ_DIR)/Estatisticas_lig4.o \
-		  $(OBJ_DIR)/Estatisticas_reversi.o \
-		  $(OBJ_DIR)/Estatisticas_velha.o \
-		  $(OBJ_DIR)/RegistroEstatisticas.o \
 		  $(OBJ_DIR)/Tutorial.o \
           $(OBJ_DIR)/main.o
 
@@ -39,10 +35,6 @@ INCLUDES = $(INCLUDE_DIR)/FuncoesGlobais.hpp \
 		   $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogo_da_velha.hpp \
 		   $(INCLUDE_DIR)/Partida.hpp \
 		   $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas.hpp \
-		   $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas_lig4.hpp \
-		   $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas_reversi.hpp \
-		   $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas_velha.hpp \
-		   $(INCLUDE_DIR)/$(DIR_ESTATS)/RegistroEstatisticas.hpp \
 		   $(INCLUDE_DIR)/Tutorial.hpp
 
 
@@ -86,18 +78,6 @@ $(OBJ_DIR)/Partida.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(INCLUDE_DIR)/Validacao
 
 $(OBJ_DIR)/Estatisticas.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas.hpp $(SRC_DIR)/$(DIR_ESTATS)/Estatisticas.cpp
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_ESTATS)/Estatisticas.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Estatisticas.o
-
-$(OBJ_DIR)/Estatisticas_lig4.o: $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas.hpp $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas_lig4.hpp $(SRC_DIR)/$(DIR_ESTATS)/Estatisticas_lig4.cpp
-	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_ESTATS)/Estatisticas_lig4.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Estatisticas_lig4.o
-
-$(OBJ_DIR)/Estatisticas_reversi.o: $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas.hpp $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas_reversi.hpp $(SRC_DIR)/$(DIR_ESTATS)/Estatisticas_reversi.cpp
-	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_ESTATS)/Estatisticas_reversi.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Estatisticas_reversi.o
-
-$(OBJ_DIR)/Estatisticas_velha.o: $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas.hpp $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas_velha.hpp $(SRC_DIR)/$(DIR_ESTATS)/Estatisticas_velha.cpp
-	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_ESTATS)/Estatisticas_velha.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Estatisticas_velha.o
-
-$(OBJ_DIR)/RegistroEstatisticas.o: $(INCLUDE_DIR)/$(DIR_ESTATS)/Estatisticas.hpp $(INCLUDE_DIR)/$(DIR_ESTATS)/RegistroEstatisticas.hpp $(SRC_DIR)/$(DIR_ESTATS)/RegistroEstatisticas.cpp
-	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_ESTATS)/RegistroEstatisticas.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/RegistroEstatisticas.o
 
 $(OBJ_DIR)/Tutorial.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Lig_4.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Reversi.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogo_da_velha.hpp $(INCLUDE_DIR)/Tutorial.hpp $(SRC_DIR)/Tutorial.cpp 
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/Tutorial.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Tutorial.o

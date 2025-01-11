@@ -19,7 +19,7 @@ void Arquivo::extrair_dados(){
             jogador->set_vitorias_totais(vitorias_totais);
             jogador->set_derrotas_totais(derrotas_totais);
             jogador->set_empates_totais(empates_totais);
-            jogador->set_pontos(pontos);
+            jogador->set_pontos_totais(pontos);
 
             for (int i = 0; i < 3; i++) {
                 file >> auxstr >> auxstr >> vitorias_jogo >> auxstr >> derrotas_jogo >> auxstr >> empates_jogo;
@@ -63,11 +63,11 @@ void Arquivo::salvar_dados(){
         }
 
         for (const auto& jogador : lista_jogadores.get_jogadores()) {
-            file << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome();
+            file << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome() << std::endl;;
             file << "VT:" << jogador->get_vitorias_totais() << " "
                 << "DT:" << jogador->get_derrotas_totais() << " "
                 << "ET:" << jogador->get_empates_totais() << std::endl;
-            file << "Pontos: " << jogador->get_pontos() << std::endl;
+            file << "Pontos: " << jogador->get_pontos_totais() << std::endl;
 
             file << "Reversi V:" << jogador->get_Reversi().vitorias
                 << " D:" << jogador->get_Reversi().derrotas << std::endl;

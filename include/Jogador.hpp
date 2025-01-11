@@ -8,21 +8,22 @@ class Placar{
     public:
         int vitorias = 0;
         int derrotas = 0;
-        int empates=0;
+        int empates= 0;
+        int pontos_por_jogo = 0;
     
 };
 
 class Jogador{
     private:
-    std::string nome;
-    std::string apelido;
-    int vitorias_totais; 
-    int derrotas_totais;
-    int empates_totais;
-    int pontos;
-    Placar Reversi;
-    Placar Lig4;
-    Placar JogoVelha;
+        std::string nome;
+        std::string apelido;
+        int vitorias_totais = 0; 
+        int derrotas_totais = 0;
+        int empates_totais = 0;
+        int pontos_totais = 0;
+        Placar Reversi;
+        Placar Lig4;
+        Placar JogoVelha;
 
     public:
     Jogador(std::string nome, std::string apelido);
@@ -33,10 +34,11 @@ class Jogador{
     void set_derrotas_totais();
     void set_empates_totais();
 
+//metodos para armazenar os dados do arquivo nos atributos de cada jogador
     void set_vitorias_totais(int n);
     void set_derrotas_totais(int n);
     void set_empates_totais(int n);
-    void set_pontos(int n);
+    void set_pontos_totais(int n);
 
     //metodos para atualizar os empates
     void set_Lig4();
@@ -44,7 +46,7 @@ class Jogador{
 
     //se os metodos set forem chamados com bool isso indica que é apenas a atualização do placar na partida
     //no caso dos pontos, true= vitoria= +3pontos; false = empate = +1ponto
-    void set_pontos(bool valor); 
+    void set_pontos_totais(bool valor, std::string jogo); //passa o jogo pra saber onde add ponto
     void set_Reversi(bool valor);
     void set_Lig4(bool valor);
     void set_JogoVelha(bool valor);
@@ -59,7 +61,7 @@ class Jogador{
     int get_vitorias_totais();
     int get_derrotas_totais();
     int get_empates_totais();
-    int get_pontos();
+    int get_pontos_totais();
     Placar get_Reversi();
     Placar get_Lig4();
     Placar get_JogoVelha();

@@ -84,10 +84,7 @@ Validacao validar_entrada_jogos;
         CadastroJogadores perdedor;
 
         auto it = vencedor.buscar_jogador(apelido_vencedor);
-        (*it)->set_vitorias_totais();
-        (*it)->set_pontos(true);
         auto it2 = perdedor.buscar_jogador(apelido_perdedor);
-        (*it2)->set_derrotas_totais();
 
         if(jogo.compare("Reversi") == 0){
             (*it)->set_Reversi(true);
@@ -106,16 +103,16 @@ Validacao validar_entrada_jogos;
 
     }
 
-    void Jogo_De_Tabuleiro::atualizar_placar_empate(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo){
+    void Jogo_De_Tabuleiro::atualizar_placar_empate(std::string j1, std::string j2, std::string jogo){
         CadastroJogadores jogador1;
         CadastroJogadores jogador2;
             
-        auto it = jogador1.buscar_jogador(apelido_vencedor);
+        auto it = jogador1.buscar_jogador(j1);
         (*it)->set_empates_totais();
-        (*it)->set_pontos(false);
-        auto it2 = jogador2.buscar_jogador(apelido_perdedor);
+        (*it)->set_pontos_totais(false);
+        auto it2 = jogador2.buscar_jogador(j2);
         (*it2)->set_empates_totais();
-        (*it2)->set_pontos(false);
+        (*it2)->set_pontos_totais(false);
 
         if(jogo.compare("Lig4") == 0){
             (*it)->set_Lig4();

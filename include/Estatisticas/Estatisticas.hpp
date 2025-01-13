@@ -12,14 +12,18 @@ class Estatisticas{
         std::vector<Jogador*> ranking_jogadores;
 
     protected:
+        void atualizar_ranking();
+        void listar_jogadores();
         void ranking_geral();
         void ranking_reversi();
         void ranking_lig4();
         void ranking_jogovelha();
+        void imprimir_ranking(std::vector<Jogador*> vetor_jogadores);
 
     public:
-        void listar_jogadores();
-        void ranking();
+        Estatisticas();
+        void estatisticas_jogos();
+        ~Estatisticas();
 };      
 
 #endif

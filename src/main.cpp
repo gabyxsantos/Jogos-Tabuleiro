@@ -4,18 +4,12 @@
 #include "Jogador.hpp"
 #include "FuncoesGlobais.hpp"
 #include "Estatisticas/Estatisticas.hpp"
-#include <fstream>
-#include <sstream>
 
 int main() { 
 
+    //para começar chamar o arquivo, extrair_dados(), e qndo a partidar acabar, chama salvar_dados()
+    //obs: se o jogador quiser ver as estatistiicas do jogo, basta chamar estatisticas_jogos()
     std::cout << "É hora de jogar!" << std::endl;
-    Estatisticas est;
-    CadastroJogadores jogador;
-    Jogador *j1 = new Jogador("gabrielly", "gaby");
-    jogador.adicionar_jogador(j1, "gaby");
-    est.listar_jogadores(); 
-
     
     return 0;
 }

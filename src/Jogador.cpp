@@ -58,30 +58,67 @@
         this->empates_totais = n;
     }
 
+    void Jogador::set_pontos_totais(int n){
+        this->pontos_totais = n;
+    };
+
+//como melhorar essa logica dos empates??
+    void Jogador::set_Lig4(){
+        this->Lig4.empates++;
+        
+    };
+
+    void Jogador::set_JogoVelha(){
+        this->JogoVelha.empates++;
+        
+    };
+
+    void Jogador::set_pontos_totais(bool valor, std::string jogo){
+        if (valor) {
+            this->pontos_totais +=3;
+        } 
+        else {
+            this->pontos_totais +=1;
+        }
+    }
+
+
     void Jogador::set_Reversi(bool valor){
         if (valor) {
-            this->Reversi.vitorias ++;
+            this->Reversi.vitorias ++; //add vitoria no jogo
+            this->Reversi.pontos_por_jogo += 3; //add pontos da vitoria
+            set_pontos_totais(true); //add pontuaçao geral
+            set_vitorias_totais(); //add vitoria geral
         } 
         else {
             this->Reversi.derrotas ++;
+            set_derrotas_totais();
         }
     }
 
     void Jogador::set_Lig4(bool valor){
         if (valor) {
             this->Lig4.vitorias ++;
+            this->Lig4.pontos_por_jogo += 3;
+            set_pontos_totais(true);
+            set_vitorias_totais();
         } 
         else {
             this->Lig4.derrotas ++;
+            set_derrotas_totais();
         }
     }
 
     void Jogador::set_JogoVelha(bool valor){
         if (valor) {
             this->JogoVelha.vitorias ++;
+            this->JogoVelha.pontos_por_jogo += 3;
+            set_pontos_totais(true);
+            set_vitorias_totais();
         } 
         else {
             this->JogoVelha.derrotas ++;
+            set_derrotas_totais();
         }
     }
 
@@ -121,8 +158,12 @@
         return Jogador::derrotas_totais;
     }
 
-     int Jogador::get_empates_totais(){
+    int Jogador::get_empates_totais(){
         return Jogador::empates_totais;
+    }
+
+    int Jogador::get_pontos_totais(){
+        return Jogador::pontos_totais;
     }
 
     Placar Jogador::get_Reversi(){
@@ -137,3 +178,4 @@
         return Jogador::JogoVelha;
     }
 
+    

@@ -6,15 +6,20 @@ void Arquivo::extrair_dados(){
     if(file.is_open()){ //caso o arquivo ja exista
         
         std::string nome, apelido, auxstr; ///se der errado a leitura voltar aqui
-        int vitorias_jogo, derrotas_jogo, empates_jogo, vitorias_totais, derrotas_totais, empates_totais;
+        int pontos, vitorias_jogo, derrotas_jogo, empates_jogo, vitorias_totais, derrotas_totais, empates_totais;
 
         while(!file.eof()){
 
-            file >> auxstr >> apelido >> nome >> auxstr >> vitorias_totais >> auxstr >> derrotas_totais >> auxstr >> empates_totais;
+            file >> auxstr >> apelido >> nome ;
+            file >> auxstr >> vitorias_totais >> auxstr 
+            >> derrotas_totais >> auxstr >> empates_totais;
+            file >> auxstr >> pontos;
+
             Jogador* jogador = new Jogador(nome, apelido); 
             jogador->set_vitorias_totais(vitorias_totais);
             jogador->set_derrotas_totais(derrotas_totais);
             jogador->set_empates_totais(empates_totais);
+            jogador->set_pontos_totais(pontos);
 
             for (int i = 0; i < 3; i++) {
                 file >> auxstr >> auxstr >> vitorias_jogo >> auxstr >> derrotas_jogo >> auxstr >> empates_jogo;
@@ -58,10 +63,11 @@ void Arquivo::salvar_dados(){
         }
 
         for (const auto& jogador : lista_jogadores.get_jogadores()) {
-            file << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome();
+            file << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome() << std::endl;;
             file << "VT:" << jogador->get_vitorias_totais() << " "
                 << "DT:" << jogador->get_derrotas_totais() << " "
                 << "ET:" << jogador->get_empates_totais() << std::endl;
+            file << "Pontos: " << jogador->get_pontos_totais() << std::endl;
 
             file << "Reversi V:" << jogador->get_Reversi().vitorias
                 << " D:" << jogador->get_Reversi().derrotas << std::endl;

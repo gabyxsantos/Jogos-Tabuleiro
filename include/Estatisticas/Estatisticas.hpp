@@ -2,20 +2,28 @@
 #define ESTATISTICAS_H
 
 #include "FuncoesGlobais.hpp"
+#include "Cadastro.hpp"
+#include "Validacao.hpp"
 
 class Estatisticas{
+    private:
+        CadastroJogadores acessar_jogadores;
+        int jogo_mais_jogado; //tem que calcular isso a cada partida
+        std::vector<Jogador*> ranking_jogadores;
+
     protected:
-    std::string nome_jogador;
-    int partidas_jogadas;
-    int vitorias;
-    int empates;
-    int derrotas;
+        void atualizar_ranking();
+        void listar_jogadores();
+        void ranking_geral();
+        void ranking_reversi();
+        void ranking_lig4();
+        void ranking_jogovelha();
+        void imprimir_ranking(std::vector<Jogador*> vetor_jogadores);
 
     public:
-    void imprimir_estatisticas();
-    void estatisticas_jogo_da_velha();
-    void estatisticas_lig_4();
-    void estatisticas_reversi();
-};
+        Estatisticas();
+        void estatisticas_jogos();
+        ~Estatisticas();
+};      
 
 #endif

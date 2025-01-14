@@ -10,6 +10,9 @@ class CadastroJogadores{
     std::list<Jogador*> Jogadores;
 
     public: 
+
+    CadastroJogadores();
+
     void ordenar_jogadores_nome();
 
     void ordenar_jogadores_apelido(); 
@@ -17,7 +20,7 @@ class CadastroJogadores{
     bool adicionar_jogador(Jogador* jogador_novo, std::string apelido);
 
     void remover_jogador(std::string& apelido);
-    void mostrar_jogadores();
+    
 
     std::list<Jogador*> get_jogadores();
     
@@ -25,6 +28,7 @@ class CadastroJogadores{
     bool lista_vazia() const;
     const std::list<Jogador*>& get_jogadores() const;
     
+    ~CadastroJogadores();
 };
 
 

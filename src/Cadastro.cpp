@@ -1,7 +1,6 @@
 #include "Cadastro.hpp"
  
-//Funções da classe Registro_jogadores
-
+    CadastroJogadores::CadastroJogadores(){};
 
     void CadastroJogadores::ordenar_jogadores_nome(){ // Ordenar por nome
         CadastroJogadores::Jogadores.sort([](Jogador* a, Jogador* b) {
@@ -45,23 +44,6 @@
         }
     }
 
-    
-    void CadastroJogadores::mostrar_jogadores(){
-        for (const auto& jogador : Jogadores) {
-           std::cout << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome() << std::endl;
-
-            std::cout << "Reversi V:" << jogador->get_Reversi().vitorias
-                << " D:" << jogador->get_Reversi().derrotas << std::endl;
-
-            std::cout << "Lig4 V:" << jogador->get_Lig4().vitorias
-                << " D:" << jogador->get_Lig4().derrotas << std::endl;
-
-            std::cout << "Velha V:" << jogador->get_JogoVelha().vitorias
-                << " D:" << jogador->get_JogoVelha().derrotas << std::endl;
-
-            std::cout << std::endl; // Separador entre os registros
-        }
-    }
 
     std::list<Jogador*> CadastroJogadores::get_jogadores(){
         return CadastroJogadores::Jogadores;
@@ -72,6 +54,8 @@
     }
 
     // Getter para acesso indireto (opcional, caso precise)
-    const std::list<Jogador*>& CadastroJogadores::get_jogadores() const {
-        return Jogadores;
-    }
+    //const std::list<Jogador*>& CadastroJogadores::get_jogadores() const {
+    //    return Jogadores;
+    //}
+
+    CadastroJogadores::~CadastroJogadores(){};

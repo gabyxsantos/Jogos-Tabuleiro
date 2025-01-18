@@ -1,7 +1,12 @@
 #include "Estatisticas/Estatisticas.hpp"
 
-Estatisticas::Estatisticas() { 
+Estatisticas::Estatisticas(CadastroJogadores& buscador) 
+    : acessar_jogadores(buscador) {
     atualizar_ranking(); //garante que ao inicializar o vector estará limpo e atualizado
+}
+
+void Estatisticas::atualizar_acesso(CadastroJogadores &buscador){
+    this->acessar_jogadores=buscador;
 }
 
 void Estatisticas::atualizar_ranking() {
@@ -27,27 +32,31 @@ void Estatisticas::estatisticas_jogos(){ //main chama apenas essa função e o j
               << "(5) Para acessar o ranking do Jogo da Velha." << std::endl;
 
     int escolha;
-    std::cin >> escolha;
+    validar_entrada_ranking.pedir_usuario(escolha);
+
+    if (escolha>5 || escolha<1){
+        throw std::out_of_range("Erro: A escolha feita foi fora do intervalo permitido (1 a 5).");
+    }
 
     while (true) {
         switch (escolha) {
-            case '1':
+            case 1:
                 listar_jogadores();
                 break;
 
-            case '2':
+            case 2:
                 ranking_geral();
                 break;
 
-            case '3':
+            case 3:
                 ranking_reversi();
                 break;
 
-            case '4':
+            case 4:
                 ranking_lig4();
                 break;
             
-            case '5':
+            case 5:
                 ranking_jogovelha();
                 break;
 
@@ -61,6 +70,11 @@ void Estatisticas::estatisticas_jogos(){ //main chama apenas essa função e o j
 };
 
 void Estatisticas::listar_jogadores(){
+
+    if (acessar_jogadores.lista_vazia()){
+        throw std::runtime_error("Erro: Não há jogadores cadastrados no sistema.");
+    
+    }
     
     for (const auto& jogador : acessar_jogadores.get_jogadores()) {
             std::cout << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome() << std::endl;

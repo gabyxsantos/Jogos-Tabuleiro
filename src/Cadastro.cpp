@@ -26,14 +26,14 @@
     std::list<Jogador*>::iterator CadastroJogadores::buscar_jogador(std::string& apelido){
         std::list<Jogador*>::iterator it; //definindo um iterator que vai caminhar pela list
         for ( it = Jogadores.begin(); it != Jogadores.end(); ++it) {
-            if ((*it)->get_apelido() == apelido) {
+            if (*it &&(*it)->get_apelido() == apelido) {
                 return (it);
             }
         }
-        return it;
+        return Jogadores.end();
     }
 
-    bool CadastroJogadores::adicionar_jogador(Jogador* jogador_novo, std::string apelido){
+    bool CadastroJogadores::adicionar_jogador(Jogador* jogador_novo, std::string& apelido){
         if (CadastroJogadores::buscar_jogador(apelido)== Jogadores.end()) {
             CadastroJogadores::Jogadores.push_back(jogador_novo);
             return false;
@@ -41,6 +41,18 @@
         else {
             std::cout << "Já existe um jogador cadastrado com esse apelido!";
             return true;
+        }
+    }
+
+    bool CadastroJogadores::remover_jogador(std::string& apelido){
+        auto it = CadastroJogadores::buscar_jogador(apelido);
+        if (it== Jogadores.end()) {
+            std::cout << "Não existe nenhum jogador cadastrado com esse apelido!";
+            return true;
+        }
+        else {
+            CadastroJogadores::Jogadores.erase(it);
+            return false;
         }
     }
 
@@ -58,4 +70,12 @@
     //    return Jogadores;
     //}
 
-    CadastroJogadores::~CadastroJogadores(){};
+    CadastroJogadores::~CadastroJogadores(){
+        for (auto jogador : Jogadores) {
+            delete jogador;
+        }
+    };
+
+    void CadastroJogadores::limpar_lista(){
+        Jogadores.clear();
+    }

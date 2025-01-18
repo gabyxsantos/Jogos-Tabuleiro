@@ -38,7 +38,8 @@ void Partida::definir_jogadores(){
         jogador1 = acesso_lista.buscar_jogador(apelido_jogador_1);
         timer(1500);
 
-        if (jogador1 != acesso_lista.get_jogadores().end() && (*jogador1) && (*jogador1)->get_apelido() == apelido_jogador_1){
+        if (jogador1 != acesso_lista.Jogadores.end() && (*jogador1)->get_apelido() == apelido_jogador_1){
+    
             encontrei = true;
             timer(1500);
             break;
@@ -46,6 +47,7 @@ void Partida::definir_jogadores(){
         }
 
         else{
+            
             validar_entrada_partida.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
             continue;
         }
@@ -70,7 +72,7 @@ void Partida::definir_jogadores(){
 
         jogador2 = acesso_lista.buscar_jogador(apelido_jogador_2);
 
-        if (jogador1 != acesso_lista.get_jogadores().end() && (*jogador1) && (*jogador1)->get_apelido() == apelido_jogador_1){
+        if (jogador2 != acesso_lista.Jogadores.end() && (*jogador2)->get_apelido() == apelido_jogador_2){
                 encontrei2 = true;
                 timer(1500);
                 break;

@@ -1,5 +1,7 @@
 #include "Arquivo.hpp"
 
+Arquivo::Arquivo(){};
+
 void Arquivo::extrair_dados(){
     file.open("JogosTabuleiro.txt", std::fstream::in);
     

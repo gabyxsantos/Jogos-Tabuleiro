@@ -10,7 +10,7 @@ void Estatisticas::atualizar_acesso(CadastroJogadores &buscador){
 }
 
 void Estatisticas::atualizar_ranking() {
-    std::list<Jogador*> lista_auxiliar = acessar_jogadores.get_jogadores(); 
+    std::list<Jogador*> lista_auxiliar = acessar_jogadores.Jogadores; 
     
     // Limpar o vetor antes de preenchê-lo novamente
     ranking_jogadores.clear();
@@ -76,7 +76,7 @@ void Estatisticas::listar_jogadores(){
     
     }
     
-    for (const auto& jogador : acessar_jogadores.get_jogadores()) {
+    for (const auto& jogador : acessar_jogadores.Jogadores) {
             std::cout << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome() << std::endl;
 
             std::cout << "Vitorias totais: " << jogador->get_vitorias_totais() << " "

@@ -27,7 +27,8 @@ class Jogador{
 
     public:
     Jogador(std::string nome, std::string apelido);
-    
+    Jogador();
+
     void set_nome();
     void set_apelido();
     void set_vitorias_totais();

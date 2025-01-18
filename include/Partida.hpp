@@ -11,21 +11,21 @@
 
 class Partida{
     private:
-    CadastroJogadores acesso_lista;
-    char nome_do_jogo;
-    std::string apelido_jogador_1;
-    std::string apelido_jogador_2;
+        CadastroJogadores acesso_lista;
+        char nome_do_jogo;
+        std::string apelido_jogador_1;
+        std::string apelido_jogador_2;
 
     public:
-    Partida(CadastroJogadores& buscador);
-    void atualizar_acesso(CadastroJogadores &buscador);
-    void iniciar_partida();
-    void escolher_jogo();
-    void identificar_jogador(std::list<Jogador*>::iterator& jogador);
-    void definir_jogadores();
-    void jogar_lig_4();
-    void jogar_jogo_da_velha();
-    void jogar_reversi();
+        Partida(CadastroJogadores& buscador);
+        void atualizar_acesso(CadastroJogadores &buscador);
+        void iniciar_partida();
+        void escolher_jogo();
+        void identificar_jogador(std::list<Jogador*>::iterator& jogador);
+        void definir_jogadores();
+        void jogar_lig_4();
+        void jogar_jogo_da_velha();
+        void jogar_reversi();
 };
 
 #endif

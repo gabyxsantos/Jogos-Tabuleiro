@@ -26,7 +26,7 @@
     std::list<Jogador*>::iterator CadastroJogadores::buscar_jogador(std::string& apelido){
         std::list<Jogador*>::iterator it; //definindo um iterator que vai caminhar pela list
         for ( it = Jogadores.begin(); it != Jogadores.end(); ++it) {
-            if (*it &&(*it)->get_apelido() == apelido) {
+            if ((*it)->get_apelido() == apelido) {
                 return (it);
             }
         }
@@ -56,10 +56,10 @@
         }
     }
 
-
-    std::list<Jogador*> CadastroJogadores::get_jogadores(){
+    /*std::list<Jogador*> CadastroJogadores::get_jogadores(){
         return CadastroJogadores::Jogadores;
     }
+    */
     
     bool CadastroJogadores::lista_vazia() const {
         return Jogadores.empty();

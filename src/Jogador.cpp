@@ -7,31 +7,57 @@
         this->apelido = apelido;
     }
 
-    void Jogador::set_nome(){
+    Jogador::Jogador(){
+        this->nome="";
+        this->apelido="";
+    }
+
+    void Jogador::set_nome() {
         std::string verificador;
-        std::cin.ignore();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpa o buffer de entrada
+
         do {
-        std::cout << "Informe o nome do jogador: ";
-        std::getline (std::cin, verificador);
-        if (verificador.length()<1 || verificador.length()>100) std::cout << "O nome deve conter pelo menos 1 caracter e no máximo 100 caracteres" << std::endl;
-        if (verificador.find(' ')!= std::string::npos) std::cout << "O nome deve conter apenas uma palavra, sem espaços" << std::endl; //O nome é completo ou só o primeiro nome? no enunciado só fala que apelido deve ser único..
-        if (verificador.length()>=1 && verificador.length()<=100 && verificador.find(' ')== std::string::npos) Jogador::nome = verificador;
+            std::cout << "Informe o nome do jogador: ";
+            std::getline(std::cin, verificador);
+
+            // Validações
+            if (verificador.length() < 1 || verificador.length() > 10) {
+                std::cout << "Erro: O nome deve conter pelo menos 1 caractere e no máximo 10 caracteres." << std::endl;
+            } else if (verificador.find(' ') != std::string::npos) {
+                std::cout << "Erro: O nome deve conter apenas uma palavra, sem espaços." << std::endl;
+            } else if (!std::all_of(verificador.begin(), verificador.end(), isalpha)) {
+                std::cout << "Erro: O nome deve conter apenas letras (sem números ou caracteres especiais)." << std::endl;
+            } else {
+                // Nome válido
+                Jogador::nome = verificador;
+            }
+
         } while (Jogador::nome != verificador);
     }
 
-    void Jogador::set_apelido(){
+    void Jogador::set_apelido() {
         std::string verificador;
-        std::cout << "Informe o apelido do jogador: ";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpa o buffer de entrada
+
         do {
-        std::getline (std::cin, verificador);
-        if (verificador.length()<1 || verificador.length()>10) std::cout << "O apelido deve conter pelo menos 1 caracter e no máximo 10 caracteres" << std::endl;
-        if (verificador.find(' ')!= std::string::npos) std::cout << "O apelido deve conter apenas uma palavra, sem espaços" << std::endl; 
-        if (isalpha(verificador[0])==0) std::cout << "O primeiro caractere do apelido não pode ser um dígito ou caracter especial" << std::endl;
-        if (isalpha(verificador[0])!=0 && verificador.length()>=1 && verificador.length()<=10 && verificador.find(' ')== std::string::npos) {
-            Jogador::apelido = verificador;
-        }
+            std::cout << "Informe o apelido do jogador: ";
+            std::getline(std::cin, verificador);
+
+            // Validações
+            if (verificador.length() < 1 || verificador.length() > 10) {
+                std::cout << "Erro: O apelido deve conter pelo menos 1 caractere e no máximo 10 caracteres." << std::endl;
+            } else if (verificador.find(' ') != std::string::npos) {
+                std::cout << "Erro: O apelido deve conter apenas uma palavra, sem espaços." << std::endl;
+            } else if (!std::all_of(verificador.begin(), verificador.end(), isalpha)) {
+                std::cout << "Erro: O apelido deve conter apenas letras (sem números ou caracteres especiais)." << std::endl;
+            } else {
+                // Apelido válido
+                Jogador::apelido = verificador;
+            }
+
         } while (Jogador::apelido != verificador);
     }
+
 
 
     void Jogador::set_vitorias_totais(){

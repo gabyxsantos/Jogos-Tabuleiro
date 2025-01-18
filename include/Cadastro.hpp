@@ -6,10 +6,9 @@
 #include "Jogador.hpp"
 
 class CadastroJogadores{
-    private:
-    std::list<Jogador*> Jogadores;
 
     public: 
+    std::list<Jogador*> Jogadores;
 
     CadastroJogadores();
 
@@ -17,16 +16,15 @@ class CadastroJogadores{
 
     void ordenar_jogadores_apelido(); 
     std::list<Jogador*>::iterator buscar_jogador(std::string& apelido);
-    bool adicionar_jogador(Jogador* jogador_novo, std::string apelido);
+    bool adicionar_jogador(Jogador* jogador_novo, std::string& apelido);
+    bool remover_jogador(std::string& apelido);
 
-    void remover_jogador(std::string& apelido);
-    
-
-    std::list<Jogador*> get_jogadores();
+    //std::list<Jogador*> get_jogadores();
     
     //metodos para acessar os dados pelo main e salvar no arquivo
     bool lista_vazia() const;
-    const std::list<Jogador*>& get_jogadores() const;
+    //const std::list<Jogador*>& get_jogadores() const;
+    void limpar_lista();
     
     ~CadastroJogadores();
 };

@@ -30,10 +30,10 @@
                 return (it);
             }
         }
-        return it;
+        return Jogadores.end();
     }
 
-    bool CadastroJogadores::adicionar_jogador(Jogador* jogador_novo, std::string apelido){
+    bool CadastroJogadores::adicionar_jogador(Jogador* jogador_novo, std::string& apelido){
         if (CadastroJogadores::buscar_jogador(apelido)== Jogadores.end()) {
             CadastroJogadores::Jogadores.push_back(jogador_novo);
             return false;
@@ -44,10 +44,22 @@
         }
     }
 
+    bool CadastroJogadores::remover_jogador(std::string& apelido){
+        auto it = CadastroJogadores::buscar_jogador(apelido);
+        if (it== Jogadores.end()) {
+            std::cout << "Não existe nenhum jogador cadastrado com esse apelido!";
+            return true;
+        }
+        else {
+            CadastroJogadores::Jogadores.erase(it);
+            return false;
+        }
+    }
 
-    std::list<Jogador*> CadastroJogadores::get_jogadores(){
+    /*std::list<Jogador*> CadastroJogadores::get_jogadores(){
         return CadastroJogadores::Jogadores;
     }
+    */
     
     bool CadastroJogadores::lista_vazia() const {
         return Jogadores.empty();
@@ -58,4 +70,12 @@
     //    return Jogadores;
     //}
 
-    CadastroJogadores::~CadastroJogadores(){};
+    CadastroJogadores::~CadastroJogadores(){
+        for (auto jogador : Jogadores) {
+            delete jogador;
+        }
+    };
+
+    void CadastroJogadores::limpar_lista(){
+        Jogadores.clear();
+    }

@@ -7,45 +7,61 @@ void Partida::iniciar_partida(){
     escolher_jogo();
 }
 
-void Partida::identificar_jogador(std::list<Jogador*>::iterator& jogador){
+/*void Partida::identificar_jogador(std::list<Jogador*>::iterator& jogador){
     std::cout << "Os dados principais desse jogador são: " << std::endl;
     std::cout << "Nome: " << (*jogador)->get_nome() << std::endl;
     std::cout << "Número total de vitórias: " << (*jogador)->get_vitorias_totais() << std::endl;
     std::cout << "Número total de derrotas: " << (*jogador)->get_derrotas_totais() << std::endl;
     std::cout << "Número total de empates: " << (*jogador)->get_empates_totais() << std::endl;
+}*/
+
+Partida::Partida(CadastroJogadores& buscador) : 
+    acesso_lista(buscador){}
+
+void Partida::atualizar_acesso(CadastroJogadores &buscador){
+    this->acesso_lista=buscador;
 }
 
 void Partida::definir_jogadores(){
 
-    CadastroJogadores buscador;
+    if (acesso_lista.lista_vazia()) {
+        throw std::runtime_error("Erro: Não há jogadores cadastrados no sistema. Não foi possível prosseguir com a execução da partida.");
+    
+    }
+
     std::list<Jogador*>::iterator jogador1, jogador2;
     
     bool encontrei = false;
     while(!encontrei){
         std::cout << "Jogador 1, insira seu apelido:" << std::endl;
         validar_entrada_partida.pedir_usuario(apelido_jogador_1);
-        jogador1 = buscador.buscar_jogador(apelido_jogador_1);
+        jogador1 = acesso_lista.buscar_jogador(apelido_jogador_1);
         timer(1500);
 
-        if (jogador1 != buscador.get_jogadores().end() && (*jogador1)->get_apelido() == apelido_jogador_1){
+        if (jogador1 != acesso_lista.Jogadores.end() && (*jogador1)->get_apelido() == apelido_jogador_1){
+    
             encontrei = true;
             timer(1500);
             break;
+            
         }
+
         else{
+            
             validar_entrada_partida.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
             continue;
         }
     }
     timer(1500);
     std::cout << "Jogador 1 (" << apelido_jogador_1 <<") encontrado com sucesso" << std::endl;
-    identificar_jogador(jogador1);
+    //identificar_jogador(jogador1);
     timer(2000);
 
     bool encontrei2 = false;
     while(!encontrei2){
         std::cout << "Jogador 2, insira seu apelido:" << std::endl;
         validar_entrada_partida.pedir_usuario(apelido_jogador_2);
+        
         timer(1500);
 
         if (apelido_jogador_2 == apelido_jogador_1){
@@ -53,12 +69,14 @@ void Partida::definir_jogadores(){
             continue;
             timer(1500);
         }
-        jogador2 = buscador.buscar_jogador(apelido_jogador_2);
 
-        if (jogador2 != buscador.get_jogadores().end() && (*jogador2)->get_apelido() == apelido_jogador_2){
-            encontrei2 = true;
-            timer(1500);
-            break;
+        jogador2 = acesso_lista.buscar_jogador(apelido_jogador_2);
+
+        if (jogador2 != acesso_lista.Jogadores.end() && (*jogador2)->get_apelido() == apelido_jogador_2){
+                encontrei2 = true;
+                timer(1500);
+                break;
+            
         }
         else{
             validar_entrada_partida.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
@@ -67,7 +85,7 @@ void Partida::definir_jogadores(){
     }
     timer(1500);
     std::cout << "Jogador 2 (" << apelido_jogador_2 <<") encontrado com sucesso" << std::endl;
-    identificar_jogador(jogador1);
+    //identificar_jogador(jogador2);
     timer(2000);
 }
 
@@ -163,7 +181,7 @@ void Partida::jogar_reversi(){
         jogo1.imprimir_tabuleiro();
         timer(1800);
         std::cout << apelido_jogador_1 << " ganhou!" << std::endl;
-        jogo1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi");
+        jogo1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi", acesso_lista);
     
     }
 
@@ -171,7 +189,7 @@ void Partida::jogar_reversi(){
         jogo1.imprimir_tabuleiro();
         timer(1800); 
         std::cout << apelido_jogador_2 << " ganhou!" << std::endl;
-        jogo1.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Reversi");
+        jogo1.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Reversi", acesso_lista);
     }
 
 }
@@ -252,10 +270,10 @@ void Partida::jogar_jogo_da_velha(){
         jogo2.finalizar_partida_vencedor(nome_atual);
         
         if(nome_atual.compare(apelido_jogador_1) == 0){
-            jogo2.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "JogoVelha");
+            jogo2.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "JogoVelha", acesso_lista);
         }
-         else{
-            jogo2.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "JogoVelha");
+        else{
+            jogo2.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "JogoVelha", acesso_lista);
         }
     }
 
@@ -271,7 +289,7 @@ void Partida::jogar_lig_4(){
     timer(1800);
 
     std::string peca1, peca2;
-    Partida aux;
+    //Partida aux;
 
     jogo3.definir_filler(PECA_BRANCO);
 
@@ -337,10 +355,10 @@ void Partida::jogar_lig_4(){
         jogo3.finalizar_partida_vencedor(nome_atual);
         
         if(nome_atual.compare(apelido_jogador_1) == 0){
-            jogo3.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Lig4");
+            jogo3.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Lig4",acesso_lista);
         }
          else{
-            jogo3.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Lig4");
+            jogo3.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Lig4", acesso_lista);
         }
         
     }

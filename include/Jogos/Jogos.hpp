@@ -40,8 +40,8 @@ class Jogo_De_Tabuleiro {
     bool testar_empate(const std::string& peca1, const std::string& peca2);
 
     //metodo para atualizar placar
-    void atualizar_placar(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo);
-    void atualizar_placar_empate(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo);
+    void atualizar_placar(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo, CadastroJogadores& buscador);
+    void atualizar_placar_empate(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo, CadastroJogadores &buscador);
 
     // Método para definir uma cor que não pode ser igual a outra
     std::string definir_cor(const std::string& cor_excluida = " ");

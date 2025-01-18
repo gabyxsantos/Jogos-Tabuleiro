@@ -1,5 +1,7 @@
 #include "Arquivo.hpp"
 
+Arquivo::Arquivo(){};
+
 void Arquivo::extrair_dados(){
     file.open("JogosTabuleiro.txt", std::fstream::in);
     
@@ -62,7 +64,7 @@ void Arquivo::salvar_dados(){
             return;
         }
 
-        for (const auto& jogador : lista_jogadores.get_jogadores()) {
+        for (const auto& jogador : lista_jogadores.Jogadores) {
             file << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome() << std::endl;;
             file << "VT:" << jogador->get_vitorias_totais() << " "
                 << "DT:" << jogador->get_derrotas_totais() << " "

@@ -34,6 +34,7 @@ class Jogador{
     void set_vitorias_totais();
     void set_derrotas_totais();
     void set_empates_totais();
+    
 
 //metodos para armazenar os dados do arquivo nos atributos de cada jogador
     void set_vitorias_totais(int n);
@@ -47,15 +48,15 @@ class Jogador{
 
     //se os metodos set forem chamados com bool isso indica que é apenas a atualização do placar na partida
     //no caso dos pontos, true= vitoria= +3pontos; false = empate = +1ponto
-    void set_pontos_totais(bool valor, std::string jogo); //passa o jogo pra saber onde add ponto
+    void set_pontos_totais(bool valor); //passa o jogo pra saber onde add ponto
     void set_Reversi(bool valor);
     void set_Lig4(bool valor);
     void set_JogoVelha(bool valor);
 
     //por outro lado, se forem chamados com inteiros, indica que apenas se esta lendo os dados do arquivo
-    void set_Reversi(int vitorias, int derrotas, int empates);
-    void set_Lig4(int vitorias, int derrotas, int empates);
-    void set_JogoVelha(int vitorias, int derrotas, int empates);
+    void set_Reversi(int vitorias, int derrotas, int empates, int pontos);
+    void set_Lig4(int vitorias, int derrotas, int empates, int pontos);
+    void set_JogoVelha(int vitorias, int derrotas, int empates, int pontos);
 
     std::string get_nome();
     std::string get_apelido();

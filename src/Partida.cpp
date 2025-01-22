@@ -7,14 +7,6 @@ void Partida::iniciar_partida(){
     escolher_jogo();
 }
 
-/*void Partida::identificar_jogador(std::list<Jogador*>::iterator& jogador){
-    std::cout << "Os dados principais desse jogador são: " << std::endl;
-    std::cout << "Nome: " << (*jogador)->get_nome() << std::endl;
-    std::cout << "Número total de vitórias: " << (*jogador)->get_vitorias_totais() << std::endl;
-    std::cout << "Número total de derrotas: " << (*jogador)->get_derrotas_totais() << std::endl;
-    std::cout << "Número total de empates: " << (*jogador)->get_empates_totais() << std::endl;
-}*/
-
 Partida::Partida(CadastroJogadores& buscador) : 
     acesso_lista(buscador){}
 

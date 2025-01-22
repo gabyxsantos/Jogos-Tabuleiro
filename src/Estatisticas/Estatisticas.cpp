@@ -77,29 +77,29 @@ void Estatisticas::listar_jogadores(){
     }
     
     for (const auto& jogador : acessar_jogadores.Jogadores) {
-            std::cout << "Jogador: " << jogador->get_apelido() << " " << jogador->get_nome() << std::endl;
+        std::cout << "--------------------------------------------------------------------" << std::endl;
+        std::cout << "JOGADOR: " << jogador->get_apelido() << std::setw(10) << jogador->get_nome() << std::endl;
 
-            std::cout << "Vitorias totais: " << jogador->get_vitorias_totais() << " "
-                      << "Derrotas totais: " << jogador->get_derrotas_totais() << " "
-                      << "Empates totais: " << jogador->get_empates_totais() << std::endl;
+        std::cout << "VT: " << jogador->get_vitorias_totais()
+                << std::setw(2) << " DT: " << jogador->get_derrotas_totais()
+                << std::setw(2) << " ET: " << jogador->get_empates_totais()
+                << std::setw(2) << " PT: " << jogador->get_pontos_totais() << std::endl << std::endl;
+        
+        std::cout << std::setw(10) << "REVERSI - " << std::setw(2) << " V: " << jogador->get_Reversi().vitorias
+            << std::setw(5) << " D: " << jogador->get_Reversi().derrotas
+            << std::setw(5) << " E: " << jogador->get_Reversi().empates
+            << std::setw(5) << " P: " << jogador->get_Reversi().pontos_por_jogo << std::endl;
 
-            std::cout << "Reversi V: " << jogador->get_Reversi().vitorias
-                << " D: " << jogador->get_Reversi().derrotas
-                << "E: " << jogador->get_Reversi().empates
-                << "P: " << jogador->get_Reversi().pontos_por_jogo << std::endl;
+        std::cout << std::setw(10) << "LIG4 - " << std::setw(2) << " V: " <<  jogador->get_Lig4().vitorias 
+            << std::setw(5) << " D: " << jogador->get_Lig4().derrotas 
+            << std::setw(5) << " E: " << jogador->get_Lig4().empates 
+            << std::setw(5) << " P: " << jogador->get_Lig4().pontos_por_jogo << std::endl;
 
-            std::cout << "Lig4 V:" << jogador->get_Lig4().vitorias
-                << " D:" << jogador->get_Lig4().derrotas 
-                << "E: " << jogador->get_Lig4().empates
-                << "P: " << jogador->get_Lig4().pontos_por_jogo << std::endl;
-
-            std::cout << "Velha V:" << jogador->get_JogoVelha().vitorias
-                << " D:" << jogador->get_JogoVelha().derrotas
-                << "E: " << jogador->get_JogoVelha().empates
-                << "P: " << jogador->get_JogoVelha().pontos_por_jogo << std::endl;
-
-            std::cout << std::endl; 
-        }
+        std::cout << std::setw(10) << "VELHA - " << std::setw(2) << " V: " << jogador->get_JogoVelha().vitorias
+            << std::setw(5) << " D: " << jogador->get_JogoVelha().derrotas
+            << std::setw(5) << " E: " << jogador->get_JogoVelha().empates
+            << std::setw(5) << " P: " << jogador->get_JogoVelha().pontos_por_jogo << std::endl;
+    }
 };
 
 

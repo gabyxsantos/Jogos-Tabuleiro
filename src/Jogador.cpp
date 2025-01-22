@@ -15,11 +15,9 @@
     void Jogador::set_nome() {
         std::string verificador;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpa o buffer de entrada
-
         do {
             std::cout << "Informe o nome do jogador: ";
             std::getline(std::cin, verificador);
-
             // Validações
             if (verificador.length() < 1 || verificador.length() > 10) {
                 std::cout << "Erro: O nome deve conter pelo menos 1 caractere e no máximo 10 caracteres." << std::endl;
@@ -37,12 +35,9 @@
 
     void Jogador::set_apelido() {
         std::string verificador;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpa o buffer de entrada
-
         do {
             std::cout << "Informe o apelido do jogador: ";
             std::getline(std::cin, verificador);
-
             // Validações
             if (verificador.length() < 1 || verificador.length() > 10) {
                 std::cout << "Erro: O apelido deve conter pelo menos 1 caractere e no máximo 10 caracteres." << std::endl;
@@ -99,7 +94,7 @@
         
     };
 
-    void Jogador::set_pontos_totais(bool valor, std::string jogo){
+    void Jogador::set_pontos_totais(bool valor){
         if (valor) {
             this->pontos_totais +=3;
         } 
@@ -149,22 +144,25 @@
     }
 
 
-    void Jogador::set_Reversi(int vitorias, int derrotas, int empates){
+    void Jogador::set_Reversi(int vitorias, int derrotas, int empates, int pontos){
         this->Reversi.vitorias = vitorias;
         this->Reversi.derrotas = derrotas;
         this->Reversi.empates = empates;
+        this->Reversi.pontos_por_jogo = pontos;
     }
 
-    void Jogador::set_Lig4(int vitorias, int derrotas, int empates){
+    void Jogador::set_Lig4(int vitorias, int derrotas, int empates, int pontos){
         this->Lig4.vitorias = vitorias;
         this->Lig4.derrotas = derrotas;
         this->Lig4.empates = empates;
+        this->Lig4.pontos_por_jogo = pontos;
     }
 
-    void Jogador::set_JogoVelha(int vitorias, int derrotas, int empates){
+    void Jogador::set_JogoVelha(int vitorias, int derrotas, int empates, int pontos){
         this->JogoVelha.vitorias = vitorias;
         this->JogoVelha.derrotas = derrotas;
         this->JogoVelha.empates = empates;
+        this->JogoVelha.pontos_por_jogo = pontos;
     }
 
 

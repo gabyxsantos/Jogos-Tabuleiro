@@ -16,6 +16,8 @@ class Arquivo{
         Arquivo();
         void extrair_dados();
         void salvar_dados();
+        void set_lista_jogadores(CadastroJogadores &acesso);
+        CadastroJogadores get_lista_jogadores();
         ~Arquivo(){};
 
 };

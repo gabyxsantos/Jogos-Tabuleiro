@@ -8,7 +8,7 @@
 class CadastroJogadores{
 
     public: 
-    std::list<Jogador*> Jogadores;
+    static std::list<Jogador*> Jogadores;
 
     CadastroJogadores();
 
@@ -24,7 +24,6 @@ class CadastroJogadores{
     //metodos para acessar os dados pelo main e salvar no arquivo
     bool lista_vazia() const;
     //const std::list<Jogador*>& get_jogadores() const;
-    void limpar_lista();
     
     ~CadastroJogadores();
 };

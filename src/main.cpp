@@ -1,4 +1,3 @@
-#include "Cadastro.hpp"
 #include "Jogos/Jogos.hpp"
 #include "Partida.hpp"
 #include "Jogador.hpp"
@@ -7,6 +6,7 @@
 #include "Tutorial.hpp"
 #include "FuncoesGlobais.hpp"
 #include "Estatisticas/Estatisticas.hpp"
+#include "Cadastro.hpp"
 
 Validacao validar_entrada_main;
 
@@ -15,7 +15,15 @@ int main() {
     std::cout << "É hora de jogar!" << std::endl;
 
     Arquivo arq;
-    arq.extrair_dados();   //para começar devemos chamar o arquivo e extrair_dados()
+    try{
+        arq.extrair_dados(); 
+    }
+    catch(std:: exception& e){
+        std::cerr << "Exceção capturada: " << e.what() << std::endl;
+        std::cout<<"O arquivo não foi encontrado, nem foi possível criá-lo."<<std::endl;
+    }
+      //para começar devemos chamar o arquivo e extrair_dados()
+    CadastroJogadores acesso =  arq.get_lista_jogadores();
     
     std::cout<<"Digite algum dos seguintes comandos:"<<std::endl
     <<"'CJ': Cadastrar um novo jogador."<<std::endl
@@ -26,10 +34,9 @@ int main() {
     <<"'VT': Visualizar um tutorial explicativo sobre o sistema e os jogos."<<std::endl
     <<"'FS': Finalizar o sistema."<<std::endl;
 
-    std::string entrada;
-    std::cin>>entrada;
-
-    CadastroJogadores acesso;
+    std::string entrada; 
+    std::cin >> entrada;
+    
     Estatisticas est(acesso);
     Partida jogos(acesso);
     std::string jogador_remover="";
@@ -44,8 +51,12 @@ int main() {
             jogador_cadastrar->set_nome();
             jogador_cadastrar->set_apelido();
             std::string apelido_cadastrar = jogador_cadastrar->get_apelido();
-            acesso.adicionar_jogador(jogador_cadastrar, apelido_cadastrar);
-            
+            while(acesso.adicionar_jogador(jogador_cadastrar, apelido_cadastrar)){
+                jogador_cadastrar->set_apelido();
+                apelido_cadastrar.clear();
+                apelido_cadastrar = jogador_cadastrar->get_apelido();
+            }
+            std::cout << jogador_cadastrar->get_nome() << " foi cadastrado com sucesso!" << std::endl;
         }
 
         else if(entrada=="RJ"){ //Remoção de um jogador
@@ -107,8 +118,6 @@ int main() {
             validar_entrada_main.imprimir_erro("Parece que você digitou uma opção inválida, tente novamente: ");
         }
         
-        jogador_remover.clear();
-        apelido_cadastrar.clear();
         std::cout<<"Digite outro comando: ";
         std::cin>>entrada; //Pedindo uma nova entrada para o usuário
 
@@ -116,7 +125,7 @@ int main() {
     
     std::cout<<"O sistema foi finalizado sem erros!"<<std::endl;
 
-    arq.salvar_dados();  // quando a partidar acabar devemos chamar salvar_dados()
-   
+    arq.set_lista_jogadores(acesso); // quando a partidar acabar devemos chamar salvar_dados()
+
     return 0;
 }

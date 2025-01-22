@@ -34,6 +34,9 @@ class Jogo_De_Tabuleiro {
     int get_colunas();
     std::vector<std::vector<std::string>> get_tabuleiro();
 
+    //Setters
+    void set_tabuleiro(std::vector<std::vector<std::string>> tabuleiro);
+
     // Metodos para encerramento da partida
     void finalizar_partida_vencedor(const std::string& apelido_vencedor);
     void finalizar_partida_empate();

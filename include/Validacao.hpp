@@ -8,6 +8,8 @@ class Validacao{
         
         //funcao para limpar o estado de erro e descartar a entrada invalida
         void limpar_entrada();
+    
+    public:
         bool validar_char(char& valor);
         bool validar_string(const std::string& valor);
 
@@ -44,8 +46,6 @@ class Validacao{
             return false; // Entrada inválida
         }
         
-    public:
-
         void imprimir_erro(const std::string& erro);
 
         template <typename T>

@@ -61,6 +61,11 @@ Validacao validar_entrada_jogos;
         return Jogo_De_Tabuleiro::tabuleiro;
     }
     
+    //Setters
+    void Jogo_De_Tabuleiro::set_tabuleiro(std::vector<std::vector<std::string>> tabuleiro){
+        this->tabuleiro = tabuleiro;
+    }
+
     // Funções para finalizar a partida
     void Jogo_De_Tabuleiro::finalizar_partida_vencedor(const std::string& nome_vencedor){
         imprimir_tabuleiro();

@@ -15,14 +15,8 @@ int main() {
     std::cout << "É hora de jogar!" << std::endl;
 
     Arquivo arq;
-    try{
-        arq.extrair_dados(); 
-    }
-    catch(std:: exception& e){
-        std::cerr << "Exceção capturada: " << e.what() << std::endl;
-        std::cout<<"O arquivo não foi encontrado, nem foi possível criá-lo."<<std::endl;
-    }
-      //para começar devemos chamar o arquivo e extrair_dados()
+    arq.extrair_dados(); //para começar devemos chamar o arquivo e extrair_dados()
+    
     CadastroJogadores acesso =  arq.get_lista_jogadores();
     
     std::cout<<"Digite algum dos seguintes comandos:"<<std::endl

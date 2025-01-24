@@ -27,9 +27,9 @@ Validacao validar_entrada_velha;
         }
     }
 
-
-    std::string Jogo_Da_Velha::escolher_peca(const std::string& peca_excluida, bool colorido) {
+    std::string Jogo_Da_Velha::escolher_peca(const std::string& peca_oponente, bool colorido) {
         int peca_escolhida;
+        std::string peca_excluida = remover_cor(peca_oponente);
         do {
             std::cout << "Escolha a sua peça: " << std::endl
                     << "<1> " << BOLD << PECA_X << RESET << std::endl
@@ -40,16 +40,16 @@ Validacao validar_entrada_velha;
                 validar_entrada_velha.imprimir_erro("Por favor, escolha uma peça válida.");
             } else {
                 // Peça válida escolhida
-                std::string peca = std::string(BOLD) + ((peca_escolhida == 1) ? PECA_X : PECA_O) + RESET;
+                std::string peca = (peca_escolhida == 1) ? PECA_X : PECA_O;
 
-                if (peca.compare(peca_excluida) == 0) {
+                if (peca == peca_excluida) {
                     validar_entrada_velha.imprimir_erro("Essa peça já foi escolhida pelo oponente. Escolha outra.");
                 } else {
                     // Escolher cor, se necessário
                     if (colorido) {
                         return escolher_cor(peca);
                     } else {
-                        return peca;
+                        return std::string(BOLD) + peca + RESET;
                     }
                 }
             }

@@ -28,6 +28,9 @@ class Jogo_De_Tabuleiro {
     void imprimir_tabuleiro();
     bool tabuleiro_cheio();
 
+    // Remover cor das peças
+    std::string remover_cor(const std::string& texto);
+
     // Getters
     std::string get_filler();
     int get_linhas();

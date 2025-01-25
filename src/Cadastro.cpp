@@ -47,16 +47,19 @@ Validacao validar_entradas_cadastro;
         }
     }
 
-    bool CadastroJogadores::remover_jogador(std::string& apelido){
-        auto it = buscar_jogador(apelido);
-        if (it== Jogadores.end()) {
-            return true;
+    bool CadastroJogadores::remover_jogador(std::string& apelido) {
+        if (lista_vazia()) {
+            throw std::runtime_error("Não há jogadores cadastrados no sistema.");
         }
-        else {
-            CadastroJogadores::Jogadores.erase(it);
-            return false;
+        auto jogador_encontrado = buscar_jogador(apelido);
+        if (jogador_encontrado == Jogadores.end()) {
+            throw std::invalid_argument("jogador não encontrado em nossa base de dados.");
+        } else {
+            Jogadores.erase(jogador_encontrado);
+            return true; // Jogador removido com sucesso
         }
     }
+
     
     bool CadastroJogadores::lista_vazia() const {
         return Jogadores.empty();

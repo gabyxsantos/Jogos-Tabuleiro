@@ -65,15 +65,20 @@ Validacao validar_entradas_jogador;
                 validar_entradas_jogador.imprimir_erro("O apelido não pode estar vazio.");
                 continue; // Recomeça o loop sem validar outras condições
             }
-
             // Validações
             if (verificador.length() < 1 || verificador.length() > 10) {
                 validar_entradas_jogador.imprimir_erro("O apelido deve conter pelo menos 1 caractere e no máximo 10 caracteres.");
-            } else if (verificador.find(' ') != std::string::npos) {
+            } 
+            else if (verificador.find(' ') != std::string::npos) {
                 validar_entradas_jogador.imprimir_erro("O apelido deve conter apenas uma palavra, sem espaços.");
-            } else if (!std::all_of(verificador.begin(), verificador.end(), isalpha)) {
+            } 
+            else if (!std::all_of(verificador.begin(), verificador.end(), isalpha)) {
                 validar_entradas_jogador.imprimir_erro("O apelido deve conter apenas letras (sem números ou caracteres especiais).");
-            } else {
+            } 
+            else if (verificador.compare("CP") == 0){
+                validar_entradas_jogador.imprimir_erro( "Por excessões do sistema, para garantir um funcionamento correto, o apelido não pode ser CP.");
+            }
+            else {
                 // Apelido válido
                 Jogador::apelido = verificador;
                 break;

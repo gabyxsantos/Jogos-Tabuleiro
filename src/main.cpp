@@ -19,7 +19,9 @@ int main() {
         arq.extrair_dados(); 
     }
     catch(std:: exception& e){
-        std::cerr << "Exceção capturada: " << e.what() << std::endl;
+        validar_entrada_main.imprimir_erro("Exceção capturada: ");
+        validar_entrada_main.imprimir_erro("Exceção capturada: ");
+        std::cerr << e.what() << std::endl;
         std::cout<<"O arquivo não foi encontrado, nem foi possível criá-lo."<<std::endl;
     }
       //para começar devemos chamar o arquivo e extrair_dados()
@@ -59,12 +61,41 @@ int main() {
             std::cout << jogador_cadastrar->get_nome() << " foi cadastrado com sucesso!" << std::endl;
         }
 
-        else if(entrada=="RJ"){ //Remoção de um jogador
-            
+        else if (entrada == "RJ") { // Remoção de um jogador
+            std::cout << "Caso queira cancelar o processo, insira CP." << std::endl
+                    << "Adicione o apelido do jogador que deseja remover: ";
             validar_entrada_main.pedir_usuario(jogador_remover);
-            acesso.remover_jogador(jogador_remover); 
 
+            do {
+                if (jogador_remover == "CP") {
+                    std::cout << "Processo de remoção cancelado." << std::endl;
+                    break; // Sai do loop se o jogador cancelar o processo
+                }
+
+                // Buscar jogador
+                auto jogador_encontrado = acesso.buscar_jogador(jogador_remover);
+
+                // Verificar se o jogador foi encontrado
+                if (jogador_encontrado != acesso.buscar_jogador("")) { 
+                    std::cout << jogador_remover << " encontrado com sucesso!" << std::endl;
+                    try {
+                        if (!acesso.remover_jogador(jogador_remover)) {
+                            std::cout << jogador_remover << " foi removido com sucesso!" << std::endl;
+                        } else {
+                            throw std::runtime_error("Erro ao tentar remover o jogador.");
+                        }
+                    } catch (const std::runtime_error& e) {
+                        validar_entrada_main.imprimir_erro("Exceção capturada: ");
+                        std::cerr << "Exceção capturada ao remover o jogador: " << e.what() << std::endl;
+                    }
+                    break;
+                } else {
+                    validar_entrada_main.imprimir_erro("Erro: Apelido não encontrado em nossa base de dados! Tente novamente.");
+                    validar_entrada_main.pedir_usuario(jogador_remover); // Solicita novo apelido
+                }
+            } while (true);
         }
+
 
         else if(entrada=="LJ"){ //Lista todos os jogadores
 
@@ -73,7 +104,8 @@ int main() {
                 est.listar_jogadores();
            }
            catch (const std::runtime_error& e) {
-                std::cerr << "Exceção capturada: " << e.what() << std::endl;
+                validar_entrada_main.imprimir_erro("Exceção capturada: ");
+                std::cerr << e.what() << std::endl;
                 
             }
 
@@ -86,12 +118,14 @@ int main() {
                 est.estatisticas_jogos(); // se o jogador quiser ver as estatisticas do jogo, basta chamar estatisticas_jogos()
             }
             catch(const std::out_of_range& e){
-                std::cerr << "Exceção capturada: " << e.what() << std::endl;
-                std::cout<<"Você pode escolher outra atividade ou 'VE' novamente, inserindo posteriormente um número dentro do range (1-5)"<<std::endl;
+                validar_entrada_main.imprimir_erro("Exceção capturada: ");
+                std::cerr << e.what() << std::endl;
+                std::cout<<"Você pode escolher outra atividade (M para ver menu) ou 'VE' novamente, inserindo posteriormente um número dentro do range (1-5)"<<std::endl;
 
             }
             catch (const std::runtime_error& e) {
-                std::cerr << "Exceção capturada: " << e.what() << std::endl;
+                validar_entrada_main.imprimir_erro("Exceção capturada: ");
+                std::cerr << e.what() << std::endl;
                 
             }
 
@@ -104,12 +138,27 @@ int main() {
                 jogos.iniciar_partida();
             } 
             catch (const std::runtime_error& e) {
-                std::cerr << "Exceção capturada: " << e.what() << std::endl;
+                validar_entrada_main.imprimir_erro("Exceção capturada: ");
+                std::cerr << e.what() << std::endl;
                 
             }
 
         }
 
+        else if (entrada == "M"){
+            timer(1000);
+            timer(1000);
+            std::cout<<"Menu de comandos:"<<std::endl
+                <<"'CJ': Cadastrar um novo jogador."<<std::endl
+                <<"'RJ': Remover um jogador existente."<<std::endl
+                <<"'LJ': Listar todos os jogadores cadastrados e seus dados."<<std::endl
+                <<"'EP': Executar uma partida entre jogadores."<<std::endl
+                <<"'VE': Visualizar estatísticas relacionadas aos jogos."<<std::endl
+                <<"'VT': Visualizar um tutorial explicativo sobre o sistema e os jogos."<<std::endl
+                <<"'FS': Finalizar o sistema."<<std::endl;
+            timer(1000);
+            timer(1000);
+        }
         /*else if(entrada=="T"){  }
         
         */
@@ -118,7 +167,9 @@ int main() {
             validar_entrada_main.imprimir_erro("Parece que você digitou uma opção inválida, tente novamente: ");
         }
         
-        std::cout<<"Digite outro comando: ";
+        std::cout<<"Processo finalizado. Agora você pode iniciar um novo processo no sistema!"<<
+        std::endl<< "Para imprimir o menu principal novamente, digite M."<<
+        std::endl<< "Digite seu novo comando: ";
         std::cin>>entrada; //Pedindo uma nova entrada para o usuário
 
     }

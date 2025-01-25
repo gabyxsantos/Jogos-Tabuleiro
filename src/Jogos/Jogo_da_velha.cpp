@@ -27,6 +27,11 @@ Validacao validar_entrada_velha;
         }
     }
 
+    Jogo_Da_Velha::~Jogo_Da_Velha() {
+        tabuleiro.clear();
+    }
+
+
     std::string Jogo_Da_Velha::escolher_peca(const std::string& peca_oponente, bool colorido) {
         int peca_escolhida;
         std::string peca_excluida = remover_cor(peca_oponente);

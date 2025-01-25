@@ -13,6 +13,20 @@ Validacao validar_entradas_jogador;
         this->apelido="";
     }
 
+    Jogador::~Jogador() {
+        // Limpar ou resetar os objetos de Placar
+        this->Reversi = Placar(); // Reseta o placar de Reversi para o estado padrão
+        this->Lig4 = Placar();    // Reseta o placar de Lig4 para o estado padrão
+        this->JogoVelha = Placar(); // Reseta o placar de Jogo da Velha para o estado padrão
+
+        // Zerando outras estatísticas
+        this->vitorias_totais = 0;
+        this->derrotas_totais = 0;
+        this->empates_totais = 0;
+        this->pontos_totais = 0;
+    }
+
+
     void Jogador::set_nome() {
         std::string verificador;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpa o buffer de entrada

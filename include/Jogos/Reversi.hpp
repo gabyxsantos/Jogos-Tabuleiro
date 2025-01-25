@@ -10,6 +10,7 @@ class Reversi : public Jogo_De_Tabuleiro{
 
     public:
     Reversi();
+    ~Reversi();
 
     void colocar_pecas_iniciais(std::string jogador1, std::string jogador2);
     bool verificar_jogada(int linha, int coluna) override;

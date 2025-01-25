@@ -7,6 +7,11 @@ Validacao validar_entrada_reversi;
         definir_tamanho_tabuleiro(8,8);
         inicializar_tabuleiro();
     }
+
+    Reversi::~Reversi() {
+        tabuleiro.clear();
+    }
+
     void Reversi::colocar_pecas_iniciais(std::string jogador1, std::string jogador2){
         this->tabuleiro[3][3] = jogador1;
         this->tabuleiro[4][4] = jogador1;

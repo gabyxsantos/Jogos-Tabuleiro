@@ -28,6 +28,10 @@ Validacao validar_entrada_lig4;
         inicializar_tabuleiro();
     }
 
+    Lig_4::~Lig_4() {
+        tabuleiro.clear(); // Libera o conteúdo do vetor
+    }
+
     std::string Lig_4::escolher_peca(const std::string& peca_excluida){
         std::cout << "Para esse jogo, por favor, não escolha a peça branca!" << std::endl;
         do{

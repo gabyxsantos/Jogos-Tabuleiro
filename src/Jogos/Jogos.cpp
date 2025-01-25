@@ -47,6 +47,13 @@ Validacao validar_entrada_jogos;
         return true;
     }
 
+    // Remove códigos ANSI da string
+    std::string Jogo_De_Tabuleiro::remover_cor(const std::string& texto){
+        // Expressão regular para capturar códigos de controle ANSI (que dão cor)
+        std::regex ansi_regex("\\x1B\\[[0-9;]*[A-Za-z]");
+        return std::regex_replace(texto, ansi_regex, "");
+    }
+
     // Getters
     std::string Jogo_De_Tabuleiro::get_filler(){
         return Jogo_De_Tabuleiro::filler;

@@ -13,6 +13,7 @@
 #include <fstream>
 #include <sstream>
 #include <cctype>
+#include <regex>
 
 #define RESET   "\033[0m"        // Resetar cor para padrão
 #define BOLD    "\033[1m"

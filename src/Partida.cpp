@@ -17,7 +17,7 @@ void Partida::atualizar_acesso(CadastroJogadores &buscador){
 void Partida::definir_jogadores(){
 
     if (acesso_lista.lista_vazia()) {
-        throw std::runtime_error("Erro: Não há jogadores cadastrados no sistema. Não foi possível prosseguir com a execução da partida.");
+        throw std::runtime_error("Não há jogadores cadastrados no sistema. Não foi possível prosseguir com a execução da partida.");
     
     }
 

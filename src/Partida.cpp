@@ -10,6 +10,12 @@ void Partida::iniciar_partida(){
 Partida::Partida(CadastroJogadores& buscador) : 
     acesso_lista(buscador){}
 
+Partida::~Partida() {
+    // Verificar e liberar qualquer recurso associado aos atributos
+    apelido_jogador_1.clear(); // Limpa o conteúdo da string
+    apelido_jogador_2.clear(); // Limpa o conteúdo da string
+}
+
 void Partida::atualizar_acesso(CadastroJogadores &buscador){
     this->acesso_lista=buscador;
 }

@@ -90,7 +90,7 @@ int main() {
                     }
                     break;
                 } else {
-                    validar_entrada_main.imprimir_erro("Erro: Apelido não encontrado em nossa base de dados! Tente novamente.");
+                    validar_entrada_main.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente.");
                     validar_entrada_main.pedir_usuario(jogador_remover); // Solicita novo apelido
                 }
             } while (true);
@@ -104,6 +104,20 @@ int main() {
                 est.listar_jogadores();
            }
            catch (const std::runtime_error& e) {
+                validar_entrada_main.imprimir_erro("Exceção capturada: ");
+                std::cerr << e.what() << std::endl;
+                
+            }
+
+        }
+
+        else if(entrada=="EP"){ 
+            jogos.atualizar_acesso(acesso);
+
+            try {
+                jogos.iniciar_partida();
+            } 
+            catch (const std::runtime_error& e) {
                 validar_entrada_main.imprimir_erro("Exceção capturada: ");
                 std::cerr << e.what() << std::endl;
                 
@@ -131,18 +145,32 @@ int main() {
 
         }
         
-        else if(entrada=="EP"){ 
-            jogos.atualizar_acesso(acesso);
+        else if (entrada == "VT"){
 
-            try {
-                jogos.iniciar_partida();
-            } 
-            catch (const std::runtime_error& e) {
-                validar_entrada_main.imprimir_erro("Exceção capturada: ");
-                std::cerr << e.what() << std::endl;
-                
+            Tutorial tutorial;
+
+            int entrada_tutorial; 
+            while(true){
+
+                timer(1000);
+                timer(1000);
+                std::cout << "Escolha uma opção: " << std::endl
+                        << "<1> Jogo da velha" << std::endl
+                        << "<2> Lig 4" << std::endl
+                        << "<3> Reversi" << std:: endl
+                        << "<4> Voltar ao menu principal" << std:: endl;
+                timer(1000);
+                std::cout << "Digite uma das opções: " ;
+
+                validar_entrada_main.pedir_usuario(entrada_tutorial);
+                if (entrada_tutorial < 1 || entrada_tutorial > 4){
+                    validar_entrada_main.imprimir_erro("Por favor, escolha uma opção válida.");
+                }else if (entrada_tutorial == 4) break;
+                else{
+                    tutorial.iniciar_tutorial(entrada_tutorial);
+                    
+                }
             }
-
         }
 
         else if (entrada == "M"){

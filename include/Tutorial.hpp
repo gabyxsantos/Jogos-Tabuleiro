@@ -8,7 +8,7 @@
 #include "Jogos/Reversi.hpp"
 
 class Tutorial{
-    public:
+    private:
         void imprimir_regras_lig4();
         void imprimir_regras_reversi();
         void imprimir_regras_jogo_da_velha(); 
@@ -16,6 +16,9 @@ class Tutorial{
         void iniciar_tutorial_lig4();
         void iniciar_tutorial_reversi();
         void iniciar_tutorial_jogo_da_velha();
+    public:
+        void mostrar_opcoes_tutorial();
+        void iniciar_tutorial(int opcao_jogo);
 };
 
 #endif

@@ -19,7 +19,9 @@ int main() {
         arq.extrair_dados(); 
     }
     catch(std:: exception& e){
-        std::cerr << "Exceção capturada: " << e.what() << std::endl;
+        validar_entrada_main.imprimir_erro("Exceção capturada: ");
+        validar_entrada_main.imprimir_erro("Exceção capturada: ");
+        std::cerr << e.what() << std::endl;
         std::cout<<"O arquivo não foi encontrado, nem foi possível criá-lo."<<std::endl;
     }
       //para começar devemos chamar o arquivo e extrair_dados()

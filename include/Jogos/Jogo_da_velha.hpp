@@ -13,6 +13,7 @@ class Jogo_Da_Velha : public Jogo_De_Tabuleiro{
     bool verificar_jogada(int linha, int coluna) override;
     void ler_jogada(const std::string& peca) override;
     bool testar_vitoria(const std::string& peca) override;
+    void auxiliar_tutorial(const std::string& peca, int linha, int coluna); // Função auxiliar para o tutorial de Jogo da Velha
 };
 
 #endif

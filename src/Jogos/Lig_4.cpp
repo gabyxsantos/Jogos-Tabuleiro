@@ -115,4 +115,12 @@ Validacao validar_entrada_lig4;
         }
         return false;
     }
+    
+    void Lig_4::auxiliar_tutorial(const std::string& peca, int coluna) { // Função auxiliar para simular Lig4
+        for (int i = linhas - 1; i >= 0; --i) {
+            tabuleiro[i][coluna - 1] = peca;
+            std::cout << "Peça " << peca << " foi inserida na coluna " << coluna << "." << std::endl;
+            return;
+        }
+    }
 

@@ -17,6 +17,7 @@ class Reversi : public Jogo_De_Tabuleiro{
     bool testar_vitoria(const std::string& peca) override;
     void mostrar_posicoes_possiveis(std::string jogador1, std::string jogador2);
     void converter_pecas(std::string& peca_nova, std::string& peca_convertida);
+    void auxiliar_tutorial(const std::string& peca, int linha, int coluna);  // Função auxiliar para o tutorial de Reversi
 };
 
 #endif

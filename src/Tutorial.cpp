@@ -1,4 +1,100 @@
 #include "Tutorial.hpp"
+
+
+Validacao validar_entrada_tutorial;
+
+void Tutorial::mostrar_opcoes_tutorial(){
+    timer(1000);
+    std::cout << "Escolha uma opção: " << std::endl
+                << "<1> Ler regras do jogo" << std::endl
+                << "<2> Simular jogo" << std::endl
+                << "<3> Apresentar tutorial completo" << std:: endl
+                << "<4> Voltar" << std:: endl;
+    timer(1000);
+    std::cout << "Digite uma das opções: ";
+}
+
+
+void Tutorial::iniciar_tutorial(int opcao_jogo){
+    
+    if (opcao_jogo == 1){ 
+        timer(1000);
+        timer(1000);
+        std::cout << "Iniciar Tutorial: Jogo da velha";
+
+        int entrada_tutorial_velha; 
+        while(true){
+            mostrar_opcoes_tutorial();
+            validar_entrada_tutorial.pedir_usuario(entrada_tutorial_velha);
+            if (entrada_tutorial_velha < 1 || entrada_tutorial_velha > 4){
+                validar_entrada_tutorial.imprimir_erro("Por favor, escolha uma opção válida.");
+            }else if (entrada_tutorial_velha == 4) break;
+            else{
+                switch(entrada_tutorial_velha){
+                    case 1: imprimir_regras_jogo_da_velha(); break;
+                    case 2: iniciar_tutorial_jogo_da_velha(); break;
+                    case 3: 
+                        std::cout << "Apresentando tutorial completo: regras e simulação"<< std::endl;
+                        imprimir_regras_jogo_da_velha(); iniciar_tutorial_jogo_da_velha(); break;
+                }
+                
+            }
+        }
+    }
+
+    else if (opcao_jogo == 2){ 
+        timer(1000);
+        timer(1000);
+        std::cout << "Iniciar Tutorial: Lig 4";
+
+        int entrada_tutorial_lig4; 
+        while(true){
+            mostrar_opcoes_tutorial();
+            validar_entrada_tutorial.pedir_usuario(entrada_tutorial_lig4);
+            if (entrada_tutorial_lig4 < 1 || entrada_tutorial_lig4 > 4){
+                validar_entrada_tutorial.imprimir_erro("Por favor, escolha uma opção válida.");
+            }else if (entrada_tutorial_lig4 == 4) break;
+            else{
+                switch(entrada_tutorial_lig4){
+                    case 1: imprimir_regras_lig4(); break;
+                    case 2: iniciar_tutorial_lig4(); break;
+                    case 3: 
+                        std::cout << "Apresentando tutorial completo: regras e simulação"<< std::endl;
+                        imprimir_regras_lig4(); iniciar_tutorial_lig4(); break;
+                }
+                
+            }
+        }
+    }
+
+    else if (opcao_jogo == 3){ 
+        timer(1000);
+        timer(1000);
+        std::cout << "Iniciar Tutorial: Reversi";
+
+        int entrada_tutorial_reversi; 
+        while(true){
+            mostrar_opcoes_tutorial();
+            validar_entrada_tutorial.pedir_usuario(entrada_tutorial_reversi);
+            if (entrada_tutorial_reversi < 1 || entrada_tutorial_reversi > 4){
+                validar_entrada_tutorial.imprimir_erro("Por favor, escolha uma opção válida.");
+            }else if (entrada_tutorial_reversi == 4) break;
+            else{
+                switch(entrada_tutorial_reversi){
+                    case 1: imprimir_regras_reversi(); break;
+                    case 2: iniciar_tutorial_reversi(); break;
+                    case 3: 
+                        std::cout << "Apresentando tutorial completo: regras e simulação"<< std::endl;
+                        imprimir_regras_reversi(); iniciar_tutorial_reversi(); break;
+                }
+                
+            }
+        }
+    }
+
+    else validar_entrada_tutorial.imprimir_erro("Erro interno! Parâmetro de função incorreto! Função: iniciar_tutorial.");
+}
+
 //TUTORIAL LIG4: 
 void Tutorial::imprimir_regras_lig4() {
     std::cout << "Regras do Lig4:"<< std::endl;
@@ -8,6 +104,7 @@ void Tutorial::imprimir_regras_lig4() {
     timer(5000);
 }
 void Tutorial::iniciar_tutorial_lig4() {
+    std::cout << "Iniciando a simulação do Lig 4..." << std::endl;
     std::cout << "Para que o tutorial funcione corretamente, por favor, insira o tamanho do tabuleiro (6 x 7) do Lig4." << std::endl;
     do {
         Lig_4 lig4;
@@ -71,7 +168,8 @@ void Tutorial::imprimir_regras_jogo_da_velha() {
     timer(5000);
 }
 void Tutorial::iniciar_tutorial_jogo_da_velha() {
-     std::cout << "Para que o tutorial funcione corretamente, por favor, insira o formato padrão para as peças." << std::endl;
+    std::cout << "Iniciando a simulação do Jogo da Velha..." << std::endl;
+    std::cout << "Para que o tutorial funcione corretamente, por favor, insira o formato padrão para as peças." << std::endl;
     do{
         Jogo_Da_Velha jogo_da_velha;
         if(jogo_da_velha.pecas_coloridas == true) {
@@ -132,7 +230,7 @@ void Tutorial::iniciar_tutorial_reversi() {
     reversi.definir_tamanho_tabuleiro(8, 8);
     reversi.inicializar_tabuleiro();
 
-    std::cout << "Iniciando o tutorial do Reversi..." << std::endl;
+    std::cout << "Iniciando a simulação do Reversi..." << std::endl;
     std::cout << "O tutorial a seguir é um exemplo de implementação do jogo Reversi. Todas as informações serão fornecidas"
               << " pela própria maquina e você não precisa adicionar nada. É um tutorial, então alguns dados serão arbitrariamente" 
               << " decididos pela máquina (o que não acontece no jogo real)." << std::endl;
@@ -174,7 +272,7 @@ void Tutorial::iniciar_tutorial_reversi() {
     reversi.auxiliar_tutorial(PECA_VERMELHA, 4, 5);
     reversi.imprimir_tabuleiro();
     timer(2000);
-    std::cout << std::endl << "Jogador 1 (🔴) ao dominar maior parte do tabuleiro." << std::endl;
+    std::cout << std::endl << "Jogador 1 (🔴) venceu ao dominar maior parte do tabuleiro." << std::endl;
     timer(5000);
     std::cout << std::endl << "Fim do tutorial. Pressione Enter para encerrar..." << std::endl;
     std::cin.ignore();

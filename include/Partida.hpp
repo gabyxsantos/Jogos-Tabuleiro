@@ -18,6 +18,7 @@ class Partida{
 
     public:
         Partida(CadastroJogadores& buscador);
+        ~Partida();
         void atualizar_acesso(CadastroJogadores &buscador);
         void iniciar_partida();
         void escolher_jogo();

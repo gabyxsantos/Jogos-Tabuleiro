@@ -256,6 +256,7 @@ void Partida::jogar_jogo_da_velha(){
     timer(1800);
     if (empate) {
         jogo2.finalizar_partida_empate();
+        jogo2.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "JogoVelha", acesso_lista);
         
     }
     else {
@@ -342,6 +343,7 @@ void Partida::jogar_lig_4(){
     timer(1800);
     if (empate) {
         jogo3.finalizar_partida_empate();
+        jogo3.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "Lig4", acesso_lista);
     }
     else {
         jogo3.finalizar_partida_vencedor(nome_atual);

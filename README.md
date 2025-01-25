@@ -46,13 +46,14 @@ O projeto foi estruturado de forma modular, com cada classe definida em seus pr�
 
 - Manter a integração entre diferentes módulos e classes foi uma grande dificuldade, principalmente no início do projeto.
 
-- Problemas de vazamento de memória. Segmentation fault
+- Enfrentamos diversos problemas relacionados a vazamentos de memória e "segmentation faults". Isso ocorreu principalmente devido ao uso intensivo de ponteiros em nosso código, combinados com acessos incorretos a áreas de memória não alocadas ou já liberadas. Esses problemas impactaram diretamente a estabilidade do programa e exigiram uma análise cuidadosa para encontrar e corrigir os erros.
+
+- Identificar métodos em que seriam necessários aplicar Testes de Software.
 
 
 #  Extras
 
 Como implementação extra, criamos uma classe chamada "Estatisticas", que organiza um ranking dos jogadores, tanto geral quanto por jogo, e outra chamada "Tutorial", que apresenta tutorias explicativos para os jogos Reversi, Jogo da Velha e Lig 4, simulando jogos e imprimindo regras. Além disso, demos ao usuário a opção de escolher cores e tipos de peças diferentes em cada jogo, melhorando a sua experiência.
-
 
 
 # 👩 Autores

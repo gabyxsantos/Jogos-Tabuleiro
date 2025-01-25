@@ -1,7 +1,8 @@
 #include "Cadastro.hpp"
  
-    std::list<Jogador*> CadastroJogadores::Jogadores;
-    
+std::list<Jogador*> CadastroJogadores::Jogadores;
+Validacao validar_entradas_cadastro;
+
     CadastroJogadores::CadastroJogadores(){};
 
     void CadastroJogadores::ordenar_jogadores_nome(){ // Ordenar por nome
@@ -25,7 +26,7 @@
     }
 
 
-    std::list<Jogador*>::iterator CadastroJogadores::buscar_jogador(std::string& apelido){
+    std::list<Jogador*>::iterator CadastroJogadores::buscar_jogador(const std::string& apelido){
         std::list<Jogador*>::iterator it; //definindo um iterator que vai caminhar pela list
         for ( it = Jogadores.begin(); it != Jogadores.end(); ++it) {
             if ((*it)->get_apelido() == apelido) {
@@ -41,7 +42,7 @@
             return false;
         }
         else {
-            std::cout << "Já existe um jogador cadastrado com esse apelido!" << std::endl;
+            validar_entradas_cadastro.imprimir_erro("Já existe um jogador cadastrado com esse apelido!");
             return true;
         }
     }

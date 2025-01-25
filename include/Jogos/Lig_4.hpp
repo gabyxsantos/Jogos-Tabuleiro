@@ -11,6 +11,8 @@ class Lig_4 : public Jogo_De_Tabuleiro {
     bool verificar_jogada(int linha, int coluna) override;
     void ler_jogada(const std::string& peca) override;
     bool testar_vitoria(const std::string& peca) override;
+    void auxiliar_tutorial(const std::string& peca, int coluna); // Função auxiliar para o tutorial de Lig4
+
 };
 
 #endif

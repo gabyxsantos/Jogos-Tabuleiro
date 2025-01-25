@@ -322,3 +322,16 @@ Validacao validar_entrada_reversi;
             }
         }
     }
+
+    void Reversi::auxiliar_tutorial(const std::string& peca, int linha, int coluna) {
+        tabuleiro[linha - 1][coluna - 1] = peca;
+        linha_ultima_jogada = linha - 1;
+        coluna_ultima_jogada = coluna - 1;
+
+        std::string peca_convertida = (peca == PECA_VERMELHA) ? PECA_AMARELA : PECA_VERMELHA;
+        std::string peca_nova = peca;
+
+        converter_pecas(peca_nova, peca_convertida);
+
+        std::cout << "Peça " << peca << " foi inserida na posição (" << linha << ", " << coluna << ")." << std::endl;
+    }

@@ -149,3 +149,8 @@ Validacao validar_entrada_velha;
 
         return false;
     }
+
+    void Jogo_Da_Velha::auxiliar_tutorial(const std::string& peca, int linha, int coluna) {
+        tabuleiro[linha - 1][coluna - 1] = peca;
+        std::cout << "Peça " << peca << " foi inserida na posição (" << linha << ", " << coluna << ")." << std::endl;
+    }

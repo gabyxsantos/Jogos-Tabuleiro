@@ -1,5 +1,6 @@
 #include "Jogador.hpp"
 
+Validacao validar_entradas_jogador;
 //Funções da classe Jogador:
 
     Jogador::Jogador(std::string nome, std::string apelido){
@@ -18,19 +19,26 @@
         do {
             std::cout << "Informe o nome do jogador: ";
             std::getline(std::cin, verificador);
+
+            // Se a entrada estiver vazia, limpa o estado do buffer
+            if (verificador.empty()) {
+                validar_entradas_jogador.imprimir_erro("O nome não pode estar vazio.");
+                continue; // Recomeça o loop sem validar outras condições
+            }
             // Validações
             if (verificador.length() < 1 || verificador.length() > 10) {
-                std::cout << "Erro: O nome deve conter pelo menos 1 caractere e no máximo 10 caracteres." << std::endl;
+                validar_entradas_jogador.imprimir_erro("O nome deve conter pelo menos 1 caractere e no máximo 10 caracteres.");
             } else if (verificador.find(' ') != std::string::npos) {
-                std::cout << "Erro: O nome deve conter apenas uma palavra, sem espaços." << std::endl;
+                validar_entradas_jogador.imprimir_erro("O nome deve conter apenas uma palavra, sem espaços.");
             } else if (!std::all_of(verificador.begin(), verificador.end(), isalpha)) {
-                std::cout << "Erro: O nome deve conter apenas letras (sem números ou caracteres especiais)." << std::endl;
+                validar_entradas_jogador.imprimir_erro("O nome deve conter apenas letras (sem números ou caracteres especiais).");
             } else {
                 // Nome válido
                 Jogador::nome = verificador;
+                break;
             }
 
-        } while (Jogador::nome != verificador);
+        } while (true);
     }
 
     void Jogador::set_apelido() {
@@ -38,19 +46,26 @@
         do {
             std::cout << "Informe o apelido do jogador: ";
             std::getline(std::cin, verificador);
+            // Se a entrada estiver vazia, limpa o estado do buffer
+            if (verificador.empty()) {
+                validar_entradas_jogador.imprimir_erro("O apelido não pode estar vazio.");
+                continue; // Recomeça o loop sem validar outras condições
+            }
+
             // Validações
             if (verificador.length() < 1 || verificador.length() > 10) {
-                std::cout << "Erro: O apelido deve conter pelo menos 1 caractere e no máximo 10 caracteres." << std::endl;
+                validar_entradas_jogador.imprimir_erro("O apelido deve conter pelo menos 1 caractere e no máximo 10 caracteres.");
             } else if (verificador.find(' ') != std::string::npos) {
-                std::cout << "Erro: O apelido deve conter apenas uma palavra, sem espaços." << std::endl;
+                validar_entradas_jogador.imprimir_erro("O apelido deve conter apenas uma palavra, sem espaços.");
             } else if (!std::all_of(verificador.begin(), verificador.end(), isalpha)) {
-                std::cout << "Erro: O apelido deve conter apenas letras (sem números ou caracteres especiais)." << std::endl;
+                validar_entradas_jogador.imprimir_erro("O apelido deve conter apenas letras (sem números ou caracteres especiais).");
             } else {
                 // Apelido válido
                 Jogador::apelido = verificador;
+                break;
             }
 
-        } while (Jogador::apelido != verificador);
+        } while (true);
     }
 
 

@@ -15,7 +15,7 @@ class CadastroJogadores{
     void ordenar_jogadores_nome();
 
     void ordenar_jogadores_apelido(); 
-    std::list<Jogador*>::iterator buscar_jogador(std::string& apelido);
+    std::list<Jogador*>::iterator buscar_jogador(const std::string& apelido);
     bool adicionar_jogador(Jogador* jogador_novo, std::string& apelido);
     bool remover_jogador(std::string& apelido);
 

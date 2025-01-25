@@ -2,6 +2,8 @@
 
 Arquivo::Arquivo(){};
 
+Validacao validar_entradas_arquivo;
+
 void Arquivo::extrair_dados(){
     file.open("DadosJogos/JogosTabuleiro.txt", std::fstream::in);
     
@@ -59,7 +61,7 @@ void Arquivo::salvar_dados(){
     file.open("DadosJogos/JogosTabuleiro.txt", std::fstream::out ); 
 
         if (!file.is_open()) {
-            std::cout << "Erro ao abrir o arquivo para salvar os jogadores!" << std::endl;
+            validar_entradas_arquivo.imprimir_erro("Erro ao abrir o arquivo para salvar os jogadores!");
             return;
         }
 

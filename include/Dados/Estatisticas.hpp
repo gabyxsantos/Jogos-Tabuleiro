@@ -2,7 +2,7 @@
 #define ESTATISTICAS_H
 
 #include "FuncoesGlobais.hpp"
-#include "Cadastro.hpp"
+#include "Cadastro/Cadastro.hpp"
 #include "Validacao.hpp"
 
 class Estatisticas{

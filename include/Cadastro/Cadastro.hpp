@@ -3,7 +3,7 @@
 
 #include "FuncoesGlobais.hpp"
 #include "Validacao.hpp"
-#include "Jogador.hpp"
+#include "Partida/Jogador.hpp"
 
 class CadastroJogadores{
 

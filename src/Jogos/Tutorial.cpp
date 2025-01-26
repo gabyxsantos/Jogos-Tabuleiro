@@ -1,4 +1,4 @@
-#include "Tutorial.hpp"
+#include "Jogos/Tutorial.hpp"
 
 
 Validacao validar_entrada_tutorial;

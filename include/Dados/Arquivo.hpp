@@ -3,7 +3,7 @@
 
 #include "FuncoesGlobais.hpp"
 #include "Validacao.hpp"
-#include "Cadastro.hpp"
+#include "Cadastro/Cadastro.hpp"
 
 
 class Arquivo{

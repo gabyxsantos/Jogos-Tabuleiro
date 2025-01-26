@@ -3,7 +3,7 @@
 
 #include "FuncoesGlobais.hpp"
 #include "Validacao.hpp"
-#include "Cadastro.hpp"
+#include "Cadastro/Cadastro.hpp"
 #include "Jogos/Jogos.hpp"
 #include "Jogos/Lig_4.hpp"
 #include "Jogos/Jogo_da_velha.hpp"

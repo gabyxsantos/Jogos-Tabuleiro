@@ -1,12 +1,12 @@
+#include "Cadastro/Cadastro.hpp"
+#include "Dados/Arquivo.hpp"
+#include "Dados/Estatisticas.hpp"
 #include "Jogos/Jogos.hpp"
-#include "Partida.hpp"
-#include "Jogador.hpp"
-#include "Arquivo.hpp"
+#include "Jogos/Tutorial.hpp"
+#include "Partida/Partida.hpp"
+#include "Partida/Jogador.hpp"
 #include "Validacao.hpp"
-#include "Tutorial.hpp"
 #include "FuncoesGlobais.hpp"
-#include "Estatisticas/Estatisticas.hpp"
-#include "Cadastro.hpp"
 
 Validacao validar_entrada_main;
 

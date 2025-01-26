@@ -5,64 +5,59 @@ Estatisticas::Estatisticas(CadastroJogadores& buscador)
     atualizar_ranking(); //garante que ao inicializar o vector estará limpo e atualizado
 }
 
-void Estatisticas::atualizar_acesso(CadastroJogadores &buscador){
-    this->acessar_jogadores=buscador;
-}
-
 void Estatisticas::atualizar_ranking() {
     std::list<Jogador*> lista_auxiliar = acessar_jogadores.Jogadores; 
-    
     // Limpar o vetor antes de preenchê-lo novamente
     ranking_jogadores.clear();
     ranking_jogadores.assign(std::make_move_iterator(std::begin(lista_auxiliar)), 
                              std::make_move_iterator(std::end(lista_auxiliar)));
 }
 
-void Estatisticas::estatisticas_jogos(){ //main chama apenas essa função e o jogador opta pelo que preferir:
+void Estatisticas::estatisticas_jogos(){ 
+    if(acessar_jogadores.lista_vazia()){
+        throw std::runtime_error("Erro: Não há jogadores cadastrados no sistema.");
+    }
     Validacao validar_entrada_ranking;
     
     std::cout << "Querido jogador, você optou por ver as estatisticas do jogo." << std::endl 
               << "Visando atender melhor seu pedido, por favor selecione mais especificamente o que gostaria de ver"  
               << "(tecle o número correspondente a sua escolha)" << std::endl;
 
-    std::cout << "(1) Para listar todos os jogadores e seus dados" << std::endl 
-              << "(2) Para ver o ranking geral (todos os jogos)." << std::endl
-              << "(3) Para acessar o ranking do jogo Reversi." << std::endl
-              << "(4) Para acessar o ranking do jogo Lig4." <<  std::endl
-              << "(5) Para acessar o ranking do Jogo da Velha." << std::endl;
+    std::cout << "(1) Para ver o ranking geral (todos os jogos)." << std::endl
+              << "(2) Para acessar o ranking do jogo Reversi." << std::endl
+              << "(3) Para acessar o ranking do jogo Lig4." <<  std::endl
+              << "(4) Para acessar o ranking do Jogo da Velha." << std::endl;
+              
 
     int escolha;
     validar_entrada_ranking.pedir_usuario(escolha);
 
-    if (escolha>5 || escolha<1){
-        throw std::out_of_range("Erro: A escolha feita foi fora do intervalo permitido (1 a 5).");
+    if (escolha>4 || escolha<1){
+        throw std::out_of_range("Erro: A escolha feita foi fora do intervalo permitido (1 a 4).");
     }
 
     while (true) {
         switch (escolha) {
             case 1:
-                listar_jogadores();
-                break;
-
-            case 2:
+                std::cout << std::endl;
                 ranking_geral();
                 break;
 
-            case 3:
+            case 2:
+                std::cout << std::endl;
                 ranking_reversi();
                 break;
 
-            case 4:
+            case 3:
+                std::cout << std::endl;
                 ranking_lig4();
                 break;
-            
-            case 5:
+
+            case 4:
+                std::cout << std::endl;
                 ranking_jogovelha();
                 break;
-
-            default:
-                validar_entrada_ranking.imprimir_erro("Parece que você digitou uma opção inválida, tente novamente:");
-                continue; 
+            
         }
         break; // Sai do while quando o switch processa um caso válido
     }
@@ -126,7 +121,7 @@ void Estatisticas::ranking_geral(){
             }
         }
     });
-
+    std::cout << BOLD << "Ranking Geral: " << RESET << std::endl;
     imprimir_ranking(ranking_jogadores);
     
 }
@@ -155,6 +150,8 @@ void Estatisticas::ranking_reversi(){
             }
         }
     });
+
+    std::cout << BOLD << "Ranking do Reversi: " << RESET << std::endl;
    imprimir_ranking(ranking_jogadores);
 };
 
@@ -183,6 +180,7 @@ void Estatisticas::ranking_lig4(){
         }
     });
 
+    std::cout << BOLD << "Ranking do Lig4: " << RESET << std::endl;
     imprimir_ranking(ranking_jogadores);
 };
 
@@ -211,6 +209,7 @@ void Estatisticas::ranking_jogovelha(){
         }
     });
 
+    std::cout << BOLD << "Ranking do Jogo da Velha: " << RESET << std::endl;
     imprimir_ranking(ranking_jogadores);
 };
 
@@ -220,12 +219,10 @@ void Estatisticas::imprimir_ranking(std::vector<Jogador*> vetor_jogadores){
         std::cout << posicao << ". " << jogador->get_apelido() << std::endl;
         posicao ++;
     }
+    std::cout << std::endl;
 };
 
 Estatisticas::~Estatisticas() {
-    for (auto jogador : ranking_jogadores) {
-        delete jogador; 
-    }
     ranking_jogadores.clear(); 
 }
 

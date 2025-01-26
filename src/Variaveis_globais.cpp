@@ -1,4 +1,4 @@
-#include "FuncoesGlobais.hpp"
+#include "Variaveis_globais.hpp"
 
 
 // Funções para saídas amigáveis

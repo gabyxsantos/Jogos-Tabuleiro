@@ -6,7 +6,7 @@
 #include "Partida/Partida.hpp"
 #include "Partida/Jogador.hpp"
 #include "Validacao.hpp"
-#include "FuncoesGlobais.hpp"
+#include "Variaveis_globais.hpp"
 
 Validacao validar_entrada_main;
 

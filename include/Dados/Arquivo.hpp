@@ -1,10 +1,9 @@
 #ifndef ARQUIVO_H
 #define ARQUIVO_H
 
-#include "FuncoesGlobais.hpp"
-#include "Validacao.hpp"
 #include "Cadastro/Cadastro.hpp"
-
+#include "Variaveis_globais.hpp"
+#include "Validacao.hpp"
 
 class Arquivo{
     private:

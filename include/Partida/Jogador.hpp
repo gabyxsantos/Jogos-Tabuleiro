@@ -1,7 +1,7 @@
 #ifndef JOGADOR_H
 #define JOGADOR_H
 
-#include "FuncoesGlobais.hpp"
+#include "Variaveis_globais.hpp"
 #include "Validacao.hpp"
 
 class Placar{

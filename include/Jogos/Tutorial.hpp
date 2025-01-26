@@ -1,11 +1,11 @@
 #ifndef TUTORIAL_H
 #define TUTORIAL_H
 
-#include "FuncoesGlobais.hpp"
 #include "Jogos/Jogos.hpp"
 #include "Jogos/Lig_4.hpp"
 #include "Jogos/Jogo_da_velha.hpp"
 #include "Jogos/Reversi.hpp"
+#include "Variaveis_globais.hpp"
 
 class Tutorial{
     private:

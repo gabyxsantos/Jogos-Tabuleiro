@@ -1,5 +1,5 @@
-#ifndef FUNCOESGLOBAIS_HPP
-#define FUNCOESGLOBAIS_HPP
+#ifndef VARIAVEISGLOBAIS_HPP
+#define VARIAVEISGLOBAIS_HPP
 
 #include <iostream>
 #include <string>

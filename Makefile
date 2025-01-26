@@ -12,7 +12,7 @@ BIN_DIR = bin
 
 
 # Arquivos de saída
-OBJECTS = $(OBJ_DIR)/FuncoesGlobais.o \
+OBJECTS = $(OBJ_DIR)/Variaveis_globais.o \
 		  $(OBJ_DIR)/Validacao.o \
 		  $(OBJ_DIR)/Jogador.o \
 		  $(OBJ_DIR)/Cadastro.o \
@@ -26,7 +26,7 @@ OBJECTS = $(OBJ_DIR)/FuncoesGlobais.o \
 		  $(OBJ_DIR)/Tutorial.o \
           $(OBJ_DIR)/main.o
 
-INCLUDES = $(INCLUDE_DIR)/FuncoesGlobais.hpp \
+INCLUDES = $(INCLUDE_DIR)/Variaveis_globais.hpp \
 		   $(INCLUDE_DIR)/Validacao.hpp \
 		   $(INCLUDE_DIR)/$(DIR_PARTIDA)/Jogador.hpp \
 		   $(INCLUDE_DIR)/$(DIR_CADASTRO)/Cadastro.hpp \
@@ -48,16 +48,16 @@ create_dirs:
 	mkdir -p $(OBJ_DIR) $(BIN_DIR)
 
 # Regras de compilação
-$(OBJ_DIR)/Cadastro.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_PARTIDA)/Jogador.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_PARTIDA)/Jogador.hpp $(INCLUDE_DIR)/$(DIR_CADASTRO)/Cadastro.hpp $(SRC_DIR)/$(DIR_CADASTRO)/Cadastro.cpp
+$(OBJ_DIR)/Cadastro.o: $(INCLUDE_DIR)/Variaveis_globais.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_PARTIDA)/Jogador.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_PARTIDA)/Jogador.hpp $(INCLUDE_DIR)/$(DIR_CADASTRO)/Cadastro.hpp $(SRC_DIR)/$(DIR_CADASTRO)/Cadastro.cpp
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_CADASTRO)/Cadastro.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Cadastro.o
 
-$(OBJ_DIR)/Arquivo.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_CADASTRO)/Cadastro.hpp $(INCLUDE_DIR)/$(DIR_DADOS)/Arquivo.hpp $(SRC_DIR)/$(DIR_DADOS)/Arquivo.cpp 
+$(OBJ_DIR)/Arquivo.o: $(INCLUDE_DIR)/Variaveis_globais.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_CADASTRO)/Cadastro.hpp $(INCLUDE_DIR)/$(DIR_DADOS)/Arquivo.hpp $(SRC_DIR)/$(DIR_DADOS)/Arquivo.cpp 
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_DADOS)/Arquivo.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Arquivo.o
 
-$(OBJ_DIR)/Estatisticas.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(INCLUDE_DIR)/$(DIR_DADOS)/Estatisticas.hpp $(SRC_DIR)/$(DIR_DADOS)/Estatisticas.cpp
+$(OBJ_DIR)/Estatisticas.o: $(INCLUDE_DIR)/Variaveis_globais.hpp $(INCLUDE_DIR)/$(DIR_DADOS)/Estatisticas.hpp $(SRC_DIR)/$(DIR_DADOS)/Estatisticas.cpp
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_DADOS)/Estatisticas.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Estatisticas.o
 
-$(OBJ_DIR)/Jogos.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_CADASTRO)/Cadastro.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(SRC_DIR)/$(DIR_JOGOS)/Jogos.cpp
+$(OBJ_DIR)/Jogos.o: $(INCLUDE_DIR)/Variaveis_globais.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_CADASTRO)/Cadastro.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(SRC_DIR)/$(DIR_JOGOS)/Jogos.cpp
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_JOGOS)/Jogos.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Jogos.o
 
 $(OBJ_DIR)/Lig_4.o: $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Lig_4.hpp $(SRC_DIR)/$(DIR_JOGOS)/Lig_4.cpp
@@ -69,19 +69,19 @@ $(OBJ_DIR)/Reversi.o: $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(INCLUDE_DIR)/$(DIR
 $(OBJ_DIR)/Jogo_da_velha.o: $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogo_da_velha.hpp $(SRC_DIR)/$(DIR_JOGOS)/Jogo_da_velha.cpp
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_JOGOS)/Jogo_da_velha.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Jogo_da_velha.o
 
-$(OBJ_DIR)/Tutorial.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Lig_4.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Reversi.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogo_da_velha.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Tutorial.hpp $(SRC_DIR)/$(DIR_JOGOS)/Tutorial.cpp 
+$(OBJ_DIR)/Tutorial.o: $(INCLUDE_DIR)/Variaveis_globais.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Lig_4.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Reversi.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogo_da_velha.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Tutorial.hpp $(SRC_DIR)/$(DIR_JOGOS)/Tutorial.cpp 
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_JOGOS)/Tutorial.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Tutorial.o
 
-$(OBJ_DIR)/Jogador.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_PARTIDA)/Jogador.hpp $(SRC_DIR)/$(DIR_PARTIDA)/Jogador.cpp
+$(OBJ_DIR)/Jogador.o: $(INCLUDE_DIR)/Variaveis_globais.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_PARTIDA)/Jogador.hpp $(SRC_DIR)/$(DIR_PARTIDA)/Jogador.cpp
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_PARTIDA)/Jogador.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Jogador.o
 
-$(OBJ_DIR)/Partida.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_CADASTRO)/Cadastro.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Lig_4.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Reversi.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogo_da_velha.hpp $(INCLUDE_DIR)/$(DIR_PARTIDA)/Partida.hpp $(SRC_DIR)/$(DIR_PARTIDA)/Partida.cpp
+$(OBJ_DIR)/Partida.o: $(INCLUDE_DIR)/Variaveis_globais.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_CADASTRO)/Cadastro.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Lig_4.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Reversi.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogo_da_velha.hpp $(INCLUDE_DIR)/$(DIR_PARTIDA)/Partida.hpp $(SRC_DIR)/$(DIR_PARTIDA)/Partida.cpp
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_PARTIDA)/Partida.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Partida.o
 
-$(OBJ_DIR)/FuncoesGlobais.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(SRC_DIR)/FuncoesGlobais.cpp 
-	$(CC) $(CFLAGS) -c $(SRC_DIR)/FuncoesGlobais.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/FuncoesGlobais.o
+$(OBJ_DIR)/Variaveis_globais.o: $(INCLUDE_DIR)/Variaveis_globais.hpp $(SRC_DIR)/Variaveis_globais.cpp 
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/Variaveis_globais.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Variaveis_globais.o
 
-$(OBJ_DIR)/Validacao.o: $(INCLUDE_DIR)/FuncoesGlobais.hpp $(INCLUDE_DIR)/Validacao.hpp $(SRC_DIR)/Validacao.cpp 
+$(OBJ_DIR)/Validacao.o: $(INCLUDE_DIR)/Variaveis_globais.hpp $(INCLUDE_DIR)/Validacao.hpp $(SRC_DIR)/Validacao.cpp 
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/Validacao.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Validacao.o
 
 $(OBJ_DIR)/main.o: $(INCLUDES) $(SRC_DIR)/main.cpp

@@ -1,8 +1,8 @@
 #ifndef ESTATISTICAS_H
 #define ESTATISTICAS_H
 
-#include "FuncoesGlobais.hpp"
 #include "Cadastro/Cadastro.hpp"
+#include "Variaveis_globais.hpp"
 #include "Validacao.hpp"
 
 class Estatisticas{

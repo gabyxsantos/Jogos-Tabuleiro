@@ -90,13 +90,19 @@ void Partida::definir_jogadores(){
 void Partida::escolher_jogo(){
 
     std::cout<< "Qual jogo vocês gostariam de jogar?" << std::endl << "Digite a letra correspondente a sua escolha:" <<std::endl;
-    std::cout << "(R) Reversi" << std::endl;
+    std::cout << "(B) Batalha Naval" << std::endl;
     std::cout << "(L) Lig4" << std::endl;
+    std::cout << "(R) Reversi" << std::endl;
     std::cout << "(V) Jogo da Velha" << std::endl;
     
     while (true) {
         validar_entrada_partida.pedir_usuario(nome_do_jogo);
         switch (nome_do_jogo) {
+            case 'B':
+            case 'b': 
+                jogar_batalha_naval();
+                break;
+
             case 'R':
             case 'r': 
                 jogar_reversi();
@@ -121,7 +127,79 @@ void Partida::escolher_jogo(){
 
 
 }
+/// @brief /////////////////////////////////////////////////////////////////////////////////
+void Partida::jogar_batalha_naval(){
+    Batalha_Naval jogo1;
+    CadastroJogadores vencedor;
+    CadastroJogadores perdedor;
 
+    timer(900);
+    std::cout << "Vamos jogar Batalha Naval!" << std::endl;
+    timer(900);
+
+    std::string jogador1, jogador2;
+    std::string peca1, peca2;
+
+    jogo1.definir_filler(AGUA);
+    jogo1.inicializar_tabuleiro();
+
+    std::cout << apelido_jogador_1 << ":" << std::endl;
+    jogo1.posicionar_navios(); // O primeiro jogador posiciona seus navios
+    std::cout << "11" << std::endl;
+    timer(900);
+    std::cout << "222" << std::endl;
+    jogo1.imprimir_tabuleiro();
+    std::cout << "3333" << std::endl;
+    timer(900);
+/*
+    std::cout << apelido_jogador_2 << ":" << std::endl;
+    peca2 = jogo1.definir_cor(peca1); // O segundo jogador escolhe a cor diferente do primeiro
+    timer(1800);
+    std::cout << "Jogador: " << apelido_jogador_2 << std::endl << "Peça: " << peca2 << std::endl;
+    timer(1800);
+
+    // Inicializar o tabuleiro
+    jogo1.inicializar_tabuleiro();
+    jogo1.colocar_pecas_iniciais(peca1, peca2);
+
+    int i=0;
+    while(i < 30){
+
+        timer(1800);
+        std::cout << apelido_jogador_1 << " (" << peca1 << "), é sua vez!" << std::endl;
+        jogo1.mostrar_posicoes_possiveis(peca1, peca2);
+        jogo1.imprimir_tabuleiro();
+        jogo1.ler_jogada(peca1);
+        jogo1.converter_pecas(peca1, peca2);
+
+        timer(1800);
+        std::cout << apelido_jogador_2 << " (" << peca2 << "), é sua vez!" << std::endl;
+        jogo1.mostrar_posicoes_possiveis(peca2, peca1);
+        jogo1.imprimir_tabuleiro();
+        jogo1.ler_jogada(peca2);
+        jogo1.converter_pecas(peca2, peca1);
+
+        i++;
+    }
+    
+    timer(1800);
+    if(jogo1.testar_vitoria(peca1)){
+        jogo1.imprimir_tabuleiro();
+        timer(1800);
+        jogo1.finalizar_partida_vencedor(apelido_jogador_1);
+        jogo1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi", acesso_lista);
+    
+    }
+
+    if(jogo1.testar_vitoria(peca2)){
+        jogo1.imprimir_tabuleiro();
+        timer(1800);
+        jogo1.finalizar_partida_vencedor(apelido_jogador_2);
+        jogo1.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Reversi", acesso_lista);
+    }
+*/
+}
+/// @brief ////////////////////////////////////////////////////////////////////////////////
 void Partida::jogar_reversi(){
     Reversi jogo1;
     CadastroJogadores vencedor;

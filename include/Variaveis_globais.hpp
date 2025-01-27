@@ -35,7 +35,12 @@
 #define PECA_BRANCO "⚪"
 #define PECA_X " X"
 #define PECA_O " O"
-#define VOID "  "    
+#define PORTA_AVIOES "✈️"
+#define ENCOURACADO "🛡️"     
+#define CONTRATORPEDEIRO "🛶"
+#define VOID "  " 
+#define AGUA " ~ " 
+
 
 // Funções para saídas amigáveis
 void timer(int tempo);

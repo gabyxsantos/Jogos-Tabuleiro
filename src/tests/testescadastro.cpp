@@ -1,5 +1,5 @@
 #include "doctest.h"
-#include "Cadastro.hpp"
+#include "Cadastro/Cadastro.hpp"
 
 //Testes para a Classe CadastroJogadores
 

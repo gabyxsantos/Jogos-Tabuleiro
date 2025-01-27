@@ -1,8 +1,8 @@
 #include "doctest.h"
-#include "Estatisticas/Estatisticas.hpp"
+#include "Dados/Estatisticas.hpp"
 #include "Validacao.hpp"
-#include "Cadastro.hpp"
-#include "Jogador.hpp"
+#include "Cadastro/Cadastro.hpp"
+#include "Partida/Jogador.hpp"
 
 //Testes para a Classe Estatisticas
 

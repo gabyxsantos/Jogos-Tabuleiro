@@ -1,4 +1,4 @@
-#include "Jogador.hpp"
+#include "Partida/Jogador.hpp"
 
 Validacao validar_entradas_jogador;
 //Funções da classe Jogador:

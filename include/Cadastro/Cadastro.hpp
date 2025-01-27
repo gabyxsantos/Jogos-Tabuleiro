@@ -1,9 +1,9 @@
 #ifndef CADASTRO_H
 #define CADASTRO_H
 
-#include "FuncoesGlobais.hpp"
+#include "Partida/Jogador.hpp"
+#include "Variaveis_globais.hpp"
 #include "Validacao.hpp"
-#include "Jogador.hpp"
 
 class CadastroJogadores{
 

@@ -1,4 +1,4 @@
-#include "Estatisticas/Estatisticas.hpp"
+#include "Dados/Estatisticas.hpp"
 
 Estatisticas::Estatisticas(CadastroJogadores& buscador) 
     : acessar_jogadores(buscador) {

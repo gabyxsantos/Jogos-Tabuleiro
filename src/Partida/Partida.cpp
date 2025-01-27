@@ -1,4 +1,4 @@
-#include "Partida.hpp"
+#include "Partida/Partida.hpp"
 
 Validacao validar_entrada_partida;
 

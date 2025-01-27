@@ -1,9 +1,9 @@
 #ifndef JOGOS_H
 #define JOGOS_H
 
-#include "FuncoesGlobais.hpp"
+#include "Cadastro/Cadastro.hpp"
+#include "Variaveis_globais.hpp"
 #include "Validacao.hpp"
-#include "Cadastro.hpp"
 
 class Jogo_De_Tabuleiro {
     protected:

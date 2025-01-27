@@ -1,4 +1,4 @@
-#include "Cadastro.hpp"
+#include "Cadastro/Cadastro.hpp"
  
 std::list<Jogador*> CadastroJogadores::Jogadores;
 Validacao validar_entradas_cadastro;

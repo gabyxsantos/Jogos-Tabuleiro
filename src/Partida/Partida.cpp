@@ -23,6 +23,11 @@ void Partida::definir_jogadores(){
     
     }
 
+    else if (acesso_lista.Jogadores.size()<2){
+        throw std::runtime_error("Não há jogadores suficientes cadastrados no sistema. Pelo menos mais um jogador precisa ser cadastrado para a execução de uma partida.");
+    
+    }
+
     std::list<Jogador*>::iterator jogador1, jogador2;
     
     bool encontrei = false;

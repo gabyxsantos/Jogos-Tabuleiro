@@ -104,10 +104,12 @@ void Tutorial::imprimir_regras_lig4() {
     timer(5000);
 }
 void Tutorial::iniciar_tutorial_lig4() {
-    std::cout << "Iniciando a simulação do Lig 4..." << std::endl;
     std::cout << "Para que o tutorial funcione corretamente, por favor, insira o tamanho do tabuleiro (6 x 7) do Lig4." << std::endl;
     do {
         Lig_4 lig4;
+        
+        lig4.definir_filler(VOID);
+        lig4.inicializar_tabuleiro();
         if(lig4.get_linhas() != 6 || lig4.get_colunas() != 7){
             std::cout << "Tamanho do tabuleiro inválido. Por favor, insira o tamanho correto (6x7)." << std::endl;
             continue;
@@ -120,33 +122,35 @@ void Tutorial::iniciar_tutorial_lig4() {
                     << " decididos pela máquina (o que não acontece no jogo real)." << std::endl;
             std::cout << "O jogador 1 usará a peça vermelha (" << PECA_VERMELHA << ") e o jogador 2  usará a peça amarela ("<< PECA_AMARELA ")"<<std::endl;
             timer(5000);
+            const std::string PECA_1 = " 🔴"; 
+            const std::string PECA_2 = " 🟡"; 
             std::cout << std::endl << "Jogador 1 insere peça na coluna 3." << std::endl;
-            lig4.auxiliar_tutorial(PECA_VERMELHA, 3);
-            lig4.imprimir_tabuleiro();
+            lig4.auxiliar_tutorial(PECA_1, 3);
+            lig4.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << std::endl << "Jogador 2 insere peça na coluna 1." << std::endl;
-            lig4.auxiliar_tutorial(PECA_AMARELA, 1);
-            lig4.imprimir_tabuleiro();
+            lig4.auxiliar_tutorial(PECA_2, 1);
+            lig4.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << std::endl << "Jogador 1 insere peça na coluna 4." << std::endl;
-            lig4.auxiliar_tutorial(PECA_VERMELHA, 4);
-            lig4.imprimir_tabuleiro();
+            lig4.auxiliar_tutorial(PECA_1, 4);
+            lig4.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << std::endl << "Jogador 2 insere peça na coluna 7." << std::endl;
-            lig4.auxiliar_tutorial(PECA_AMARELA, 7);
-            lig4.imprimir_tabuleiro();
+            lig4.auxiliar_tutorial(PECA_2, 7);
+            lig4.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << std::endl << "Jogador 1 insere peça na coluna 5." << std::endl;
-            lig4.auxiliar_tutorial(PECA_VERMELHA, 5);
-            lig4.imprimir_tabuleiro();
+            lig4.auxiliar_tutorial(PECA_1, 5);
+            lig4.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << std::endl << "Jogador 2 insere peça na coluna 2." << std::endl;
-            lig4.auxiliar_tutorial(PECA_AMARELA, 2);
-            lig4.imprimir_tabuleiro();
+            lig4.auxiliar_tutorial(PECA_2, 2);
+            lig4.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << std::endl << "Jogador 1 insere peça na coluna 6." << std::endl;
-            lig4.auxiliar_tutorial(PECA_VERMELHA, 6);
-            lig4.imprimir_tabuleiro();
+            lig4.auxiliar_tutorial(PECA_1, 6);
+            lig4.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << std::endl << "Jogador 1 (🔴) venceu ao conectar 4 peças na horizontal na linha 2!" << std::endl;
             timer(5000);
@@ -168,10 +172,11 @@ void Tutorial::imprimir_regras_jogo_da_velha() {
     timer(5000);
 }
 void Tutorial::iniciar_tutorial_jogo_da_velha() {
-    std::cout << "Iniciando a simulação do Jogo da Velha..." << std::endl;
-    std::cout << "Para que o tutorial funcione corretamente, por favor, insira o formato padrão para as peças." << std::endl;
+     std::cout << "Para que o tutorial funcione corretamente, por favor, insira o formato padrão para as peças." << std::endl;
     do{
         Jogo_Da_Velha jogo_da_velha;
+        jogo_da_velha.definir_filler(VOID);
+        jogo_da_velha.inicializar_tabuleiro();
         if(jogo_da_velha.pecas_coloridas == true) {
             std::cout << "Formato de peças inválido. Por favor, insira um formato válido (Formato padrão)." << std::endl;
             continue;
@@ -185,23 +190,23 @@ void Tutorial::iniciar_tutorial_jogo_da_velha() {
             timer(5000);
             std::cout << "Jogador 1 (X) faz sua jogada na posição (1, 1)." << std::endl;
             jogo_da_velha.auxiliar_tutorial(PECA_X, 1, 1);
-            jogo_da_velha.imprimir_tabuleiro();
+            jogo_da_velha.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << "Jogador 2 (O) faz sua jogada na posição (1, 2)." << std::endl;
             jogo_da_velha.auxiliar_tutorial(PECA_O, 1, 2);
-            jogo_da_velha.imprimir_tabuleiro();
+            jogo_da_velha.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << "Jogador 1 (X) faz sua jogada na posição (2, 2)." << std::endl;
             jogo_da_velha.auxiliar_tutorial(PECA_X, 2, 2);
-            jogo_da_velha.imprimir_tabuleiro();
+            jogo_da_velha.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << "Jogador 2 (O) faz sua jogada na posição (1, 3)." << std::endl;
             jogo_da_velha.auxiliar_tutorial(PECA_O, 1, 3);
-            jogo_da_velha.imprimir_tabuleiro();
+            jogo_da_velha.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << "Jogador 1 (X) faz sua jogada na posição (3, 3)." << std::endl;
             jogo_da_velha.auxiliar_tutorial(PECA_X, 3, 3);
-            jogo_da_velha.imprimir_tabuleiro();
+            jogo_da_velha.imprimir_tabuleiro_tutorial();
             timer(2000);
             std::cout << std::endl << "Jogador 1 (X) venceu o jogo ao completar a diagonal principal!" << std::endl;
             timer(5000);
@@ -227,52 +232,68 @@ void Tutorial::imprimir_regras_reversi() {
 }
 void Tutorial::iniciar_tutorial_reversi() {
     Reversi reversi;
+    reversi.definir_filler(VOID);
     reversi.definir_tamanho_tabuleiro(8, 8);
     reversi.inicializar_tabuleiro();
 
-    std::cout << "Iniciando a simulação do Reversi..." << std::endl;
+    std::cout << "Iniciando o tutorial do Reversi..." << std::endl;
     std::cout << "O tutorial a seguir é um exemplo de implementação do jogo Reversi. Todas as informações serão fornecidas"
-              << " pela própria maquina e você não precisa adicionar nada. É um tutorial, então alguns dados serão arbitrariamente" 
+              << " pela própria máquina e você não precisa adicionar nada. É um tutorial, então alguns dados serão arbitrariamente"
               << " decididos pela máquina (o que não acontece no jogo real)." << std::endl;
-    std::cout << "O jogador 1 usará a peça vermelha (" << PECA_VERMELHA << ") e o jogador 2  usará a peça amarela ("<< PECA_AMARELA ")"<<std::endl;
+    std::cout << "O jogador 1 usará a peça vermelha (" << PECA_VERMELHA << ") e o jogador 2 usará a peça amarela (" << PECA_AMARELA << ")."
+              << std::endl;
     timer(5000);
+
+    const std::string PECA_1 = " 🔴"; 
+    const std::string PECA_2 = " 🟡"; 
+
+    // Jogadas válidas com capturas
     std::cout << "Jogador 1 (🔴) faz sua jogada na posição (3, 5)." << std::endl;
-    reversi.auxiliar_tutorial(PECA_VERMELHA, 3, 5);
-    reversi.imprimir_tabuleiro();
+    reversi.auxiliar_tutorial(PECA_1, 3, 5);
+    reversi.imprimir_tabuleiro_tutorial();
     timer(2000);
-    std::cout << "Jogador 2 (🟡) faz sua jogada na posição (4, 6)." << std::endl;
-    reversi.auxiliar_tutorial(PECA_AMARELA, 4, 6);
-    reversi.imprimir_tabuleiro();
+
+    std::cout << "Jogador 2 (🟡) faz sua jogada na posição (2, 4)." << std::endl;
+    reversi.auxiliar_tutorial(PECA_1, 2, 4);
+    reversi.imprimir_tabuleiro_tutorial();
     timer(2000);
-    std::cout << "Jogador 1 (🔴) faz sua jogada na posição (5, 4)." << std::endl;
-    reversi.auxiliar_tutorial(PECA_VERMELHA, 5, 4);
-    reversi.imprimir_tabuleiro();
+
+    std::cout << "Jogador 1 (🔴) faz sua jogada na posição (4, 5)." << std::endl;
+    reversi.auxiliar_tutorial(PECA_1, 4, 5); 
+    reversi.imprimir_tabuleiro_tutorial();
     timer(2000);
+
+    std::cout << "Jogador 2 (🟡) faz sua jogada na posição (5, 4)." << std::endl;
+    reversi.auxiliar_tutorial(PECA_1, 5, 4);
+    reversi.imprimir_tabuleiro_tutorial();
+    timer(2000);
+
+    std::cout << "Jogador 1 (🔴) faz sua jogada na posição (3, 3)." << std::endl;
+    reversi.auxiliar_tutorial(PECA_1, 3, 3);
+    reversi.imprimir_tabuleiro_tutorial();
+    timer(2000);
+
     std::cout << "Jogador 2 (🟡) faz sua jogada na posição (6, 5)." << std::endl;
-    reversi.auxiliar_tutorial(PECA_AMARELA, 6, 5);
-    reversi.imprimir_tabuleiro();
+    reversi.auxiliar_tutorial(PECA_1, 6, 5);
+    reversi.imprimir_tabuleiro_tutorial();
     timer(2000);
-    std::cout << "Jogador 1 (🔴) faz sua jogada na posição (2, 4)." << std::endl;
-    reversi.auxiliar_tutorial(PECA_VERMELHA, 2, 4);
-    reversi.imprimir_tabuleiro();
+
+    std::cout << "Jogador 1 (🔴) faz sua jogada na posição (2, 5)." << std::endl;
+    reversi.auxiliar_tutorial(PECA_1, 2, 5);
+    reversi.imprimir_tabuleiro_tutorial();
     timer(2000);
-    std::cout << "Jogador 2 (🟡) faz sua jogada na posição (3, 3)." << std::endl;
-    reversi.auxiliar_tutorial(PECA_AMARELA, 3, 3);
-    reversi.imprimir_tabuleiro();
+
+    std::cout << "Jogador 2 (🟡) faz sua jogada na posição (5, 3)." << std::endl;
+    reversi.auxiliar_tutorial(PECA_1, 5, 3);
+    reversi.imprimir_tabuleiro_tutorial();
     timer(2000);
-    std::cout << "Jogador 1 (🔴) faz sua jogada na posição (5, 3)." << std::endl;
-    reversi.auxiliar_tutorial(PECA_VERMELHA, 5, 3);
-    reversi.imprimir_tabuleiro();
+
+    std::cout << "Jogador 1 (🔴) faz sua jogada na posição (4, 6)." << std::endl;
+    reversi.auxiliar_tutorial(PECA_1, 4, 6);
+    reversi.imprimir_tabuleiro_tutorial();
     timer(2000);
-    std::cout << "Jogador 2 (🟡) faz sua jogada na posição (6, 4)." << std::endl;
-    reversi.auxiliar_tutorial(PECA_AMARELA, 6, 4);
-    reversi.imprimir_tabuleiro();
-    timer(2000);
-    std::cout << "Jogador 1 (🔴) faz sua jogada na posição." << std::endl;
-    reversi.auxiliar_tutorial(PECA_VERMELHA, 4, 5);
-    reversi.imprimir_tabuleiro();
-    timer(2000);
-    std::cout << std::endl << "Jogador 1 (🔴) venceu ao dominar maior parte do tabuleiro." << std::endl;
+
+    std::cout << std::endl << "Jogador 1 (🔴) domina a maior parte do tabuleiro e vence!" << std::endl;
     timer(5000);
     std::cout << std::endl << "Fim do tutorial. Pressione Enter para encerrar..." << std::endl;
     std::cin.ignore();

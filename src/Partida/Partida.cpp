@@ -129,6 +129,7 @@ void Partida::escolher_jogo(){
 }
 /// @brief /////////////////////////////////////////////////////////////////////////////////
 void Partida::jogar_batalha_naval(){
+    int numero_de_jogadas;
     Batalha_Naval jogo4_mapa1;
     Batalha_Naval jogo4_mapa2;
     CadastroJogadores vencedor;
@@ -137,6 +138,11 @@ void Partida::jogar_batalha_naval(){
     timer(900);
     std::cout << "Vamos jogar Batalha Naval!" << std::endl;
     timer(900);
+
+    std::cout << "Por favor, escolham um numero de jogadas entre 1 e 20:" << std::endl;
+    do {
+        std::cin >> numero_de_jogadas;
+    } while (numero_de_jogadas<1 || numero_de_jogadas>20);
 
     jogo4_mapa1.definir_filler(AGUA);
     jogo4_mapa1.inicializar_tabuleiro();
@@ -154,39 +160,32 @@ void Partida::jogar_batalha_naval(){
     std::cout << apelido_jogador_2 << ", seu tabuleiro ficou assim:" << std::endl;
     jogo4_mapa2.imprimir_tabuleiro();
 
-    jogo4_mapa1.imprimir_tabuleiro();
-    //timer(900);
-/*
-    std::cout << apelido_jogador_2 << ":" << std::endl;
-    peca2 = jogo1.definir_cor(peca1); // O segundo jogador escolhe a cor diferente do primeiro
-    timer(1800);
-    std::cout << "Jogador: " << apelido_jogador_2 << std::endl << "Peça: " << peca2 << std::endl;
-    timer(1800);
-
-    // Inicializar o tabuleiro
-    jogo1.inicializar_tabuleiro();
-    jogo1.colocar_pecas_iniciais(peca1, peca2);
-
     int i=0;
-    while(i < 30){
+    while(i < numero_de_jogadas){
 
-        timer(1800);
-        std::cout << apelido_jogador_1 << " (" << peca1 << "), é sua vez!" << std::endl;
-        jogo1.mostrar_posicoes_possiveis(peca1, peca2);
-        jogo1.imprimir_tabuleiro();
-        jogo1.ler_jogada(peca1);
-        jogo1.converter_pecas(peca1, peca2);
+        timer(300);
+        std::cout << apelido_jogador_1 << ", é sua vez!" << std::endl;
+        jogo4_mapa2.ler_jogada(PECA_X); 
 
-        timer(1800);
-        std::cout << apelido_jogador_2 << " (" << peca2 << "), é sua vez!" << std::endl;
-        jogo1.mostrar_posicoes_possiveis(peca2, peca1);
-        jogo1.imprimir_tabuleiro();
-        jogo1.ler_jogada(peca2);
-        jogo1.converter_pecas(peca2, peca1);
+        timer(300);
+        std::cout << apelido_jogador_2 << ", é sua vez!" << std::endl;
+        jogo4_mapa1.ler_jogada(PECA_X);
 
         i++;
     }
+        if (jogo4_mapa1.get_pontos() != jogo4_mapa2.get_pontos()){
+            jogo4_mapa1.finalizar_partida_vencedor(jogo4_mapa1.comparar_pontuacoes(jogo4_mapa2.get_pontos(), apelido_jogador_1, apelido_jogador_2));
+
+        }
+        else{
+            jogo4_mapa1.finalizar_partida_empate();
+            //jogo4_mapa1.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "Lig4", acesso_lista);
+        }
+        //jogo4_mapa1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi", acesso_lista);
     
+    
+    //timer(900);
+/*
     timer(1800);
     if(jogo1.testar_vitoria(peca1)){
         jogo1.imprimir_tabuleiro();

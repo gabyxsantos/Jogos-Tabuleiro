@@ -12,6 +12,13 @@ Validacao validar_entrada_batalha_naval;
         tabuleiro.clear(); // Libera o conteúdo do vetor
     }
     
+    void Batalha_Naval::set_pontos(int pontos_jogada){
+        pontos_oponente += pontos_jogada;
+    }
+
+    int Batalha_Naval::get_pontos(){
+        return pontos_oponente;
+    }
     void Batalha_Naval::imprimir_tabuleiro(){
         std::cout << VOID;
         for (int j = 1; j <= 10; ++j){
@@ -57,7 +64,7 @@ Validacao validar_entrada_batalha_naval;
             validar_entrada_batalha_naval.imprimir_erro("Linha inválida!");
             return false;
         }
-        if (tabuleiro[linha][coluna].compare(PECA_X) == 0){
+        if (tabuleiro[linha-1][coluna-1].compare(PECA_X) == 0){
             validar_entrada_batalha_naval.imprimir_erro("Você já atacou essa posição!");
             return false;
         }
@@ -154,147 +161,57 @@ Validacao validar_entrada_batalha_naval;
 }; 
 return true;
     };
-    /*bool Batalha_Naval::testar_vitoria(const std::string& peca){
-        for (int i = 0; i < linhas; ++i){
-            for (int j = 0; j <= colunas - 4; ++j){
-                if (tabuleiro[i][j].compare(peca) == 0 && tabuleiro[i][j + 1].compare(peca) == 0 &&
-                    tabuleiro[i][j + 2].compare(peca) == 0 && tabuleiro[i][j + 3].compare(peca) == 0){
-                    return true;
-                }
-            }
-        };
-        return false;
-    };*/
-
-    bool Batalha_Naval::testar_vitoria(const std::string& peca){
-        // Horizontal
-        for (int i = 0; i < linhas; ++i){
-            for (int j = 0; j <= colunas - 4; ++j){
-                if (tabuleiro[i][j].compare(peca) == 0 && tabuleiro[i][j + 1].compare(peca) == 0 &&
-                    tabuleiro[i][j + 2].compare(peca) == 0 && tabuleiro[i][j + 3].compare(peca) == 0){
-                    return true;
-                }
-            }
-        }
-        // Vertical
-        for (int j = 0; j < colunas; ++j){
-            for (int i = 0; i <= linhas - 4; ++i){
-                if (tabuleiro[i][j].compare(peca) == 0 && tabuleiro[i + 1][j].compare(peca) == 0 &&
-                    tabuleiro[i + 2][j].compare(peca) == 0 && tabuleiro[i + 3][j].compare(peca) == 0){
-                    return true;
-                }
-            }
-        }
-        // Diagonal (crescente)
-        for (int i = 0; i <= linhas - 4; ++i){
-            for (int j = 0; j <= colunas - 4; ++j){
-                if (tabuleiro[i][j].compare(peca) == 0 && tabuleiro[i + 1][j + 1].compare(peca) == 0 &&
-                    tabuleiro[i + 2][j + 2].compare(peca) == 0 && tabuleiro[i + 3][j + 3].compare(peca) == 0){
-                    return true;
-                }
-            }
-        }
-        // Diagonal (decrescente)
-        for (int i = 3; i < linhas; ++i){
-            for (int j = 0; j <= colunas - 4; ++j){
-                if (tabuleiro[i][j].compare(peca) == 0 && tabuleiro[i - 1][j + 1].compare(peca) == 0 &&
-                    tabuleiro[i - 2][j + 2].compare(peca) == 0 && tabuleiro[i - 3][j + 3].compare(peca) == 0){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 
     void Batalha_Naval::ler_jogada(const std::string& peca){
-        int coluna;
+        int coluna, linha;
         while (true){
-            std::cout << "Escolha uma coluna (1-" << colunas << ") para colocar a peça " << peca << ": ";
+            std::cout << "Escolha uma coluna (1-" << colunas << ") para atacar: ";
             validar_entrada_batalha_naval.pedir_usuario(coluna);
-            if (verificar_jogada(0,coluna)) {
-                for (int i = linhas - 1; i >= 0; --i) {
-                    if (tabuleiro[i][coluna - 1].compare(filler) == 0) {
-                        tabuleiro[i][coluna - 1] = peca;
-                        return;
+            std::cout << "Escolha uma linha (1-" << linhas << ") para atacar: ";
+            validar_entrada_batalha_naval.pedir_usuario(linha);
+            if (verificar_jogada(linha,coluna)) {
+                    if (tabuleiro[linha-1][coluna-1].compare(AGUA) == 0){
+                        tabuleiro[linha-1][coluna-1] = PECA_X;
+                        std::cout << "Você não acertou nenhum navio inimigo!" << std::endl;
+                        break;
                     }
-                }
+                    if (tabuleiro[linha-1][coluna-1].compare(CONTRATORPEDEIRO) == 0){
+                        tabuleiro[linha-1][coluna-1] = PECA_X;
+                        std::cout << "Você acertou um contratorpedeiro inimigo! +2 pontos" << std::endl;
+                        set_pontos(2);
+                        break;
+                    }
+                    if (tabuleiro[linha-1][coluna-1].compare(ENCOURACADO) == 0){
+                        tabuleiro[linha-1][coluna-1] = PECA_X;
+                        std::cout << "Você acertou um encouraçado inimigo! +5 pontos" << std::endl;
+                        set_pontos(5);
+                        break;
+                    }
+                    if (tabuleiro[linha-1][coluna-1].compare(PORTA_AVIOES) == 0){
+                        tabuleiro[linha-1][coluna-1] = PECA_X;
+                        std::cout << "Você acertou um porta-aviões inimigo! +10 pontos" << std::endl;
+                        set_pontos(10);
+                        break;
+                    }
             }
         }
     }
-    /*bool Batalha_Naval::verificar_jogada(int linha,int coluna){
-        if (coluna < 1 || coluna > colunas){
-            validar_entrada_lig4.imprimir_erro("Coluna inválida!");
-            return false;
+
+    std::string Batalha_Naval::comparar_pontuacoes(int pontos_jogador, const std::string& apelido_jogador, const std::string& apelido_adversario){
+        if (pontos_jogador > pontos_oponente){
+            std::cout << apelido_jogador << " ganhou de " << apelido_adversario << ", por " << pontos_jogador << "pontos, contra " << pontos_oponente << " pontos!" << std::endl;
+            return apelido_jogador;
         }
-        if (linha != 0){ // Para Lig_4, sempre esperamos linha = 0
-            validar_entrada_lig4.imprimir_erro("Linha inválida para este jogo!");
-            return false;
+        else if (pontos_jogador < pontos_oponente){
+            std::cout << apelido_adversario << " ganhou de " << apelido_jogador << ", por " << pontos_oponente << "pontos, contra " << pontos_jogador << " pontos!" << std::endl;
+            return apelido_adversario;
         }
-        if (tabuleiro[0][coluna - 1].compare(filler) != 0){
-            validar_entrada_lig4.imprimir_erro("Coluna cheia!");
-            return false;
-        }
+    }
+
+    bool Batalha_Naval::testar_vitoria(const std::string& peca){
         return true;
     }
-
-
-    void Batalha_Naval::ler_jogada(const std::string& peca){
-        int coluna;
-        while (true){
-            std::cout << "Escolha uma coluna (1-" << colunas << ") para colocar a peça " << peca << ": ";
-            validar_entrada_lig4.pedir_usuario(coluna);
-            if (verificar_jogada(0,coluna)) {
-                for (int i = linhas - 1; i >= 0; --i) {
-                    if (tabuleiro[i][coluna - 1].compare(filler) == 0) {
-                        tabuleiro[i][coluna - 1] = peca;
-                        return;
-                    }
-                }
-            }
-        }
-    }
-
-
-    bool Batalha_Naval::testar_vitoria(const std::string& peca){
-        // Horizontal
-        for (int i = 0; i < linhas; ++i){
-            for (int j = 0; j <= colunas - 4; ++j){
-                if (tabuleiro[i][j].compare(peca) == 0 && tabuleiro[i][j + 1].compare(peca) == 0 &&
-                    tabuleiro[i][j + 2].compare(peca) == 0 && tabuleiro[i][j + 3].compare(peca) == 0){
-                    return true;
-                }
-            }
-        }
-        // Vertical
-        for (int j = 0; j < colunas; ++j){
-            for (int i = 0; i <= linhas - 4; ++i){
-                if (tabuleiro[i][j].compare(peca) == 0 && tabuleiro[i + 1][j].compare(peca) == 0 &&
-                    tabuleiro[i + 2][j].compare(peca) == 0 && tabuleiro[i + 3][j].compare(peca) == 0){
-                    return true;
-                }
-            }
-        }
-        // Diagonal (crescente)
-        for (int i = 0; i <= linhas - 4; ++i){
-            for (int j = 0; j <= colunas - 4; ++j){
-                if (tabuleiro[i][j].compare(peca) == 0 && tabuleiro[i + 1][j + 1].compare(peca) == 0 &&
-                    tabuleiro[i + 2][j + 2].compare(peca) == 0 && tabuleiro[i + 3][j + 3].compare(peca) == 0){
-                    return true;
-                }
-            }
-        }
-        // Diagonal (decrescente)
-        for (int i = 3; i < linhas; ++i){
-            for (int j = 0; j <= colunas - 4; ++j){
-                if (tabuleiro[i][j].compare(peca) == 0 && tabuleiro[i - 1][j + 1].compare(peca) == 0 &&
-                    tabuleiro[i - 2][j + 2].compare(peca) == 0 && tabuleiro[i - 3][j + 3].compare(peca) == 0){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    
+    /*
     void Batalha_Naval::auxiliar_tutorial(const std::string& peca, int coluna) { // Função auxiliar para simular Lig4
         for (int i = linhas - 1; i >= 0; --i) {
             tabuleiro[i][coluna - 1] = peca;

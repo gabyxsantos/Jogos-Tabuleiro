@@ -36,6 +36,23 @@ Validacao validar_entrada_jogos;
         }
     }
 
+    void Jogo_De_Tabuleiro::imprimir_tabuleiro_tutorial() {
+        std::cout << VOID;
+        for (int j = 1; j <= colunas; ++j){
+            std::cout << VOID << j;
+        }
+        std::cout << std::endl;
+
+        for (int i = 0; i < linhas; ++i){
+            std::cout << std::setw(2) << i + 1 << " |";
+            for (int j = 0; j < colunas; ++j){
+                std::cout << tabuleiro[i][j] << "|";
+            }
+            std::cout << std::endl;
+        }
+    }
+
+
     bool Jogo_De_Tabuleiro::tabuleiro_cheio(){
         for (const auto& linha : tabuleiro) {
             for (const auto& casa : linha) {

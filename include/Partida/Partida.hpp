@@ -3,6 +3,7 @@
 
 #include "Cadastro/Cadastro.hpp"
 #include "Jogos/Jogos.hpp"
+#include "Jogos/Batalha_naval.hpp"
 #include "Jogos/Lig_4.hpp"
 #include "Jogos/Jogo_da_velha.hpp"
 #include "Jogos/Reversi.hpp"
@@ -24,6 +25,7 @@ class Partida{
         void escolher_jogo();
         void identificar_jogador(std::list<Jogador*>::iterator& jogador);
         void definir_jogadores();
+        void jogar_batalha_naval();
         void jogar_lig_4();
         void jogar_jogo_da_velha();
         void jogar_reversi();

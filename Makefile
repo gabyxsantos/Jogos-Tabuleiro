@@ -18,6 +18,7 @@ OBJECTS = $(OBJ_DIR)/Variaveis_globais.o \
 		  $(OBJ_DIR)/Cadastro.o \
 		  $(OBJ_DIR)/Arquivo.o \
 		  $(OBJ_DIR)/Jogos.o \
+          $(OBJ_DIR)/Batalha_naval.o \
           $(OBJ_DIR)/Lig_4.o \
           $(OBJ_DIR)/Reversi.o \
           $(OBJ_DIR)/Jogo_da_velha.o \
@@ -32,6 +33,7 @@ INCLUDES = $(INCLUDE_DIR)/Variaveis_globais.hpp \
 		   $(INCLUDE_DIR)/$(DIR_CADASTRO)/Cadastro.hpp \
 		   $(INCLUDE_DIR)/$(DIR_DADOS)/Arquivo.hpp \
 		   $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp \
+		   $(INCLUDE_DIR)/$(DIR_JOGOS)/Batalha_naval.hpp \
 		   $(INCLUDE_DIR)/$(DIR_JOGOS)/Lig_4.hpp \
 		   $(INCLUDE_DIR)/$(DIR_JOGOS)/Reversi.hpp \
 		   $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogo_da_velha.hpp \
@@ -60,6 +62,9 @@ $(OBJ_DIR)/Estatisticas.o: $(INCLUDE_DIR)/Variaveis_globais.hpp $(INCLUDE_DIR)/$
 $(OBJ_DIR)/Jogos.o: $(INCLUDE_DIR)/Variaveis_globais.hpp $(INCLUDE_DIR)/Validacao.hpp $(INCLUDE_DIR)/$(DIR_CADASTRO)/Cadastro.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(SRC_DIR)/$(DIR_JOGOS)/Jogos.cpp
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_JOGOS)/Jogos.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Jogos.o
 
+$(OBJ_DIR)/Batalha_naval.o: $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Batalha_naval.hpp $(SRC_DIR)/$(DIR_JOGOS)/Batalha_naval.cpp
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_JOGOS)/Batalha_naval.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Batalha_naval.o
+	
 $(OBJ_DIR)/Lig_4.o: $(INCLUDE_DIR)/$(DIR_JOGOS)/Jogos.hpp $(INCLUDE_DIR)/$(DIR_JOGOS)/Lig_4.hpp $(SRC_DIR)/$(DIR_JOGOS)/Lig_4.cpp
 	$(CC) $(CFLAGS) -c $(SRC_DIR)/$(DIR_JOGOS)/Lig_4.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/Lig_4.o
 

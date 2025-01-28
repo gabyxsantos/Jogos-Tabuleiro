@@ -6,6 +6,7 @@
 class Lig_4 : public Jogo_De_Tabuleiro {
     public:
     Lig_4();
+    ~Lig_4();
 
     std::string escolher_peca(const std::string& peca_excluida);
     bool verificar_jogada(int linha, int coluna) override;

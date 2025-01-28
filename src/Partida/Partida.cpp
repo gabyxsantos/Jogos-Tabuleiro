@@ -1,4 +1,4 @@
-#include "Partida.hpp"
+#include "Partida/Partida.hpp"
 
 Validacao validar_entrada_partida;
 
@@ -10,14 +10,21 @@ void Partida::iniciar_partida(){
 Partida::Partida(CadastroJogadores& buscador) : 
     acesso_lista(buscador){}
 
-void Partida::atualizar_acesso(CadastroJogadores &buscador){
-    this->acesso_lista=buscador;
+Partida::~Partida() {
+    // Verificar e liberar qualquer recurso associado aos atributos
+    apelido_jogador_1.clear(); // Limpa o conteúdo da string
+    apelido_jogador_2.clear(); // Limpa o conteúdo da string
 }
 
 void Partida::definir_jogadores(){
 
     if (acesso_lista.lista_vazia()) {
         throw std::runtime_error("Não há jogadores cadastrados no sistema. Não foi possível prosseguir com a execução da partida.");
+    
+    }
+
+    else if (acesso_lista.Jogadores.size()<2){
+        throw std::runtime_error("Não há jogadores suficientes cadastrados no sistema. Pelo menos mais um jogador precisa ser cadastrado para a execução de uma partida.");
     
     }
 
@@ -28,12 +35,12 @@ void Partida::definir_jogadores(){
         std::cout << "Jogador 1, insira seu apelido:" << std::endl;
         validar_entrada_partida.pedir_usuario(apelido_jogador_1);
         jogador1 = acesso_lista.buscar_jogador(apelido_jogador_1);
-        timer(1500);
+        timer(500);
 
         if (jogador1 != acesso_lista.Jogadores.end() && (*jogador1)->get_apelido() == apelido_jogador_1){
     
             encontrei = true;
-            timer(1500);
+            timer(500);
             break;
             
         }
@@ -44,29 +51,29 @@ void Partida::definir_jogadores(){
             continue;
         }
     }
-    timer(1500);
+    //timer(1500);
     std::cout << "Jogador 1 (" << apelido_jogador_1 <<") encontrado com sucesso" << std::endl;
     //identificar_jogador(jogador1);
-    timer(2000);
+    timer(500);
 
     bool encontrei2 = false;
     while(!encontrei2){
         std::cout << "Jogador 2, insira seu apelido:" << std::endl;
         validar_entrada_partida.pedir_usuario(apelido_jogador_2);
         
-        timer(1500);
+        timer(500);
 
         if (apelido_jogador_2 == apelido_jogador_1){
             validar_entrada_partida.imprimir_erro("Os dois oponentes não podem ser o mesmo jogador! Tente novamente.");
             continue;
-            timer(1500);
+            timer(500);
         }
 
         jogador2 = acesso_lista.buscar_jogador(apelido_jogador_2);
 
         if (jogador2 != acesso_lista.Jogadores.end() && (*jogador2)->get_apelido() == apelido_jogador_2){
                 encontrei2 = true;
-                timer(1500);
+                timer(500);
                 break;
             
         }
@@ -75,22 +82,27 @@ void Partida::definir_jogadores(){
             continue;
         }
     }
-    timer(1500);
+    
     std::cout << "Jogador 2 (" << apelido_jogador_2 <<") encontrado com sucesso" << std::endl;
-    //identificar_jogador(jogador2);
-    timer(2000);
+    timer(500);
 }
 
 void Partida::escolher_jogo(){
 
     std::cout<< "Qual jogo vocês gostariam de jogar?" << std::endl << "Digite a letra correspondente a sua escolha:" <<std::endl;
-    std::cout << "(R) Reversi" << std::endl;
+    std::cout << "(B) Batalha Naval" << std::endl;
     std::cout << "(L) Lig4" << std::endl;
+    std::cout << "(R) Reversi" << std::endl;
     std::cout << "(V) Jogo da Velha" << std::endl;
     
     while (true) {
         validar_entrada_partida.pedir_usuario(nome_do_jogo);
         switch (nome_do_jogo) {
+            case 'B':
+            case 'b': 
+                jogar_batalha_naval();
+                break;
+
             case 'R':
             case 'r': 
                 jogar_reversi();
@@ -110,18 +122,72 @@ void Partida::escolher_jogo(){
                 validar_entrada_partida.imprimir_erro("Parece que você digitou uma opção inválida, tente novamente:");
                 continue; 
         }
-        break; // Sai do while quando o switch processa um caso válido
+        break; 
     }
 
-   
 
+}
+
+void Partida::jogar_batalha_naval(){
+    int numero_de_jogadas;
+    Batalha_Naval jogo4_mapa1;
+    Batalha_Naval jogo4_mapa2;
+    CadastroJogadores vencedor;
+    CadastroJogadores perdedor;
+
+    timer(900);
+    std::cout << "Vamos jogar Batalha Naval!" << std::endl;
+    timer(900);
+
+    std::cout << "Por favor, escolham um numero de jogadas entre 1 e 20:" << std::endl;
+    do {
+        std::cin >> numero_de_jogadas;
+    } while (numero_de_jogadas<1 || numero_de_jogadas>20);
+
+    jogo4_mapa1.definir_filler(AGUA);
+    jogo4_mapa1.inicializar_tabuleiro();
+    jogo4_mapa2.definir_filler(AGUA);
+    jogo4_mapa2.inicializar_tabuleiro();
+
+    std::cout << apelido_jogador_1 << ", posicione seus navios!" << std::endl;
+    std::cout << "(Você deve escolher as coordenadas do centro das peças)" << std::endl;
+    jogo4_mapa1.posicionar_navios(); // O primeiro jogador posiciona seus navios
+    std::cout << apelido_jogador_1 << ", seu tabuleiro ficou assim:" << std::endl;
+    jogo4_mapa1.imprimir_tabuleiro();
+    std::cout << apelido_jogador_2 << ", posicione seus navios!" << std::endl;
+    std::cout << "(Você deve escolher as coordenadas do centro das peças)" << std::endl;
+    jogo4_mapa2.posicionar_navios(); // O segundo jogador posiciona seus navios
+    std::cout << apelido_jogador_2 << ", seu tabuleiro ficou assim:" << std::endl;
+    jogo4_mapa2.imprimir_tabuleiro();
+
+    int i=0;
+    while(i < numero_de_jogadas){
+
+        timer(300);
+        std::cout << apelido_jogador_1 << ", é sua vez!" << std::endl;
+        jogo4_mapa2.ler_jogada(PECA_X); 
+
+        timer(300);
+        std::cout << apelido_jogador_2 << ", é sua vez!" << std::endl;
+        jogo4_mapa1.ler_jogada(PECA_X);
+
+        i++;
+    }
+        if (jogo4_mapa1.get_pontos() != jogo4_mapa2.get_pontos()){
+            jogo4_mapa1.finalizar_partida_vencedor(jogo4_mapa1.comparar_pontuacoes(jogo4_mapa2.get_pontos(), apelido_jogador_1, apelido_jogador_2));
+
+        }
+        else{
+            jogo4_mapa1.finalizar_partida_empate();
+            //jogo4_mapa1.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "Lig4", acesso_lista);
+        }
+        //jogo4_mapa1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi", acesso_lista);
 }
 
 void Partida::jogar_reversi(){
     Reversi jogo1;
     CadastroJogadores vencedor;
     CadastroJogadores perdedor;
-
 
     timer(1800);
     std::cout << "Vamos jogar Reversi!" << std::endl;
@@ -167,20 +233,20 @@ void Partida::jogar_reversi(){
 
         i++;
     }
-
+    
     timer(1800);
     if(jogo1.testar_vitoria(peca1)){
         jogo1.imprimir_tabuleiro();
         timer(1800);
-        std::cout << apelido_jogador_1 << " ganhou!" << std::endl;
+        jogo1.finalizar_partida_vencedor(apelido_jogador_1);
         jogo1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi", acesso_lista);
     
     }
 
     if(jogo1.testar_vitoria(peca2)){
         jogo1.imprimir_tabuleiro();
-        timer(1800); 
-        std::cout << apelido_jogador_2 << " ganhou!" << std::endl;
+        timer(1800);
+        jogo1.finalizar_partida_vencedor(apelido_jogador_2);
         jogo1.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Reversi", acesso_lista);
     }
 
@@ -256,6 +322,7 @@ void Partida::jogar_jogo_da_velha(){
     timer(1800);
     if (empate) {
         jogo2.finalizar_partida_empate();
+        jogo2.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "JogoVelha", acesso_lista);
         
     }
     else {
@@ -268,8 +335,6 @@ void Partida::jogar_jogo_da_velha(){
             jogo2.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "JogoVelha", acesso_lista);
         }
     }
-
-    
 
 }
 
@@ -320,14 +385,12 @@ void Partida::jogar_lig_4(){
             terminou = true;
             break;
         }
-
         // Verificar empate
         if (jogo3.testar_empate(peca1, peca2)) {
             terminou = true;
             empate = true;
             break;
         }
-
         // Trocar de turno
         if (jogador_atual == peca1) {
             jogador_atual = peca2;
@@ -342,6 +405,7 @@ void Partida::jogar_lig_4(){
     timer(1800);
     if (empate) {
         jogo3.finalizar_partida_empate();
+        jogo3.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "Lig4", acesso_lista);
     }
     else {
         jogo3.finalizar_partida_vencedor(nome_atual);
@@ -357,5 +421,3 @@ void Partida::jogar_lig_4(){
     
     
 }
-
-

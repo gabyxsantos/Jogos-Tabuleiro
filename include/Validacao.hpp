@@ -1,7 +1,7 @@
 #ifndef VALIDACAO_HPP
 #define VALIDACAO_HPP
 
-#include "FuncoesGlobais.hpp"
+#include "Variaveis_globais.hpp"
 
 class Validacao{
     private:

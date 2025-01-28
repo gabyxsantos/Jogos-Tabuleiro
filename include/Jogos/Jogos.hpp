@@ -1,9 +1,9 @@
 #ifndef JOGOS_H
 #define JOGOS_H
 
-#include "FuncoesGlobais.hpp"
+#include "Cadastro/Cadastro.hpp"
+#include "Variaveis_globais.hpp"
 #include "Validacao.hpp"
-#include "Cadastro.hpp"
 
 class Jogo_De_Tabuleiro {
     protected:
@@ -25,7 +25,7 @@ class Jogo_De_Tabuleiro {
     void definir_filler(std::string filler);
     void definir_tamanho_tabuleiro(int linhas, int colunas);
     void inicializar_tabuleiro();
-    void imprimir_tabuleiro();
+    virtual void imprimir_tabuleiro(); //virtual devido ao tamanho superior o tabuleiro de batalha naval
     bool tabuleiro_cheio();
 
     // Remover cor das peças

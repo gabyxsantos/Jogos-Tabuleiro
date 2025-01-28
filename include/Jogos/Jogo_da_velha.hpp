@@ -7,6 +7,7 @@ class Jogo_Da_Velha : public Jogo_De_Tabuleiro{
     public:
     bool pecas_coloridas;
     Jogo_Da_Velha();
+    ~Jogo_Da_Velha();
 
     std::string escolher_peca(const std::string& peca_excluida = " ", bool colorido = false);
     std::string escolher_cor(const std::string& peca);

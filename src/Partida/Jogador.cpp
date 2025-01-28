@@ -1,4 +1,4 @@
-#include "Jogador.hpp"
+#include "Partida/Jogador.hpp"
 
 Validacao validar_entradas_jogador;
 //Funções da classe Jogador:
@@ -12,6 +12,20 @@ Validacao validar_entradas_jogador;
         this->nome="";
         this->apelido="";
     }
+
+    Jogador::~Jogador() {
+        // Limpar ou resetar os objetos de Placar
+        this->Reversi = Placar(); // Reseta o placar de Reversi para o estado padrão
+        this->Lig4 = Placar();    // Reseta o placar de Lig4 para o estado padrão
+        this->JogoVelha = Placar(); // Reseta o placar de Jogo da Velha para o estado padrão
+
+        // Zerando outras estatísticas
+        this->vitorias_totais = 0;
+        this->derrotas_totais = 0;
+        this->empates_totais = 0;
+        this->pontos_totais = 0;
+    }
+
 
     void Jogador::set_nome() {
         std::string verificador;
@@ -51,15 +65,20 @@ Validacao validar_entradas_jogador;
                 validar_entradas_jogador.imprimir_erro("O apelido não pode estar vazio.");
                 continue; // Recomeça o loop sem validar outras condições
             }
-
             // Validações
             if (verificador.length() < 1 || verificador.length() > 10) {
                 validar_entradas_jogador.imprimir_erro("O apelido deve conter pelo menos 1 caractere e no máximo 10 caracteres.");
-            } else if (verificador.find(' ') != std::string::npos) {
+            } 
+            else if (verificador.find(' ') != std::string::npos) {
                 validar_entradas_jogador.imprimir_erro("O apelido deve conter apenas uma palavra, sem espaços.");
-            } else if (!std::all_of(verificador.begin(), verificador.end(), isalpha)) {
+            } 
+            else if (!std::all_of(verificador.begin(), verificador.end(), isalpha)) {
                 validar_entradas_jogador.imprimir_erro("O apelido deve conter apenas letras (sem números ou caracteres especiais).");
-            } else {
+            } 
+            else if (verificador.compare("CP") == 0){
+                validar_entradas_jogador.imprimir_erro( "Por excessões do sistema, para garantir um funcionamento correto, o apelido não pode ser CP.");
+            }
+            else {
                 // Apelido válido
                 Jogador::apelido = verificador;
                 break;

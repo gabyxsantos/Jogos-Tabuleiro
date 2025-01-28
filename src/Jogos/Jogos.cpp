@@ -93,13 +93,13 @@ Validacao validar_entrada_jogos;
     // Funções para finalizar a partida
     void Jogo_De_Tabuleiro::finalizar_partida_vencedor(const std::string& nome_vencedor){
         imprimir_tabuleiro();
-        timer(1800);
+        timer(500);
         std::cout << GREEN << "Parabéns, " << nome_vencedor << "! Você venceu!" << RESET << std::endl;
     }
 
     void Jogo_De_Tabuleiro::finalizar_partida_empate(){
         imprimir_tabuleiro();
-        timer(1800);
+        timer(500);
         std::cout << GREEN << "O jogo terminou em um empate!" << RESET << std::endl;
     }
 

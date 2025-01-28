@@ -23,7 +23,8 @@ void Arquivo::extrair_dados(){
             jogador->set_empates_totais(empates_totais);
             jogador->set_pontos_totais(pontos_totais);
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 4; i++) {
+
                 file >> auxstr >> auxstr >> vitorias_jogo >> auxstr >> derrotas_jogo >> auxstr >> empates_jogo >> auxstr >> pontos_jogo;
                 if (i == 0) {
                     jogador->set_Reversi(vitorias_jogo, derrotas_jogo, empates_jogo, pontos_jogo);
@@ -33,6 +34,9 @@ void Arquivo::extrair_dados(){
                 } 
                 else if (i == 2) {
                     jogador->set_JogoVelha(vitorias_jogo, derrotas_jogo, empates_jogo, pontos_jogo);
+                }
+                else if (i == 3) {
+                    jogador->set_BatalhaNaval(vitorias_jogo, derrotas_jogo, empates_jogo, pontos_jogo);
                 }
             }
 
@@ -85,6 +89,12 @@ void Arquivo::salvar_dados(){
                 << std::setw(5) << " D: " << jogador->get_JogoVelha().derrotas
                 << std::setw(5) << " E: " << jogador->get_JogoVelha().empates
                 << std::setw(5) << " P: " << jogador->get_JogoVelha().pontos_por_jogo << std::endl;
+
+            file << "BATALHANAVAL" << " V: " << jogador->get_BatalhaNaval().vitorias
+                << std::setw(5) << " D: " << jogador->get_BatalhaNaval().derrotas
+                << std::setw(5) << " E: " << jogador->get_BatalhaNaval().empates
+                << std::setw(5) << " P: " << jogador->get_BatalhaNaval().pontos_por_jogo << std::endl;
+        
         }
         file.close();
 }

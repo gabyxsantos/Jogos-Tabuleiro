@@ -8,7 +8,9 @@ class Batalha_Naval : public Jogo_De_Tabuleiro {
     Batalha_Naval();
     ~Batalha_Naval();
 
+    void imprimir_tabuleiro() override;
     void posicionar_navios();
+    bool ler_posicao_inicial(const std::string& peca);
     bool verificar_jogada(int linha, int coluna) override;
     void ler_jogada(const std::string& peca) override;
     bool testar_vitoria(const std::string& peca) override;

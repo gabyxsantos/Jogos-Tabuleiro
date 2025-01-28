@@ -35,12 +35,12 @@ void Partida::definir_jogadores(){
         std::cout << "Jogador 1, insira seu apelido:" << std::endl;
         validar_entrada_partida.pedir_usuario(apelido_jogador_1);
         jogador1 = acesso_lista.buscar_jogador(apelido_jogador_1);
-        timer(1000);
+        timer(500);
 
         if (jogador1 != acesso_lista.Jogadores.end() && (*jogador1)->get_apelido() == apelido_jogador_1){
     
             encontrei = true;
-            timer(1500);
+            timer(500);
             break;
             
         }
@@ -138,20 +138,23 @@ void Partida::jogar_batalha_naval(){
     std::cout << "Vamos jogar Batalha Naval!" << std::endl;
     timer(900);
 
-    std::string jogador1, jogador2;
-    std::string peca1, peca2;
-
     jogo4_mapa1.definir_filler(AGUA);
     jogo4_mapa1.inicializar_tabuleiro();
+    jogo4_mapa2.definir_filler(AGUA);
+    jogo4_mapa2.inicializar_tabuleiro();
 
     std::cout << apelido_jogador_1 << ", posicione seus navios!" << std::endl;
     std::cout << "(Você deve escolher as coordenadas do centro das peças)" << std::endl;
     jogo4_mapa1.posicionar_navios(); // O primeiro jogador posiciona seus navios
-    std::cout << "11" << std::endl;
-    //timer(900);
-    std::cout << "222" << std::endl;
+    std::cout << apelido_jogador_1 << ", seu tabuleiro ficou assim:" << std::endl;
     jogo4_mapa1.imprimir_tabuleiro();
-    std::cout << "3333" << std::endl;
+    std::cout << apelido_jogador_2 << ", posicione seus navios!" << std::endl;
+    std::cout << "(Você deve escolher as coordenadas do centro das peças)" << std::endl;
+    jogo4_mapa2.posicionar_navios(); // O segundo jogador posiciona seus navios
+    std::cout << apelido_jogador_2 << ", seu tabuleiro ficou assim:" << std::endl;
+    jogo4_mapa2.imprimir_tabuleiro();
+
+    jogo4_mapa1.imprimir_tabuleiro();
     //timer(900);
 /*
     std::cout << apelido_jogador_2 << ":" << std::endl;

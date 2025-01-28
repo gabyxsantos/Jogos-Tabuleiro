@@ -127,7 +127,7 @@ void Partida::escolher_jogo(){
 
 
 }
-/// @brief /////////////////////////////////////////////////////////////////////////////////
+
 void Partida::jogar_batalha_naval(){
     int numero_de_jogadas;
     Batalha_Naval jogo4_mapa1;
@@ -182,28 +182,8 @@ void Partida::jogar_batalha_naval(){
             //jogo4_mapa1.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "Lig4", acesso_lista);
         }
         //jogo4_mapa1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi", acesso_lista);
-    
-    
-    //timer(900);
-/*
-    timer(1800);
-    if(jogo1.testar_vitoria(peca1)){
-        jogo1.imprimir_tabuleiro();
-        timer(1800);
-        jogo1.finalizar_partida_vencedor(apelido_jogador_1);
-        jogo1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi", acesso_lista);
-    
-    }
-
-    if(jogo1.testar_vitoria(peca2)){
-        jogo1.imprimir_tabuleiro();
-        timer(1800);
-        jogo1.finalizar_partida_vencedor(apelido_jogador_2);
-        jogo1.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Reversi", acesso_lista);
-    }
-*/
 }
-/// @brief ////////////////////////////////////////////////////////////////////////////////
+
 void Partida::jogar_reversi(){
     Reversi jogo1;
     CadastroJogadores vencedor;

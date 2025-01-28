@@ -211,11 +211,3 @@ return true;
     bool Batalha_Naval::testar_vitoria(const std::string& peca){
         return true;
     }
-    /*
-    void Batalha_Naval::auxiliar_tutorial(const std::string& peca, int coluna) { // Função auxiliar para simular Lig4
-        for (int i = linhas - 1; i >= 0; --i) {
-            tabuleiro[i][coluna - 1] = peca;
-            std::cout << "Peça " << peca << " foi inserida na coluna " << coluna << "." << std::endl;
-            return;
-        }
-    }*/

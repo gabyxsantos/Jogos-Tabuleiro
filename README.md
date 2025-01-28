@@ -55,7 +55,9 @@ O projeto foi estruturado de forma modular, com cada classe definida em seus pr�
 
 #  Extras
 
-Como implementação extra, criamos uma classe chamada "Estatisticas", que organiza um ranking dos jogadores, tanto geral quanto por jogo, e outra chamada "Tutorial", que apresenta tutorias explicativos para os jogos Reversi, Jogo da Velha e Lig 4, simulando jogos e imprimindo regras. Além disso, demos ao usuário a opção de escolher cores e tipos de peças diferentes em cada jogo, melhorando a sua experiência.
+Como parte dos extras, introduzimos duas novas classes: Estatisticas e Tutorial. A classe Estatisticas organiza rankings dos jogadores, permitindo acompanhar o desempenho geral e por jogo. Já a classe Tutorial oferece explicações detalhadas sobre os jogos disponíveis, simulando jogadas e apresentando as regras de forma interativa, ajudando os usuários a entenderem rapidamente cada jogo.
+
+Além dos jogos Reversi, Jogo da Velha e Lig 4, adicionamos o clássico Batalha Naval, ampliando as opções de entretenimento. Também aprimoramos a experiência do usuário ao permitir a personalização de cores e tipos de peças nos jogos. Essas implementações visam tornar o sistema mais intuitivo, inclusivo e envolvente para todos os jogadores.
 
 
 # 👩 Autores

@@ -37,7 +37,7 @@ class Jogador{
     void set_empates_totais();
     
 
-//metodos para armazenar os dados do arquivo nos atributos de cada jogador
+    //metodos para armazenar os dados do arquivo nos atributos de cada jogador
     void set_vitorias_totais(int n);
     void set_derrotas_totais(int n);
     void set_empates_totais(int n);

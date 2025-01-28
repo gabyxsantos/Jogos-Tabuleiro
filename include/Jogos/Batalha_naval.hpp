@@ -20,7 +20,7 @@ class Batalha_Naval : public Jogo_De_Tabuleiro {
     void ler_jogada(const std::string& peca) override;
     std::string comparar_pontuacoes(int pontos_jogador, const std::string& apelido_jogador, const std::string& apelido_adversario);
     bool testar_vitoria(const std::string& peca) override;
-    //void auxiliar_tutorial(const std::string& peca, int coluna); // Função auxiliar para o tutorial de Lig4
+    //void auxiliar_tutorial(const std::string& peca, int coluna); // Função auxiliar para o tutorial de Batalha Naval
 
 };
 

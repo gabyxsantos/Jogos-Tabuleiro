@@ -27,7 +27,7 @@ class Validacao{
         inline bool validar_entrada(char& valor) {
             if (std::cin >> valor) {
                 if (Validacao::validar_char(valor)) {
-                    return true; // Validação de char passou
+                    return true; // Entrada passou em validação de char 
                 }
             }
             
@@ -38,7 +38,7 @@ class Validacao{
         inline bool validar_entrada(std::string& valor) {
             if (std::cin >> valor) {
                 if (Validacao::validar_string(valor)) {
-                    return true; // Validação de string passou
+                    return true; // Entrada passou em validação de string
                 }
             }
             // Limpa o estado de erro e descarta a entrada inválida

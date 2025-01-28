@@ -42,7 +42,7 @@
 #define AGUA " ~ " 
 
 
-// Funções para saídas amigáveis
+// Funções para saídas mais espaçadas, para garantir maior jogabilidade
 void timer(int tempo);
 
 #endif

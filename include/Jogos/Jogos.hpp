@@ -7,49 +7,47 @@
 
 class Jogo_De_Tabuleiro {
     protected:
-    std::string filler;
-    int linhas, colunas;
-    std::vector<std::vector<std::string>> tabuleiro;
-
+        std::string filler;
+        int linhas, colunas;
+        std::vector<std::vector<std::string>> tabuleiro;
 
     public:
-    virtual ~Jogo_De_Tabuleiro() = default; // Destrutor virtual para permitir limpeza apropriada
+        virtual ~Jogo_De_Tabuleiro() = default; // Destrutor virtual para permitir limpeza apropriada
 
-    // Métodos abstratos
-    virtual bool verificar_jogada(int linha, int coluna) = 0;
-    virtual void ler_jogada(const std::string& peca) = 0;
-    virtual bool testar_vitoria(const std::string& peca) = 0;
+        // Métodos abstratos
+        virtual bool verificar_jogada(int linha, int coluna) = 0;
+        virtual void ler_jogada(const std::string& peca) = 0;
+        virtual bool testar_vitoria(const std::string& peca) = 0;
     
-    
-    // Métodos para o tabuleiro
-    void definir_filler(std::string filler);
-    void definir_tamanho_tabuleiro(int linhas, int colunas);
-    void inicializar_tabuleiro();
-    virtual void imprimir_tabuleiro(); //virtual devido ao tamanho superior o tabuleiro de batalha naval
-    bool tabuleiro_cheio();
+        // Métodos para o tabuleiro
+        void definir_filler(std::string filler);
+        void definir_tamanho_tabuleiro(int linhas, int colunas);
+        void inicializar_tabuleiro();
+        virtual void imprimir_tabuleiro(); //virtual devido ao tamanho superior o tabuleiro de batalha naval
+        bool tabuleiro_cheio();
 
-    // Remover cor das peças
-    std::string remover_cor(const std::string& texto);
+        // Remover cor das peças
+        std::string remover_cor(const std::string& texto);
 
-    // Getters
-    std::string get_filler();
-    int get_linhas();
-    int get_colunas();
-    std::vector<std::vector<std::string>> get_tabuleiro();
+        // Getters
+        std::string get_filler();
+        int get_linhas();
+        int get_colunas();
+        std::vector<std::vector<std::string>> get_tabuleiro();
 
-    //Setters
-    void set_tabuleiro(std::vector<std::vector<std::string>> tabuleiro);
+        //Setters
+        void set_tabuleiro(std::vector<std::vector<std::string>> tabuleiro);
 
-    // Metodos para encerramento da partida
-    void finalizar_partida_vencedor(const std::string& apelido_vencedor);
-    void finalizar_partida_empate();
-    bool testar_empate(const std::string& peca1, const std::string& peca2);
+        // Metodos para encerramento da partida
+        void finalizar_partida_vencedor(const std::string& apelido_vencedor);
+        void finalizar_partida_empate();
+        bool testar_empate(const std::string& peca1, const std::string& peca2);
 
-    //metodo para atualizar placar
-    void atualizar_placar(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo, CadastroJogadores& buscador);
-    void atualizar_placar_empate(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo, CadastroJogadores &buscador);
+        //metodo para atualizar placar
+        void atualizar_placar(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo, CadastroJogadores& buscador);
+        void atualizar_placar_empate(std::string apelido_vencedor, std::string apelido_perdedor, std::string jogo, CadastroJogadores &buscador);
 
-    // Método para definir uma cor que não pode ser igual a outra
-    std::string definir_cor(const std::string& cor_excluida = " ");
+        // Método para definir uma cor que não pode ser igual a outra
+        std::string definir_cor(const std::string& cor_excluida = " ");
 };
 #endif

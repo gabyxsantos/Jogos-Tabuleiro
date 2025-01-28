@@ -5,7 +5,6 @@
 
 class Validacao{
     private:
-        
         //funcao para limpar o estado de erro e descartar a entrada invalida
         void limpar_entrada();
     
@@ -19,7 +18,6 @@ class Validacao{
             if (std::cin >> valor) {
                 return true; // Entrada válida
             }
-            
             Validacao::limpar_entrada();
             return false; // Entrada inválida
         }
@@ -30,7 +28,6 @@ class Validacao{
                     return true; // Entrada passou em validação de char 
                 }
             }
-            
             Validacao::limpar_entrada();
             return false; // Entrada inválida
         }
@@ -54,7 +51,6 @@ class Validacao{
                 imprimir_erro("Entrada inválida. Insira no formato correto!");
             }
         }
-    
 };
 
 

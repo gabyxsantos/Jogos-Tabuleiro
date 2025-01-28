@@ -38,6 +38,8 @@ VE: Visualizar estatísticas relacionadas aos jogos.
 VT: Visualizar um tutorial explicativo sobre o sistema.
 FS: Finalizar o sistema.
 
+Para verificar a execução dos testes implementados, é necessário usar o comando "make testes". Após corrigirmos pequenos erros nos métodos, conseguimos tornar todos os testes bem-sucedidos.
+
 #  Estrutura e funcionamento do programa
 
 O projeto foi estruturado de forma modular, com cada classe definida em seus próprios arquivos de cabeçalho (.hpp) e implementação (.cpp). Esta abordagem permite uma melhor organização e legibilidade do código, bem como facilita a manutenção e o entendimento do funcionamento interno do sistema. Há um total de 12 classes no programa, cada uma com suas responsabilidades específicas, como cadastro de jogadores, execução de partidas, armazenamento de estatísticas, validação de entradas, etc.

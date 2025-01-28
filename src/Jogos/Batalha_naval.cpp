@@ -199,11 +199,11 @@ return true;
 
     std::string Batalha_Naval::comparar_pontuacoes(int pontos_jogador, const std::string& apelido_jogador, const std::string& apelido_adversario){
         if (pontos_jogador > pontos_oponente){
-            std::cout << apelido_jogador << " ganhou de " << apelido_adversario << ", por " << pontos_jogador << "pontos, contra " << pontos_oponente << " pontos!" << std::endl;
+            std::cout << apelido_jogador << " ganhou de " << apelido_adversario << ", por " << pontos_jogador << " pontos, contra " << pontos_oponente << " pontos!" << std::endl;
             return apelido_jogador;
         }
         else if (pontos_jogador < pontos_oponente){
-            std::cout << apelido_adversario << " ganhou de " << apelido_jogador << ", por " << pontos_oponente << "pontos, contra " << pontos_jogador << " pontos!" << std::endl;
+            std::cout << apelido_adversario << " ganhou de " << apelido_jogador << ", por " << pontos_oponente << " pontos, contra " << pontos_jogador << " pontos!" << std::endl;
             return apelido_adversario;
         }
     }

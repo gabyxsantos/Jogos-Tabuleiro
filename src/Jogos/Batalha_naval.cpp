@@ -106,6 +106,13 @@ Validacao validar_entrada_batalha_naval;
             validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
             return false;
         }
+        for (contador_Y=coordenada_Y-2; contador_Y<=coordenada_Y; contador_Y++) {
+            if (tabuleiro [contador_Y][coordenada_X-1].compare(AGUA) != 0){
+                validar_entrada_batalha_naval.imprimir_erro("Parece que um dos seus navios já está ocupando alguma dessas casas, por favor escolha outras casas!");
+                contador_Y=0;
+                return false;
+            }
+        }
         for (contador_Y=coordenada_Y-2; contador_Y<=coordenada_Y; contador_Y++) tabuleiro [contador_Y][coordenada_X-1]= CONTRATORPEDEIRO;
         break;
     }
@@ -114,6 +121,13 @@ Validacao validar_entrada_batalha_naval;
         if (coordenada_X < 2 || coordenada_X > 19){
             validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
             return false;
+        }
+        for (contador_X=coordenada_X-2; contador_X<=coordenada_X; contador_X++) {
+            if (tabuleiro [coordenada_Y-1][contador_X].compare(AGUA) != 0){
+                validar_entrada_batalha_naval.imprimir_erro("Parece que um dos seus navios já está ocupando alguma dessas casas, por favor escolha outras casas!");
+                contador_X=0;
+                return false;
+            }
         }
         for (contador_X=coordenada_X-2; contador_X<=coordenada_X; contador_X++) tabuleiro [coordenada_Y-1][contador_X]= CONTRATORPEDEIRO;
     break;
@@ -128,6 +142,13 @@ Validacao validar_entrada_batalha_naval;
             validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
             return false;
         }
+        for (contador_Y=coordenada_Y-3; contador_Y<=coordenada_Y+1; contador_Y++) {
+            if (tabuleiro [contador_Y][coordenada_X-1].compare(AGUA) != 0){
+                validar_entrada_batalha_naval.imprimir_erro("Parece que um dos seus navios já está ocupando alguma dessas casas, por favor escolha outras casas!");
+                contador_Y=0;
+                return false;
+            }
+        }
         for (contador_Y=coordenada_Y - 3; contador_Y<=coordenada_Y+1; contador_Y++) tabuleiro [contador_Y][coordenada_X-1]= ENCOURACADO;
     break;
         }
@@ -136,6 +157,13 @@ Validacao validar_entrada_batalha_naval;
         if (coordenada_X < 3 || coordenada_X > 18){
             validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
             return false;
+        }
+        for (contador_X=coordenada_X-3; contador_X<=coordenada_X+1; contador_X++) {
+            if (tabuleiro [coordenada_Y-1][contador_X].compare(AGUA) != 0){
+                validar_entrada_batalha_naval.imprimir_erro("Parece que um dos seus navios já está ocupando alguma dessas casas, por favor escolha outras casas!");
+                contador_X=0;
+                return false;
+            }
         }
         for (contador_X=coordenada_X - 3; contador_X<=coordenada_X+1; contador_X++) tabuleiro [coordenada_Y-1][contador_X]= ENCOURACADO;
     break;
@@ -150,6 +178,13 @@ Validacao validar_entrada_batalha_naval;
             validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
             return false;
         }
+        for (contador_Y=coordenada_Y-4; contador_Y<=coordenada_Y+2; contador_Y++) {
+            if (tabuleiro [contador_Y][coordenada_X-1].compare(AGUA) != 0){
+                validar_entrada_batalha_naval.imprimir_erro("Parece que um dos seus navios já está ocupando alguma dessas casas, por favor escolha outras casas!");
+                contador_Y=0;
+                return false;
+            }
+        }
         for (contador_Y=coordenada_Y - 4; contador_Y<=coordenada_Y+2; contador_Y++) tabuleiro [contador_Y][coordenada_X-1]= PORTA_AVIOES;
     break;
         };
@@ -158,6 +193,13 @@ Validacao validar_entrada_batalha_naval;
         if (coordenada_X < 4 || coordenada_X > 17){
             validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
             return false;
+        }
+        for (contador_X=coordenada_X-4; contador_X<=coordenada_X+2; contador_X++) {
+            if (tabuleiro [coordenada_Y-1][contador_X].compare(AGUA) != 0){
+                validar_entrada_batalha_naval.imprimir_erro("Parece que um dos seus navios já está ocupando alguma dessas casas, por favor escolha outras casas!");
+                contador_X=0;
+                return false;
+            }
         }
         for (contador_X=coordenada_X - 4; contador_X<=coordenada_X+2; contador_X++) tabuleiro [coordenada_Y-1][contador_X]= PORTA_AVIOES;
     break;

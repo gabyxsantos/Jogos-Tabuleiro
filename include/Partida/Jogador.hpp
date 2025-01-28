@@ -24,6 +24,7 @@ class Jogador{
         Placar Reversi;
         Placar Lig4;
         Placar JogoVelha;
+        Placar BatalhaNaval;
 
     public:
     Jogador(std::string nome, std::string apelido);
@@ -46,6 +47,7 @@ class Jogador{
     //metodos para atualizar os empates
     void set_Lig4();
     void set_JogoVelha();
+    void set_BatalhaNaval();
 
     //se os metodos set forem chamados com bool isso indica que é apenas a atualização do placar na partida
     //no caso dos pontos, true= vitoria= +3pontos; false = empate = +1ponto
@@ -53,11 +55,13 @@ class Jogador{
     void set_Reversi(bool valor);
     void set_Lig4(bool valor);
     void set_JogoVelha(bool valor);
+    void set_BatalhaNaval(bool valor);
 
     //por outro lado, se forem chamados com inteiros, indica que apenas se esta lendo os dados do arquivo
     void set_Reversi(int vitorias, int derrotas, int empates, int pontos);
     void set_Lig4(int vitorias, int derrotas, int empates, int pontos);
     void set_JogoVelha(int vitorias, int derrotas, int empates, int pontos);
+    void set_BatalhaNaval(int vitorias, int derrotas, int empates, int pontos);
 
     std::string get_nome();
     std::string get_apelido();
@@ -68,6 +72,7 @@ class Jogador{
     Placar get_Reversi();
     Placar get_Lig4();
     Placar get_JogoVelha();
+    Placar get_BatalhaNaval();
 };
 
 #endif

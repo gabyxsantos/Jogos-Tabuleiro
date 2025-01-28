@@ -17,6 +17,7 @@ class Estatisticas{
         void ranking_reversi();
         void ranking_lig4();
         void ranking_jogovelha();
+        void ranking_batalhanaval();
         void imprimir_ranking(std::vector<Jogador*> vetor_jogadores);
 
     public:

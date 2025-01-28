@@ -179,9 +179,9 @@ void Partida::jogar_batalha_naval(){
         }
         else{
             jogo4_mapa1.finalizar_partida_empate();
-            //jogo4_mapa1.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "Lig4", acesso_lista);
+            jogo4_mapa1.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "BatalhaNaval", acesso_lista);
         }
-        //jogo4_mapa1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi", acesso_lista);
+        jogo4_mapa1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "BatalhaNaval", acesso_lista);
 }
 
 void Partida::jogar_reversi(){

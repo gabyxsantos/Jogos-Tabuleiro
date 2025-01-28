@@ -206,6 +206,10 @@ return true;
             std::cout << apelido_adversario << " ganhou de " << apelido_jogador << ", por " << pontos_oponente << " pontos, contra " << pontos_jogador << " pontos!" << std::endl;
             return apelido_adversario;
         }
+        else {
+            std::cout << "Empate! Ambos jogadores fizeram " << pontos_jogador << " pontos!" << std::endl;
+            return "Empate";
+        }
     }
 
     bool Batalha_Naval::testar_vitoria(const std::string& peca){

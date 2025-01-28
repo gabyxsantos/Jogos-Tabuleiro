@@ -8,10 +8,8 @@ void Arquivo::extrair_dados(){
     file.open("DadosJogos/JogosTabuleiro.txt", std::fstream::in);
     
     if(file.is_open()){ //caso o arquivo ja exista
-        
         std::string nome, apelido, auxstr; ///se der errado a leitura voltar aqui
         int vitorias_jogo, derrotas_jogo, empates_jogo, pontos_jogo, vitorias_totais, derrotas_totais, empates_totais, pontos_totais;
-        //lista_jogadores.limpar_lista(); //garantindo que a lista esteja vazia antes de adicionar os jogadores
 
         while(true){
             file >>auxstr >> apelido >> nome;
@@ -25,8 +23,8 @@ void Arquivo::extrair_dados(){
             jogador->set_empates_totais(empates_totais);
             jogador->set_pontos_totais(pontos_totais);
 
-
             for (int i = 0; i < 4; i++) {
+
                 file >> auxstr >> auxstr >> vitorias_jogo >> auxstr >> derrotas_jogo >> auxstr >> empates_jogo >> auxstr >> pontos_jogo;
                 if (i == 0) {
                     jogador->set_Reversi(vitorias_jogo, derrotas_jogo, empates_jogo, pontos_jogo);
@@ -45,17 +43,13 @@ void Arquivo::extrair_dados(){
             if(jogador->get_nome()!=""){
                 lista_jogadores.adicionar_jogador(jogador, apelido);
             }
-
-
         }
         file.close();
     }
     else{ //caso nao exista, iremos criá-lo
-
         file.open("DadosJogos/JogosTabuleiro.txt", std::fstream::out);
         file.close();
     }
-
 }
 
 
@@ -102,9 +96,7 @@ void Arquivo::salvar_dados(){
                 << std::setw(5) << " P: " << jogador->get_BatalhaNaval().pontos_por_jogo << std::endl;
         
         }
-
         file.close();
-
 }
 
 void Arquivo::set_lista_jogadores(CadastroJogadores &acesso){

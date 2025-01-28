@@ -36,6 +36,23 @@ Validacao validar_entrada_jogos;
         }
     }
 
+    void Jogo_De_Tabuleiro::imprimir_tabuleiro_tutorial() {
+        std::cout << VOID;
+        for (int j = 1; j <= colunas; ++j){
+            std::cout << VOID << j;
+        }
+        std::cout << std::endl;
+
+        for (int i = 0; i < linhas; ++i){
+            std::cout << std::setw(2) << i + 1 << " |";
+            for (int j = 0; j < colunas; ++j){
+                std::cout << tabuleiro[i][j] << "|";
+            }
+            std::cout << std::endl;
+        }
+    }
+
+
     bool Jogo_De_Tabuleiro::tabuleiro_cheio(){
         for (const auto& linha : tabuleiro) {
             for (const auto& casa : linha) {
@@ -76,13 +93,13 @@ Validacao validar_entrada_jogos;
     // Funções para finalizar a partida
     void Jogo_De_Tabuleiro::finalizar_partida_vencedor(const std::string& nome_vencedor){
         imprimir_tabuleiro();
-        timer(1800);
+        timer(500);
         std::cout << GREEN << "Parabéns, " << nome_vencedor << "! Você venceu!" << RESET << std::endl;
     }
 
     void Jogo_De_Tabuleiro::finalizar_partida_empate(){
         imprimir_tabuleiro();
-        timer(1800);
+        timer(500);
         std::cout << GREEN << "O jogo terminou em um empate!" << RESET << std::endl;
     }
 

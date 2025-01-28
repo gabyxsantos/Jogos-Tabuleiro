@@ -10,7 +10,6 @@ class Placar{
         int derrotas = 0;
         int empates= 0;
         int pontos_por_jogo = 0;
-    
 };
 
 class Jogador{
@@ -27,22 +26,26 @@ class Jogador{
         Placar BatalhaNaval;
 
     public:
-    Jogador(std::string nome, std::string apelido);
-    Jogador();
-    ~Jogador();
+        Jogador(std::string nome, std::string apelido);
+        Jogador();
+        ~Jogador();
 
-    void set_nome();
-    void set_apelido();
-    void set_vitorias_totais();
-    void set_derrotas_totais();
-    void set_empates_totais();
+        void set_nome();
+        void set_apelido();
+        void set_vitorias_totais();
+        void set_derrotas_totais();
+        void set_empates_totais();
     
+        //metodos para armazenar os dados do arquivo nos atributos de cada jogador
+        void set_vitorias_totais(int n);
+        void set_derrotas_totais(int n);
+        void set_empates_totais(int n);
+        void set_pontos_totais(int n);
 
-//metodos para armazenar os dados do arquivo nos atributos de cada jogador
-    void set_vitorias_totais(int n);
-    void set_derrotas_totais(int n);
-    void set_empates_totais(int n);
-    void set_pontos_totais(int n);
+        //metodos para atualizar os empates
+        void set_Lig4();
+        void set_JogoVelha();
+
 
     //metodos para atualizar os empates
     void set_Lig4();
@@ -73,6 +76,7 @@ class Jogador{
     Placar get_Lig4();
     Placar get_JogoVelha();
     Placar get_BatalhaNaval();
+
 };
 
 #endif

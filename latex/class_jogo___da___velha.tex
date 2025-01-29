@@ -1,0 +1,170 @@
+\doxysection{Jogo\+\_\+\+Da\+\_\+\+Velha Class Reference}
+\hypertarget{class_jogo___da___velha}{}\label{class_jogo___da___velha}\index{Jogo\_Da\_Velha@{Jogo\_Da\_Velha}}
+
+
+{\ttfamily \#include $<$Jogo\+\_\+da\+\_\+velha.\+hpp$>$}
+
+Inheritance diagram for Jogo\+\_\+\+Da\+\_\+\+Velha\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_jogo___da___velha}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_jogo___da___velha_a0eb9c7640d4ec2baf47d42b4bc6f2a88}{Jogo\+\_\+\+Da\+\_\+\+Velha}} ()
+\item 
+\mbox{\hyperlink{class_jogo___da___velha_a19886aee094914e930d951b33f1bdd82}{\texorpdfstring{$\sim$}{\string~}\+Jogo\+\_\+\+Da\+\_\+\+Velha}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___da___velha_ac5bd7429db6e839d96070d065c8376ed}{escolher\+\_\+peca}} (const std\+::string \&peca\+\_\+excluida="{} "{}, bool colorido=false)
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___da___velha_a8811c6ed5ae9c93a68524edf8b50101c}{escolher\+\_\+cor}} (const std\+::string \&peca)
+\item 
+bool \mbox{\hyperlink{class_jogo___da___velha_af3227675e373d131801b92e373bc0535}{verificar\+\_\+jogada}} (int linha, int coluna) override
+\item 
+void \mbox{\hyperlink{class_jogo___da___velha_a7e8ea1e7c3ca06acadc3193028711468}{ler\+\_\+jogada}} (const std\+::string \&peca) override
+\item 
+bool \mbox{\hyperlink{class_jogo___da___velha_a32044d8583a1b12affa90b0b3f4502e0}{testar\+\_\+vitoria}} (const std\+::string \&peca) override
+\item 
+void \mbox{\hyperlink{class_jogo___da___velha_ac729a854430824e61d58f730d7b0664f}{auxiliar\+\_\+tutorial}} (const std\+::string \&peca, int linha, int coluna)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_jogo___de___tabuleiro}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_jogo___de___tabuleiro_a2ce9561155f03d0358cd56f86d4d7dc7}{\texorpdfstring{$\sim$}{\string~}\+Jogo\+\_\+\+De\+\_\+\+Tabuleiro}} ()=default
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a57c4caa041031840de42f1e9bb5aba34}{definir\+\_\+filler}} (std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_a1d33d728c6ede7dade20dec1805f9c9f}{filler}})
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a2d9c1de49564089524aa3bbd52dad6e1}{definir\+\_\+tamanho\+\_\+tabuleiro}} (int \mbox{\hyperlink{class_jogo___de___tabuleiro_a0591b1dc73c86fa20d20fa1cf3ff73d6}{linhas}}, int \mbox{\hyperlink{class_jogo___de___tabuleiro_a40120bd6463e749e5a7183e6e51dc1ed}{colunas}})
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_ac30d97b936535f5d1e5d22766e45a503}{inicializar\+\_\+tabuleiro}} ()
+\item 
+virtual void \mbox{\hyperlink{class_jogo___de___tabuleiro_a8a09742d542aa0e89bfc5fd2adef1b02}{imprimir\+\_\+tabuleiro}} ()
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a6c94a89b05ed6803f8b11a588a4d2ba2}{imprimir\+\_\+tabuleiro\+\_\+tutorial}} ()
+\item 
+bool \mbox{\hyperlink{class_jogo___de___tabuleiro_ae0d47ef51467aacd9e01ad8dcfbf0713}{tabuleiro\+\_\+cheio}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_adacf4760b419d57b8ee6027d17c21af1}{remover\+\_\+cor}} (const std\+::string \&texto)
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_a84f2ac999c99deb8beb5b3747e85084d}{get\+\_\+filler}} ()
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a215900851c7f87d1dbb0e7ed82628719}{get\+\_\+linhas}} ()
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a5792dcb251ed80e86ae004931752adcc}{get\+\_\+colunas}} ()
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_jogo___de___tabuleiro_a4ac60fff6dff40843b339ba3e2787a90}{get\+\_\+tabuleiro}} ()
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_ac674603404502d998104f66e267ed126}{set\+\_\+tabuleiro}} (std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_jogo___de___tabuleiro_ad5d8fb77aff8ef186a407fc5bc4db220}{tabuleiro}})
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a258a0426693643f7ef6675c8d5761b38}{finalizar\+\_\+partida\+\_\+vencedor}} (const std\+::string \&apelido\+\_\+vencedor)
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_aede68fefaec45788c94cbd3af6cd19f9}{finalizar\+\_\+partida\+\_\+empate}} ()
+\item 
+bool \mbox{\hyperlink{class_jogo___de___tabuleiro_a9eb0b93de1356545c75423471b1b3328}{testar\+\_\+empate}} (const std\+::string \&peca1, const std\+::string \&peca2)
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a0c30c501ac9ce6404274a3803af2c3ab}{atualizar\+\_\+placar}} (std\+::string apelido\+\_\+vencedor, std\+::string apelido\+\_\+perdedor, std\+::string jogo, \mbox{\hyperlink{class_cadastro_jogadores}{Cadastro\+Jogadores}} \&buscador)
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_ae5e6d3ddae9f0190d72e16509e43eb03}{atualizar\+\_\+placar\+\_\+empate}} (std\+::string apelido\+\_\+vencedor, std\+::string apelido\+\_\+perdedor, std\+::string jogo, \mbox{\hyperlink{class_cadastro_jogadores}{Cadastro\+Jogadores}} \&buscador)
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_ac8ffa20e2ceaac20f66f650630dac823}{definir\+\_\+cor}} (const std\+::string \&cor\+\_\+excluida="{} "{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_jogo___da___velha_a263e4d8e8c322942369291a96ecce01e}{pecas\+\_\+coloridas}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_jogo___de___tabuleiro}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_a1d33d728c6ede7dade20dec1805f9c9f}{filler}}
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a0591b1dc73c86fa20d20fa1cf3ff73d6}{linhas}}
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a40120bd6463e749e5a7183e6e51dc1ed}{colunas}}
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_jogo___de___tabuleiro_ad5d8fb77aff8ef186a407fc5bc4db220}{tabuleiro}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_jogo___da___velha_a0eb9c7640d4ec2baf47d42b4bc6f2a88}\index{Jogo\_Da\_Velha@{Jogo\_Da\_Velha}!Jogo\_Da\_Velha@{Jogo\_Da\_Velha}}
+\index{Jogo\_Da\_Velha@{Jogo\_Da\_Velha}!Jogo\_Da\_Velha@{Jogo\_Da\_Velha}}
+\doxysubsubsection{\texorpdfstring{Jogo\_Da\_Velha()}{Jogo\_Da\_Velha()}}
+{\footnotesize\ttfamily \label{class_jogo___da___velha_a0eb9c7640d4ec2baf47d42b4bc6f2a88} 
+Jogo\+\_\+\+Da\+\_\+\+Velha\+::\+Jogo\+\_\+\+Da\+\_\+\+Velha (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_jogo___da___velha_a19886aee094914e930d951b33f1bdd82}\index{Jogo\_Da\_Velha@{Jogo\_Da\_Velha}!````~Jogo\_Da\_Velha@{\texorpdfstring{$\sim$}{\string~}Jogo\_Da\_Velha}}
+\index{````~Jogo\_Da\_Velha@{\texorpdfstring{$\sim$}{\string~}Jogo\_Da\_Velha}!Jogo\_Da\_Velha@{Jogo\_Da\_Velha}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Jogo\_Da\_Velha()}{\string~Jogo\_Da\_Velha()}}
+{\footnotesize\ttfamily \label{class_jogo___da___velha_a19886aee094914e930d951b33f1bdd82} 
+Jogo\+\_\+\+Da\+\_\+\+Velha\+::\texorpdfstring{$\sim$}{\string~}\+Jogo\+\_\+\+Da\+\_\+\+Velha (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_jogo___da___velha_ac729a854430824e61d58f730d7b0664f}\index{Jogo\_Da\_Velha@{Jogo\_Da\_Velha}!auxiliar\_tutorial@{auxiliar\_tutorial}}
+\index{auxiliar\_tutorial@{auxiliar\_tutorial}!Jogo\_Da\_Velha@{Jogo\_Da\_Velha}}
+\doxysubsubsection{\texorpdfstring{auxiliar\_tutorial()}{auxiliar\_tutorial()}}
+{\footnotesize\ttfamily \label{class_jogo___da___velha_ac729a854430824e61d58f730d7b0664f} 
+void Jogo\+\_\+\+Da\+\_\+\+Velha\+::auxiliar\+\_\+tutorial (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_jogo___da___velha_a8811c6ed5ae9c93a68524edf8b50101c}\index{Jogo\_Da\_Velha@{Jogo\_Da\_Velha}!escolher\_cor@{escolher\_cor}}
+\index{escolher\_cor@{escolher\_cor}!Jogo\_Da\_Velha@{Jogo\_Da\_Velha}}
+\doxysubsubsection{\texorpdfstring{escolher\_cor()}{escolher\_cor()}}
+{\footnotesize\ttfamily \label{class_jogo___da___velha_a8811c6ed5ae9c93a68524edf8b50101c} 
+std\+::string Jogo\+\_\+\+Da\+\_\+\+Velha\+::escolher\+\_\+cor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_jogo___da___velha_ac5bd7429db6e839d96070d065c8376ed}\index{Jogo\_Da\_Velha@{Jogo\_Da\_Velha}!escolher\_peca@{escolher\_peca}}
+\index{escolher\_peca@{escolher\_peca}!Jogo\_Da\_Velha@{Jogo\_Da\_Velha}}
+\doxysubsubsection{\texorpdfstring{escolher\_peca()}{escolher\_peca()}}
+{\footnotesize\ttfamily \label{class_jogo___da___velha_ac5bd7429db6e839d96070d065c8376ed} 
+std\+::string Jogo\+\_\+\+Da\+\_\+\+Velha\+::escolher\+\_\+peca (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca\+\_\+excluida}{ = {\ttfamily "{}~"{}}, }\item[{bool}]{colorido}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+\Hypertarget{class_jogo___da___velha_a7e8ea1e7c3ca06acadc3193028711468}\index{Jogo\_Da\_Velha@{Jogo\_Da\_Velha}!ler\_jogada@{ler\_jogada}}
+\index{ler\_jogada@{ler\_jogada}!Jogo\_Da\_Velha@{Jogo\_Da\_Velha}}
+\doxysubsubsection{\texorpdfstring{ler\_jogada()}{ler\_jogada()}}
+{\footnotesize\ttfamily \label{class_jogo___da___velha_a7e8ea1e7c3ca06acadc3193028711468} 
+void Jogo\+\_\+\+Da\+\_\+\+Velha\+::ler\+\_\+jogada (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_jogo___de___tabuleiro_a8579c9ff1a82e9c46e850aa13881ae02}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}.
+
+\Hypertarget{class_jogo___da___velha_a32044d8583a1b12affa90b0b3f4502e0}\index{Jogo\_Da\_Velha@{Jogo\_Da\_Velha}!testar\_vitoria@{testar\_vitoria}}
+\index{testar\_vitoria@{testar\_vitoria}!Jogo\_Da\_Velha@{Jogo\_Da\_Velha}}
+\doxysubsubsection{\texorpdfstring{testar\_vitoria()}{testar\_vitoria()}}
+{\footnotesize\ttfamily \label{class_jogo___da___velha_a32044d8583a1b12affa90b0b3f4502e0} 
+bool Jogo\+\_\+\+Da\+\_\+\+Velha\+::testar\+\_\+vitoria (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_jogo___de___tabuleiro_a6b67d17ca7acc701de2195d235cb1c9c}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}.
+
+\Hypertarget{class_jogo___da___velha_af3227675e373d131801b92e373bc0535}\index{Jogo\_Da\_Velha@{Jogo\_Da\_Velha}!verificar\_jogada@{verificar\_jogada}}
+\index{verificar\_jogada@{verificar\_jogada}!Jogo\_Da\_Velha@{Jogo\_Da\_Velha}}
+\doxysubsubsection{\texorpdfstring{verificar\_jogada()}{verificar\_jogada()}}
+{\footnotesize\ttfamily \label{class_jogo___da___velha_af3227675e373d131801b92e373bc0535} 
+bool Jogo\+\_\+\+Da\+\_\+\+Velha\+::verificar\+\_\+jogada (\begin{DoxyParamCaption}\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_jogo___de___tabuleiro_a3eac1f1ce3a8efb2af3a5703a897a990}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_jogo___da___velha_a263e4d8e8c322942369291a96ecce01e}\index{Jogo\_Da\_Velha@{Jogo\_Da\_Velha}!pecas\_coloridas@{pecas\_coloridas}}
+\index{pecas\_coloridas@{pecas\_coloridas}!Jogo\_Da\_Velha@{Jogo\_Da\_Velha}}
+\doxysubsubsection{\texorpdfstring{pecas\_coloridas}{pecas\_coloridas}}
+{\footnotesize\ttfamily \label{class_jogo___da___velha_a263e4d8e8c322942369291a96ecce01e} 
+bool Jogo\+\_\+\+Da\+\_\+\+Velha\+::pecas\+\_\+coloridas}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Jogos/\mbox{\hyperlink{_jogo__da__velha_8hpp}{Jogo\+\_\+da\+\_\+velha.\+hpp}}\item 
+src/\+Jogos/\mbox{\hyperlink{_jogo__da__velha_8cpp}{Jogo\+\_\+da\+\_\+velha.\+cpp}}\end{DoxyCompactItemize}

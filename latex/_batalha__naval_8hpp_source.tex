@@ -1,0 +1,31 @@
+\doxysection{Batalha\+\_\+naval.\+hpp}
+\hypertarget{_batalha__naval_8hpp_source}{}\label{_batalha__naval_8hpp_source}\index{include/Jogos/Batalha\_naval.hpp@{include/Jogos/Batalha\_naval.hpp}}
+\mbox{\hyperlink{_batalha__naval_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BATALHANAVAL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BATALHANAVAL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_jogos_8hpp}{Jogos/Jogos.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_batalha___naval_acae43541a001e811256a2b58fe423403}{Batalha\_Naval}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_jogo___de___tabuleiro}{Jogo\_De\_Tabuleiro}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pontos\_oponente\ =\ 0;\ \textcolor{comment}{//\ como\ o\ mapa\ que\ o\ jogador\ cria\ na\ verdade\ é\ utilizado\ pelo\ seu\ oponente\ para\ jogar,}}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ os\ pontos\ obtidos\ são\ referentes\ ao\ jogador\ que\ joga\ com\ o\ mapa,\ e\ não\ àquele\ que\ criou\ o\ mapa.}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_batalha___naval_acae43541a001e811256a2b58fe423403}{Batalha\_Naval}}();}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_batalha___naval_a18771640ff6883147523d201dff28aec}{\string~Batalha\_Naval}}();}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_batalha___naval_ae57165712159b8f51bf8e806de292f88}{imprimir\_tabuleiro}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_batalha___naval_a702e28591adb3850642d2daef502ba4c}{posicionar\_navios}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_batalha___naval_af1576d5b66da4ecfaea539c708633444}{set\_pontos}}(\textcolor{keywordtype}{int}\ pontos\_jogada);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_batalha___naval_afe7374148af67cd09856f64766b5b7ef}{get\_pontos}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_batalha___naval_ad7145799895a772f4755dc735deb2b59}{ler\_posicao\_inicial}}(\textcolor{keyword}{const}\ std::string\&\ peca);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_batalha___naval_a5f470572f22e88edbb25e7cb27ecdcad}{verificar\_jogada}}(\textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_batalha___naval_abaf861cfc9757c0b1d8e42e6a58162ec}{ler\_jogada}}(\textcolor{keyword}{const}\ std::string\&\ peca)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_batalha___naval_aeca49b7f07377c9629d8f7e873b9b308}{comparar\_pontuacoes}}(\textcolor{keywordtype}{int}\ pontos\_jogador,\ \textcolor{keyword}{const}\ std::string\&\ apelido\_jogador,\ \textcolor{keyword}{const}\ std::string\&\ apelido\_adversario);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_batalha___naval_a6caf77c510ed9ba047af56b6beccc9ad}{testar\_vitoria}}(\textcolor{keyword}{const}\ std::string\&\ peca)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//void\ auxiliar\_tutorial(const\ std::string\&\ peca,\ int\ coluna);\ //\ Função\ auxiliar\ para\ o\ tutorial\ de\ Batalha\ Naval}}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

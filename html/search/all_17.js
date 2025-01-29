@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['_7earquivo_0',['~Arquivo',['../class_arquivo.html#adbb299f34929877d20f453cacc648bb1',1,'Arquivo']]],
+  ['_7ebatalha_5fnaval_1',['~Batalha_Naval',['../class_batalha___naval.html#a18771640ff6883147523d201dff28aec',1,'Batalha_Naval']]],
+  ['_7ecadastrojogadores_2',['~CadastroJogadores',['../class_cadastro_jogadores.html#a2a5b6f70f4646f2d6f338a612a5cbb3d',1,'CadastroJogadores']]],
+  ['_7econtext_3',['~Context',['../classdoctest_1_1_context.html#a33b344fbc4803dca81147c4a4cc9edbd',1,'doctest::Context']]],
+  ['_7econtextscope_4',['~ContextScope',['../classdoctest_1_1detail_1_1_context_scope.html#a1ee7d4702398ee8d0e80ab843aa260d7',1,'doctest::detail::ContextScope']]],
+  ['_7econtextscopebase_5',['~ContextScopeBase',['../structdoctest_1_1detail_1_1_context_scope_base.html#a3adec03d141d955f6b4655fdb1202583',1,'doctest::detail::ContextScopeBase']]],
+  ['_7eestatisticas_6',['~Estatisticas',['../class_estatisticas.html#af40696c03aaebaeacac1b5c204da9b6d',1,'Estatisticas']]],
+  ['_7ejogador_7',['~Jogador',['../class_jogador.html#a3e62c32199fc9cfbcf22cf83f9008be6',1,'Jogador']]],
+  ['_7ejogo_5fda_5fvelha_8',['~Jogo_Da_Velha',['../class_jogo___da___velha.html#a19886aee094914e930d951b33f1bdd82',1,'Jogo_Da_Velha']]],
+  ['_7ejogo_5fde_5ftabuleiro_9',['~Jogo_De_Tabuleiro',['../class_jogo___de___tabuleiro.html#a2ce9561155f03d0358cd56f86d4d7dc7',1,'Jogo_De_Tabuleiro']]],
+  ['_7elig_5f4_10',['~Lig_4',['../class_lig__4.html#afc3adeec007be5a5010bd13275ad5d40',1,'Lig_4']]],
+  ['_7emessagebuilder_11',['~MessageBuilder',['../structdoctest_1_1detail_1_1_message_builder.html#aa8dca00768780164f52e309276692f96',1,'doctest::detail::MessageBuilder']]],
+  ['_7epartida_12',['~Partida',['../class_partida.html#aeb7153c737dcc7b06c0cc4c7f7cbb21a',1,'Partida']]],
+  ['_7ereversi_13',['~Reversi',['../class_reversi.html#afd006e4fdacdedc4a3bb34fe6f1d1940',1,'Reversi']]],
+  ['_7estring_14',['~String',['../classdoctest_1_1_string.html#af5dce5deeb8f25a4866efdff75e92975',1,'doctest::String']]],
+  ['_7esubcase_15',['~Subcase',['../structdoctest_1_1detail_1_1_subcase.html#a4812988371d226236be53c302c86abe2',1,'doctest::detail::Subcase']]],
+  ['_7etestcase_16',['~TestCase',['../structdoctest_1_1detail_1_1_test_case.html#a1fed36b077f87cd75276875fe1db00b9',1,'doctest::detail::TestCase']]]
+];

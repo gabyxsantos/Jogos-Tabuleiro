@@ -1,0 +1,182 @@
+\doxysection{Batalha\+\_\+\+Naval Class Reference}
+\hypertarget{class_batalha___naval}{}\label{class_batalha___naval}\index{Batalha\_Naval@{Batalha\_Naval}}
+
+
+{\ttfamily \#include $<$Batalha\+\_\+naval.\+hpp$>$}
+
+Inheritance diagram for Batalha\+\_\+\+Naval\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_batalha___naval}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_batalha___naval_acae43541a001e811256a2b58fe423403}{Batalha\+\_\+\+Naval}} ()
+\item 
+\mbox{\hyperlink{class_batalha___naval_a18771640ff6883147523d201dff28aec}{\texorpdfstring{$\sim$}{\string~}\+Batalha\+\_\+\+Naval}} ()
+\item 
+void \mbox{\hyperlink{class_batalha___naval_ae57165712159b8f51bf8e806de292f88}{imprimir\+\_\+tabuleiro}} () override
+\item 
+void \mbox{\hyperlink{class_batalha___naval_a702e28591adb3850642d2daef502ba4c}{posicionar\+\_\+navios}} ()
+\item 
+void \mbox{\hyperlink{class_batalha___naval_af1576d5b66da4ecfaea539c708633444}{set\+\_\+pontos}} (int pontos\+\_\+jogada)
+\item 
+int \mbox{\hyperlink{class_batalha___naval_afe7374148af67cd09856f64766b5b7ef}{get\+\_\+pontos}} ()
+\item 
+bool \mbox{\hyperlink{class_batalha___naval_ad7145799895a772f4755dc735deb2b59}{ler\+\_\+posicao\+\_\+inicial}} (const std\+::string \&peca)
+\item 
+bool \mbox{\hyperlink{class_batalha___naval_a5f470572f22e88edbb25e7cb27ecdcad}{verificar\+\_\+jogada}} (int linha, int coluna) override
+\item 
+void \mbox{\hyperlink{class_batalha___naval_abaf861cfc9757c0b1d8e42e6a58162ec}{ler\+\_\+jogada}} (const std\+::string \&peca) override
+\item 
+std\+::string \mbox{\hyperlink{class_batalha___naval_aeca49b7f07377c9629d8f7e873b9b308}{comparar\+\_\+pontuacoes}} (int pontos\+\_\+jogador, const std\+::string \&apelido\+\_\+jogador, const std\+::string \&apelido\+\_\+adversario)
+\item 
+bool \mbox{\hyperlink{class_batalha___naval_a6caf77c510ed9ba047af56b6beccc9ad}{testar\+\_\+vitoria}} (const std\+::string \&peca) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_jogo___de___tabuleiro}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_jogo___de___tabuleiro_a2ce9561155f03d0358cd56f86d4d7dc7}{\texorpdfstring{$\sim$}{\string~}\+Jogo\+\_\+\+De\+\_\+\+Tabuleiro}} ()=default
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a57c4caa041031840de42f1e9bb5aba34}{definir\+\_\+filler}} (std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_a1d33d728c6ede7dade20dec1805f9c9f}{filler}})
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a2d9c1de49564089524aa3bbd52dad6e1}{definir\+\_\+tamanho\+\_\+tabuleiro}} (int \mbox{\hyperlink{class_jogo___de___tabuleiro_a0591b1dc73c86fa20d20fa1cf3ff73d6}{linhas}}, int \mbox{\hyperlink{class_jogo___de___tabuleiro_a40120bd6463e749e5a7183e6e51dc1ed}{colunas}})
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_ac30d97b936535f5d1e5d22766e45a503}{inicializar\+\_\+tabuleiro}} ()
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a6c94a89b05ed6803f8b11a588a4d2ba2}{imprimir\+\_\+tabuleiro\+\_\+tutorial}} ()
+\item 
+bool \mbox{\hyperlink{class_jogo___de___tabuleiro_ae0d47ef51467aacd9e01ad8dcfbf0713}{tabuleiro\+\_\+cheio}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_adacf4760b419d57b8ee6027d17c21af1}{remover\+\_\+cor}} (const std\+::string \&texto)
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_a84f2ac999c99deb8beb5b3747e85084d}{get\+\_\+filler}} ()
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a215900851c7f87d1dbb0e7ed82628719}{get\+\_\+linhas}} ()
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a5792dcb251ed80e86ae004931752adcc}{get\+\_\+colunas}} ()
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_jogo___de___tabuleiro_a4ac60fff6dff40843b339ba3e2787a90}{get\+\_\+tabuleiro}} ()
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_ac674603404502d998104f66e267ed126}{set\+\_\+tabuleiro}} (std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_jogo___de___tabuleiro_ad5d8fb77aff8ef186a407fc5bc4db220}{tabuleiro}})
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a258a0426693643f7ef6675c8d5761b38}{finalizar\+\_\+partida\+\_\+vencedor}} (const std\+::string \&apelido\+\_\+vencedor)
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_aede68fefaec45788c94cbd3af6cd19f9}{finalizar\+\_\+partida\+\_\+empate}} ()
+\item 
+bool \mbox{\hyperlink{class_jogo___de___tabuleiro_a9eb0b93de1356545c75423471b1b3328}{testar\+\_\+empate}} (const std\+::string \&peca1, const std\+::string \&peca2)
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a0c30c501ac9ce6404274a3803af2c3ab}{atualizar\+\_\+placar}} (std\+::string apelido\+\_\+vencedor, std\+::string apelido\+\_\+perdedor, std\+::string jogo, \mbox{\hyperlink{class_cadastro_jogadores}{Cadastro\+Jogadores}} \&buscador)
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_ae5e6d3ddae9f0190d72e16509e43eb03}{atualizar\+\_\+placar\+\_\+empate}} (std\+::string apelido\+\_\+vencedor, std\+::string apelido\+\_\+perdedor, std\+::string jogo, \mbox{\hyperlink{class_cadastro_jogadores}{Cadastro\+Jogadores}} \&buscador)
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_ac8ffa20e2ceaac20f66f650630dac823}{definir\+\_\+cor}} (const std\+::string \&cor\+\_\+excluida="{} "{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_jogo___de___tabuleiro}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_a1d33d728c6ede7dade20dec1805f9c9f}{filler}}
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a0591b1dc73c86fa20d20fa1cf3ff73d6}{linhas}}
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a40120bd6463e749e5a7183e6e51dc1ed}{colunas}}
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_jogo___de___tabuleiro_ad5d8fb77aff8ef186a407fc5bc4db220}{tabuleiro}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_batalha___naval_acae43541a001e811256a2b58fe423403}\index{Batalha\_Naval@{Batalha\_Naval}!Batalha\_Naval@{Batalha\_Naval}}
+\index{Batalha\_Naval@{Batalha\_Naval}!Batalha\_Naval@{Batalha\_Naval}}
+\doxysubsubsection{\texorpdfstring{Batalha\_Naval()}{Batalha\_Naval()}}
+{\footnotesize\ttfamily \label{class_batalha___naval_acae43541a001e811256a2b58fe423403} 
+Batalha\+\_\+\+Naval\+::\+Batalha\+\_\+\+Naval (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_batalha___naval_a18771640ff6883147523d201dff28aec}\index{Batalha\_Naval@{Batalha\_Naval}!````~Batalha\_Naval@{\texorpdfstring{$\sim$}{\string~}Batalha\_Naval}}
+\index{````~Batalha\_Naval@{\texorpdfstring{$\sim$}{\string~}Batalha\_Naval}!Batalha\_Naval@{Batalha\_Naval}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Batalha\_Naval()}{\string~Batalha\_Naval()}}
+{\footnotesize\ttfamily \label{class_batalha___naval_a18771640ff6883147523d201dff28aec} 
+Batalha\+\_\+\+Naval\+::\texorpdfstring{$\sim$}{\string~}\+Batalha\+\_\+\+Naval (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_batalha___naval_aeca49b7f07377c9629d8f7e873b9b308}\index{Batalha\_Naval@{Batalha\_Naval}!comparar\_pontuacoes@{comparar\_pontuacoes}}
+\index{comparar\_pontuacoes@{comparar\_pontuacoes}!Batalha\_Naval@{Batalha\_Naval}}
+\doxysubsubsection{\texorpdfstring{comparar\_pontuacoes()}{comparar\_pontuacoes()}}
+{\footnotesize\ttfamily \label{class_batalha___naval_aeca49b7f07377c9629d8f7e873b9b308} 
+std\+::string Batalha\+\_\+\+Naval\+::comparar\+\_\+pontuacoes (\begin{DoxyParamCaption}\item[{int}]{pontos\+\_\+jogador}{, }\item[{const std\+::string \&}]{apelido\+\_\+jogador}{, }\item[{const std\+::string \&}]{apelido\+\_\+adversario}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_batalha___naval_afe7374148af67cd09856f64766b5b7ef}\index{Batalha\_Naval@{Batalha\_Naval}!get\_pontos@{get\_pontos}}
+\index{get\_pontos@{get\_pontos}!Batalha\_Naval@{Batalha\_Naval}}
+\doxysubsubsection{\texorpdfstring{get\_pontos()}{get\_pontos()}}
+{\footnotesize\ttfamily \label{class_batalha___naval_afe7374148af67cd09856f64766b5b7ef} 
+int Batalha\+\_\+\+Naval\+::get\+\_\+pontos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_batalha___naval_ae57165712159b8f51bf8e806de292f88}\index{Batalha\_Naval@{Batalha\_Naval}!imprimir\_tabuleiro@{imprimir\_tabuleiro}}
+\index{imprimir\_tabuleiro@{imprimir\_tabuleiro}!Batalha\_Naval@{Batalha\_Naval}}
+\doxysubsubsection{\texorpdfstring{imprimir\_tabuleiro()}{imprimir\_tabuleiro()}}
+{\footnotesize\ttfamily \label{class_batalha___naval_ae57165712159b8f51bf8e806de292f88} 
+void Batalha\+\_\+\+Naval\+::imprimir\+\_\+tabuleiro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_jogo___de___tabuleiro_a8a09742d542aa0e89bfc5fd2adef1b02}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}.
+
+\Hypertarget{class_batalha___naval_abaf861cfc9757c0b1d8e42e6a58162ec}\index{Batalha\_Naval@{Batalha\_Naval}!ler\_jogada@{ler\_jogada}}
+\index{ler\_jogada@{ler\_jogada}!Batalha\_Naval@{Batalha\_Naval}}
+\doxysubsubsection{\texorpdfstring{ler\_jogada()}{ler\_jogada()}}
+{\footnotesize\ttfamily \label{class_batalha___naval_abaf861cfc9757c0b1d8e42e6a58162ec} 
+void Batalha\+\_\+\+Naval\+::ler\+\_\+jogada (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_jogo___de___tabuleiro_a8579c9ff1a82e9c46e850aa13881ae02}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}.
+
+\Hypertarget{class_batalha___naval_ad7145799895a772f4755dc735deb2b59}\index{Batalha\_Naval@{Batalha\_Naval}!ler\_posicao\_inicial@{ler\_posicao\_inicial}}
+\index{ler\_posicao\_inicial@{ler\_posicao\_inicial}!Batalha\_Naval@{Batalha\_Naval}}
+\doxysubsubsection{\texorpdfstring{ler\_posicao\_inicial()}{ler\_posicao\_inicial()}}
+{\footnotesize\ttfamily \label{class_batalha___naval_ad7145799895a772f4755dc735deb2b59} 
+bool Batalha\+\_\+\+Naval\+::ler\+\_\+posicao\+\_\+inicial (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_batalha___naval_a702e28591adb3850642d2daef502ba4c}\index{Batalha\_Naval@{Batalha\_Naval}!posicionar\_navios@{posicionar\_navios}}
+\index{posicionar\_navios@{posicionar\_navios}!Batalha\_Naval@{Batalha\_Naval}}
+\doxysubsubsection{\texorpdfstring{posicionar\_navios()}{posicionar\_navios()}}
+{\footnotesize\ttfamily \label{class_batalha___naval_a702e28591adb3850642d2daef502ba4c} 
+void Batalha\+\_\+\+Naval\+::posicionar\+\_\+navios (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_batalha___naval_af1576d5b66da4ecfaea539c708633444}\index{Batalha\_Naval@{Batalha\_Naval}!set\_pontos@{set\_pontos}}
+\index{set\_pontos@{set\_pontos}!Batalha\_Naval@{Batalha\_Naval}}
+\doxysubsubsection{\texorpdfstring{set\_pontos()}{set\_pontos()}}
+{\footnotesize\ttfamily \label{class_batalha___naval_af1576d5b66da4ecfaea539c708633444} 
+void Batalha\+\_\+\+Naval\+::set\+\_\+pontos (\begin{DoxyParamCaption}\item[{int}]{pontos\+\_\+jogada}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_batalha___naval_a6caf77c510ed9ba047af56b6beccc9ad}\index{Batalha\_Naval@{Batalha\_Naval}!testar\_vitoria@{testar\_vitoria}}
+\index{testar\_vitoria@{testar\_vitoria}!Batalha\_Naval@{Batalha\_Naval}}
+\doxysubsubsection{\texorpdfstring{testar\_vitoria()}{testar\_vitoria()}}
+{\footnotesize\ttfamily \label{class_batalha___naval_a6caf77c510ed9ba047af56b6beccc9ad} 
+bool Batalha\+\_\+\+Naval\+::testar\+\_\+vitoria (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_jogo___de___tabuleiro_a6b67d17ca7acc701de2195d235cb1c9c}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}.
+
+\Hypertarget{class_batalha___naval_a5f470572f22e88edbb25e7cb27ecdcad}\index{Batalha\_Naval@{Batalha\_Naval}!verificar\_jogada@{verificar\_jogada}}
+\index{verificar\_jogada@{verificar\_jogada}!Batalha\_Naval@{Batalha\_Naval}}
+\doxysubsubsection{\texorpdfstring{verificar\_jogada()}{verificar\_jogada()}}
+{\footnotesize\ttfamily \label{class_batalha___naval_a5f470572f22e88edbb25e7cb27ecdcad} 
+bool Batalha\+\_\+\+Naval\+::verificar\+\_\+jogada (\begin{DoxyParamCaption}\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_jogo___de___tabuleiro_a3eac1f1ce3a8efb2af3a5703a897a990}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Jogos/\mbox{\hyperlink{_batalha__naval_8hpp}{Batalha\+\_\+naval.\+hpp}}\item 
+src/\+Jogos/\mbox{\hyperlink{_batalha__naval_8cpp}{Batalha\+\_\+naval.\+cpp}}\end{DoxyCompactItemize}

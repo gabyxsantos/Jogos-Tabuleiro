@@ -1,0 +1,40 @@
+\doxysection{Partida.\+hpp}
+\hypertarget{_partida_8hpp_source}{}\label{_partida_8hpp_source}\index{include/Partida/Partida.hpp@{include/Partida/Partida.hpp}}
+\mbox{\hyperlink{_partida_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARTIDA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARTIDA\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_cadastro_8hpp}{Cadastro/Cadastro.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_jogos_8hpp}{Jogos/Jogos.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_batalha__naval_8hpp}{Jogos/Batalha\_naval.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_lig__4_8hpp}{Jogos/Lig\_4.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_jogo__da__velha_8hpp}{Jogos/Jogo\_da\_velha.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_reversi_8hpp}{Jogos/Reversi.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_variaveis__globais_8hpp}{Variaveis\_globais.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_validacao_8hpp}{Validacao.hpp}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_partida_a3f35822b1ea4ecf78b7367bab929c4d8}{Partida}}\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cadastro_jogadores}{CadastroJogadores}}\ acesso\_lista;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ nome\_do\_jogo;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::string\ apelido\_jogador\_1;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::string\ apelido\_jogador\_2;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_partida_a3f35822b1ea4ecf78b7367bab929c4d8}{Partida}}(\mbox{\hyperlink{class_cadastro_jogadores}{CadastroJogadores}}\&\ buscador);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_partida_aeb7153c737dcc7b06c0cc4c7f7cbb21a}{\string~Partida}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_partida_a07395c5cf87c916bb2c14615cb4a158f}{atualizar\_acesso}}(\mbox{\hyperlink{class_cadastro_jogadores}{CadastroJogadores}}\ \&buscador);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_partida_a5ebbba0cf49bbc495c690a20bfb741cb}{iniciar\_partida}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_partida_a6a1dec88cfb875bcfd050dfa62935b2a}{escolher\_jogo}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_partida_a734fa53061243279c402d767199723bd}{identificar\_jogador}}(std::list<Jogador*>::iterator\&\ jogador);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_partida_af369d31452507cfc49f256f0f85b5bdb}{definir\_jogadores}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_partida_a0bffa7097f78b3dc3c2783f08939b5df}{jogar\_batalha\_naval}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_partida_a113d388c6aaa6db4cadf5bccf41dd8cb}{jogar\_lig\_4}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_partida_ad607b144fbea727bc8e5dd4f7bad9db5}{jogar\_jogo\_da\_velha}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_partida_ac4883754b41c11a104e6feff525ad413}{jogar\_reversi}}();}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

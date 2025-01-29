@@ -1,0 +1,26 @@
+\doxysection{Jogo\+\_\+da\+\_\+velha.\+hpp}
+\hypertarget{_jogo__da__velha_8hpp_source}{}\label{_jogo__da__velha_8hpp_source}\index{include/Jogos/Jogo\_da\_velha.hpp@{include/Jogos/Jogo\_da\_velha.hpp}}
+\mbox{\hyperlink{_jogo__da__velha_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ JOGO\_DA\_VELHA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ JOGO\_DA\_VELHA\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_jogos_8hpp}{Jogos/Jogos.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_jogo___da___velha_a0eb9c7640d4ec2baf47d42b4bc6f2a88}{Jogo\_Da\_Velha}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_jogo___de___tabuleiro}{Jogo\_De\_Tabuleiro}}\{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_jogo___da___velha_a263e4d8e8c322942369291a96ecce01e}{pecas\_coloridas}};}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_jogo___da___velha_a0eb9c7640d4ec2baf47d42b4bc6f2a88}{Jogo\_Da\_Velha}}();}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_jogo___da___velha_a19886aee094914e930d951b33f1bdd82}{\string~Jogo\_Da\_Velha}}();}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_jogo___da___velha_ac5bd7429db6e839d96070d065c8376ed}{escolher\_peca}}(\textcolor{keyword}{const}\ std::string\&\ peca\_excluida\ =\ \textcolor{stringliteral}{"{}\ "{}},\ \textcolor{keywordtype}{bool}\ colorido\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_jogo___da___velha_a8811c6ed5ae9c93a68524edf8b50101c}{escolher\_cor}}(\textcolor{keyword}{const}\ std::string\&\ peca);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_jogo___da___velha_af3227675e373d131801b92e373bc0535}{verificar\_jogada}}(\textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogo___da___velha_a7e8ea1e7c3ca06acadc3193028711468}{ler\_jogada}}(\textcolor{keyword}{const}\ std::string\&\ peca)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_jogo___da___velha_a32044d8583a1b12affa90b0b3f4502e0}{testar\_vitoria}}(\textcolor{keyword}{const}\ std::string\&\ peca)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogo___da___velha_ac729a854430824e61d58f730d7b0664f}{auxiliar\_tutorial}}(\textcolor{keyword}{const}\ std::string\&\ peca,\ \textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna);\ \textcolor{comment}{//\ Função\ auxiliar\ para\ o\ tutorial\ de\ Jogo\ da\ Velha}}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

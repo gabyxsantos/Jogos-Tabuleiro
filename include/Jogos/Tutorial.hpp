@@ -7,6 +7,12 @@
 #include "Jogos/Reversi.hpp"
 #include "Variaveis_globais.hpp"
 
+/**
+ * @class Tutorial
+ * @brief Classe responsável por gerenciar o tutorial para diferentes jogos.
+ * @details Esta classe permite mostrar as opções de tutorial para o usuário e iniciar o tutorial de jogos específicos,
+ * como Liga 4, Reversi, Jogo da Velha, entre outros.
+ */
 class Tutorial{
     private:
         void imprimir_regras_lig4();

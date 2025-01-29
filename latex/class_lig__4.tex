@@ -1,0 +1,148 @@
+\doxysection{Lig\+\_\+4 Class Reference}
+\hypertarget{class_lig__4}{}\label{class_lig__4}\index{Lig\_4@{Lig\_4}}
+
+
+{\ttfamily \#include $<$Lig\+\_\+4.\+hpp$>$}
+
+Inheritance diagram for Lig\+\_\+4\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_lig__4}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_lig__4_ab92a68ab960f1bf8306b48eb3ee81361}{Lig\+\_\+4}} ()
+\item 
+\mbox{\hyperlink{class_lig__4_afc3adeec007be5a5010bd13275ad5d40}{\texorpdfstring{$\sim$}{\string~}\+Lig\+\_\+4}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_lig__4_ae31bcb3c10a0542582f670ec5cf38898}{escolher\+\_\+peca}} (const std\+::string \&peca\+\_\+excluida)
+\item 
+bool \mbox{\hyperlink{class_lig__4_a897556988dec802477fa851605d4d72a}{verificar\+\_\+jogada}} (int linha, int coluna) override
+\item 
+void \mbox{\hyperlink{class_lig__4_a44149f2bd874407497fddadd049c48b8}{ler\+\_\+jogada}} (const std\+::string \&peca) override
+\item 
+bool \mbox{\hyperlink{class_lig__4_ad7bb7c4318c1a799b4c8507e2479d60d}{testar\+\_\+vitoria}} (const std\+::string \&peca) override
+\item 
+void \mbox{\hyperlink{class_lig__4_abff4f6de259751fad1754a5290474ca9}{auxiliar\+\_\+tutorial}} (const std\+::string \&peca, int coluna)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_jogo___de___tabuleiro}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_jogo___de___tabuleiro_a2ce9561155f03d0358cd56f86d4d7dc7}{\texorpdfstring{$\sim$}{\string~}\+Jogo\+\_\+\+De\+\_\+\+Tabuleiro}} ()=default
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a57c4caa041031840de42f1e9bb5aba34}{definir\+\_\+filler}} (std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_a1d33d728c6ede7dade20dec1805f9c9f}{filler}})
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a2d9c1de49564089524aa3bbd52dad6e1}{definir\+\_\+tamanho\+\_\+tabuleiro}} (int \mbox{\hyperlink{class_jogo___de___tabuleiro_a0591b1dc73c86fa20d20fa1cf3ff73d6}{linhas}}, int \mbox{\hyperlink{class_jogo___de___tabuleiro_a40120bd6463e749e5a7183e6e51dc1ed}{colunas}})
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_ac30d97b936535f5d1e5d22766e45a503}{inicializar\+\_\+tabuleiro}} ()
+\item 
+virtual void \mbox{\hyperlink{class_jogo___de___tabuleiro_a8a09742d542aa0e89bfc5fd2adef1b02}{imprimir\+\_\+tabuleiro}} ()
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a6c94a89b05ed6803f8b11a588a4d2ba2}{imprimir\+\_\+tabuleiro\+\_\+tutorial}} ()
+\item 
+bool \mbox{\hyperlink{class_jogo___de___tabuleiro_ae0d47ef51467aacd9e01ad8dcfbf0713}{tabuleiro\+\_\+cheio}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_adacf4760b419d57b8ee6027d17c21af1}{remover\+\_\+cor}} (const std\+::string \&texto)
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_a84f2ac999c99deb8beb5b3747e85084d}{get\+\_\+filler}} ()
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a215900851c7f87d1dbb0e7ed82628719}{get\+\_\+linhas}} ()
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a5792dcb251ed80e86ae004931752adcc}{get\+\_\+colunas}} ()
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_jogo___de___tabuleiro_a4ac60fff6dff40843b339ba3e2787a90}{get\+\_\+tabuleiro}} ()
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_ac674603404502d998104f66e267ed126}{set\+\_\+tabuleiro}} (std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_jogo___de___tabuleiro_ad5d8fb77aff8ef186a407fc5bc4db220}{tabuleiro}})
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a258a0426693643f7ef6675c8d5761b38}{finalizar\+\_\+partida\+\_\+vencedor}} (const std\+::string \&apelido\+\_\+vencedor)
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_aede68fefaec45788c94cbd3af6cd19f9}{finalizar\+\_\+partida\+\_\+empate}} ()
+\item 
+bool \mbox{\hyperlink{class_jogo___de___tabuleiro_a9eb0b93de1356545c75423471b1b3328}{testar\+\_\+empate}} (const std\+::string \&peca1, const std\+::string \&peca2)
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_a0c30c501ac9ce6404274a3803af2c3ab}{atualizar\+\_\+placar}} (std\+::string apelido\+\_\+vencedor, std\+::string apelido\+\_\+perdedor, std\+::string jogo, \mbox{\hyperlink{class_cadastro_jogadores}{Cadastro\+Jogadores}} \&buscador)
+\item 
+void \mbox{\hyperlink{class_jogo___de___tabuleiro_ae5e6d3ddae9f0190d72e16509e43eb03}{atualizar\+\_\+placar\+\_\+empate}} (std\+::string apelido\+\_\+vencedor, std\+::string apelido\+\_\+perdedor, std\+::string jogo, \mbox{\hyperlink{class_cadastro_jogadores}{Cadastro\+Jogadores}} \&buscador)
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_ac8ffa20e2ceaac20f66f650630dac823}{definir\+\_\+cor}} (const std\+::string \&cor\+\_\+excluida="{} "{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_jogo___de___tabuleiro}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_jogo___de___tabuleiro_a1d33d728c6ede7dade20dec1805f9c9f}{filler}}
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a0591b1dc73c86fa20d20fa1cf3ff73d6}{linhas}}
+\item 
+int \mbox{\hyperlink{class_jogo___de___tabuleiro_a40120bd6463e749e5a7183e6e51dc1ed}{colunas}}
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_jogo___de___tabuleiro_ad5d8fb77aff8ef186a407fc5bc4db220}{tabuleiro}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_lig__4_ab92a68ab960f1bf8306b48eb3ee81361}\index{Lig\_4@{Lig\_4}!Lig\_4@{Lig\_4}}
+\index{Lig\_4@{Lig\_4}!Lig\_4@{Lig\_4}}
+\doxysubsubsection{\texorpdfstring{Lig\_4()}{Lig\_4()}}
+{\footnotesize\ttfamily \label{class_lig__4_ab92a68ab960f1bf8306b48eb3ee81361} 
+Lig\+\_\+4\+::\+Lig\+\_\+4 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_lig__4_afc3adeec007be5a5010bd13275ad5d40}\index{Lig\_4@{Lig\_4}!````~Lig\_4@{\texorpdfstring{$\sim$}{\string~}Lig\_4}}
+\index{````~Lig\_4@{\texorpdfstring{$\sim$}{\string~}Lig\_4}!Lig\_4@{Lig\_4}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Lig\_4()}{\string~Lig\_4()}}
+{\footnotesize\ttfamily \label{class_lig__4_afc3adeec007be5a5010bd13275ad5d40} 
+Lig\+\_\+4\+::\texorpdfstring{$\sim$}{\string~}\+Lig\+\_\+4 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lig__4_abff4f6de259751fad1754a5290474ca9}\index{Lig\_4@{Lig\_4}!auxiliar\_tutorial@{auxiliar\_tutorial}}
+\index{auxiliar\_tutorial@{auxiliar\_tutorial}!Lig\_4@{Lig\_4}}
+\doxysubsubsection{\texorpdfstring{auxiliar\_tutorial()}{auxiliar\_tutorial()}}
+{\footnotesize\ttfamily \label{class_lig__4_abff4f6de259751fad1754a5290474ca9} 
+void Lig\+\_\+4\+::auxiliar\+\_\+tutorial (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_lig__4_ae31bcb3c10a0542582f670ec5cf38898}\index{Lig\_4@{Lig\_4}!escolher\_peca@{escolher\_peca}}
+\index{escolher\_peca@{escolher\_peca}!Lig\_4@{Lig\_4}}
+\doxysubsubsection{\texorpdfstring{escolher\_peca()}{escolher\_peca()}}
+{\footnotesize\ttfamily \label{class_lig__4_ae31bcb3c10a0542582f670ec5cf38898} 
+std\+::string Lig\+\_\+4\+::escolher\+\_\+peca (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca\+\_\+excluida}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_lig__4_a44149f2bd874407497fddadd049c48b8}\index{Lig\_4@{Lig\_4}!ler\_jogada@{ler\_jogada}}
+\index{ler\_jogada@{ler\_jogada}!Lig\_4@{Lig\_4}}
+\doxysubsubsection{\texorpdfstring{ler\_jogada()}{ler\_jogada()}}
+{\footnotesize\ttfamily \label{class_lig__4_a44149f2bd874407497fddadd049c48b8} 
+void Lig\+\_\+4\+::ler\+\_\+jogada (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_jogo___de___tabuleiro_a8579c9ff1a82e9c46e850aa13881ae02}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}.
+
+\Hypertarget{class_lig__4_ad7bb7c4318c1a799b4c8507e2479d60d}\index{Lig\_4@{Lig\_4}!testar\_vitoria@{testar\_vitoria}}
+\index{testar\_vitoria@{testar\_vitoria}!Lig\_4@{Lig\_4}}
+\doxysubsubsection{\texorpdfstring{testar\_vitoria()}{testar\_vitoria()}}
+{\footnotesize\ttfamily \label{class_lig__4_ad7bb7c4318c1a799b4c8507e2479d60d} 
+bool Lig\+\_\+4\+::testar\+\_\+vitoria (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{peca}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_jogo___de___tabuleiro_a6b67d17ca7acc701de2195d235cb1c9c}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}.
+
+\Hypertarget{class_lig__4_a897556988dec802477fa851605d4d72a}\index{Lig\_4@{Lig\_4}!verificar\_jogada@{verificar\_jogada}}
+\index{verificar\_jogada@{verificar\_jogada}!Lig\_4@{Lig\_4}}
+\doxysubsubsection{\texorpdfstring{verificar\_jogada()}{verificar\_jogada()}}
+{\footnotesize\ttfamily \label{class_lig__4_a897556988dec802477fa851605d4d72a} 
+bool Lig\+\_\+4\+::verificar\+\_\+jogada (\begin{DoxyParamCaption}\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_jogo___de___tabuleiro_a3eac1f1ce3a8efb2af3a5703a897a990}{Jogo\+\_\+\+De\+\_\+\+Tabuleiro}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Jogos/\mbox{\hyperlink{_lig__4_8hpp}{Lig\+\_\+4.\+hpp}}\item 
+src/\+Jogos/\mbox{\hyperlink{_lig__4_8cpp}{Lig\+\_\+4.\+cpp}}\end{DoxyCompactItemize}

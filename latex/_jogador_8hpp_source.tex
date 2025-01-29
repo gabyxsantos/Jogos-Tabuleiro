@@ -1,0 +1,83 @@
+\doxysection{Jogador.\+hpp}
+\hypertarget{_jogador_8hpp_source}{}\label{_jogador_8hpp_source}\index{include/Partida/Jogador.hpp@{include/Partida/Jogador.hpp}}
+\mbox{\hyperlink{_jogador_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ JOGADOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ JOGADOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_variaveis__globais_8hpp}{Variaveis\_globais.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_validacao_8hpp}{Validacao.hpp}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_placar}{Placar}}\{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_placar_ac634e866b18c8dc9e8866ec09138bb92}{vitorias}}\ =\ 0;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_placar_a2b78ae3daa893f895997dfe877baa418}{derrotas}}\ =\ 0;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_placar_af8655c3fc3e445a1f80287eac262ef4d}{empates}}=\ 0;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_placar_a456c7cbf83b245edc5ebd610f394c0f2}{pontos\_por\_jogo}}\ =\ 0;}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_jogador_a0a94e8a1bc777aaf062f866de53c7ebf}{Jogador}}\{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::string\ nome;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::string\ apelido;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vitorias\_totais\ =\ 0;\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ derrotas\_totais\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ empates\_totais\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pontos\_totais\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_placar}{Placar}}\ Reversi;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_placar}{Placar}}\ Lig4;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_placar}{Placar}}\ JogoVelha;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_placar}{Placar}}\ BatalhaNaval;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_jogador_a94a4939138ce04d2f3ceb68257517ac1}{Jogador}}(std::string\ nome,\ std::string\ apelido);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_jogador_a94a4939138ce04d2f3ceb68257517ac1}{Jogador}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_jogador_a3e62c32199fc9cfbcf22cf83f9008be6}{\string~Jogador}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_ad25b9b97d875d7918804be7b21dae779}{set\_nome}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a7517ff257910841d2beefa7b5abb19cb}{set\_apelido}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_ab312864018d0a29d4178f23f4ad813f4}{set\_vitorias\_totais}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a1c7540a7682c464d70754856d4d5c6a2}{set\_derrotas\_totais}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_ada24368a74bd1ba0fdc1d521b1051c08}{set\_empates\_totais}}();}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//metodos\ para\ armazenar\ os\ dados\ do\ arquivo\ nos\ atributos\ de\ cada\ jogador}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_ab312864018d0a29d4178f23f4ad813f4}{set\_vitorias\_totais}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a1c7540a7682c464d70754856d4d5c6a2}{set\_derrotas\_totais}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_ada24368a74bd1ba0fdc1d521b1051c08}{set\_empates\_totais}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a60c60d42a62376870686dc4e9c261dc8}{set\_pontos\_totais}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//metodos\ para\ atualizar\ os\ empates}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_ac5652e7a93a8e4d59ba52a11a59c9344}{set\_Lig4}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a7d3edc11cb21e4d847e358428dadd890}{set\_JogoVelha}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_abaa0be371bf4a70d01ddf90c7ac9c9aa}{set\_BatalhaNaval}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//se\ os\ metodos\ set\ forem\ chamados\ com\ bool\ isso\ indica\ que\ é\ apenas\ a\ atualização\ do\ placar\ na\ partida}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//no\ caso\ dos\ pontos,\ true=\ vitoria=\ +3pontos;\ false\ =\ empate\ =\ +1ponto}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a60c60d42a62376870686dc4e9c261dc8}{set\_pontos\_totais}}(\textcolor{keywordtype}{bool}\ valor);\ \textcolor{comment}{//passa\ o\ jogo\ pra\ saber\ onde\ add\ ponto}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a80e96aacf0a4f0a22bd2aba3be500a31}{set\_Reversi}}(\textcolor{keywordtype}{bool}\ valor);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_ac5652e7a93a8e4d59ba52a11a59c9344}{set\_Lig4}}(\textcolor{keywordtype}{bool}\ valor);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a7d3edc11cb21e4d847e358428dadd890}{set\_JogoVelha}}(\textcolor{keywordtype}{bool}\ valor);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_abaa0be371bf4a70d01ddf90c7ac9c9aa}{set\_BatalhaNaval}}(\textcolor{keywordtype}{bool}\ valor);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//por\ outro\ lado,\ se\ forem\ chamados\ com\ inteiros,\ indica\ que\ apenas\ se\ esta\ lendo\ os\ dados\ do\ arquivo}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a80e96aacf0a4f0a22bd2aba3be500a31}{set\_Reversi}}(\textcolor{keywordtype}{int}\ vitorias,\ \textcolor{keywordtype}{int}\ derrotas,\ \textcolor{keywordtype}{int}\ empates,\ \textcolor{keywordtype}{int}\ pontos);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_ac5652e7a93a8e4d59ba52a11a59c9344}{set\_Lig4}}(\textcolor{keywordtype}{int}\ vitorias,\ \textcolor{keywordtype}{int}\ derrotas,\ \textcolor{keywordtype}{int}\ empates,\ \textcolor{keywordtype}{int}\ pontos);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_a7d3edc11cb21e4d847e358428dadd890}{set\_JogoVelha}}(\textcolor{keywordtype}{int}\ vitorias,\ \textcolor{keywordtype}{int}\ derrotas,\ \textcolor{keywordtype}{int}\ empates,\ \textcolor{keywordtype}{int}\ pontos);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_jogador_abaa0be371bf4a70d01ddf90c7ac9c9aa}{set\_BatalhaNaval}}(\textcolor{keywordtype}{int}\ vitorias,\ \textcolor{keywordtype}{int}\ derrotas,\ \textcolor{keywordtype}{int}\ empates,\ \textcolor{keywordtype}{int}\ pontos);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_jogador_a1620f6946757da4aeaa8d86530ee8fe6}{get\_nome}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_jogador_a4b45ba2e9ede2efa74caa20baf916733}{get\_apelido}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jogador_aa6203a2e18cdaf0202725989a0b15d74}{get\_vitorias\_totais}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jogador_aed3ff4cdc6724ea4cc70f402929bceb4}{get\_derrotas\_totais}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jogador_ab1c2762ada9087485859205db952defd}{get\_empates\_totais}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_jogador_aef1de2f46fc11f72d2631df6a654f798}{get\_pontos\_totais}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_placar}{Placar}}\ \mbox{\hyperlink{class_jogador_a3dd9eb55c9fbbed1669096a97290890b}{get\_Reversi}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_placar}{Placar}}\ \mbox{\hyperlink{class_jogador_abd8d544a020da41fbdfb6138680865b4}{get\_Lig4}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_placar}{Placar}}\ \mbox{\hyperlink{class_jogador_ad40dcbe77126d80567d15b730bd7e934}{get\_JogoVelha}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_placar}{Placar}}\ \mbox{\hyperlink{class_jogador_afa443e3d508c3caa0af09d90bdc7026d}{get\_BatalhaNaval}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

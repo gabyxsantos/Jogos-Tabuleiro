@@ -1,0 +1,31 @@
+\doxysection{Reversi.\+hpp}
+\hypertarget{_reversi_8hpp_source}{}\label{_reversi_8hpp_source}\index{include/Jogos/Reversi.hpp@{include/Jogos/Reversi.hpp}}
+\mbox{\hyperlink{_reversi_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ REVERSI\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ REVERSI\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_jogos_8hpp}{Jogos/Jogos.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_reversi_a73e3ca5c21b634f9c490b404d62f0e01}{Reversi}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_jogo___de___tabuleiro}{Jogo\_De\_Tabuleiro}}\{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ linha\_ultima\_jogada;}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ coluna\_ultima\_jogada;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reversi_a73e3ca5c21b634f9c490b404d62f0e01}{Reversi}}();}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reversi_afd006e4fdacdedc4a3bb34fe6f1d1940}{\string~Reversi}}();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reversi_a416ea1ea8dbac15d852a7a50d99c6fd4}{colocar\_pecas\_iniciais}}(std::string\ jogador1,\ std::string\ jogador2);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_reversi_a20f53d07f210ff66b2593cd08c951743}{verificar\_jogada}}(\textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_reversi_aeacf5823ac170d15016e7e931155be46}{passar\_a\_vez}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reversi_a4d927c09ab0785cd7bcc0df51ac06c1e}{ler\_jogada}}(\textcolor{keyword}{const}\ std::string\&\ peca)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_reversi_abd1bd7389c7f0d0b80b388fef5317da5}{testar\_vitoria}}(\textcolor{keyword}{const}\ std::string\&\ peca)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reversi_aef7752fc4a1a8221eaa48dd78bb11b6c}{mostrar\_posicoes\_possiveis}}(std::string\ jogador1,\ std::string\ jogador2);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reversi_a5bbe2f1d2a1cb590001ce3423afe56ca}{converter\_pecas}}(std::string\&\ peca\_nova,\ std::string\&\ peca\_convertida);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reversi_a9723c39c9a0fbc8f04f21d8531e2b5bf}{auxiliar\_tutorial}}(\textcolor{keyword}{const}\ std::string\&\ peca,\ \textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna);\ \ \textcolor{comment}{//\ Função\ auxiliar\ para\ o\ tutorial\ de\ Reversi}}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

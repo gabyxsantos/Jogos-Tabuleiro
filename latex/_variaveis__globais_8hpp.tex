@@ -1,0 +1,235 @@
+\doxysection{include/\+Variaveis\+\_\+globais.hpp File Reference}
+\hypertarget{_variaveis__globais_8hpp}{}\label{_variaveis__globais_8hpp}\index{include/Variaveis\_globais.hpp@{include/Variaveis\_globais.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_ab702106cf3b3e96750b6845ded4e0299}{RESET}}~"{}\textbackslash{}033\mbox{[}0m"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a26cdbb1a00213c810caccf21cd33a631}{BOLD}}~"{}\textbackslash{}033\mbox{[}1m"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a8d23feea868a983c8c2b661e1e16972f}{RED}}~"{}\textbackslash{}033\mbox{[}91m"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_acfbc006ea433ad708fdee3e82996e721}{GREEN}}~"{}\textbackslash{}033\mbox{[}92m"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_abf681265909adf3d3e8116c93c0ba179}{YELLOW}}~"{}\textbackslash{}033\mbox{[}93m"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a79d10e672abb49ad63eeaa8aaef57c38}{BLUE}}~"{}\textbackslash{}033\mbox{[}94m"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a6f699060902f800f12aaae150f3a708e}{MAGENTA}}~"{}\textbackslash{}033\mbox{[}95m"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a7b3b25cba33b07c303f3060fe41887f6}{BLACK}}~"{}\textbackslash{}033\mbox{[}90m"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_ac5b6e19bf06822021f35602c59658de3}{ORANGE}}~"{}\textbackslash{}033\mbox{[}38;5;214m"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a87b537f5fa5c109d3c05c13d6b18f382}{WHITE}}~"{}\textbackslash{}033\mbox{[}97m"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a4f68562387a1f306d8e72a4af11c610d}{PECA\+\_\+\+VERMELHA}}~"{}🔴"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_adf47764720e37f4f422c644bc477b69b}{PECA\+\_\+\+VERDE}}~"{}🟢"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_ae6c29e540b6f204d43922102205b36dd}{PECA\+\_\+\+AMARELA}}~"{}🟡"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_afde6140ca1fde77aab914848b4febd31}{PECA\+\_\+\+AZUL}}~"{}🔵"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_abbde8ed537ca9a04c4c94dff942e47e9}{PECA\+\_\+\+MAGENTA}}~"{}🟣"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a7e5530b0c0c2807c9b2195d98da06090}{PECA\+\_\+\+LARANJA}}~"{}🟠"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a652d99c8048d812f8eb5b6be721edf08}{PECA\+\_\+\+PRETA}}~"{}⚫"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a6f6214426b12e2d7651c243092e5e27b}{PECA\+\_\+\+BRANCO}}~"{}⚪"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_af4b72af6ebef9422bb2107fef3e47eb0}{PECA\+\_\+X}}~"{} X"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_acccea77bccfda21d5e1927e25852fff5}{PECA\+\_\+O}}~"{} O"{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a0e96d440626ae1ab7e7b84c072f76bda}{PORTA\+\_\+\+AVIOES}}~"{}✈️  "{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_add45e7d6238303d89d233b3037b8bf51}{ENCOURACADO}}~"{}🛡️  "{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a613217335aeec4e4896d876da338b837}{CONTRATORPEDEIRO}}~"{}🛶 "{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_a7f319bfc2492a2136964194204e7a8cf}{VOID}}~"{}  "{}
+\item 
+\#define \mbox{\hyperlink{_variaveis__globais_8hpp_aac90289bb1a5731b2a955f546426c33b}{AGUA}}~"{} \texorpdfstring{$\sim$}{\string~} "{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_variaveis__globais_8hpp_a00788a4f6f22d2dc32a5958f3d7d91c5}{timer}} (int tempo)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_variaveis__globais_8hpp_aac90289bb1a5731b2a955f546426c33b}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!AGUA@{AGUA}}
+\index{AGUA@{AGUA}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{AGUA}{AGUA}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_aac90289bb1a5731b2a955f546426c33b} 
+\#define AGUA~"{} \texorpdfstring{$\sim$}{\string~} "{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a7b3b25cba33b07c303f3060fe41887f6}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!BLACK@{BLACK}}
+\index{BLACK@{BLACK}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{BLACK}{BLACK}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a7b3b25cba33b07c303f3060fe41887f6} 
+\#define BLACK~"{}\textbackslash{}033\mbox{[}90m"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a79d10e672abb49ad63eeaa8aaef57c38}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!BLUE@{BLUE}}
+\index{BLUE@{BLUE}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{BLUE}{BLUE}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a79d10e672abb49ad63eeaa8aaef57c38} 
+\#define BLUE~"{}\textbackslash{}033\mbox{[}94m"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a26cdbb1a00213c810caccf21cd33a631}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!BOLD@{BOLD}}
+\index{BOLD@{BOLD}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{BOLD}{BOLD}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a26cdbb1a00213c810caccf21cd33a631} 
+\#define BOLD~"{}\textbackslash{}033\mbox{[}1m"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a613217335aeec4e4896d876da338b837}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!CONTRATORPEDEIRO@{CONTRATORPEDEIRO}}
+\index{CONTRATORPEDEIRO@{CONTRATORPEDEIRO}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{CONTRATORPEDEIRO}{CONTRATORPEDEIRO}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a613217335aeec4e4896d876da338b837} 
+\#define CONTRATORPEDEIRO~"{}🛶 "{}}
+
+\Hypertarget{_variaveis__globais_8hpp_add45e7d6238303d89d233b3037b8bf51}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!ENCOURACADO@{ENCOURACADO}}
+\index{ENCOURACADO@{ENCOURACADO}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{ENCOURACADO}{ENCOURACADO}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_add45e7d6238303d89d233b3037b8bf51} 
+\#define ENCOURACADO~"{}🛡️  "{}}
+
+\Hypertarget{_variaveis__globais_8hpp_acfbc006ea433ad708fdee3e82996e721}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!GREEN@{GREEN}}
+\index{GREEN@{GREEN}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{GREEN}{GREEN}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_acfbc006ea433ad708fdee3e82996e721} 
+\#define GREEN~"{}\textbackslash{}033\mbox{[}92m"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a6f699060902f800f12aaae150f3a708e}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!MAGENTA@{MAGENTA}}
+\index{MAGENTA@{MAGENTA}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{MAGENTA}{MAGENTA}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a6f699060902f800f12aaae150f3a708e} 
+\#define MAGENTA~"{}\textbackslash{}033\mbox{[}95m"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_ac5b6e19bf06822021f35602c59658de3}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!ORANGE@{ORANGE}}
+\index{ORANGE@{ORANGE}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{ORANGE}{ORANGE}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_ac5b6e19bf06822021f35602c59658de3} 
+\#define ORANGE~"{}\textbackslash{}033\mbox{[}38;5;214m"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_ae6c29e540b6f204d43922102205b36dd}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!PECA\_AMARELA@{PECA\_AMARELA}}
+\index{PECA\_AMARELA@{PECA\_AMARELA}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{PECA\_AMARELA}{PECA\_AMARELA}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_ae6c29e540b6f204d43922102205b36dd} 
+\#define PECA\+\_\+\+AMARELA~"{}🟡"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_afde6140ca1fde77aab914848b4febd31}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!PECA\_AZUL@{PECA\_AZUL}}
+\index{PECA\_AZUL@{PECA\_AZUL}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{PECA\_AZUL}{PECA\_AZUL}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_afde6140ca1fde77aab914848b4febd31} 
+\#define PECA\+\_\+\+AZUL~"{}🔵"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a6f6214426b12e2d7651c243092e5e27b}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!PECA\_BRANCO@{PECA\_BRANCO}}
+\index{PECA\_BRANCO@{PECA\_BRANCO}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{PECA\_BRANCO}{PECA\_BRANCO}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a6f6214426b12e2d7651c243092e5e27b} 
+\#define PECA\+\_\+\+BRANCO~"{}⚪"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a7e5530b0c0c2807c9b2195d98da06090}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!PECA\_LARANJA@{PECA\_LARANJA}}
+\index{PECA\_LARANJA@{PECA\_LARANJA}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{PECA\_LARANJA}{PECA\_LARANJA}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a7e5530b0c0c2807c9b2195d98da06090} 
+\#define PECA\+\_\+\+LARANJA~"{}🟠"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_abbde8ed537ca9a04c4c94dff942e47e9}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!PECA\_MAGENTA@{PECA\_MAGENTA}}
+\index{PECA\_MAGENTA@{PECA\_MAGENTA}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{PECA\_MAGENTA}{PECA\_MAGENTA}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_abbde8ed537ca9a04c4c94dff942e47e9} 
+\#define PECA\+\_\+\+MAGENTA~"{}🟣"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_acccea77bccfda21d5e1927e25852fff5}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!PECA\_O@{PECA\_O}}
+\index{PECA\_O@{PECA\_O}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{PECA\_O}{PECA\_O}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_acccea77bccfda21d5e1927e25852fff5} 
+\#define PECA\+\_\+O~"{} O"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a652d99c8048d812f8eb5b6be721edf08}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!PECA\_PRETA@{PECA\_PRETA}}
+\index{PECA\_PRETA@{PECA\_PRETA}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{PECA\_PRETA}{PECA\_PRETA}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a652d99c8048d812f8eb5b6be721edf08} 
+\#define PECA\+\_\+\+PRETA~"{}⚫"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_adf47764720e37f4f422c644bc477b69b}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!PECA\_VERDE@{PECA\_VERDE}}
+\index{PECA\_VERDE@{PECA\_VERDE}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{PECA\_VERDE}{PECA\_VERDE}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_adf47764720e37f4f422c644bc477b69b} 
+\#define PECA\+\_\+\+VERDE~"{}🟢"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a4f68562387a1f306d8e72a4af11c610d}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!PECA\_VERMELHA@{PECA\_VERMELHA}}
+\index{PECA\_VERMELHA@{PECA\_VERMELHA}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{PECA\_VERMELHA}{PECA\_VERMELHA}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a4f68562387a1f306d8e72a4af11c610d} 
+\#define PECA\+\_\+\+VERMELHA~"{}🔴"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_af4b72af6ebef9422bb2107fef3e47eb0}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!PECA\_X@{PECA\_X}}
+\index{PECA\_X@{PECA\_X}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{PECA\_X}{PECA\_X}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_af4b72af6ebef9422bb2107fef3e47eb0} 
+\#define PECA\+\_\+X~"{} X"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a0e96d440626ae1ab7e7b84c072f76bda}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!PORTA\_AVIOES@{PORTA\_AVIOES}}
+\index{PORTA\_AVIOES@{PORTA\_AVIOES}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{PORTA\_AVIOES}{PORTA\_AVIOES}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a0e96d440626ae1ab7e7b84c072f76bda} 
+\#define PORTA\+\_\+\+AVIOES~"{}✈️  "{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a8d23feea868a983c8c2b661e1e16972f}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!RED@{RED}}
+\index{RED@{RED}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{RED}{RED}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a8d23feea868a983c8c2b661e1e16972f} 
+\#define RED~"{}\textbackslash{}033\mbox{[}91m"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_ab702106cf3b3e96750b6845ded4e0299}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!RESET@{RESET}}
+\index{RESET@{RESET}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{RESET}{RESET}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_ab702106cf3b3e96750b6845ded4e0299} 
+\#define RESET~"{}\textbackslash{}033\mbox{[}0m"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a7f319bfc2492a2136964194204e7a8cf}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!VOID@{VOID}}
+\index{VOID@{VOID}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{VOID}{VOID}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a7f319bfc2492a2136964194204e7a8cf} 
+\#define VOID~"{}  "{}}
+
+\Hypertarget{_variaveis__globais_8hpp_a87b537f5fa5c109d3c05c13d6b18f382}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!WHITE@{WHITE}}
+\index{WHITE@{WHITE}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{WHITE}{WHITE}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a87b537f5fa5c109d3c05c13d6b18f382} 
+\#define WHITE~"{}\textbackslash{}033\mbox{[}97m"{}}
+
+\Hypertarget{_variaveis__globais_8hpp_abf681265909adf3d3e8116c93c0ba179}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!YELLOW@{YELLOW}}
+\index{YELLOW@{YELLOW}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{YELLOW}{YELLOW}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_abf681265909adf3d3e8116c93c0ba179} 
+\#define YELLOW~"{}\textbackslash{}033\mbox{[}93m"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_variaveis__globais_8hpp_a00788a4f6f22d2dc32a5958f3d7d91c5}\index{Variaveis\_globais.hpp@{Variaveis\_globais.hpp}!timer@{timer}}
+\index{timer@{timer}!Variaveis\_globais.hpp@{Variaveis\_globais.hpp}}
+\doxysubsubsection{\texorpdfstring{timer()}{timer()}}
+{\footnotesize\ttfamily \label{_variaveis__globais_8hpp_a00788a4f6f22d2dc32a5958f3d7d91c5} 
+void timer (\begin{DoxyParamCaption}\item[{int}]{tempo}{}\end{DoxyParamCaption})}
+

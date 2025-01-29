@@ -1,0 +1,29 @@
+\doxysection{Arquivo.\+hpp}
+\hypertarget{_arquivo_8hpp_source}{}\label{_arquivo_8hpp_source}\index{include/Dados/Arquivo.hpp@{include/Dados/Arquivo.hpp}}
+\mbox{\hyperlink{_arquivo_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ARQUIVO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ARQUIVO\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_cadastro_8hpp}{Cadastro/Cadastro.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_variaveis__globais_8hpp}{Variaveis\_globais.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_validacao_8hpp}{Validacao.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_arquivo_a0a08495066e1ff58307a06433af83d69}{Arquivo}}\{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ std::fstream\ file;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ std::string\ str;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cadastro_jogadores}{CadastroJogadores}}\ lista\_jogadores;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_arquivo_a0a08495066e1ff58307a06433af83d69}{Arquivo}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_arquivo_a3de7600fee4b3f0e5ea0b5d3187a31d7}{extrair\_dados}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_arquivo_ae6fbf46fa9a62aa2894232f435ce05c2}{salvar\_dados}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_arquivo_a702b22e507200bbcc5a895d4bb8afc69}{set\_lista\_jogadores}}(\mbox{\hyperlink{class_cadastro_jogadores}{CadastroJogadores}}\ \&acesso);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cadastro_jogadores}{CadastroJogadores}}\ \mbox{\hyperlink{class_arquivo_a80b021297ed03ee926df7d4c8b9b9adb}{get\_lista\_jogadores}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_arquivo_adbb299f34929877d20f453cacc648bb1}{\string~Arquivo}}()\{\};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

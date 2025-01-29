@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['validacao_0',['Validacao',['../class_validacao.html',1,'']]],
+  ['validacao_2ecpp_1',['Validacao.cpp',['../_validacao_8cpp.html',1,'']]],
+  ['validacao_2ehpp_2',['Validacao.hpp',['../_validacao_8hpp.html',1,'']]],
+  ['validar_5fchar_3',['validar_char',['../class_validacao.html#a1aebb7b0b6c11a113e2af65bffecde11',1,'Validacao']]],
+  ['validar_5fentrada_4',['validar_entrada',['../class_validacao.html#ab155277cd4586bae10a3fdaa5cddb9cd',1,'Validacao::validar_entrada(T &amp;valor)'],['../class_validacao.html#ae063e5407e6801859d71190267586dc2',1,'Validacao::validar_entrada(char &amp;valor)'],['../class_validacao.html#a2213b8a6b26eae86f8bdaf2d45dbdb0c',1,'Validacao::validar_entrada(std::string &amp;valor)']]],
+  ['validar_5fentrada_5fbatalha_5fnaval_5',['validar_entrada_batalha_naval',['../_batalha__naval_8cpp.html#a54bae4d3e5eebe6e25755a07637e50e5',1,'Batalha_naval.cpp']]],
+  ['validar_5fentrada_5fjogos_6',['validar_entrada_jogos',['../_jogos_8cpp.html#ae4166c8a18566f2aa2b253485d90f406',1,'Jogos.cpp']]],
+  ['validar_5fentrada_5flig4_7',['validar_entrada_lig4',['../_lig__4_8cpp.html#ada778af137a067406ebb23ec24c1c180',1,'Lig_4.cpp']]],
+  ['validar_5fentrada_5fmain_8',['validar_entrada_main',['../main_8cpp.html#a4e2d2daafa1da5f66035fc6c2fd99b57',1,'main.cpp']]],
+  ['validar_5fentrada_5fpartida_9',['validar_entrada_partida',['../_partida_8cpp.html#a17c29fc2972d925eca5f5c2dc9657e1e',1,'Partida.cpp']]],
+  ['validar_5fentrada_5freversi_10',['validar_entrada_reversi',['../_reversi_8cpp.html#ad2a3ae038aca48330583881172d7dd72',1,'Reversi.cpp']]],
+  ['validar_5fentrada_5ftutorial_11',['validar_entrada_tutorial',['../_tutorial_8cpp.html#a1eb97740411e785da3530ca1b0b0c309',1,'Tutorial.cpp']]],
+  ['validar_5fentrada_5fvelha_12',['validar_entrada_velha',['../_jogo__da__velha_8cpp.html#aa575eb819210eed6078c3fd6acd1f8ee',1,'Jogo_da_velha.cpp']]],
+  ['validar_5fentradas_5farquivo_13',['validar_entradas_arquivo',['../_arquivo_8cpp.html#a30a9949d1255d070f0a33ebeb20b656e',1,'Arquivo.cpp']]],
+  ['validar_5fentradas_5fcadastro_14',['validar_entradas_cadastro',['../_cadastro_8cpp.html#acd8f5bff97f5f8d2758f4306db27dda9',1,'Cadastro.cpp']]],
+  ['validar_5fentradas_5fjogador_15',['validar_entradas_jogador',['../_jogador_8cpp.html#ad30037ea63e0992bbd8aef300e179555',1,'Jogador.cpp']]],
+  ['validar_5fstring_16',['validar_string',['../class_validacao.html#a2756c6fac2a9925d4068acf5b662c5d9',1,'Validacao']]],
+  ['value_17',['value',['../structdoctest_1_1detail_1_1types_1_1true__type.html#a5ad232af56ff87690d552f77e0413f02',1,'doctest::detail::types::true_type::value'],['../structdoctest_1_1detail_1_1types_1_1false__type.html#a8580f67f4b223b10e49d93b959767f6d',1,'doctest::detail::types::false_type::value'],['../structdoctest_1_1detail_1_1types_1_1is__enum.html#a2ac322024808b91cda5ce1a42691ee07',1,'doctest::detail::types::is_enum::value'],['../structdoctest_1_1detail_1_1should__stringify__as__underlying__type.html#a0115e8b2c73fe1a0fc9f344a1374e2dd',1,'doctest::detail::should_stringify_as_underlying_type::value'],['../structdoctest_1_1_is_na_n.html#a6a490d3d5f5561bcf019fefc88291475',1,'doctest::IsNaN::value']]],
+  ['variaveis_5fglobais_2ecpp_18',['Variaveis_globais.cpp',['../_variaveis__globais_8cpp.html',1,'']]],
+  ['variaveis_5fglobais_2ehpp_19',['Variaveis_globais.hpp',['../_variaveis__globais_8hpp.html',1,'']]],
+  ['verificar_5fjogada_20',['verificar_jogada',['../class_batalha___naval.html#a5f470572f22e88edbb25e7cb27ecdcad',1,'Batalha_Naval::verificar_jogada()'],['../class_jogo___da___velha.html#af3227675e373d131801b92e373bc0535',1,'Jogo_Da_Velha::verificar_jogada()'],['../class_jogo___de___tabuleiro.html#a3eac1f1ce3a8efb2af3a5703a897a990',1,'Jogo_De_Tabuleiro::verificar_jogada()'],['../class_lig__4.html#a897556988dec802477fa851605d4d72a',1,'Lig_4::verificar_jogada()'],['../class_reversi.html#a20f53d07f210ff66b2593cd08c951743',1,'Reversi::verificar_jogada()']]],
+  ['version_21',['version',['../structdoctest_1_1_context_options.html#a08931527a9e5e634e64a336e5493a7c1',1,'doctest::ContextOptions']]],
+  ['visão_20geral_20do_20projeto_22',['Descrição e visão geral do projeto',['../md__r_e_a_d_m_e.html#autotoc_md3',1,'']]],
+  ['vitorias_23',['vitorias',['../class_placar.html#ac634e866b18c8dc9e8866ec09138bb92',1,'Placar']]],
+  ['void_24',['VOID',['../_variaveis__globais_8hpp.html#a7f319bfc2492a2136964194204e7a8cf',1,'Variaveis_globais.hpp']]]
+];

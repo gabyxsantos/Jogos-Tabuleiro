@@ -143,14 +143,13 @@ int main() {
             int entrada_tutorial; 
             while(true){
 
-                //timer(1000);
-                timer(1000);
+                timer(500);
                 std::cout << "Escolha uma opção: " << std::endl
                         << "<1> Jogo da velha" << std::endl
                         << "<2> Lig 4" << std::endl
                         << "<3> Reversi" << std:: endl
                         << "<4> Voltar ao menu principal" << std:: endl;
-                timer(1000);
+                timer(500);
                 std::cout << "Digite uma das opções: " ;
 
                 validar_entrada_main.pedir_usuario(entrada_tutorial);
@@ -166,7 +165,7 @@ int main() {
 
         else if (entrada == "M"){
             
-            timer(1000);
+            timer(500);
             std::cout<<"Menu de comandos:"<<std::endl
                 <<"'CJ': Cadastrar um novo jogador."<<std::endl
                 <<"'RJ': Remover um jogador existente."<<std::endl
@@ -175,15 +174,14 @@ int main() {
                 <<"'VE': Visualizar estatísticas relacionadas aos jogos."<<std::endl
                 <<"'VT': Visualizar um tutorial explicativo sobre o sistema e os jogos."<<std::endl
                 <<"'FS': Finalizar o sistema."<<std::endl;
-            timer(1000);
+            timer(500);
         }
 
         else{ //Caso em que o usuário não digite nenhuma das opções acima
             validar_entrada_main.imprimir_erro("Parece que você digitou uma opção inválida, tente novamente: ");
         }
         
-        std::cout<<"Processo finalizado. Agora você pode iniciar um novo processo no sistema!"<<
-        std::endl<< "Para imprimir o menu principal novamente, digite M."<<
+        std::cout<< "Para imprimir o menu principal novamente, digite M." <<
         std::endl<< "Digite seu novo comando: ";
         std::cin>>entrada; //Pedindo uma nova entrada para o usuário
 

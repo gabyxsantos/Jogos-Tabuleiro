@@ -8,7 +8,6 @@
 class Estatisticas{
     private:
         CadastroJogadores acessar_jogadores;
-        //int jogo_mais_jogado; //tem que calcular isso a cada partida
         std::vector<Jogador*> ranking_jogadores;
 
     protected:
@@ -17,10 +16,10 @@ class Estatisticas{
         void ranking_reversi();
         void ranking_lig4();
         void ranking_jogovelha();
+        void ranking_batalhanaval();
         void imprimir_ranking(std::vector<Jogador*> vetor_jogadores);
 
-    public:
-        
+    public:   
         Estatisticas(CadastroJogadores &buscador);
         void listar_jogadores();
         void atualizar_acesso(CadastroJogadores &buscador);

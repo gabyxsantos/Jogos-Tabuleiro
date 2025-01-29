@@ -41,15 +41,18 @@ Validacao validar_entrada_batalha_naval;
     void Batalha_Naval::posicionar_navios(){
         std::cout << "Você possui 3 contratorpedeiros (3 casas), 2 encouraçados (5 casas) e 1 porta-aviões (7 casas) para posicionar." << std::endl;
         for(int i=1; i<4; i++){
+            imprimir_tabuleiro();
             do{
         std::cout << "Escolha a posição do seu " << i << "° contratorpedeiro: " << CONTRATORPEDEIRO << std::endl;
             } while (!ler_posicao_inicial(CONTRATORPEDEIRO));
         }
         for(int i=1; i<3; i++){
+            imprimir_tabuleiro();
             do{
         std::cout << "Escolha a posição do seu " << i << "° encouraçado: " << ENCOURACADO << std::endl;
             } while (!ler_posicao_inicial(ENCOURACADO));
         }
+            imprimir_tabuleiro();
         do {
         std::cout << "Escolha a posição do seu porta-aviões: " << PORTA_AVIOES << std::endl;
         } while (!ler_posicao_inicial(PORTA_AVIOES));
@@ -103,7 +106,7 @@ Validacao validar_entrada_batalha_naval;
     case 'v':
     case 'V': {
         if (coordenada_Y < 2 || coordenada_Y > 19){
-            validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
+            validar_entrada_batalha_naval.imprimir_erro("Posição inválida, o navio não pode sair do tabuleiro!");
             return false;
         }
         for (contador_Y=coordenada_Y-2; contador_Y<=coordenada_Y; contador_Y++) {
@@ -119,7 +122,7 @@ Validacao validar_entrada_batalha_naval;
     case 'h':
     case 'H': {
         if (coordenada_X < 2 || coordenada_X > 19){
-            validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
+            validar_entrada_batalha_naval.imprimir_erro("Posição inválida, o navio não pode sair do tabuleiro!");
             return false;
         }
         for (contador_X=coordenada_X-2; contador_X<=coordenada_X; contador_X++) {
@@ -139,7 +142,7 @@ Validacao validar_entrada_batalha_naval;
     case 'v':
     case 'V': {
         if (coordenada_Y < 3 || coordenada_Y > 18){
-            validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
+            validar_entrada_batalha_naval.imprimir_erro("Posição inválida, o navio não pode sair do tabuleiro!");
             return false;
         }
         for (contador_Y=coordenada_Y-3; contador_Y<=coordenada_Y+1; contador_Y++) {
@@ -155,7 +158,7 @@ Validacao validar_entrada_batalha_naval;
     case 'h':
     case 'H': {
         if (coordenada_X < 3 || coordenada_X > 18){
-            validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
+            validar_entrada_batalha_naval.imprimir_erro("Posição inválida, o navio não pode sair do tabuleiro!");
             return false;
         }
         for (contador_X=coordenada_X-3; contador_X<=coordenada_X+1; contador_X++) {
@@ -175,7 +178,7 @@ Validacao validar_entrada_batalha_naval;
     case 'v':
     case 'V': {
         if (coordenada_Y < 4 || coordenada_Y > 17){
-            validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
+            validar_entrada_batalha_naval.imprimir_erro("Posição inválida, o navio não pode sair do tabuleiro!");
             return false;
         }
         for (contador_Y=coordenada_Y-4; contador_Y<=coordenada_Y+2; contador_Y++) {
@@ -191,7 +194,7 @@ Validacao validar_entrada_batalha_naval;
     case 'h':
     case 'H': {
         if (coordenada_X < 4 || coordenada_X > 17){
-            validar_entrada_batalha_naval.imprimir_erro("Posição inválida!");
+            validar_entrada_batalha_naval.imprimir_erro("Posição inválida, o navio não pode sair do tabuleiro!");
             return false;
         }
         for (contador_X=coordenada_X-4; contador_X<=coordenada_X+2; contador_X++) {
@@ -217,29 +220,29 @@ return true;
             std::cout << "Escolha uma linha (1-" << linhas << ") para atacar: ";
             validar_entrada_batalha_naval.pedir_usuario(linha);
             if (verificar_jogada(linha,coluna)) {
-                    if (tabuleiro[linha-1][coluna-1].compare(AGUA) == 0){
-                        tabuleiro[linha-1][coluna-1] = PECA_X;
-                        std::cout << "Você não acertou nenhum navio inimigo!" << std::endl;
-                        break;
-                    }
-                    if (tabuleiro[linha-1][coluna-1].compare(CONTRATORPEDEIRO) == 0){
-                        tabuleiro[linha-1][coluna-1] = PECA_X;
-                        std::cout << "Você acertou um contratorpedeiro inimigo! +2 pontos" << std::endl;
-                        set_pontos(2);
-                        break;
-                    }
-                    if (tabuleiro[linha-1][coluna-1].compare(ENCOURACADO) == 0){
-                        tabuleiro[linha-1][coluna-1] = PECA_X;
-                        std::cout << "Você acertou um encouraçado inimigo! +5 pontos" << std::endl;
-                        set_pontos(5);
-                        break;
-                    }
-                    if (tabuleiro[linha-1][coluna-1].compare(PORTA_AVIOES) == 0){
-                        tabuleiro[linha-1][coluna-1] = PECA_X;
-                        std::cout << "Você acertou um porta-aviões inimigo! +10 pontos" << std::endl;
-                        set_pontos(10);
-                        break;
-                    }
+                if (tabuleiro[linha-1][coluna-1].compare(AGUA) == 0){
+                    tabuleiro[linha-1][coluna-1] = PECA_X;
+                    std::cout << "Você não acertou nenhum navio inimigo!" << std::endl;
+                    break;
+                }
+                if (tabuleiro[linha-1][coluna-1].compare(CONTRATORPEDEIRO) == 0){
+                    tabuleiro[linha-1][coluna-1] = PECA_X;
+                    std::cout << "Você acertou um contratorpedeiro inimigo! +2 pontos" << std::endl;
+                    set_pontos(2);
+                    break;
+                }
+                if (tabuleiro[linha-1][coluna-1].compare(ENCOURACADO) == 0){
+                    tabuleiro[linha-1][coluna-1] = PECA_X;
+                    std::cout << "Você acertou um encouraçado inimigo! +5 pontos" << std::endl;
+                    set_pontos(5);
+                    break;
+                }
+                if (tabuleiro[linha-1][coluna-1].compare(PORTA_AVIOES) == 0){
+                    tabuleiro[linha-1][coluna-1] = PECA_X;
+                    std::cout << "Você acertou um porta-aviões inimigo! +10 pontos" << std::endl;
+                    set_pontos(10);
+                    break;
+                }
             }
         }
     }
@@ -252,6 +255,10 @@ return true;
         else if (pontos_jogador < pontos_oponente){
             std::cout << apelido_adversario << " ganhou de " << apelido_jogador << ", por " << pontos_oponente << " pontos, contra " << pontos_jogador << " pontos!" << std::endl;
             return apelido_adversario;
+        }
+        else {
+            std::cout << "Empate! Ambos jogadores fizeram " << pontos_jogador << " pontos!" << std::endl;
+            return "Empate";
         }
     }
 

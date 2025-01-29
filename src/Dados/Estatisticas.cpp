@@ -26,7 +26,8 @@ void Estatisticas::estatisticas_jogos(){
     std::cout << "(1) Para ver o ranking geral (todos os jogos)." << std::endl
               << "(2) Para acessar o ranking do jogo Reversi." << std::endl
               << "(3) Para acessar o ranking do jogo Lig4." <<  std::endl
-              << "(4) Para acessar o ranking do Jogo da Velha." << std::endl;
+              << "(4) Para acessar o ranking do Jogo da Velha." << std::endl
+              << "(5) Para acessar o ranking da Batalha Naval." << std::endl;
               
 
     int escolha;
@@ -57,11 +58,14 @@ void Estatisticas::estatisticas_jogos(){
                 std::cout << std::endl;
                 ranking_jogovelha();
                 break;
+            case 5:
+                std::cout << std::endl;
+                ranking_batalhanaval();
+                break;
             
         }
         break; // Sai do while quando o switch processa um caso válido
     }
-
 };
 
 void Estatisticas::listar_jogadores(){
@@ -94,6 +98,11 @@ void Estatisticas::listar_jogadores(){
             << std::setw(5) << " D: " << jogador->get_JogoVelha().derrotas
             << std::setw(5) << " E: " << jogador->get_JogoVelha().empates
             << std::setw(5) << " P: " << jogador->get_JogoVelha().pontos_por_jogo << std::endl;
+        
+        std::cout << std::setw(10) << "BATALHA NAVAL - " << std::setw(2) << " V: " << jogador->get_BatalhaNaval().vitorias
+            << std::setw(5) << " D: " << jogador->get_BatalhaNaval().derrotas
+            << std::setw(5) << " E: " << jogador->get_BatalhaNaval().empates
+            << std::setw(5) << " P: " << jogador->get_BatalhaNaval().pontos_por_jogo << std::endl << std::endl;
     }
 };
 
@@ -103,12 +112,11 @@ void Estatisticas::ranking_geral(){
 
     std::sort(ranking_jogadores.begin(), ranking_jogadores.end(), [](Jogador* a, Jogador* b) {
         if(a->get_pontos_totais() != b->get_pontos_totais()){ //se os pontos sao !=, ordena por eles
-             return  a->get_pontos_totais() > b->get_pontos_totais();
+            return  a->get_pontos_totais() > b->get_pontos_totais();
         }
         else { //se forem igauis, vai pros proximos requisitos:
-
             if(a->get_vitorias_totais() != b->get_vitorias_totais()){ //se o num vitorias for diferente usa isso:
-                    return a->get_vitorias_totais() > b->get_vitorias_totais();
+                return a->get_vitorias_totais() > b->get_vitorias_totais();
             }
             else{ //se o num de vitorias for igual, prossegue
 
@@ -123,7 +131,6 @@ void Estatisticas::ranking_geral(){
     });
     std::cout << BOLD << "Ranking Geral: " << RESET << std::endl;
     imprimir_ranking(ranking_jogadores);
-    
 }
 
 
@@ -135,12 +142,10 @@ void Estatisticas::ranking_reversi(){
              return  a->get_Reversi().pontos_por_jogo > b->get_Reversi().pontos_por_jogo;
         }
         else { 
-
             if(a->get_Reversi().vitorias != b->get_Reversi().vitorias){ 
                     return a->get_Reversi().vitorias > b->get_Reversi().vitorias;
             }
-            else{ 
-
+            else{
                 if(a->get_Reversi().derrotas != b->get_Reversi().derrotas){ //olha qm tem neos derrotas
                     return a->get_Reversi().derrotas < b->get_Reversi().derrotas;
                 }
@@ -150,7 +155,6 @@ void Estatisticas::ranking_reversi(){
             }
         }
     });
-
     std::cout << BOLD << "Ranking do Reversi: " << RESET << std::endl;
    imprimir_ranking(ranking_jogadores);
 };
@@ -164,12 +168,10 @@ void Estatisticas::ranking_lig4(){
              return  a->get_Lig4().pontos_por_jogo > b->get_Lig4().pontos_por_jogo;
         }
         else { 
-
             if(a->get_Lig4().vitorias != b->get_Lig4().vitorias){ 
                     return a->get_Lig4().vitorias > b->get_Lig4().vitorias;
             }
             else{ 
-
                 if(a->get_Lig4().derrotas != b->get_Lig4().derrotas){ //olha qm tem neos derrotas
                     return a->get_Lig4().derrotas < b->get_Lig4().derrotas;
                 }
@@ -179,7 +181,6 @@ void Estatisticas::ranking_lig4(){
             }
         }
     });
-
     std::cout << BOLD << "Ranking do Lig4: " << RESET << std::endl;
     imprimir_ranking(ranking_jogadores);
 };
@@ -187,18 +188,15 @@ void Estatisticas::ranking_lig4(){
 void Estatisticas::ranking_jogovelha(){
     atualizar_ranking();
 
-     std::sort(ranking_jogadores.begin(), ranking_jogadores.end(), [](Jogador* a, Jogador* b) {
-    
+    std::sort(ranking_jogadores.begin(), ranking_jogadores.end(), [](Jogador* a, Jogador* b) {
         if(a->get_JogoVelha().pontos_por_jogo != b->get_JogoVelha().pontos_por_jogo){ 
-             return  a->get_JogoVelha().pontos_por_jogo > b->get_JogoVelha().pontos_por_jogo;
+            return  a->get_JogoVelha().pontos_por_jogo > b->get_JogoVelha().pontos_por_jogo;
         }
-        else { 
-
+        else {
             if(a->get_JogoVelha().vitorias != b->get_JogoVelha().vitorias){ 
-                    return a->get_JogoVelha().vitorias > b->get_JogoVelha().vitorias;
+                return a->get_JogoVelha().vitorias > b->get_JogoVelha().vitorias;
             }
             else{ 
-
                 if(a->get_JogoVelha().derrotas != b->get_JogoVelha().derrotas){ //olha qm tem neos derrotas
                     return a->get_JogoVelha().derrotas < b->get_JogoVelha().derrotas;
                 }
@@ -208,15 +206,43 @@ void Estatisticas::ranking_jogovelha(){
             }
         }
     });
-
     std::cout << BOLD << "Ranking do Jogo da Velha: " << RESET << std::endl;
     imprimir_ranking(ranking_jogadores);
 };
 
-void Estatisticas::imprimir_ranking(std::vector<Jogador*> vetor_jogadores){
+void Estatisticas::ranking_batalhanaval(){
+    atualizar_ranking();
+
+    std::sort(ranking_jogadores.begin(), ranking_jogadores.end(), [](Jogador* a, Jogador* b) {
+    
+        if(a->get_BatalhaNaval().pontos_por_jogo != b->get_BatalhaNaval().pontos_por_jogo){ 
+             return  a->get_BatalhaNaval().pontos_por_jogo > b->get_BatalhaNaval().pontos_por_jogo;
+        }
+        else { 
+
+            if(a->get_BatalhaNaval().vitorias != b->get_BatalhaNaval().vitorias){ 
+                    return a->get_BatalhaNaval().vitorias > b->get_BatalhaNaval().vitorias;
+            }
+            else{ 
+
+                if(a->get_BatalhaNaval().derrotas != b->get_BatalhaNaval().derrotas){ //olha qm tem neos derrotas
+                    return a->get_BatalhaNaval().derrotas < b->get_BatalhaNaval().derrotas;
+                }
+                else{// por fim, caso precise, recorremos a ordem alfabética
+                    return a->get_nome() < b->get_nome();
+                }
+            }
+        }
+    });
+
+    std::cout << BOLD << "Ranking da Batalha Naval: " << RESET << std::endl;
+    imprimir_ranking(ranking_jogadores);
+}
+void Estatisticas::imprimir_ranking(std::vector<Jogador *> vetor_jogadores)
+{
     int posicao = 1;
     for(auto jogador: vetor_jogadores){
-        std::cout << posicao << ". " << jogador->get_apelido() << std::endl;
+        std::cout << BOLD << posicao << ". " << RESET << jogador->get_apelido() << std::endl;
         posicao ++;
     }
     std::cout << std::endl;

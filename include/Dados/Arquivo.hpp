@@ -18,7 +18,6 @@ class Arquivo{
         void set_lista_jogadores(CadastroJogadores &acesso);
         CadastroJogadores get_lista_jogadores();
         ~Arquivo(){};
-
 };
 
 #endif

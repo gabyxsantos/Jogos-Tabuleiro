@@ -255,7 +255,7 @@ Validacao validar_entrada_reversi;
             }
         } 
         //CONFERINDO A DIAGONAL INFERIOR-ESQUERDO A SUPERIOR-DIREITO:
-        if (coluna_ultima_jogada<6 && linha_ultima_jogada >1){ //col utl mais ou menos 1
+        if (coluna_ultima_jogada<6 && linha_ultima_jogada >1){ 
             if (tabuleiro[linha_ultima_jogada-1][coluna_ultima_jogada+1].compare(peca_convertida) == 0){
                 int i=linha_ultima_jogada;
                 int j=coluna_ultima_jogada;
@@ -273,7 +273,7 @@ Validacao validar_entrada_reversi;
             }
         }
         //CONFERINDO A DIAGONAL SUPERIOR-DIREITO A INFERIOR-ESQUERDO:
-        if (coluna_ultima_jogada>1 && linha_ultima_jogada <6){ //col utl mais ou menos 1
+        if (coluna_ultima_jogada>1 && linha_ultima_jogada <6){ 
             if (tabuleiro[linha_ultima_jogada+1][coluna_ultima_jogada-1].compare(peca_convertida) == 0){
                 int i=linha_ultima_jogada;
                 int j=coluna_ultima_jogada;

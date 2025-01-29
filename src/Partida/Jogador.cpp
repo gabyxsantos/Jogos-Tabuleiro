@@ -128,7 +128,12 @@ Validacao validar_entradas_jogador;
         
     };
 
-    void Jogador::set_pontos_totais(bool valor){
+    void Jogador::set_BatalhaNaval(){
+        this->BatalhaNaval.empates++;
+    }
+
+    void Jogador::set_pontos_totais(bool valor)
+    {
         if (valor) {
             this->pontos_totais +=3;
         } 
@@ -136,7 +141,6 @@ Validacao validar_entradas_jogador;
             this->pontos_totais +=1;
         }
     }
-
 
     void Jogador::set_Reversi(bool valor){
         if (valor) {
@@ -177,6 +181,18 @@ Validacao validar_entradas_jogador;
         }
     }
 
+    void Jogador::set_BatalhaNaval(bool valor){
+        if (valor) {
+            this->BatalhaNaval.vitorias ++;
+            this->BatalhaNaval.pontos_por_jogo += 3;
+            set_pontos_totais(true);
+            set_vitorias_totais();
+        } 
+        else {
+            this->BatalhaNaval.derrotas ++;
+            set_derrotas_totais();
+        }
+    }
 
     void Jogador::set_Reversi(int vitorias, int derrotas, int empates, int pontos){
         this->Reversi.vitorias = vitorias;
@@ -199,8 +215,15 @@ Validacao validar_entradas_jogador;
         this->JogoVelha.pontos_por_jogo = pontos;
     }
 
+    void Jogador::set_BatalhaNaval(int vitorias, int derrotas, int empates, int pontos){
+        this->BatalhaNaval.vitorias = vitorias;
+        this->BatalhaNaval.derrotas = derrotas;
+        this->BatalhaNaval.empates = empates;
+        this->BatalhaNaval.pontos_por_jogo = pontos;
+    }
 
-    std::string Jogador::get_nome(){
+    std::string Jogador::get_nome()
+    {
         return Jogador::nome;
     }
 
@@ -236,4 +259,6 @@ Validacao validar_entradas_jogador;
         return Jogador::JogoVelha;
     }
 
-    
+    Placar Jogador::get_BatalhaNaval(){
+        return Jogador::BatalhaNaval;
+    }

@@ -44,16 +44,12 @@ void Partida::definir_jogadores(){
             break;
             
         }
-
         else{
-            
             validar_entrada_partida.imprimir_erro("Apelido não encontrado em nossa base de dados! Tente novamente."); 
             continue;
         }
     }
-    //timer(1500);
     std::cout << "Jogador 1 (" << apelido_jogador_1 <<") encontrado com sucesso" << std::endl;
-    //identificar_jogador(jogador1);
     timer(500);
 
     bool encontrei2 = false;
@@ -89,7 +85,7 @@ void Partida::definir_jogadores(){
 
 void Partida::escolher_jogo(){
 
-    std::cout<< "Qual jogo vocês gostariam de jogar?" << std::endl << "Digite a letra correspondente a sua escolha:" <<std::endl;
+    std::cout << "Qual jogo vocês gostariam de jogar?" << std::endl << "Digite a letra correspondente a sua escolha:" <<std::endl;
     std::cout << "(B) Batalha Naval" << std::endl;
     std::cout << "(L) Lig4" << std::endl;
     std::cout << "(R) Reversi" << std::endl;
@@ -124,8 +120,6 @@ void Partida::escolher_jogo(){
         }
         break; 
     }
-
-
 }
 
 void Partida::jogar_batalha_naval(){
@@ -135,9 +129,9 @@ void Partida::jogar_batalha_naval(){
     CadastroJogadores vencedor;
     CadastroJogadores perdedor;
 
-    timer(900);
+    timer(500);
     std::cout << "Vamos jogar Batalha Naval!" << std::endl;
-    timer(900);
+    timer(500);
 
     std::cout << "Por favor, escolham um numero de jogadas entre 1 e 20:" << std::endl;
     do {
@@ -179,9 +173,9 @@ void Partida::jogar_batalha_naval(){
         }
         else{
             jogo4_mapa1.finalizar_partida_empate();
-            //jogo4_mapa1.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "Lig4", acesso_lista);
+            jogo4_mapa1.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "BatalhaNaval", acesso_lista);
         }
-        //jogo4_mapa1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi", acesso_lista);
+        jogo4_mapa1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "BatalhaNaval", acesso_lista);
 }
 
 void Partida::jogar_reversi(){
@@ -189,9 +183,9 @@ void Partida::jogar_reversi(){
     CadastroJogadores vencedor;
     CadastroJogadores perdedor;
 
-    timer(1800);
+    timer(500);
     std::cout << "Vamos jogar Reversi!" << std::endl;
-    timer(1800);
+    timer(500);
 
     std::string jogador1, jogador2;
     std::string peca1, peca2;
@@ -200,15 +194,15 @@ void Partida::jogar_reversi(){
 
     std::cout << apelido_jogador_1 << ":" << std::endl;
     peca1 = jogo1.definir_cor(" "); // O primeiro jogador escolhe a cor
-    timer(1800);
+    timer(500);
     std::cout << "Jogador: " << apelido_jogador_1 << std::endl << "Peça: " << peca1 << std::endl;
-    timer(1800);
+    timer(500);
 
     std::cout << apelido_jogador_2 << ":" << std::endl;
     peca2 = jogo1.definir_cor(peca1); // O segundo jogador escolhe a cor diferente do primeiro
-    timer(1800);
+    timer(500);
     std::cout << "Jogador: " << apelido_jogador_2 << std::endl << "Peça: " << peca2 << std::endl;
-    timer(1800);
+    timer(500);
 
     // Inicializar o tabuleiro
     jogo1.inicializar_tabuleiro();
@@ -217,14 +211,14 @@ void Partida::jogar_reversi(){
     int i=0;
     while(i < 30){
 
-        timer(1800);
+        timer(500);
         std::cout << apelido_jogador_1 << " (" << peca1 << "), é sua vez!" << std::endl;
         jogo1.mostrar_posicoes_possiveis(peca1, peca2);
         jogo1.imprimir_tabuleiro();
         jogo1.ler_jogada(peca1);
         jogo1.converter_pecas(peca1, peca2);
 
-        timer(1800);
+        timer(500);
         std::cout << apelido_jogador_2 << " (" << peca2 << "), é sua vez!" << std::endl;
         jogo1.mostrar_posicoes_possiveis(peca2, peca1);
         jogo1.imprimir_tabuleiro();
@@ -234,48 +228,45 @@ void Partida::jogar_reversi(){
         i++;
     }
     
-    timer(1800);
+    timer(500);
     if(jogo1.testar_vitoria(peca1)){
         jogo1.imprimir_tabuleiro();
-        timer(1800);
+        timer(500);
         jogo1.finalizar_partida_vencedor(apelido_jogador_1);
         jogo1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Reversi", acesso_lista);
-    
     }
 
     if(jogo1.testar_vitoria(peca2)){
         jogo1.imprimir_tabuleiro();
-        timer(1800);
+        timer(500);
         jogo1.finalizar_partida_vencedor(apelido_jogador_2);
         jogo1.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Reversi", acesso_lista);
     }
-
 }
 
 void Partida::jogar_jogo_da_velha(){
     Jogo_Da_Velha jogo2;
     
-    timer(1800);
+    timer(500);
     std::cout << "Vamos jogar Jogo da Velha!" << std::endl;
-    timer(1800);
+    timer(500);
 
     std::string peca1, peca2;
-
     jogo2.definir_filler(VOID);
 
     std::cout << apelido_jogador_1 << ":" << std::endl; 
     peca1 = jogo2.escolher_peca(" ", jogo2.pecas_coloridas);
 
-    timer(1800);
+    timer(500);
     std::cout << "Jogador: " << apelido_jogador_1 << std::endl << "Peça: " << peca1 << std::endl;
-    timer(1800);
+    timer(500);
 
     std::cout << apelido_jogador_2 << ":" << std::endl; 
     peca2 = jogo2.escolher_peca(peca1, jogo2.pecas_coloridas);
 
-    timer(1800);
+    timer(500);
     std::cout << "Jogador: " << apelido_jogador_2 << std::endl << "Peça: " << peca2 << std::endl;
-    timer(1800);
+    timer(500);
 
     std::string nome_atual = apelido_jogador_1;
     std::string jogador_atual = peca1;
@@ -286,7 +277,7 @@ void Partida::jogar_jogo_da_velha(){
     bool terminou = false;
     bool empate = false;
     while (!terminou) {
-        timer(1800);
+        timer(500);
         jogo2.imprimir_tabuleiro();
 
         // Informar o turno atual
@@ -319,11 +310,10 @@ void Partida::jogar_jogo_da_velha(){
     }
 
     // Finalizar a partida
-    timer(1800);
+    timer(500);
     if (empate) {
         jogo2.finalizar_partida_empate();
-        jogo2.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "JogoVelha", acesso_lista);
-        
+        jogo2.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "JogoVelha", acesso_lista);   
     }
     else {
         jogo2.finalizar_partida_vencedor(nome_atual);
@@ -341,28 +331,27 @@ void Partida::jogar_jogo_da_velha(){
 void Partida::jogar_lig_4(){
     Lig_4 jogo3;
 
-    timer(1800);
+    timer(500);
     std::cout << "Vamos jogar Lig 4!" << std::endl;
-    timer(1800);
+    timer(500);
 
     std::string peca1, peca2;
-    //Partida aux;
 
     jogo3.definir_filler(PECA_BRANCO);
 
     std::cout << apelido_jogador_1 << ":" << std::endl;
     peca1 = jogo3.escolher_peca(" "); // O primeiro jogador escolhe a cor
     
-    timer(1800);
+    timer(500);
     std::cout << "Jogador: " << apelido_jogador_1 << std::endl << "Peça: " << peca1 << std::endl;
-    timer(1800);
+    timer(500);
 
     std::cout << apelido_jogador_2 << ":" << std::endl;
     peca2 = jogo3.escolher_peca(peca1); // O segundo jogador escolhe a cor diferente do primeiro
 
-    timer(1800);
+    timer(500);
     std::cout << "Jogador: " << apelido_jogador_2 << std::endl << "Peça: " << peca2 << std::endl;
-    timer(1800);
+    timer(500);
 
     jogo3.inicializar_tabuleiro();
     std::string jogador_atual = peca1;
@@ -371,7 +360,7 @@ void Partida::jogar_lig_4(){
     bool terminou = false;
     bool empate = false;
     while (!terminou) {
-        timer(1800);
+        timer(500);
         jogo3.imprimir_tabuleiro();
 
         // Informar o turno atual
@@ -402,22 +391,18 @@ void Partida::jogar_lig_4(){
     }
 
     // Finalizar a partida
-    timer(1800);
+    timer(500);
     if (empate) {
         jogo3.finalizar_partida_empate();
         jogo3.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "Lig4", acesso_lista);
     }
     else {
         jogo3.finalizar_partida_vencedor(nome_atual);
-        
         if(nome_atual.compare(apelido_jogador_1) == 0){
             jogo3.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "Lig4",acesso_lista);
         }
          else{
             jogo3.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Lig4", acesso_lista);
-        }
-        
+        } 
     }
-    
-    
 }

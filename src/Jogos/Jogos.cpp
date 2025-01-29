@@ -93,13 +93,13 @@ Validacao validar_entrada_jogos;
     // Funções para finalizar a partida
     void Jogo_De_Tabuleiro::finalizar_partida_vencedor(const std::string& nome_vencedor){
         imprimir_tabuleiro();
-        timer(1800);
+        timer(500);
         std::cout << GREEN << "Parabéns, " << nome_vencedor << "! Você venceu!" << RESET << std::endl;
     }
 
     void Jogo_De_Tabuleiro::finalizar_partida_empate(){
         imprimir_tabuleiro();
-        timer(1800);
+        timer(500);
         std::cout << GREEN << "O jogo terminou em um empate!" << RESET << std::endl;
     }
 
@@ -127,6 +127,10 @@ Validacao validar_entrada_jogos;
             (*it)->set_JogoVelha(true);
             (*it2)->set_JogoVelha(false);
         }
+        else if (jogo.compare("BatalhaNaval") == 0){
+            (*it)->set_BatalhaNaval(true);
+            (*it2)->set_BatalhaNaval(false);
+        }
 
     }
 
@@ -146,6 +150,14 @@ Validacao validar_entrada_jogos;
         else if (jogo.compare("JogoVelha") == 0){
             (*it)->set_JogoVelha();
             (*it2)->set_JogoVelha();
+        }
+        //else if (jogo.compare("Reversi") == 0){
+           // (*it)->set_Reversi();
+           // (*it2)->set_Reversi();
+        //}
+        else if (jogo.compare("BatalhaNaval") == 0){
+            (*it)->set_BatalhaNaval();
+            (*it2)->set_BatalhaNaval();
         }
     };
 

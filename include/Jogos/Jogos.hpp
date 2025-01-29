@@ -7,19 +7,17 @@
 
 class Jogo_De_Tabuleiro {
     protected:
-    std::string filler;
-    int linhas, colunas;
-    std::vector<std::vector<std::string>> tabuleiro;
-
+        std::string filler;
+        int linhas, colunas;
+        std::vector<std::vector<std::string>> tabuleiro;
 
     public:
-    virtual ~Jogo_De_Tabuleiro() = default; // Destrutor virtual para permitir limpeza apropriada
+        virtual ~Jogo_De_Tabuleiro() = default; // Destrutor virtual para permitir limpeza apropriada
 
-    // Métodos abstratos
-    virtual bool verificar_jogada(int linha, int coluna) = 0;
-    virtual void ler_jogada(const std::string& peca) = 0;
-    virtual bool testar_vitoria(const std::string& peca) = 0;
-    
+        // Métodos abstratos
+        virtual bool verificar_jogada(int linha, int coluna) = 0;
+        virtual void ler_jogada(const std::string& peca) = 0;
+        virtual bool testar_vitoria(const std::string& peca) = 0;
     
     // Métodos para o tabuleiro
     void definir_filler(std::string filler);

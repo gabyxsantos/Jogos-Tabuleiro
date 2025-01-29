@@ -21,7 +21,6 @@ Validacao validar_entradas_cadastro;
             std::transform(apelido_a.begin(), apelido_a.end(), apelido_a.begin(), ::tolower);
             std::transform(apelido_b.begin(), apelido_b.end(), apelido_b.begin(), ::tolower);
             return apelido_a < apelido_b;
-
         });
     }
 
@@ -54,7 +53,8 @@ Validacao validar_entradas_cadastro;
         auto jogador_encontrado = buscar_jogador(apelido);
         if (jogador_encontrado == Jogadores.end()) {
             throw std::invalid_argument("jogador não encontrado em nossa base de dados.");
-        } else {
+        } 
+        else {
             Jogadores.erase(jogador_encontrado);
             return true; // Jogador removido com sucesso
         }
@@ -70,5 +70,4 @@ Validacao validar_entradas_cadastro;
             delete jogador;
         }
         Jogadores.clear();
-
     };

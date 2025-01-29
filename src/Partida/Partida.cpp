@@ -122,66 +122,11 @@ void Partida::escolher_jogo(){
     }
 }
 
-void Partida::jogar_batalha_naval(){
-    int numero_de_jogadas;
-    Batalha_Naval jogo4_mapa1;
-    Batalha_Naval jogo4_mapa2;
-    CadastroJogadores vencedor;
-    CadastroJogadores perdedor;
-
-    timer(500);
-    std::cout << "Vamos jogar Batalha Naval!" << std::endl;
-    timer(500);
-
-    std::cout << "Por favor, escolham um numero de jogadas entre 1 e 20:" << std::endl;
-    do {
-        std::cin >> numero_de_jogadas;
-    } while (numero_de_jogadas<1 || numero_de_jogadas>20);
-
-    jogo4_mapa1.definir_filler(AGUA);
-    jogo4_mapa1.inicializar_tabuleiro();
-    jogo4_mapa2.definir_filler(AGUA);
-    jogo4_mapa2.inicializar_tabuleiro();
-
-    std::cout << apelido_jogador_1 << ", posicione seus navios!" << std::endl;
-    std::cout << "(Você deve escolher as coordenadas do centro das peças)" << std::endl;
-    jogo4_mapa1.posicionar_navios(); // O primeiro jogador posiciona seus navios
-    std::cout << apelido_jogador_1 << ", seu tabuleiro ficou assim:" << std::endl;
-    jogo4_mapa1.imprimir_tabuleiro();
-    std::cout << apelido_jogador_2 << ", posicione seus navios!" << std::endl;
-    std::cout << "(Você deve escolher as coordenadas do centro das peças)" << std::endl;
-    jogo4_mapa2.posicionar_navios(); // O segundo jogador posiciona seus navios
-    std::cout << apelido_jogador_2 << ", seu tabuleiro ficou assim:" << std::endl;
-    jogo4_mapa2.imprimir_tabuleiro();
-
-    int i=0;
-    while(i < numero_de_jogadas){
-
-        timer(300);
-        std::cout << apelido_jogador_1 << ", é sua vez!" << std::endl;
-        jogo4_mapa2.ler_jogada(PECA_X); 
-
-        timer(300);
-        std::cout << apelido_jogador_2 << ", é sua vez!" << std::endl;
-        jogo4_mapa1.ler_jogada(PECA_X);
-
-        i++;
-    }
-        if (jogo4_mapa1.get_pontos() != jogo4_mapa2.get_pontos()){
-            jogo4_mapa1.finalizar_partida_vencedor(jogo4_mapa1.comparar_pontuacoes(jogo4_mapa2.get_pontos(), apelido_jogador_1, apelido_jogador_2));
-
-        }
-        else{
-            jogo4_mapa1.finalizar_partida_empate();
-            jogo4_mapa1.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "BatalhaNaval", acesso_lista);
-        }
-        jogo4_mapa1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "BatalhaNaval", acesso_lista);
-}
 
 void Partida::jogar_reversi(){
     Reversi jogo1;
-    CadastroJogadores vencedor;
-    CadastroJogadores perdedor;
+    //CadastroJogadores vencedor;
+    //CadastroJogadores perdedor;
 
     timer(500);
     std::cout << "Vamos jogar Reversi!" << std::endl;
@@ -405,4 +350,67 @@ void Partida::jogar_lig_4(){
             jogo3.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "Lig4", acesso_lista);
         } 
     }
+}
+
+void Partida::jogar_batalha_naval(){
+    int numero_de_jogadas;
+    Batalha_Naval jogo4_mapa1;
+    Batalha_Naval jogo4_mapa2;
+    //CadastroJogadores vencedor;
+    //CadastroJogadores perdedor;
+
+    timer(500);
+    std::cout << "Vamos jogar Batalha Naval!" << std::endl;
+    timer(500);
+
+    std::cout << "Por favor, escolham um numero de jogadas entre 1 e 20:" << std::endl;
+    do {
+        std::cin >> numero_de_jogadas;
+    } while (numero_de_jogadas<1 || numero_de_jogadas>20);
+
+    jogo4_mapa1.definir_filler(AGUA);
+    jogo4_mapa1.inicializar_tabuleiro();
+    jogo4_mapa2.definir_filler(AGUA);
+    jogo4_mapa2.inicializar_tabuleiro();
+
+    std::cout << apelido_jogador_1 << ", posicione seus navios!" << std::endl;
+    std::cout << "(Você deve escolher as coordenadas do centro das peças)" << std::endl;
+    jogo4_mapa1.posicionar_navios(); // O primeiro jogador posiciona seus navios
+    std::cout << apelido_jogador_1 << ", seu tabuleiro ficou assim:" << std::endl;
+    jogo4_mapa1.imprimir_tabuleiro();
+    std::cout << apelido_jogador_2 << ", posicione seus navios!" << std::endl;
+    std::cout << "(Você deve escolher as coordenadas do centro das peças)" << std::endl;
+    jogo4_mapa2.posicionar_navios(); // O segundo jogador posiciona seus navios
+    std::cout << apelido_jogador_2 << ", seu tabuleiro ficou assim:" << std::endl;
+    jogo4_mapa2.imprimir_tabuleiro();
+
+    int i=0;
+    while(i < numero_de_jogadas){
+
+        timer(300);
+        std::cout << apelido_jogador_1 << ", é sua vez!" << std::endl;
+        jogo4_mapa2.ler_jogada(PECA_X); 
+
+        timer(300);
+        std::cout << apelido_jogador_2 << ", é sua vez!" << std::endl;
+        jogo4_mapa1.ler_jogada(PECA_X);
+
+        i++;
+    }
+    if (jogo4_mapa1.get_pontos() != jogo4_mapa2.get_pontos()){
+        std::string vencedor_batalha = jogo4_mapa1.comparar_pontuacoes(jogo4_mapa2.get_pontos(), apelido_jogador_1, apelido_jogador_2);
+        jogo4_mapa1.finalizar_partida_vencedor(vencedor_batalha);
+        
+        if(vencedor_batalha.compare(apelido_jogador_1) == 0){
+            jogo4_mapa1.atualizar_placar(apelido_jogador_1, apelido_jogador_2, "BatalhaNaval", acesso_lista);
+        }
+        else{
+            jogo4_mapa1.atualizar_placar(apelido_jogador_2, apelido_jogador_1, "BatalhaNaval", acesso_lista);
+        }
+    }
+    else{
+        jogo4_mapa1.finalizar_partida_empate();
+        jogo4_mapa1.atualizar_placar_empate(apelido_jogador_1, apelido_jogador_2, "BatalhaNaval", acesso_lista);
+    }
+       
 }

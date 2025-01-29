@@ -92,9 +92,46 @@ void Tutorial::iniciar_tutorial(int opcao_jogo){
         }
     }
 
+    else if (opcao_jogo == 4){ 
+        timer(1000);
+        timer(1000);
+        std::cout << "Iniciar Tutorial: Batalha Naval";
+
+        int entrada_tutorial_bat; 
+        while(true){
+            mostrar_opcoes_tutorial();
+            validar_entrada_tutorial.pedir_usuario(entrada_tutorial_bat);
+            if (entrada_tutorial_bat < 1 || entrada_tutorial_bat > 4){
+                validar_entrada_tutorial.imprimir_erro("Por favor, escolha uma opção válida.");
+            }else if (entrada_tutorial_bat == 4) break;
+            else{
+                switch(entrada_tutorial_bat){
+                    case 1: imprimir_regras_batalha_naval(); break;
+                    case 2: std::cout << "Para a Batalha Naval, não temos simulação disponível!"<< std::endl; break;
+                    case 3: 
+                        std::cout << "Apresentando tutorial completo: regras"<< std::endl;
+                        imprimir_regras_batalha_naval(); 
+                        std::cout << "Para a Batalha Naval, não temos simulação disponível!"<< std::endl;
+                        break;
+                }
+                
+            }
+        }
+    }
+
     else validar_entrada_tutorial.imprimir_erro("Erro interno! Parâmetro de função incorreto! Função: iniciar_tutorial.");
 }
 
+// TUTORIAL BATALHA NAVAL
+void Tutorial::imprimir_regras_batalha_naval() {
+    std::cout << "Regras da Batalha Naval:" << std::endl;
+    std::cout << "1. Cada jogador posiciona seus navios no tabuleiro sem que o adversário veja." << std::endl;
+    std::cout << "2. O objetivo é acertar e afundar todos os navios do oponente antes que ele faça o mesmo." << std::endl;
+    std::cout << "3. No seu turno, escolha uma coordenada para atacar (ex: 'B4')." << std::endl;
+    std::cout << "4. O oponente informa se o ataque foi um acerto ou erro." << std::endl;
+    std::cout << "5. O jogo termina quando todos os navios de um jogador são afundados." << std::endl;
+    timer(5000);
+}
 //TUTORIAL LIG4: 
 void Tutorial::imprimir_regras_lig4() {
     std::cout << "Regras do Lig4:"<< std::endl;

@@ -148,14 +148,15 @@ int main() {
                         << "<1> Jogo da velha" << std::endl
                         << "<2> Lig 4" << std::endl
                         << "<3> Reversi" << std:: endl
-                        << "<4> Voltar ao menu principal" << std:: endl;
+                        << "<4> Batalha Naval" << std:: endl
+                        << "<5> Voltar ao menu principal" << std:: endl;
                 timer(500);
                 std::cout << "Digite uma das opções: " ;
 
                 validar_entrada_main.pedir_usuario(entrada_tutorial);
-                if (entrada_tutorial < 1 || entrada_tutorial > 4){
+                if (entrada_tutorial < 1 || entrada_tutorial > 5){
                     validar_entrada_main.imprimir_erro("Por favor, escolha uma opção válida.");
-                }else if (entrada_tutorial == 4) break;
+                }else if (entrada_tutorial == 5) break;
                 else{
                     tutorial.iniciar_tutorial(entrada_tutorial);
                     

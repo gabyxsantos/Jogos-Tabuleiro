@@ -34,6 +34,11 @@ Validacao validar_entrada_reversi;
         return true;
     }
     void Reversi::ler_jogada(const std::string& peca){
+        if(passar_a_vez()){
+            std::cout<<"Sem movimentos possíveis, passando a vez para outro jogador!"<<std::endl;
+            return;
+        }
+
         int coluna, linha;
         while (true){
             std::cout << "Escolha uma coluna (1-" << colunas << ") para colocar a peça " << peca << ": ";
@@ -48,6 +53,20 @@ Validacao validar_entrada_reversi;
                 }
         }
     }
+
+    bool Reversi::passar_a_vez () {
+        for (int i = 0; i < 8; ++i){
+            for (int j = 0; j < 8; ++j){
+                if (tabuleiro[i][j].compare(PECA_O) == 0) {
+
+                    return false;
+
+                }
+            }
+        }
+        return true;
+    };
+
     bool Reversi::testar_vitoria(const std::string& peca_1){
         int casas_jogador_1=0;
         int casas_vazias = 0;

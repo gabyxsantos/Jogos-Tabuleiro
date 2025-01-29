@@ -24,7 +24,7 @@ Desenvolver aprendizados adquiridos no curso de PDS II, praticar a linguagem de 
 
 #  Descrição e visão geral do projeto
 
-O projeto consiste em um programa cuja finalidade é oferecer uma plataforma para jogadores se registrarem, competirem nos jogos  Reversi, Jogo da Velha ou Lig 4, e manter um registro das estatísticas de desempenho de cada jogador. O sistema permite o cadastro de jogadores, realizar partidas entre eles e armazenar informações como vitórias, derrotas e empates para cada jogo.
+O projeto consiste em um programa cuja finalidade é oferecer uma plataforma para jogadores se registrarem, competirem nos jogos Reversi, Jogo da Velha, Lig 4 ou Batalha Naval, e manter um registro das estatísticas de desempenho de cada jogador. O sistema permite o cadastro de jogadores, realizar partidas entre eles e armazenar informações como vitórias, derrotas e empates para cada jogo.
 
 #  Como rodar e compilar
 

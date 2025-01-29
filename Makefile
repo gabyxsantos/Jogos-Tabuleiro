@@ -96,6 +96,7 @@ $(OBJ_DIR)/main.o: $(INCLUDES) $(SRC_DIR)/main.cpp
 $(BIN_DIR)/main: $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $(BIN_DIR)/main
 
+
 # Parte de TESTES
 TEST_SOURCES = $(wildcard $(SRC_DIR)/tests/*.cpp)
 TEST_OBJECTS = $(TEST_SOURCES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
@@ -107,7 +108,7 @@ $(OBJ_DIR)/tests:
 $(OBJ_DIR)/tests/%.o: $(SRC_DIR)/tests/%.cpp | $(OBJ_DIR)/tests
 	$(CC) $(CFLAGS) -c $< -Iinclude -o $@
 
-$(BIN_DIR)/tests: $(TEST_OBJECTS) $(OBJ_DIR)/Variaveis_globais.o $(OBJ_DIR)/Validacao.o $(OBJ_DIR)/Jogador.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Arquivo.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Lig_4.o $(OBJ_DIR)/Reversi.o $(OBJ_DIR)/Jogo_da_velha.o $(OBJ_DIR)/Partida.o $(OBJ_DIR)/Estatisticas.o $(OBJ_DIR)/Tutorial.o
+$(BIN_DIR)/tests: $(TEST_OBJECTS) $(OBJ_DIR)/Variaveis_globais.o $(OBJ_DIR)/Validacao.o $(OBJ_DIR)/Batalha_naval.o $(OBJ_DIR)/Jogador.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/Arquivo.o $(OBJ_DIR)/Jogos.o $(OBJ_DIR)/Lig_4.o $(OBJ_DIR)/Reversi.o $(OBJ_DIR)/Jogo_da_velha.o $(OBJ_DIR)/Partida.o $(OBJ_DIR)/Estatisticas.o $(OBJ_DIR)/Tutorial.o
 	$(CC) $(CFLAGS) $^ -o $(BIN_DIR)/tests
 
 testes: $(BIN_DIR)/tests

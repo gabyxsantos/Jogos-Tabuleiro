@@ -125,11 +125,11 @@ void Tutorial::iniciar_tutorial(int opcao_jogo){
 // TUTORIAL BATALHA NAVAL
 void Tutorial::imprimir_regras_batalha_naval() {
     std::cout << "Regras da Batalha Naval:" << std::endl;
-    std::cout << "1. Cada jogador posiciona seus navios no tabuleiro sem que o adversário veja." << std::endl;
+    std::cout << "1. Os jogadores escolhem o limite de jogadas e cada jogador posiciona seus navios no tabuleiro sem que o adversário veja." << std::endl;
     std::cout << "2. O objetivo é acertar e afundar todos os navios do oponente antes que ele faça o mesmo." << std::endl;
-    std::cout << "3. No seu turno, escolha uma coordenada para atacar (ex: 'B4')." << std::endl;
-    std::cout << "4. O oponente informa se o ataque foi um acerto ou erro." << std::endl;
-    std::cout << "5. O jogo termina quando todos os navios de um jogador são afundados." << std::endl;
+    std::cout << "3. No seu turno, escolha uma coordenada para atacar (linha e colona)." << std::endl;
+    std::cout << "4. O sistema irá te informar se o ataque foi um sucesso ou se não acertou nenhum navio." << std::endl;
+    std::cout << "5. O jogo termina quando todos os navios de um jogador são afundados ou de acordo com a quantidade de jogadas informadas." << std::endl;
     timer(5000);
 }
 //TUTORIAL LIG4: 

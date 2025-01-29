@@ -33,8 +33,8 @@ void Estatisticas::estatisticas_jogos(){
     int escolha;
     validar_entrada_ranking.pedir_usuario(escolha);
 
-    if (escolha>4 || escolha<1){
-        throw std::out_of_range("Erro: A escolha feita foi fora do intervalo permitido (1 a 4).");
+    if (escolha>5 || escolha<1){
+        throw std::out_of_range("Erro: A escolha feita foi fora do intervalo permitido (1 a 5).");
     }
 
     while (true) {

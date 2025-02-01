@@ -1,0 +1,36 @@
+\doxysection{Estatisticas.\+hpp}
+\hypertarget{_estatisticas_8hpp_source}{}\label{_estatisticas_8hpp_source}\index{include/Dados/Estatisticas.hpp@{include/Dados/Estatisticas.hpp}}
+\mbox{\hyperlink{_estatisticas_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ESTATISTICAS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ESTATISTICAS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_cadastro_8hpp}{Cadastro/Cadastro.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_variaveis__globais_8hpp}{Variaveis\_globais.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_validacao_8hpp}{Validacao.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_estatisticas_acf494ad09027b60a94a1991fcdaefb57}{Estatisticas}}\{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cadastro_jogadores}{CadastroJogadores}}\ acessar\_jogadores;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ std::vector<Jogador*>\ ranking\_jogadores;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_estatisticas_ae852a4db10b44fc82c827464039d285f}{atualizar\_ranking}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_estatisticas_ab4b681b03b9c7a3c3dd1bb4f54af0db7}{ranking\_geral}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_estatisticas_a1ca54b0b7f049b6fc2846eb4c60e62fe}{ranking\_reversi}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_estatisticas_a893adf1378895e8aa2be3b46f14767f0}{ranking\_lig4}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_estatisticas_ae97a182191873aeafd9dd61291593330}{ranking\_jogovelha}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_estatisticas_a717c35d02b1b3aad0ee90505464eaefd}{ranking\_batalhanaval}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_estatisticas_a19be33c471d55947630e3ade249b85a9}{imprimir\_ranking}}(std::vector<Jogador*>\ vetor\_jogadores);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:\ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_estatisticas_acf494ad09027b60a94a1991fcdaefb57}{Estatisticas}}(\mbox{\hyperlink{class_cadastro_jogadores}{CadastroJogadores}}\ \&buscador);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_estatisticas_a4c07674c99c62c3a7f67a33b3480a1ed}{listar\_jogadores}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_estatisticas_af3de71d78fbdf5c9f5712d6ab8e8b007}{atualizar\_acesso}}(\mbox{\hyperlink{class_cadastro_jogadores}{CadastroJogadores}}\ \&buscador);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_estatisticas_afc8333300126cf254e7de458cea91c3e}{estatisticas\_jogos}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_estatisticas_af40696c03aaebaeacac1b5c204da9b6d}{\string~Estatisticas}}();}
+\DoxyCodeLine{00028\ \};\ \ \ \ \ \ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

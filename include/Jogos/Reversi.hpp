@@ -59,6 +59,7 @@ class Reversi : public Jogo_De_Tabuleiro {
          * @brief Processa a jogada do jogador.
          * @param peca Símbolo do jogador que está jogando.
          */
+  
         void ler_jogada(const std::string& peca) override;
 
         /**

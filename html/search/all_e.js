@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['partida_0',['Partida',['../class_partida.html',1,'Partida'],['../class_partida.html#a3f35822b1ea4ecf78b7367bab929c4d8',1,'Partida::Partida()']]],
+  ['partida_2ecpp_1',['Partida.cpp',['../_partida_8cpp.html',1,'']]],
+  ['partida_2ehpp_2',['Partida.hpp',['../_partida_8hpp.html',1,'']]],
+  ['passar_5fa_5fvez_3',['passar_a_vez',['../class_reversi.html#aeacf5823ac170d15016e7e931155be46',1,'Reversi']]],
+  ['peca_5famarela_4',['PECA_AMARELA',['../_variaveis__globais_8hpp.html#ae6c29e540b6f204d43922102205b36dd',1,'Variaveis_globais.hpp']]],
+  ['peca_5fazul_5',['PECA_AZUL',['../_variaveis__globais_8hpp.html#afde6140ca1fde77aab914848b4febd31',1,'Variaveis_globais.hpp']]],
+  ['peca_5fbranco_6',['PECA_BRANCO',['../_variaveis__globais_8hpp.html#a6f6214426b12e2d7651c243092e5e27b',1,'Variaveis_globais.hpp']]],
+  ['peca_5flaranja_7',['PECA_LARANJA',['../_variaveis__globais_8hpp.html#a7e5530b0c0c2807c9b2195d98da06090',1,'Variaveis_globais.hpp']]],
+  ['peca_5fmagenta_8',['PECA_MAGENTA',['../_variaveis__globais_8hpp.html#abbde8ed537ca9a04c4c94dff942e47e9',1,'Variaveis_globais.hpp']]],
+  ['peca_5fo_9',['PECA_O',['../_variaveis__globais_8hpp.html#acccea77bccfda21d5e1927e25852fff5',1,'Variaveis_globais.hpp']]],
+  ['peca_5fpreta_10',['PECA_PRETA',['../_variaveis__globais_8hpp.html#a652d99c8048d812f8eb5b6be721edf08',1,'Variaveis_globais.hpp']]],
+  ['peca_5fverde_11',['PECA_VERDE',['../_variaveis__globais_8hpp.html#adf47764720e37f4f422c644bc477b69b',1,'Variaveis_globais.hpp']]],
+  ['peca_5fvermelha_12',['PECA_VERMELHA',['../_variaveis__globais_8hpp.html#a4f68562387a1f306d8e72a4af11c610d',1,'Variaveis_globais.hpp']]],
+  ['peca_5fx_13',['PECA_X',['../_variaveis__globais_8hpp.html#af4b72af6ebef9422bb2107fef3e47eb0',1,'Variaveis_globais.hpp']]],
+  ['pecas_5fcoloridas_14',['pecas_coloridas',['../class_jogo___da___velha.html#a263e4d8e8c322942369291a96ecce01e',1,'Jogo_Da_Velha']]],
+  ['pedir_5fusuario_15',['pedir_usuario',['../class_validacao.html#a21b44565add0e54082736937b1f337e9',1,'Validacao']]],
+  ['placar_16',['Placar',['../class_placar.html',1,'']]],
+  ['pontos_5fpor_5fjogo_17',['pontos_por_jogo',['../class_placar.html#a456c7cbf83b245edc5ebd610f394c0f2',1,'Placar']]],
+  ['porta_5favioes_18',['PORTA_AVIOES',['../_variaveis__globais_8hpp.html#a0e96d440626ae1ab7e7b84c072f76bda',1,'Variaveis_globais.hpp']]],
+  ['posicionar_5fnavios_19',['posicionar_navios',['../class_batalha___naval.html#a702e28591adb3850642d2daef502ba4c',1,'Batalha_Naval']]],
+  ['principais_20dificuldades_20encontradas_20',['Principais dificuldades encontradas',['../md__r_e_a_d_m_e.html#autotoc_md6',1,'']]],
+  ['programa_21',['Estrutura e funcionamento do programa',['../md__r_e_a_d_m_e.html#autotoc_md5',1,'']]],
+  ['projeto_22',['projeto',['../md__r_e_a_d_m_e.html#autotoc_md0',1,'🔨 Funcionalidades do projeto'],['../md__r_e_a_d_m_e.html#autotoc_md3',1,'Descrição e visão geral do projeto']]]
+];

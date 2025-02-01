@@ -1,0 +1,63 @@
+\doxysection{Validacao.\+hpp}
+\hypertarget{_validacao_8hpp_source}{}\label{_validacao_8hpp_source}\index{include/Validacao.hpp@{include/Validacao.hpp}}
+\mbox{\hyperlink{_validacao_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VALIDACAO\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VALIDACAO\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_variaveis__globais_8hpp}{Variaveis\_globais.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_validacao}{Validacao}}\{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{comment}{//funcao\ para\ limpar\ o\ estado\ de\ erro\ e\ descartar\ a\ entrada\ invalida}}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ limpar\_entrada();}
+\DoxyCodeLine{00010\ \ \ \ \ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_validacao_a1aebb7b0b6c11a113e2af65bffecde11}{validar\_char}}(\textcolor{keywordtype}{char}\&\ valor);}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_validacao_a2756c6fac2a9925d4068acf5b662c5d9}{validar\_string}}(\textcolor{keyword}{const}\ std::string\&\ valor);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Funções\ templadas\ para\ entrada\ de\ dados}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_validacao_ab155277cd4586bae10a3fdaa5cddb9cd}{validar\_entrada}}(T\&\ valor)\ \{\ \textcolor{comment}{//usando\ inline\ para\ evitar\ múltiplas\ definições\ ao\ incluir\ o\ hpp\ em\ diferentes\ arquivos\ cpp}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin\ >>\ valor)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Entrada\ válida}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ Validacao::limpar\_entrada();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Entrada\ inválida}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_validacao_ae063e5407e6801859d71190267586dc2}{validar\_entrada}}(\textcolor{keywordtype}{char}\&\ valor)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin\ >>\ valor)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_validacao_a1aebb7b0b6c11a113e2af65bffecde11}{Validacao::validar\_char}}(valor))\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Entrada\ passou\ em\ validação\ de\ char\ }}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ Validacao::limpar\_entrada();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Entrada\ inválida}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_validacao_a2213b8a6b26eae86f8bdaf2d45dbdb0c}{validar\_entrada}}(std::string\&\ valor)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin\ >>\ valor)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_validacao_a2756c6fac2a9925d4068acf5b662c5d9}{Validacao::validar\_string}}(valor))\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Entrada\ passou\ em\ validação\ de\ string}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Limpa\ o\ estado\ de\ erro\ e\ descarta\ a\ entrada\ inválida}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ Validacao::limpar\_entrada();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Entrada\ inválida}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_validacao_a2cfc38c43746e37c0d3557066dc25534}{imprimir\_erro}}(\textcolor{keyword}{const}\ std::string\&\ erro);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_validacao_a21b44565add0e54082736937b1f337e9}{pedir\_usuario}}(T\&\ valor)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{class_validacao_ab155277cd4586bae10a3fdaa5cddb9cd}{validar\_entrada}}(valor))\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_validacao_a2cfc38c43746e37c0d3557066dc25534}{imprimir\_erro}}(\textcolor{stringliteral}{"{}Entrada\ inválida.\ Insira\ no\ formato\ correto!"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

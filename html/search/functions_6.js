@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['get_5factive_5fcontexts_0',['get_active_contexts',['../structdoctest_1_1_i_reporter.html#ad34f2f1954ff43b6e8fe2dc595cec53a',1,'doctest::IReporter']]],
+  ['get_5fapelido_1',['get_apelido',['../class_jogador.html#a4b45ba2e9ede2efa74caa20baf916733',1,'Jogador']]],
+  ['get_5fbatalhanaval_2',['get_BatalhaNaval',['../class_jogador.html#afa443e3d508c3caa0af09d90bdc7026d',1,'Jogador']]],
+  ['get_5fcolunas_3',['get_colunas',['../class_jogo___de___tabuleiro.html#a5792dcb251ed80e86ae004931752adcc',1,'Jogo_De_Tabuleiro']]],
+  ['get_5fderrotas_5ftotais_4',['get_derrotas_totais',['../class_jogador.html#aed3ff4cdc6724ea4cc70f402929bceb4',1,'Jogador']]],
+  ['get_5fempates_5ftotais_5',['get_empates_totais',['../class_jogador.html#ab1c2762ada9087485859205db952defd',1,'Jogador']]],
+  ['get_5ffiller_6',['get_filler',['../class_jogo___de___tabuleiro.html#a84f2ac999c99deb8beb5b3747e85084d',1,'Jogo_De_Tabuleiro']]],
+  ['get_5fjogovelha_7',['get_JogoVelha',['../class_jogador.html#ad40dcbe77126d80567d15b730bd7e934',1,'Jogador']]],
+  ['get_5flig4_8',['get_Lig4',['../class_jogador.html#abd8d544a020da41fbdfb6138680865b4',1,'Jogador']]],
+  ['get_5flinhas_9',['get_linhas',['../class_jogo___de___tabuleiro.html#a215900851c7f87d1dbb0e7ed82628719',1,'Jogo_De_Tabuleiro']]],
+  ['get_5flista_5fjogadores_10',['get_lista_jogadores',['../class_arquivo.html#a80b021297ed03ee926df7d4c8b9b9adb',1,'Arquivo']]],
+  ['get_5fnome_11',['get_nome',['../class_jogador.html#a1620f6946757da4aeaa8d86530ee8fe6',1,'Jogador']]],
+  ['get_5fnum_5factive_5fcontexts_12',['get_num_active_contexts',['../structdoctest_1_1_i_reporter.html#a7d520de46d9104c0eeb02375fabad32d',1,'doctest::IReporter']]],
+  ['get_5fnum_5fstringified_5fcontexts_13',['get_num_stringified_contexts',['../structdoctest_1_1_i_reporter.html#ac8b96fef046edc609a3374a61b84797d',1,'doctest::IReporter']]],
+  ['get_5fpontos_14',['get_pontos',['../class_batalha___naval.html#afe7374148af67cd09856f64766b5b7ef',1,'Batalha_Naval']]],
+  ['get_5fpontos_5ftotais_15',['get_pontos_totais',['../class_jogador.html#aef1de2f46fc11f72d2631df6a654f798',1,'Jogador']]],
+  ['get_5freversi_16',['get_Reversi',['../class_jogador.html#a3dd9eb55c9fbbed1669096a97290890b',1,'Jogador']]],
+  ['get_5fstringified_5fcontexts_17',['get_stringified_contexts',['../structdoctest_1_1_i_reporter.html#a6db31e528efe08c9bc9b4037a2143c3a',1,'doctest::IReporter']]],
+  ['get_5ftabuleiro_18',['get_tabuleiro',['../class_jogo___de___tabuleiro.html#a4ac60fff6dff40843b339ba3e2787a90',1,'Jogo_De_Tabuleiro']]],
+  ['get_5fvitorias_5ftotais_19',['get_vitorias_totais',['../class_jogador.html#aa6203a2e18cdaf0202725989a0b15d74',1,'Jogador']]],
+  ['getcontextoptions_20',['getContextOptions',['../namespacedoctest.html#a13c02a469cfc2264d547fc0fc3a55569',1,'doctest']]],
+  ['getcurrenttestsuite_21',['getCurrentTestSuite',['../namespacedoctest__detail__test__suite__ns.html#a63d04c2e0ba35dff1e33cf0a24ec66c8',1,'doctest_detail_test_suite_ns']]]
+];

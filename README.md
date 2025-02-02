@@ -26,6 +26,8 @@ Desenvolver aprendizados adquiridos no curso de PDS II, praticar a linguagem de 
 
 O projeto consiste em um programa cuja finalidade é oferecer uma plataforma para jogadores se registrarem, competirem nos jogos Reversi, Jogo da Velha, Lig 4 ou Batalha Naval, e manter um registro das estatísticas de desempenho de cada jogador. O sistema permite o cadastro de jogadores, realizar partidas entre eles e armazenar informações como vitórias, derrotas e empates para cada jogo.
 
+Desenvolvemos uma documentação utilizando o Doxygen, que detalha as classes e métodos implementados no projeto. Recomendamos acessar a documentação utilizando o Google Chrome, pois realizamos testes em outros navegadores e identificamos problemas de compatibilidade durante a abertura.
+
 #  Como rodar e compilar
 
 Inicialmente, o usuário deve executar o comando "make" para compilar o programa corretamente. Após a compilação bem-sucedida, o programa será iniciado e o usuário poderá interagir com ele utilizando comandos específicos:

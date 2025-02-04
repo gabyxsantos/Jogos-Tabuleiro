@@ -9,7 +9,7 @@
  * @class CadastroJogadores
  * @brief Classe responsável por gerenciar o cadastro de jogadores.
  *
- * @details A classe CadastroJogadores gerencia o cadastro de jogadores em um sistema 
+ * @details A classe CadastroJogadores gerencia o cadastro de jogadores do sistema 
  * de jogos. Ela utiliza uma lista estática de ponteiros para objetos da classe Jogador, 
  * que armazena os jogadores cadastrados. A classe oferece funcionalidades para adicionar, 
  * remover, e buscar jogadores, além de permitir a ordenação dos jogadores por 
@@ -26,6 +26,10 @@
  * em um arquivo, permitindo persistir os dados para futuras execuções do programa. 
  * A lista de jogadores pode ser manipulada durante a execução do sistema, e as 
  * operações de adicionar ou remover jogadores atualizam automaticamente o estado dessa lista.
+ * Escolhemos deixar o módulo de cadastro sozinho em uma única pasta para deixar todo o código 
+ * padronizado, com módulos separados em pastas de acordo com sua funcionalidade. Como o módulo de 
+ * cadastro está muito mais relacionado à funcionalidade de cadastrar um usúario do que a função de 
+ * executar um jovo ou armazenar um dado, julgamos que seria melhor mantê-lo como arquivo único da pasta 'Cadastro'.  
  */
 class CadastroJogadores {
     public:

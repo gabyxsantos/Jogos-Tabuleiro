@@ -22,7 +22,9 @@
  * recolher os dados e adicionar a lista, que irá ser manipulada durante a execução do sistema e, por fim, 
  * apenas modificamos o arquivo adicionando/removendo os dados de acordo com a lista. Isso evita operações 
  * repetidas e desnecessárias de leitura e escrita no arquivo durante a execução do sistema, melhorando a performance 
- * e mantendo os dados de maneira mais eficiente.
+ * e mantendo os dados de maneira mais eficiente. Por se tratar de uma classe responsável pelo gerenciamento de dados,
+ * colocamos o módulo na pasta Dados, pasta referente aos módulos que conversam com os dados salvos ou mesmo cuidam 
+ * desse gerenciamento.
  */
 
 class Arquivo {

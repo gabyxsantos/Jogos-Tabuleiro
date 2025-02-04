@@ -20,7 +20,8 @@
  * estavam misturados na lógica de seleção de jogadores, o que dificultava a manutenção e expansão do código. 
  * Para solucionar isso, organizamos melhor a classe, separando claramente a escolha do jogo da definição dos jogadores. 
  * Outro problema enfrentado foi o controle de jogadores cadastrados, pois precisávamos garantir que apenas 
- * jogadores válidos fossem selecionados para uma partida, o que levou à criação de métodos específicos para identificação.
+ * jogadores válidos fossem selecionados para uma partida, o que levou à criação de métodos específicos para 
+ * identificação.
  */
 
 class Partida {

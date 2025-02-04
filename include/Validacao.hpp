@@ -8,10 +8,10 @@
  * @brief Classe responsável pela validação das entradas do usuário.
  *
  * @details Essa classe existe para que os possíveis erros de entrada que possam vir a ser 
- * cometidos pelos usuários não sejam tratados de maneira "feia", com mensagens 
- * do sistema como Segmeentation Fault e, em seguida, o encerramento da execução do
+ * cometidos pelos usuários sejam tratados corretamente, com mensagens claras e específicas, ao invés de mensagens 
+ * do sistema como Segmentation Fault e, em seguida, o encerramento da execução do
  * programa. Durante o processo, pensamos em adicionar as funções como métodos globais, sem classe, porém,
- * dessa forma, perderíamos a possibilidade de encapsulamento e organização.  
+ * dessa forma, o código perderia um pouco a característica de encapsulamento e organização.  
  * Optamos, então, por criar uma classe específica para lidar com esses erros de maneira mais controlada,  
  * permitindo uma melhor manutenção e possíveis expansões futuras.  
  * Além disso, essa abordagem possibilita um código mais limpo e intuitivo, melhorando a experiência do  
@@ -22,6 +22,9 @@
  * permite que o compilador substitua diretamente sua chamada, otimizando o desempenho e evitando múltiplas
  * definições durante a vinculação. Dessa forma, ambas as funções podem ser utilizadas corretamente em diferentes
  * partes do código sem a necessidade de uma definição separada em um arquivo `.cpp`.
+ * Acreditamos fortemente que, a partir dessa classe e também dos outros métodos de tratamento de exceções 
+ * implementados ao longo do código, fomos capazes de ter sucesso em deixar nossa aplicação robusta, pelo menos
+ * no que tange às entradas de usuários.
  */
 class Validacao {
     private:

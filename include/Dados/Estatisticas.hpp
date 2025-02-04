@@ -16,7 +16,8 @@
  * de organizar as classificações, a classe possibilita a listagem de todos os jogadores e a exibição 
  * de estatísticas gerais, consolidando informações de desempenho. O sistema permite atualização dinâmica
  * dos rankings e acesso aos dados de jogadores cadastrados, garantindo que as informações estejam sempre 
- * atualizadas conforme os resultados das partidas.
+ * atualizadas conforme os resultados das partidas. Como os dados do jogos também são armazenados, o módulo 
+ * 'Estatísticas também se encontra na pasta Dados.
  */
 
 class Estatisticas {

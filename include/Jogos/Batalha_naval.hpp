@@ -20,7 +20,11 @@
  * o vencedor com base nos pontos acumulados. A lógica do jogo foi estruturada 
  * para manter um equilíbrio entre estratégia e acessibilidade, garantindo que a 
  * experiência seja intuitiva para novos jogadores e desafiadora para jogadores 
- * experientes.
+ * experientes. Um dos problemas experienciados foi a impressão do tabuleiro, 
+ * função que só foi redefinida para batalha naval, já que o tabuleiro era maior, 
+ * e, portanto, a partir dos números de 2 dígitos, foi necessário mudar o espaçamento
+ * entre os indicadores de colunas, para que fosse mantida a qualidade da experiência 
+ * do usuário, e que ele pudesse ver com clareza qual coluna está mirando/posicionando seu navio. 
  */
 class Batalha_Naval : public Jogo_De_Tabuleiro {
     private:

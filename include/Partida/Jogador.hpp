@@ -32,6 +32,8 @@ class Placar {
  * de cada jogo, evitando poluir a classe `Jogador` com múltiplos atributos diretos. Além disso, a separação de métodos 
  * `set` e `get` para cada jogo permitiu um melhor controle dos dados. Outro ponto importante foi o uso de diferentes 
  * construtores. Essa abordagem tornou o código mais flexível e facilitou a integração com outras partes do sistema.
+ * Como o objeto jogador existe para interagir com os jogos através das partidas, criamos uma pasta referente às 
+ * partidas, que envolve tanto o mídlo de jogador quanto o módulo de partidas.
  */
 class Jogador {
     private:

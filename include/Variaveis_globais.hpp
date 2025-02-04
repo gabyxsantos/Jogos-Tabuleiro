@@ -19,9 +19,12 @@
  * @file Variaveis_globais.hpp
  * @brief Módulo contendo variáveis globais e funções auxiliares para melhorar a experiência do usuário.
  *
- * @details Este módulo define diversas variáveis globais e funções que visam melhorar a experiência 
- * de uso do sistema, como caracteres Unicode para peças do jogo e a função timer para espaçamento 
- * de saídas no terminal.
+ * @details Este módulo define diversos caracteres Unicode como variáveis globais para representar peças do jogo,
+ * o que visa melhorar a experiência do usuário do sistema, ao deixar a visualização do terminal mais interativa e 
+ * agradável. Seguindo o mesmo objetivo de melhorar a experiência do usuário, também definimos a função 'timer', 
+ * responsável pelo espaçamento de saídas no terminal, e que, a partir desse espaçamento temporal, pode ajudar 
+ * a deixar a visualização do terminal mais agradável, e diminuir a sobreposição de várias saídas em sequência, 
+ * por exemplo.
  */
 
 // Definições de cores para formatação no terminal

@@ -16,7 +16,12 @@
  * houver uma jogada válida disponível. Além disso, a função `mostrar_posicoes_possiveis()` foi criada 
  * para auxiliar o jogador a visualizar suas opções. Por fim, a verificação de vitória exigiu um teste 
  * cuidadoso das condições de término da partida, garantindo que todas as regras fossem corretamente 
- * aplicadas e evitando inconsistências no jogo.
+ * aplicadas e evitando inconsistências no jogo. Além disso, destaca-se o tamanho da função 
+ * 'mostrar_posicoes_possiveis', o que ocorreu principalmente por causa da dificuldade de conferir as 
+ * diagonais sem cair em um erro de segmentation fault. Ao perceber essa dificuldade, achamos melhor 
+ * deixar o código mais extenso, de fato entrando em vários loops for, do que tentar refatorar o 
+ * código para deixá-lo mais enxuto, mas acabar ganhando um erro de segmentation fault. 
+ * Nesse caso, em nosso código, optamos pelo mais seguro, ao invés do possivelmente mais eficiente.
  */
 class Reversi : public Jogo_De_Tabuleiro {
     private:

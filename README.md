@@ -41,6 +41,7 @@ VT: Visualizar um tutorial explicativo sobre o sistema.
 FS: Finalizar o sistema.
 
 Para verificar a execução dos testes implementados, é necessário usar o comando "make testes". Após corrigirmos pequenos erros nos métodos, conseguimos tornar todos os testes bem-sucedidos.
+Para vizualizar a documentação, utilize o comando "doxygen Doxtfile", que criará uma pasta html dentro do output, onde será encontrado um arquivo "index.html" que, ao ser aberto, contará com a documentação completa.
 
 #  Estrutura e funcionamento do programa
 

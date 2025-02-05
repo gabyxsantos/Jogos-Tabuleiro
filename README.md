@@ -4,7 +4,7 @@
 um índice e um tratamento de erros. O projeto foi desenvolvido como trabalho final da matéria de Programação e Desenvolvimento de Software II, cursada na Universidade 
 Federal de Minas Gerais como matéria obrigatória dos cursos de Ciências da Computação, Ciência de Dados e afins. </p>
 
- ![Badge Em Desenvolvido](https://img.shields.io/badge/STATUS-EmDesenvolvimento-orange)
+ ![Badge Finalizado](https://img.shields.io/badge/STATUS-Finalizado-green)
 
 # 🔨 Funcionalidades do projeto
 
